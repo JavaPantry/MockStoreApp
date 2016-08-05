@@ -1,0 +1,20 @@
+/****** Script for SelectTopNRows command from SMS  ******/
+SELECT * FROM [MDS].[dbo].[nbtBillTo] where code in ('2A1348','A03806','2D2250','LB2302','2C2121','2A1348','B012')
+SELECT * FROM [MDS].[dbo].[nbtBillTo] where code in ('IMP001','IMP002','IMP003','IMP004','IMP005','IMP006','IMP007')
+SELECT * FROM [MDS].[dbo].[nbtMachine] where serialNo in ('DFH17074','LVX01354','DFW10915','JME09900')
+SELECT * FROM [dbo].[nbtDealer] where [code] in('128CB','121DX','00D8O','HPDLR')
+
+SELECT * FROM [MDS].[dbo].[MdsCompany] where compCode like'IMP%'
+SELECT * FROM [MDS].[dbo].[nbtBillTo] where companyCode like'IMP%'
+SELECT * FROM [MDS].[dbo].[nbtShipTo] where billToCode like'IMP%'
+SELECT * FROM [dbo].[nbtDealer] where code like'IMP%'
+SELECT * FROM [MDS].[dbo].[nbtMachine] where serialNo like'IMP%'
+
+SELECT * FROM [dbo].[nbtInvoice] where [invoiceNo] like'IMP%'
+SELECT * FROM [dbo].[nbtInvoiceItem] where [invoiceNo] like'IMP%'
+
+delete FROM [MDS].[dbo].[nbtShipTo] where billToCode like'IMP%'
+delete FROM [MDS].[dbo].[nbtBillTo] where companyCode like'IMP%'
+delete FROM [MDS].[dbo].[MdsCompany] where compCode like'IMP%'
+delete FROM [MDS].[dbo].[nbtMachine] where serialNo like'IMP%'
+delete FROM [dbo].[nbtDealer] where code like'IMP%'

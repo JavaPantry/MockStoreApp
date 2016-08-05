@@ -1,0 +1,6 @@
+http://localhost:8080/MockStubWebExtJs6/exthome
+M005554MIS\AVP
+password
+
+
+http://m005557mis:8080/hellowebxml/hello

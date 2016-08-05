@@ -1,0 +1,314 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+<groupId>org.avp.bsd</groupId>
+<artifactId>MockWebExtJs6_bsd</artifactId>
+<version>0.1</version>
+<name>MockWebExtJs6_bsd</name>
+<packaging>war</packaging>
+
+  <properties>
+	<log4j.version>1.2.17</log4j.version>
+	<slf4j.version>1.7.5</slf4j.version>
+	
+    <cxf.version>3.0.4</cxf.version>
+    <jaxb.version>2.2.7</jaxb.version>
+    <spring.version>4.1.6.RELEASE</spring.version>
+    <spring.security.version>4.0.2.RELEASE</spring.security.version>
+    <tiles.version>3.0.5</tiles.version>
+    <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
+    <junit.version>4.12</junit.version>
+    <ehcache.version>2.9.0</ehcache.version>
+    <!-- <hibernate.version>4.3.8.Final</hibernate.version> -->
+    <jpa.version>1.8.0.RELEASE</jpa.version>
+    <validator.version>5.1.3.Final</validator.version>
+  </properties>
+
+  <dependencies>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<!-- source download https://github.com/spring-projects/spring-security/releases -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-ldap</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.kerberos</groupId>
+			<artifactId>spring-security-kerberos-client</artifactId>
+			<version>1.0.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+	        <groupId>org.springframework.security.kerberos</groupId>
+	        <artifactId>spring-security-kerberos-web</artifactId>
+	        <version>1.0.1.RELEASE</version>
+    	</dependency>
+    
+		
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		      <groupId>javax.servlet</groupId>
+		      <artifactId>jstl</artifactId>
+		      <version>1.2</version>
+		</dependency>
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>spring-core</artifactId>
+          <groupId>org.springframework</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <!-- jackson 
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>x.xx</version>
+	</dependency>
+    -->
+    
+    <!-- Tiles -->
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-extras</artifactId>
+      <version>${tiles.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>ognl</groupId>
+          <artifactId>ognl</artifactId>
+        </exclusion>
+        <exclusion>
+          <artifactId>spring-web</artifactId>
+          <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-lang</artifactId>
+          <groupId>commons-lang</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>guava</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <!-- Template engine for email service -->
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring4</artifactId>
+      <version>${thymeleaf.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>slf4j-api</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>log4j</artifactId>
+          <groupId>log4j</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <!-- Local API -->
+    <!-- <dependency>
+      <groupId>org.avp.wsclient</groupId>
+      <artifactId>emailclient</artifactId>
+      <version>2.2.5</version>
+      <type>jar</type>
+    </dependency> -->
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3</version>
+    </dependency>
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-all</artifactId>
+	    <version>1.3</version>
+	    <scope>test</scope>
+	</dependency>
+    <dependency>
+    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${spring.version}</version>
+    	<scope>test</scope>
+	</dependency>
+    <dependency>
+		    <groupId>org.dbunit</groupId>
+		    <artifactId>dbunit</artifactId>
+		    <version>2.4.9</version>
+		    <scope>test</scope>
+		  <!--   <exclusions>
+		        <exclusion>
+		            <artifactId>junit</artifactId>
+		            <groupId>junit</groupId>
+		        </exclusion>
+		    </exclusions> -->
+	</dependency>
+    <dependency>
+	   <groupId>com.github.springtestdbunit</groupId>
+	   <artifactId>spring-test-dbunit</artifactId>
+	   <version>1.1.0</version>
+	   <scope>test</scope>
+	</dependency>
+    
+    <dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi</artifactId>
+    	<version>3.11</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.avp.bsd</groupId>
+    	<artifactId>MockServiceExtJs6_bsd</artifactId>
+    	<version>0.1</version>
+    </dependency>
+    
+    <!-- Log4J -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <!-- <dependency>
+    	<groupId>org.avp.common</groupId>
+    	<artifactId>commonapi</artifactId>
+    	<version>1.0.9</version>
+    </dependency> -->
+  </dependencies>
+<!--
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>dbunit-maven-plugin</artifactId>
+			<version>1.0-beta-3</version>
+		</dependency>
+-->
+  <build>
+	<plugins>
+	<!--	dbUnit with Oracle for comparison 
+			http://halilkarakose.blogspot.ca/2010/08/use-dbunit-with-maven.html -->
+<!-- 		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>dbunit-maven-plugin</artifactId>
+			<version>1.0-beta-3</version>
+			<configuration>
+				<driver>com.mysql.jdbc.Driver</driver>
+				<url>jdbc:mysql://localhost:3306/mockstub</url>
+				<username>root</username>
+				<password>pswd</password>
+				<dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dataTypeFactoryName>
+				<metadataHandlerName>org.dbunit.ext.mysql.MySqlMetadataHandler</metadataHandlerName>
+				<encoding>utf-8</encoding>
+				<src>src/test/java/org/avp/quota/kpi/service/dbUnitIntegrationData.data</src>
+				http://stackoverflow.com/questions/4966450/how-to-load-data-into-data-base-using-dbunit-in-maven
+				<format>flat</format>
+				<type>CLEAN_INSERT</type>
+			</configuration>
+			/*<executions>
+				<execution>
+					<id>test-compile</id>
+					<phase>test-compile</phase>
+					<goals>
+						<goal>operation</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>test</id>
+					<phase>test</phase>
+					<goals>
+						<goal>operation</goal>
+					</goals>
+				</execution>
+			</executions>*/
+			<dependencies>
+		    <dependency>
+		            <groupId>mysql</groupId>
+		            <artifactId>mysql-connector-java</artifactId>
+		            <version>5.1.18</version>
+		    </dependency>
+ 			</dependencies>
+		</plugin>
+ -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>  
+</project>

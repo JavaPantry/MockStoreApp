@@ -1,0 +1,158 @@
+/* 
+ * load extjs4 grid data on form submission
+ * http://stackoverflow.com/questions/20841650/how-to-load-extjs-4-grid-data-on-form-submission 
+ */
+
+Ext.define('companyColumnModel', {
+    extend: 'Ext.data.Model',
+    //idProperty:'code',
+    fields: [
+    	     {name: 'code', type: 'string'},
+    	     {name: 'name', type: 'string'},
+    	     {name: 'hasErrors', type: 'boolean'},
+    	     {name: 'messages', type: 'string'},
+    ]
+});
+
+// create the data store
+var importCompanyStore = Ext.create('Ext.data.ArrayStore', {
+    model: 'companyColumnModel',
+    fields: [
+       {name: 'code'},
+       {name: 'name'},
+       {name: 'hasErrors'}
+       
+    ],
+    proxy: {
+        type: 'ajax',
+        reader: {
+            type: 'json',
+            root: 'data'
+        }
+    },
+    autoLoad: false
+});
+
+
+Ext.define('MPS.view.imports.ImportCompany', {
+	extend: 'Ext.grid.Panel', 
+	alias: 'widget.ImportCompany'
+    ,columnLines: true
+    ,viewConfig : {
+		getRowClass : function(record) {
+			var hasErrors = record.get('hasErrors');
+			if(hasErrors == true) {
+				return 'importErrorRow';// see app.css
+			};
+		}
+	}
+
+    ,store: importCompanyStore
+    	
+	,columns: [	//https://blogs.walkingtree.in/2013/11/09/what-can-i-do-with-a-gridpanel-in-extjs/
+				{ header: 'Error', xtype: 'actioncolumn', dataIndex: 'hasErrors'
+					/*,renderer: function(value, metaData, record, row, col, store, gridView){
+						var icon = '';
+						if (value == true ) {
+							metaData.icon = 'resources/mps/images/delete.png';
+							metaData.style = 'color:red;font-weight:bold;background:yellow;';
+							metaData.tdAttr = 'data-qtip="' + '<div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div>"';
+							icon = '<img src="resources/mps/images/delete.png">';
+						} else {
+							metaData.icon = 'resources/mps/images/approve.png';
+							metaData.tdAttr = 'data-qtip="' + 'Salary revision is required!"';
+							//icon = '<img src="resources/mps/images/approve.png">';
+						}
+						return icon;
+					}*/
+	         	    , align: 'center'//,tooltip: 'Add child'
+		            ,width: 50//MainAppViewConfig.actionColumnWidth
+	                ,icon: 'resources/mps/images/delete.png'
+	                ,getClass : function( v, meta, record ) {
+	                	var hasErrors = record.get('hasErrors');
+	        			if ( hasErrors== false ) {
+	        			return 'x-hide-display';
+	        			}
+        			}
+		            ,handler: function(grid, rowIndex, colIndex, actionItem, event, record, row) {
+		            	console.log('handle error indicator');  
+		            	var hasErrors = record.get('hasErrors');
+		            	if(hasErrors){
+		            		Ext.Msg.alert('Record has errors:',record.get('messages'));
+		            	}
+		            }
+		        }
+	           	,{header: 'Code', flex:2, sortable: true,dataIndex: 'code'}
+				,{header: 'Name', flex:6, sortable: true,dataIndex: 'name'}
+				,{header: 'Errors', flex:1, dataIndex: 'hasErrors'
+					,renderer: function(value, metaData, record, row, col, store, gridView){
+	         	        if (value == true) {
+	         	        	metaData.tdAttr = 'data-qtip="' + '<div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div><div>Errors!</div>"';
+	         	            return '<img src="resources/mps/images/delete.png">';
+	         	        }else {
+	         	        	
+	         	        	return '<img src="resources/mps/images/approve.png">';
+	         	        }
+	         	        return '';
+					}
+				}
+				
+				
+				]
+
+	,dockedItems : [{xtype: 'toolbar',dock: 'top',
+							    items: [{iconCls: 'icon-add',		itemId: 'downloadCompanyExcel',text: 'Download Excel Template',action: 'downloadCompanyExcelTemplate'},
+							            //{iconCls: 'icon-add',		itemId: 'uploadCompanyExcel',text: 'Upload Company Import Excel',action: 'uploadCompanyExcel'},
+							            {xtype:'form',padding: '0 0 0 0',frame: true
+											  ,items : [{xtype:'filefield',name:'fileUpload'
+														,itemId: 'forecastUploadExelActuals'
+														,buttonOnly: true
+														,buttonText:'Upload Company Import Excel'
+													  ,listeners:{
+														  'change': function(fb, v){
+															  var theForm = fb.up('form').getForm();
+															  if(theForm.isValid()){
+																  	theForm.submit({
+																  		headers : {'Content-Type':'multipart/form-data; charset=UTF-8'},
+																        method : 'POST',
+												                        url: 'companyUpload',
+												                        waitMsg: 'Uploading your file...',
+												                        success: function(form, action){
+												                        	//var formContainer = form.owner;
+																			//var theForm = formContainer.up('UploadReviewActualsGrid');
+																			//var theStore= theForm.getStore(); 
+												                        	var jsonResponse = Ext.JSON.decode(action.response.responseText);
+												                        	importCompanyStore.loadData(jsonResponse.data );
+												                        	var entities = jsonResponse.data;
+												                        },
+																  		failure: function(form, action) {
+																  	        switch (action.failureType) {
+																  	            case Ext.form.action.Action.CLIENT_INVALID:
+																  	                Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+																  	                break;
+																  	            case Ext.form.action.Action.CONNECT_FAILURE:
+																  	                Ext.Msg.alert('Failure', 'Ajax communication failed');
+																  	                break;
+																  	            case Ext.form.action.Action.SERVER_INVALID:
+																  	               Ext.Msg.alert('Failure', action.result.msg);
+																  	       }
+																  	    }
+												                    });
+												                }
+														  }
+													  }
+											         }//end btn
+											 ]}//end form	
+							    
+										]
+					} 
+					/*,{xtype: 'pagingtoolbar', dock:'bottom',
+						store: 'company.Company',
+						displayInfo: true,
+						displayMsg: 'Displaying Quota Details {0} - {1} of {2}',
+						emptyMsg: "No Dealer to display"}*/
+	               ]
+    	,initComponent: function() {
+    		this.callParent(arguments);
+    	}    	
+   });

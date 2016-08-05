@@ -1,0 +1,71 @@
+{
+    "testEmail": "avp@avp.com",
+
+    "overrideExpiryDate": true,
+	
+	"authExcludePatterns": [
+	  ".*\.js$",
+	  ".*\.css$",
+	  ".*\.jpg$",
+	  ".*\.gif$",
+	  ".*\.png$",
+	  ".*\.ico$",
+	  ".*/login\.jsp$",
+	  ".*/login$",
+	  ".*/logout$",
+	  ".*\.map$",
+	  ".*/error$"
+	],
+
+    "attachmentPath": "c:/appAtt/upload/",
+	
+	"attachmentContentTypes": [
+        "application/pdf",
+		"application/doc",
+        "application/msword",
+        "application/rtf",
+        "text/richtext", 
+        "text/rtf", 
+        "text/plain", 
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+        "application/vnd.sun.xml.writer",
+        "application/x-soffice",
+		"application/vnd.ms-excel",
+		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+	],
+
+	"attachmentExtensions": [
+	  ".*txt$",
+	  ".*rtf$",
+	  ".*doc$",
+	  ".*docx$",
+	  ".*xls$",
+	  ".*xlsx$",
+	  ".*pdf$"
+	],
+
+    "attachmentMaxSize": 5242880,
+	
+	"logoutUrl": "",
+	
+	
+    "appDataService": {
+	  "readOnly": false,
+      "url": "http://devserver/app2013/services/app?wsdl",
+	  "connectionTimeout": 600000,
+	  "requestTimeout": 600000,
+	  "authorizationType": "Basic",
+	  "userName": "avp",
+	  "password": "pswd"
+	},
+	
+    "scsDataService": {
+	  "readOnly": false,
+      "url": "http://devserver/app2013/services/app?wsdl",
+	  "connectionTimeout": 600000,
+	  "requestTimeout": 600000,
+	  "authorizationType": "Basic",
+	  "userName": "avp",
+	  "password": "pswd"
+	}	
+}

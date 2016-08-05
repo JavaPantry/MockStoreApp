@@ -1,0 +1,91 @@
+package org.avp.quota.kpi.configuration;
+
+import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(basePackages={"org.avp.bsd.repository"}, entityManagerFactoryRef="bsdEntityManagerFactory")//, transactionManagerRef="transactionManager"
+@ComponentScan(basePackages={"org.avp.bsd.service"})
+@Profile("Tomcat")
+public class TomcatDataServiceBsdModuleConfigurationBak{
+	private static Logger logger = Logger.getLogger(TomcatDataServiceBsdModuleConfigurationBak.class);
+	
+	//at.Bean (name = "bsdEntityManagerFactory")
+	@Bean
+	public EntityManagerFactory bsdEntityManagerFactory() {
+      LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+      em.setDataSource(dataSource());
+      em.setPersistenceUnitName("hibernate_bsd");
+      em.setPackagesToScan(new String[] {"org.avp.bsd.model"});
+      JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+      em.setJpaVendorAdapter(vendorAdapter);
+      em.setJpaProperties(getJpaProperties());
+      em.afterPropertiesSet();//<-http://stackoverflow.com/questions/28817120/spring-jpa-multiple-persistence-units-injecting-entitymanager
+      logger.debug("EntityManagerFactory = "+ em.getObject());
+      return em.getObject();
+	}
+
+   @Bean
+   public DataSource dataSource(){
+      DriverManagerDataSource dataSource = new DriverManagerDataSource();
+      dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/bsd_test?createDatabaseIfNotExist=true ");
+      dataSource.setUsername( "root" );
+      dataSource.setPassword( "pswd" );
+      return dataSource;
+   }
+
+   /*
+    * Because of 
+    * org.springframework.beans.factory.UnsatisfiedDependencyException: 
+    * Error creating bean with name 'transactionManager' defined in class org.avp.quota.kpi.configuration.TomcatDataServiceBsdModuleConfiguration: Unsatisfied dependency expressed through constructor argument with index 0 of type [javax.persistence.EntityManagerFactory]: : No qualifying bean of type [javax.persistence.EntityManagerFactory] is defined: expected single matching bean but found 2: entityManagerFactory,bsdEntityManagerFactory; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [javax.persistence.EntityManagerFactory] is defined: expected single matching bean but found 2: entityManagerFactory,bsdEntityManagerFactory
+    * Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [javax.persistence.EntityManagerFactory] is defined: expected single matching bean but found 2: entityManagerFactory,bsdEntityManagerFactory
+    * 
+    * We'll relay on transaction defined in TomcatDataServiceModuleConfiguration 
+
+   @Bean
+   public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+      JpaTransactionManager transactionManager = new JpaTransactionManager();
+      transactionManager.setEntityManagerFactory(emf);
+      return transactionManager;
+   }*/
+
+   @Bean
+   public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+      return new PersistenceExceptionTranslationPostProcessor();
+   }
+/*
+ * to run CeareAndExportHSQLDBData with tomcat/mysql 
+ * change in TomcatDataServiceModuleConfiguration.java 
+ * properties.setProperty("hibernate.hbm2ddl.auto", "create");//"create","validate"
+ */
+   Properties getJpaProperties() {
+      Properties properties = new Properties();
+      properties.setProperty("hibernate.hbm2ddl.auto", "default");//Select: "create" OR "validate" OR "default"
+      properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+      
+      //to output and nicely format HQL: 
+      properties.setProperty("hibernate.show_sql", "true");
+      properties.setProperty("hibernate.format_sql", "true");
+
+      return properties;
+   }
+}

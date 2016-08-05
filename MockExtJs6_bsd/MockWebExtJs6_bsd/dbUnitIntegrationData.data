@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <quotausers id="1" enabled="true" password="$2a$11$X/alkzG5vYeH1QHh65Ytr.I62tKhBqyzJMHPWBMZud1RMVwyd5B12" userId="Alexei Ptitchkin" version="0"/>
+  <quotausers id="2" enabled="true" password="$2a$11$OdwijGJZpvSeF6WvHHhl8uUemY1Br9x0wBxXqEOw/5e27pQfqBAJK" userId="Tim Adams" version="0"/>
+  <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
+  <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
+  <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
+  <authorities id="4" role="ROLE_QuotaKPI_ADMIN" version="0" userId="1"/>
+  <authorities id="5" role="ROLE_BSD_DEALER" version="0" userId="2"/>
+  <company/>
+  <billto/>
+  <dealer/>
+  <ids_employee_profile employee_id="C05622" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="* President" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Taizaburo Ted Egawa" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
+  <ids_employee_profile employee_id="C08420" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Takayuki Naruo" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
+  <ids_employee_profile employee_id="C08421" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Fumihiko Ogihara" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
+  <ids_employee_profile employee_id="C08422" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Jean-Claude Beland" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
+  <ids_employee_profile employee_id="C08423" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Bohdan Valentovic" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
+  <ids_security alt_salesrep_cd="CIG001" all_access="true" alt_salesrep_nm="TBD(WEST MANAGER)" ids_user_id="C05622"/>
+  <productline code="A" description="CAMERA"/>
+  <productline code="B" description="CALCULATOR"/>
+  <productline code="C" description="MICRO"/>
+  <productline code="D" description="COPIER"/>
+  <productline code="E" description="BCD"/>
+  <productline code="F" description="SEMICOM"/>
+  <productline code="I" description="PC COPIER"/>
+  <productline code="J" description="PERIPHERALS"/>
+  <productline code="K" description="FAX"/>
+  <productline code="L" description="LBP"/>
+  <productline code="M" description="TYPE WRITER"/>
+  <productline code="N" description="MEDICAL"/>
+  <productline code="P" description="C-ETW"/>
+  <productline code="Q" description="LFP"/>
+  <productline code="T" description="PRINTER"/>
+  <productline code="U" description="FAX PHONE"/>
+  <productline code="V" description="VIDEO"/>
+  <productline code="X" description="VISUAL COMM SYSTEMS"/>
+  <productline code="Y" description="GRAPHICS"/>
+  <productline code="Z" description="ADMIN"/>
+  <ids_manager alt_salesrep_cd="CIG001" first_prod_ctrl_cd="A" manager_id="C05622"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="A9J" third_prod_ctrl_nm="CEC" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="A9Z" third_prod_ctrl_nm="* NO CATEGORY" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAA" third_prod_ctrl_nm="DSLR ACCESSORIES" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAE" third_prod_ctrl_nm="E-STORE" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAG" third_prod_ctrl_nm="ANALOG" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAH" third_prod_ctrl_nm="DSLR HARDWARE" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAR" third_prod_ctrl_nm="DSLR REFURBISHED" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="AAZ" third_prod_ctrl_nm="* NOT CATEGORIZED" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADA" third_prod_ctrl_nm="TAMRAC" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADB" third_prod_ctrl_nm="PHATSTRAPS" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADC" third_prod_ctrl_nm="UMBRA" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADD" third_prod_ctrl_nm="CAPTURING COUTURE" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="1" AmtType="1" A1="1" A10="0" A11="0" A12="0" A2="2" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="2" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9J"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="3" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="4" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9J"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="5" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="6" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="A9J"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="7" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="8" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="A9J"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="9" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9Z" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="10" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9Z"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="11" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9Z" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="12" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9Z"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="13" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="A9Z" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="14" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="A9Z"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="15" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="A9Z" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="16" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="A9Z"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="17" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="18" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="19" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="20" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="21" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="22" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="23" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="24" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="25" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAE" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="26" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAE"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="27" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAE" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="28" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAE"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="29" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAE" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="30" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAE"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="31" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAE" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="32" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAE"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="33" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAG" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="34" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAG"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="35" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAG" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="36" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAG"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="37" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAG" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="38" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAG"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="39" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAG" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="40" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAG"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="41" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAH" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="42" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAH"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="43" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAH" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="44" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAH"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="45" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAH" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="46" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAH"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="47" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAH" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="48" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAH"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="49" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAR" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="50" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAR"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="51" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAR" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="52" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAR"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="53" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAR" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="54" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAR"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="55" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAR" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="56" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAR"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="57" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAZ" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="58" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="AAZ"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="59" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAZ" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="60" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="AAZ"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="61" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAZ" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="62" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="AAZ"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="63" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAZ" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="64" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="AAZ"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="65" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="66" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="67" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="68" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="69" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="70" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="71" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADA" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="72" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADA"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="73" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADB" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="74" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADB"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="75" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADB" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="76" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADB"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="77" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADB" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="78" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADB"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="79" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADB" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="80" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADB"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="81" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADC" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="82" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADC"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="83" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADC" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="84" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADC"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="85" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADC" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="86" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADC"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="87" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADC" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="88" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADC"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="89" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADD" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="90" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="ADD"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="91" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADD" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="92" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="ADD"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="93" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADD" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="94" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2015" third_prod_ctrl_cd="ADD"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="95" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADD" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="B" idsQuotaId="96" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2016" third_prod_ctrl_cd="ADD"/>
+  <ids_toc toc_cd="TOCID" toc_nm="TEST TOC"/>
+  <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
+  <shipto/>
+  <machine/>
+  <orders id="1" createDt="2016-08-05 08:58:20.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
+  <orders id="2" createDt="2016-08-05 08:58:20.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
+  <orders id="3" createDt="2016-08-05 08:58:20.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
+  <user/>
+  <passwordresettoken/>
+  <privilege/>
+  <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
+  <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <role/>
+  <roles_privileges/>
+  <shippingaddresses/>
+  <stores/>
+  <users/>
+  <users_roles/>
+  <verificationtoken/>
+</dataset>

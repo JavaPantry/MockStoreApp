@@ -1,0 +1,268 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+<groupId>org.avp.bsd</groupId>
+<artifactId>MockServiceExtJs6_bsd</artifactId>
+<version>0.1</version>
+<packaging>jar</packaging>  
+  
+  <properties>
+	<log4j.version>1.2.17</log4j.version>
+	<slf4j.version>1.7.5</slf4j.version>
+  
+    <cxf.version>3.0.4</cxf.version>
+    <jaxb.version>2.2.7</jaxb.version>
+    <spring.version>4.1.6.RELEASE</spring.version>
+    <tiles.version>3.0.5</tiles.version>
+    <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
+    <junit.version>4.12</junit.version>
+    <ehcache.version>2.9.0</ehcache.version>
+    <!-- <hibernate.version>4.3.8.Final</hibernate.version> -->
+    <hibernate.version>4.2.12.Final</hibernate.version>
+    <jpa.version>1.8.0.RELEASE</jpa.version>
+    <validator.version>5.1.3.Final</validator.version>
+    <gson.version>2.3</gson.version>
+    <apache.commons.version>1.3.2</apache.commons.version>
+    <commons-lang.version>2.6</commons-lang.version>
+	<commons-beanutils.version>1.6</commons-beanutils.version>
+    <guava.version>18.0</guava.version>
+    <flexjson.version>3.3</flexjson.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.18</version>
+		<!-- <scope>test</scope> -->
+    </dependency>
+ 
+ 	<!-- http://mvnrepository.com/artifact/org.hsqldb/hsqldb/2.3.1 -->
+	<dependency>
+		<groupId>org.hsqldb</groupId>
+		<artifactId>hsqldb</artifactId>
+		<version>2.3.1</version>
+		<!-- <scope>test</scope> -->
+	</dependency>
+<!-- 
+    <dependency>
+    	<groupId>com.microsoft.sqlserver</groupId>
+    	<artifactId>sqljdbc4</artifactId>
+    	<version>4.0</version>
+    </dependency>
+-->
+<!--	
+<dependency>
+	<groupId>com.microsoft.sqlserver</groupId>
+	<artifactId>sqljdbc4</artifactId>
+	<version>4.0.2206.100</version>
+</dependency>  -->
+
+    <!-- Flex JSON -->      
+    <dependency>
+      <groupId>net.sf.flexjson</groupId>
+      <artifactId>flexjson</artifactId>
+      <version>${flexjson.version}</version>
+    </dependency>
+  
+     <!-- Google Guava Library for immutable lists, etc. -->      
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+ 
+     <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
+     <!--
+     <dependency>
+      <groupId>org.avp.common</groupId>
+      <artifactId>commonapi</artifactId>
+      <version>1.0.9</version>
+    </dependency>
+     -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+      <exclusions>
+        <exclusion>
+            <artifactId>spring-core</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+      <exclusions>
+        <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- JPA -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>${jpa.version}</version>
+      <exclusions>
+        <exclusion>
+            <artifactId>spring-aop</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>spring-beans</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>spring-core</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>spring-context</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>spring-orm</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>spring-tx</artifactId>
+            <groupId>org.springframework</groupId>
+        </exclusion>
+        <exclusion>
+            <artifactId>slf4j-api</artifactId>
+            <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>   
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+      <scope>compile</scope>
+     <!--  <exclusions>
+        <exclusion>
+            <artifactId>jboss-logging</artifactId>
+            <groupId>org.jboss.logging</groupId>
+        </exclusion>
+      </exclusions> -->
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate.version}</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+            <artifactId>jboss-logging</artifactId>
+            <groupId>org.jboss.logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <!-- Hibernate Validator -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${validator.version}</version>
+      <exclusions>
+        <exclusion>
+            <artifactId>jboss-logging</artifactId>
+            <groupId>org.jboss.logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <!-- EhCache -->
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>${ehcache.version}</version>
+    </dependency>    
+    
+    <!-- Log4J -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- for decoding passwords in CXF interceptors -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.9</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-all</artifactId>
+	    <version>1.3</version>
+	    <scope>test</scope>
+	</dependency>
+    <dependency>
+    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${spring.version}</version>
+    	<scope>test</scope>
+	</dependency>
+    
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>${commons-lang.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>${commons-beanutils.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>${gson.version}</version>
+	</dependency>
+                
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>  
+</project>
