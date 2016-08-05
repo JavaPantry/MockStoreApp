@@ -17,4 +17,21 @@ This is playground to be used as start for new projects
 
 - ExtJs6 (v 6.x)
 - AngularJs (AngularJs I) to be replaced with Angular II
+
+## import from Github
+
+- File->Import->Maven->Checkout Maven project from SCM
+
+![Checkout Maven project from SCM](./Documents/ImportMavenFromSCM.png)
+
+- Copy repository url
+
+![Copy repository url](./Documents/CopyRepoUrl.png)
  
+- Paste repository url in target and click [Finish]
+
+![Paste repository url in target](./Documents/PasteRepoUrl.png) 
+
+- You should see the start of build
+- Click on web project and select debug on server
+
