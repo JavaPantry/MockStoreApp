@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <quotausers id="1" enabled="true" password="$2a$11$X/alkzG5vYeH1QHh65Ytr.I62tKhBqyzJMHPWBMZud1RMVwyd5B12" userId="Alexei Ptitchkin" version="0"/>
-  <quotausers id="2" enabled="true" password="$2a$11$OdwijGJZpvSeF6WvHHhl8uUemY1Br9x0wBxXqEOw/5e27pQfqBAJK" userId="Tim Adams" version="0"/>
+  <quotausers id="1" enabled="true" password="$2a$11$jQgbiqQCHi7dv2LSrgMKaOxxiZwBi6LCyVahaSsyTipfzLpKmDm0i" userId="Alexei Ptitchkin" version="0"/>
+  <quotausers id="2" enabled="true" password="$2a$11$oLLMxW0uJILwFvNatmdjQee7QaVvAL6yrCnVPR6rk7CK5ziwM9dgG" userId="Tim Adams" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -149,9 +149,9 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-05 08:58:20.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
-  <orders id="2" createDt="2016-08-05 08:58:20.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
-  <orders id="3" createDt="2016-08-05 08:58:20.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
+  <orders id="1" createDt="2016-08-06 18:22:44.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
+  <orders id="2" createDt="2016-08-06 18:22:44.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
+  <orders id="3" createDt="2016-08-06 18:22:44.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
   <user/>
   <passwordresettoken/>
   <privilege/>

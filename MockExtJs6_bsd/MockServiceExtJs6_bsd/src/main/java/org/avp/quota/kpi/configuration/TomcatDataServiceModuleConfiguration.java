@@ -57,7 +57,7 @@ public class TomcatDataServiceModuleConfiguration{
       //TODO - <AP> under jboss or tomcat database not switched till full clean deploymnt folder
       
       //dataSource.setUrl("jdbc:mysql://localhost:3306/mockstub?createDatabaseIfNotExist=true ");
-      dataSource.setUrl("jdbc:mysql://localhost:3306/mockstubbsdauth?createDatabaseIfNotExist=true ");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/gitmockauth?createDatabaseIfNotExist=true ");
       
       dataSource.setUsername( "root" );
       dataSource.setPassword( "pswd" );
@@ -99,6 +99,7 @@ public class TomcatDataServiceModuleConfiguration{
  */
    Properties getJpaProperties() {
       Properties properties = new Properties();
+      //TODO - <AP> to init database from scratch change hibernate.hbm2ddl.auto to create
       properties.setProperty("hibernate.hbm2ddl.auto", "validate");//Select: "create" OR "validate" OR "default"
       properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 

@@ -17,7 +17,7 @@ Ext.define('QuotaKPI.view.AppViewport', {
 				'<TR ALIGN="left" VALIGN="middle">'+
 				'<TD><img style="float: middle; padding: 0px 0px 0px 0px;" src="resources/fast/images/SpringLogo.PNG"/></TD>'+
 					'<TD> <span style="float: middle; padding: 4px 3px 0px 0px; font-family: Helvetica,Arial,Verdana,sans-serif; font-weight: bold; font-size: 12px; color: #2F577F;">'+welcomeUserName+'</span> </TD>'+
-					'<TD> <h1><span style="float: right; padding: 4px 3px 0px 0px; font-family: Helvetica,Arial,Verdana,sans-serif; font-weight: bold; font-size: 21px; color:#2F577F;">Quota KPI'+
+					'<TD> <h1><span style="float: right; padding: 4px 3px 0px 0px; font-family: Helvetica,Arial,Verdana,sans-serif; font-weight: bold; font-size: 21px; color:#2F577F;">App Admin mode'+
 					'<span style="padding: 4px 3px 0px 0px; font-family: Helvetica,Arial,Verdana,sans-serif; font-weight: bold; font-size: 10px; color:#2F577F;">'+FaST_Version_Number+'</span>'
 					+'</span></h1></TD>'+
 				'</TR> </TABLE>'
