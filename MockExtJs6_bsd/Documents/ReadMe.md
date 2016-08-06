@@ -9,7 +9,7 @@
 
 ## _On August 6, 2016
 
-- To keep old databse setup new `gitmockauth`
+- To keep old database setup new `gitmockauth`
 - Change welcome message to `App Admin mode`
 
 ## _On August 5, 2016_
