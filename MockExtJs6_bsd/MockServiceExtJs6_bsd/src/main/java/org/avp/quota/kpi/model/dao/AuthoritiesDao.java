@@ -18,6 +18,7 @@ import javax.persistence.Version;
  * app.auth.companyGroup=ROLE_QuotaKPI_COMPANY
  * app.auth.reportGroup=ROLE_QuotaKPI_REPORT
  * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
+ * app.auth.adminGroupAngular=ROLE_QuotaKPI_ADMIN_ANGULAR
  * 
  * @author Q05459
  *

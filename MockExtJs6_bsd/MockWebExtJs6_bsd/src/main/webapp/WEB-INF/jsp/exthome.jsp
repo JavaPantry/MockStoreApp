@@ -24,11 +24,6 @@
 <link rel="icon" href="${pageContext.request.contextPath}/resources/fast/images/chart_curve.png">
 <!-- 
 	* for Spring security tag security:authorize access="hasRole('QuotaKPI_XXXX')" groups/roles should have 'ROLE_' prefix
-	* group				user
-	* QuotaKPI_QUOTA		sptestuser603
-	* QuotaKPI_BUDGET		sptestuser601
-	* QuotaKPI_COMPANY		sptestuser602
-	* QuotaKPI_REPORT		sptestuser604
  -->
 
 <script type="text/javascript">
@@ -81,7 +76,18 @@ var messages = {
     </script>
 </security:authorize>
 
+
+<security:authorize access="hasRole('QuotaKPI_ADMIN_ANGULAR')">
+    <script type="text/javascript">
+		quotaUser = true;    
+		budgetUser = true;    
+		companyUser = true;    
+		reportUser = true;    
+		adminUser = true;    
+    </script>
+</security:authorize>
  
+  
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/extjs-6.0.1/classic/theme-classic/resources/theme-classic-all-debug.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/extjs-6.0.1/packages/charts/classic/classic/resources/charts-all-debug.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/extjs-6.0.1/packages/ux/classic/classic/resources/ux-all-debug.css"/>

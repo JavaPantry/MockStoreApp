@@ -1,12 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <quotausers id="1" enabled="true" password="$2a$11$jQgbiqQCHi7dv2LSrgMKaOxxiZwBi6LCyVahaSsyTipfzLpKmDm0i" userId="Alexei Ptitchkin" version="0"/>
-  <quotausers id="2" enabled="true" password="$2a$11$oLLMxW0uJILwFvNatmdjQee7QaVvAL6yrCnVPR6rk7CK5ziwM9dgG" userId="Tim Adams" version="0"/>
+  <quotausers id="1" enabled="true" password="$2a$11$AypvLxKF4uXl37fq3s4ScOXCbEP43ZFTRtv/VKPloaeAdeqGp6hlC" userId="Alexei Ptitchkin" version="0"/>
+  <quotausers id="2" enabled="true" password="$2a$11$koTTO1qj8MC5o17po10JBe2rvBGR2FKGeBTqjxvQWtpynvT.Yz2I2" userId="Tim Adams" version="0"/>
+  <quotausers id="3" enabled="true" password="$2a$11$ThxaQQvESgFMfXXBVT3XI.2RUIaIMr3epYnwEb0uMmFJ2sRjgDyWe" userId="Angular User" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
   <authorities id="4" role="ROLE_QuotaKPI_ADMIN" version="0" userId="1"/>
   <authorities id="5" role="ROLE_BSD_DEALER" version="0" userId="2"/>
+  <authorities id="6" role="ROLE_QuotaKPI_ADMIN_ANGULAR" version="0" userId="3"/>
   <company/>
   <billto/>
   <dealer/>
@@ -149,9 +151,9 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-06 18:22:44.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
-  <orders id="2" createDt="2016-08-06 18:22:44.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
-  <orders id="3" createDt="2016-08-06 18:22:44.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
+  <orders id="1" createDt="2016-08-08 09:21:01.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
+  <orders id="2" createDt="2016-08-08 09:21:01.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
+  <orders id="3" createDt="2016-08-08 09:21:02.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
   <user/>
   <passwordresettoken/>
   <privilege/>

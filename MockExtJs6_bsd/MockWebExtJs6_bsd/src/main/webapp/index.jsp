@@ -6,6 +6,11 @@
 <c:redirect url="/exthome"/>
 </security:authorize>
 
+<security:authorize access="hasRole('QuotaKPI_ADMIN_ANGULAR')">
+<c:redirect url="/exthome"/>
+</security:authorize>
+
+
 <security:authorize access="hasRole('BSD_DEALER')">
 <c:redirect url="/bsdhome"/>
 </security:authorize>

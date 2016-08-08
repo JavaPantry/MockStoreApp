@@ -295,42 +295,58 @@ public class BuildAndExportDatabase {
 		bsdUser.setPassword(passwordEncoder.encode("password"));
 		quotaService.save(bsdUser);
 
+		UserDao angularUser = new UserDao();
+		angularUser.setUserId("Angular User");
+		//user.setEnabled(true);
+		angularUser.setPassword(passwordEncoder.encode("password"));
+		quotaService.save(angularUser);
 
-/*
- * app.auth.userGroup=QuotaKPI_USER
- * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
- * app.auth.budgetGroup=ROLE_QuotaKPI_BUDGET
- * app.auth.companyGroup=ROLE_QuotaKPI_COMPANY
- * app.auth.reportGroup=ROLE_QuotaKPI_REPORT
- * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
- * 
- */
-		
-		AuthoritiesDao authoritiy = new AuthoritiesDao();
-		authoritiy.setUser(user);
-		authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
-		quotaService.save(authoritiy);
-		
-		AuthoritiesDao authoritiy2 = new AuthoritiesDao();
-		authoritiy2.setUser(user);
-		authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
-		quotaService.save(authoritiy2);
-		
-		AuthoritiesDao authoritiy3 = new AuthoritiesDao();
-		authoritiy3.setUser(user);
-		authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
-		quotaService.save(authoritiy3);
-	
+		setupAuthorities(user, bsdUser, angularUser);
 
-		AuthoritiesDao authoritiy4 = new AuthoritiesDao();
-		authoritiy4.setUser(user);
-		authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
-		quotaService.save(authoritiy4);
+	}
 
-		AuthoritiesDao authoritiy5 = new AuthoritiesDao();
-		authoritiy5.setUser(bsdUser);
-		authoritiy5.setRole("ROLE_BSD_DEALER");
-		quotaService.save(authoritiy5);
+	private void setupAuthorities(UserDao adminUser, UserDao bsdUser,
+			UserDao angularUser) {
+		/*
+		 * app.auth.userGroup=QuotaKPI_USER
+		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
+		 * app.auth.budgetGroup=ROLE_QuotaKPI_BUDGET
+		 * app.auth.companyGroup=ROLE_QuotaKPI_COMPANY
+		 * app.auth.reportGroup=ROLE_QuotaKPI_REPORT
+		 * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
+		 * 
+		 */
+				
+				AuthoritiesDao authoritiy = new AuthoritiesDao();
+				authoritiy.setUser(adminUser);
+				authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
+				quotaService.save(authoritiy);
+				
+				AuthoritiesDao authoritiy2 = new AuthoritiesDao();
+				authoritiy2.setUser(adminUser);
+				authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
+				quotaService.save(authoritiy2);
+				
+				AuthoritiesDao authoritiy3 = new AuthoritiesDao();
+				authoritiy3.setUser(adminUser);
+				authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
+				quotaService.save(authoritiy3);
+			
+		
+				AuthoritiesDao authoritiy4 = new AuthoritiesDao();
+				authoritiy4.setUser(adminUser);
+				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
+				quotaService.save(authoritiy4);
+		
+				AuthoritiesDao authoritiy5 = new AuthoritiesDao();
+				authoritiy5.setUser(bsdUser);
+				authoritiy5.setRole("ROLE_BSD_DEALER");
+				quotaService.save(authoritiy5);
+		
+				AuthoritiesDao authoritiy6 = new AuthoritiesDao();
+				authoritiy6.setUser(angularUser);
+				authoritiy6.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
+				quotaService.save(authoritiy6);
 	}
 
 	@Test
