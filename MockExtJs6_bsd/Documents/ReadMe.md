@@ -7,7 +7,13 @@
 
 - check bootstrap table http://issues.wenzhixin.net.cn/bootstrap-table/
 
+## _On August 6, 2016
+
+- To keep old database setup new `gitmockauth`
+- Change welcome message to `App Admin mode`
+
 ## _On August 5, 2016_
+
 - get rid of 'canon' word
 - rename canonAdmin to siteAdmin
 - remove properties
