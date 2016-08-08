@@ -35,5 +35,11 @@ public class IndexController extends AbstractQuotaKPIController {
 		model.addAttribute("userFullName", userDto.getFullName());
 		return "bsdhome";
 	}
-
+	
+	@RequestMapping(value={"/clientStore"}, method=RequestMethod.GET)
+	public String showClientStore(ModelMap model, HttpServletRequest request) {
+		logger.debug(userDto.getFullName());
+		model.addAttribute("userFullName", userDto.getFullName());
+		return "clientStore";
+	}
 }

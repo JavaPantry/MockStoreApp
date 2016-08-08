@@ -7,7 +7,7 @@
 </security:authorize>
 
 <security:authorize access="hasRole('QuotaKPI_ADMIN_ANGULAR')">
-<c:redirect url="/exthome"/>
+<c:redirect url="/clientStore"/>
 </security:authorize>
 
 
