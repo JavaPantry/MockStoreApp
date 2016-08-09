@@ -86,6 +86,10 @@ var messages = {
 		adminUser = true;    
     </script>
 </security:authorize>
+
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
+<script src="${pageContext.request.contextPath}/resources/node_modules/jquery/dist/jquery.js"></script>
  
   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/extjs-6.0.1/classic/theme-classic/resources/theme-classic-all-debug.css"/>

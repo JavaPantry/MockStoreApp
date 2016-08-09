@@ -39,17 +39,17 @@ export class ProductService {
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
-      .get('/products', {search: encodeParams(params)})
+      .get('angular/products', {search: encodeParams(params)})
       .map(response => response.json());
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get('/products')
+    return this.http.get('angular/products')
       .map(response => response.json());
   }
 
-  getProductById(productId: number): Observable<Product> {
-    return this.http.get(`/products/${productId}`)
+  getProductById(productId: string): Observable<Product> {
+    return this.http.get(`angular/products/${productId}`)
       .map(response => response.json());
   }
 

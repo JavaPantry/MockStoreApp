@@ -19,6 +19,7 @@ public interface BsdService {
 	public List<BsdUser> getBsdUsers();
 	public List<Address> getAddresses();
 	public List<Product> getProducts();
+	public Product getProduct(String id);
 	public void save(Product product);
 	public List<OrderHeader> getOrderHeaders();
 	public void save(OrderHeader orderHeader);

@@ -31,7 +31,8 @@ export default class ProductDetailComponent implements OnDestroy {
       productService: ProductService,
       private bidService: BidService) {
 
-    const productId = parseInt(route.snapshot.params['productId']);
+    //const productId = parseInt(route.snapshot.params['productId']);
+    const productId = route.snapshot.params['productId'];
 
     productService
       .getProductById(productId)
@@ -42,11 +43,11 @@ export default class ProductDetailComponent implements OnDestroy {
         },
         error => console.error(error));
 
-    productService
+    /*productService
       .getReviewsForProduct(productId)
       .subscribe(
         reviews => this.reviews = reviews,
-        error => console.error(error));
+        error => console.error(error));*/
   }
 
   toggleWatchProduct() {

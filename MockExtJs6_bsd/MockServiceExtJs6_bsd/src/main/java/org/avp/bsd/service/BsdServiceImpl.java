@@ -70,6 +70,11 @@ public class BsdServiceImpl implements BsdService {
 		return productRepository.findAll();
 	}
 	
+	@Transactional(readOnly=true)
+	public Product getProduct(String id){
+		return productRepository.findOne(id);
+	}	
+	
 	@Transactional()
 	public void save(Product product){
 		productRepository.save(product);
