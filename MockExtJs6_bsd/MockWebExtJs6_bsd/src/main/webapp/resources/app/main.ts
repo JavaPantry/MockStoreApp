@@ -7,12 +7,14 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import ApplicationComponent from './components/application/application';
 import HomeComponent from './components/home/home';
 import ProductDetailComponent from './components/product-detail/product-detail';
+import OrderComponent from './components/order-detail/order-detail';
 import {ProductService} from './services/product-service';
 import {ONLINE_AUCTION_SERVICES} from './services/services';
 
 bootstrap(ApplicationComponent, [
   provideRouter([
     {path: '',                    component: HomeComponent},
+    {path: 'orders',                    component: OrderComponent},
     {path: 'products/:productId', component: ProductDetailComponent}
   ]),
   {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -8,12 +8,12 @@ import {BidService} from '../../services/bid-service';
 import StarsComponent from '../stars/stars';
 
 @Component({
-  selector: 'auction-product-page',
+  selector: 'auction-order-page',
   styles: ['auction-stars.large {font-size: 24px;}'],
-  templateUrl: 'resources/app/components/product-detail/order-detail.html',
+  templateUrl: 'resources/app/components/order-detail/order-detail.html',
   directives: [NgClass, StarsComponent]
 })
-export default class ProductDetailComponent implements OnDestroy {
+export default class OrderComponent implements OnDestroy {
   product: Product;
   reviews: Review[];
 
