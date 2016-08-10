@@ -5,6 +5,7 @@ import NavbarComponent from '../navbar/navbar';
 import FooterComponent from '../footer/footer';
 import SearchComponent from '../search/search';
 import ProductDetailComponent from '../product-detail/product-detail';
+import OrderComponent from '../order-detail/order-detail';
 
 @Component({
   selector: 'auction-application',

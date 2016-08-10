@@ -1,5 +1,13 @@
 See file://..\ReadMe.md
 
+## August 10
+
+TODO
+
+- continue to work on orders route
+- create store <- prdInStore -> product
+
+
 ## August 09
 
 Read products cause error in parsing standard json response
