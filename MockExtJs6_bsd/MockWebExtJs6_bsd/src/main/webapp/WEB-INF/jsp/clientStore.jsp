@@ -23,6 +23,26 @@
   <script src="${pageContext.request.contextPath}/resources/node_modules/systemjs/dist/system.src.js"></script>
 
   <script src="${pageContext.request.contextPath}/resources/systemjs.config.js"></script>
+  
+<%-- 
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/node_modules/datatables.net-bs\css\dataTables.bootstrap.css">
+  <script type="text/javascript" charset="utf8" src="${pageContext.request.contextPath}/resources/node_modules/datatables.net\js\jquery.dataTables.js"></script>
+ --%>  
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script>
+  
+  
+  	<script type="text/javascript" language="javascript" class="init">
+	
+
+$(document).ready(function() {
+	$('#clientOrders').DataTable();
+} );
+
+
+	</script>
+  
+  
 </head>
 <body>
 <auction-application></auction-application>
