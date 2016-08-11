@@ -33,6 +33,8 @@
     "systemjs": "^0.19.31",
     "ws": "^1.0.1",
     "zone.js": "^0.6.12"
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12"
   },
   "devDependencies": {
     "nodemon": "^1.8.1",
