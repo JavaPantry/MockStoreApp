@@ -121,7 +121,9 @@ public class BsdController extends AbstractExtJsController {
 	
 	
 	/*
+	 * TODO - <AP> TBR request from AngularJs 
 	 * 
+	 * use angular/orders for request from Angular II
 	 */
 	@RequestMapping(value={"/bsd/orders"}, method=RequestMethod.GET)
 	@ResponseBody
@@ -153,6 +155,35 @@ public class BsdController extends AbstractExtJsController {
         return response;
 	}	
 	
+	@RequestMapping(value={"/angular/orders"}, method=RequestMethod.GET)
+	@ResponseBody
+	public List<OrderHeader> getOrders(
+			@RequestParam(value="dealer", required=false) Integer dealerId,
+			@RequestParam(value="limit", required=false) Integer limit, 
+			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
+			@RequestParam(value="start", required=false) Integer start,
+			@RequestParam(value="sort", required=false) String sort,
+			@RequestParam(value="filter", required=false) String filter,
+			@RequestParam(value="summary", required=false) String summary
+			) {
+        //ExtData response = new ExtData();
+        logger.debug("/angular/orders(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
+    	//FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+    	//SortParameter[] sortParameters = getSortFromJson(sort);;
+    	
+    	//TODO - <AP> do something with that Integer crap
+    	//if(limit == null) limit=20;
+    	//if(pageIndex == null) pageIndex=1;
+    	//if(start == null) start=0;
+    	
+//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
+//		List<QuotaDao> quotas = quotaDaoPage.getContent();
+    	List<OrderHeader> orders = bsdService.getOrderHeaders();
+//    	response.add(orders);
+//    	response.setTotal(100);
+//        response.setSuccess(true);
+        return orders;
+	}	
 	
 	
 	@RequestMapping(value={"/bsd/products/dealer"}, method=RequestMethod.GET)

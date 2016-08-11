@@ -4,7 +4,13 @@ import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 
 export class Order {
-  constructor(public id: number, public sku: string) {}
+  constructor(public id: number
+      , public storeId: number
+      , public userId: string
+      , public firstName: string
+      , public lastName: string
+      , public emailAddress: string
+  ) {}
 }
 
   /*
@@ -16,7 +22,7 @@ export class Order {
 export class OrderService {
   constructor(private http: Http) {}
   getOrders(): Observable<Order[]> {
-    return this.http.get('angular/products')
+    return this.http.get('angular/orders')
       .map(response => response.json());
   }
   /*getProductById(productId: string): Observable<Order> {

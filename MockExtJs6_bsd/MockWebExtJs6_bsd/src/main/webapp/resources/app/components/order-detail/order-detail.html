@@ -1,20 +1,26 @@
 
-<div class="thumbnail">
+<!--div class="thumbnail"-->
   <!--<img src="http://placehold.it/820x320">-->
-    <div>
+    <div class="container">
         <h4>This is tab for orders {{orders.length}}</h4>
         <!--&lt;!&ndash;<h4 class="pull-right">{{ product?.price | currency }}</h4>
         <h4>{{ product?.title }}</h4>
         <p>{{ product?.description }}</p>&ndash;&gt;-->
 
         <!--h4>{{ product?.sku }}</h4 -->
-
+            <div *ngFor="let order of orders | async" >
+                <!--<auction-product-item [product]="product"></auction-product-item>-->
+                <div class="row">
+                    <div class="col-md-1">{{ order?.id}}</div>
+                    <div class="col-md-1">{{order?.storeId}}</div>
+                    <div class="col-md-2">{{order?.firstName}}</div>
+                    <div class="col-md-3">{{order?.lastName}}</div>
+                    <div class="col-md-5">{{order?.emailAddress}}</div>
+                </div>
+            </div>
     </div>
-  <!--<div class="ratings">
-    <p class="pull-right">{{ reviews?.length }} reviews</p>
-    <p><auction-stars [rating]="produt?.rating"></auction-stars></p>
-  </div>-->
-</div>
+
+<!--/div -->
 <!--<div class="thumbnail">
   <button class="btn btn-default btn-lg"
           [ngClass]="{active: isWatching}"
