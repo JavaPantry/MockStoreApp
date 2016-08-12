@@ -27,20 +27,27 @@
 <%-- 
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/node_modules/datatables.net-bs\css\dataTables.bootstrap.css">
   <script type="text/javascript" charset="utf8" src="${pageContext.request.contextPath}/resources/node_modules/datatables.net\js\jquery.dataTables.js"></script>
- --%>  
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
+datatables from CDN
+--%>  
+ 
+<!-- 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script>
+ -->
+ 
+ <%-- 
+Problem with datatables is that following script does not see not loaded page with table
+see https://datatables.net/forums/discussion/27286/initializing-datatable-after-div-element-loaded
+  
+
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+		$('#clientOrders').DataTable();
+	} );
+</script>
+--%>
+ 
   
   
-  	<script type="text/javascript" language="javascript" class="init">
-	
-
-$(document).ready(function() {
-	$('#clientOrders').DataTable();
-} );
-
-
-	</script>
   
   
 </head>
