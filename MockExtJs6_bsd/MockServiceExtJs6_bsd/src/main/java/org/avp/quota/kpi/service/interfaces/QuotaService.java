@@ -11,7 +11,7 @@ import org.avp.quota.kpi.model.dao.QuotaDao;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
@@ -45,11 +45,11 @@ public interface QuotaService {
 	public void updateBudgetDto(QuotaDto dto);
 	public void updateBudgetsValues(BudgetDao budgetDao);
 	
-	public List<UserDao> getUsers();
+	public List<QuotaUser> getUsers();
 	public List<EmployeeDao> getFilteredEmployee( final FilterParameterExtJs6[] filterParameters, SortParameter[] sortParameters);
 	public List<EmployeeDao> getEmployees();
 	public List<EmployeeDao> getEmployeesNotInSalesRep(String salesRepId, String managerId, String strQuery);
-	public UserDao getUserById(String userId);
+	public QuotaUser getUserById(String userId);
 	
  	public List<TocDao> getTocs();
  	//QKPI-55 public List<TocDao> getTocNotInSalesRep(String salesRepId);
@@ -67,7 +67,7 @@ public interface QuotaService {
 	public List<CategoryDao> getCategories();
 	
 	public List<ProductLine> getProductLines();
-	public void save(UserDao user);
+	public void save(QuotaUser user);
 	public void save(AuthoritiesDao authoritiy);
 	public void save(ProductLine lineA);
 	public void saveSalesRepresentativeHeader(SalesRepresentativeDao salesRepresentative);

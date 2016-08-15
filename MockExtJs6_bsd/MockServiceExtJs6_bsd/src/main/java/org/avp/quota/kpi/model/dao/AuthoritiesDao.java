@@ -48,7 +48,7 @@ public final class AuthoritiesDao  implements Serializable{
 	 */
     @ManyToOne
     @JoinColumn(name="userId")
-    private UserDao user;
+    private QuotaUser user;
     
 	@Version
 	@Column(name="version")
@@ -60,8 +60,8 @@ public final class AuthoritiesDao  implements Serializable{
 	public void setVersion(Long version) {this.version = version;}
 	public String getRole() {return role;}
 	public void setRole(String role) {this.role = role;}
-	public UserDao getUser() {return user;}
-	public void setUser(UserDao user) {this.user = user;}
+	public QuotaUser getUser() {return user;}
+	public void setUser(QuotaUser user) {this.user = user;}
 
 	@Override
 	public String toString() {

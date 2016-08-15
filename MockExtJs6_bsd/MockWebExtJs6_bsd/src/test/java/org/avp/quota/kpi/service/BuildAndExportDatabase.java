@@ -33,7 +33,7 @@ import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeePK;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
@@ -296,20 +296,20 @@ public class BuildAndExportDatabase {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
 //		<users id="1" enabled="true" password="password" userId="Alexei Ptitchkin"/>
-		UserDao user = new UserDao();
+		QuotaUser user = new QuotaUser();
 		user.setUserId("Alexei Ptitchkin");
 		//user.setEnabled(true);
 		//user.setPassword("password");
 		user.setPassword(passwordEncoder.encode("password"));
 		quotaService.save(user);
 
-		UserDao bsdUser = new UserDao();
+		QuotaUser bsdUser = new QuotaUser();
 		bsdUser.setUserId("Tim Adams");
 		//user.setEnabled(true);
 		bsdUser.setPassword(passwordEncoder.encode("password"));
 		quotaService.save(bsdUser);
 
-		UserDao angularUser = new UserDao();
+		QuotaUser angularUser = new QuotaUser();
 		angularUser.setUserId("Angular User");
 		//user.setEnabled(true);
 		angularUser.setPassword(passwordEncoder.encode("password"));
@@ -319,8 +319,8 @@ public class BuildAndExportDatabase {
 
 	}
 
-	private void setupAuthorities(UserDao adminUser, UserDao bsdUser,
-			UserDao angularUser) {
+	private void setupAuthorities(QuotaUser adminUser, QuotaUser bsdUser,
+			QuotaUser angularUser) {
 		/*
 		 * app.auth.userGroup=QuotaKPI_USER
 		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
@@ -365,7 +365,7 @@ public class BuildAndExportDatabase {
 
 	@Test
 	public void averifySetup(){
-		UserDao user = quotaService.getUserById("Alexei Ptitchkin");
+		QuotaUser user = quotaService.getUserById("Alexei Ptitchkin");
 		assertNotNull(user);
 		assertThat(user.getAuthorities().size(), is(4));
 		logger.debug("user " + user + " in averifySetup()");

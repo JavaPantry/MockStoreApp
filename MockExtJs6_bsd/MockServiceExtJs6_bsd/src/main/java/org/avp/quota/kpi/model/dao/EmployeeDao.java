@@ -76,6 +76,9 @@ public final class EmployeeDao  implements Serializable{
 	@Column(name="report_path_name")//@ColumnTransformer(read="RTRIM(LTRIM(report_path_name))")
 	private String reportPathName;
 
+	/*
+	 * transient for json convertor to not call getter
+	 */
 	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)//QKPI-71: fetch=FetchType.EAGER
 	private transient List<SalesRepresentativeDao> salesRepsByUser;
 	public List<SalesRepresentativeDao> getSalesRepsByUser() {return salesRepsByUser;}

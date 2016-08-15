@@ -1,15 +1,22 @@
 package org.avp.quota.kpi.model.security;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 /*
  * http://www.baeldung.com/role-and-privilege-for-spring-security-registration 
  * github for article removed
@@ -26,34 +33,55 @@ import javax.persistence.ManyToMany;
  * https://github.com/sureshk2014/TFSAPI/tree/master/spring-security-login-and-registration
  */
 import javax.persistence.Table;
+import javax.persistence.Version;
+
+import org.avp.quota.kpi.model.dao.AuthoritiesDao;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "USER_TYPE")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+	@Column(name="userId",length = 30)//@ColumnTransformer(read="RTRIM(LTRIM(userId))")
+	private String userId;
+
+	@Column(length = 30)
     private String firstName;
 
+	@Column(length = 30)
     private String lastName;
 
+	@Column(length = 60)
     private String email;
 
     @Column(length = 60)
     private String password;
 
-    @Column(name="enabled", columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
-    private boolean enabled;
-    @Column(name="tokenExpired", columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
+    @Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
     private boolean tokenExpired;
 
-    //
-
-    @ManyToMany
-    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id") , inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id") )
-    private Collection<Role> roles;
+	/*
+	 * Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	 * Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'userdao0_.enabled' in 'field list'
+	 * 
+	 */
+	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="BIT boolean default false", nullable=false, 
+	private boolean enabled = true;
+	
+	/*
+	 * http://www.mastertheboss.com/jboss-frameworks/hibernate-jpa/or-mapping/one-to-many-hibernatejpa-example
+	 */
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private List<AuthoritiesDao> authorities = new ArrayList<AuthoritiesDao>();
+	
+	@Version
+	@Column(name="version")
+	private Long version;
 
     public User() {
         super();
@@ -101,14 +129,6 @@ public class User {
         this.password = password;
     }
 
-    public Collection<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(final Collection<Role> roles) {
-        this.roles = roles;
-    }
-
     public boolean isEnabled() {
         return enabled;
     }
@@ -125,6 +145,15 @@ public class User {
         this.tokenExpired = expired;
     }
 
+	public List<AuthoritiesDao> getAuthorities() {
+		return authorities;
+	}
+	public void setAuthorities(List<AuthoritiesDao> authorities) {
+		this.authorities = authorities;
+	}
+
+    
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -157,5 +186,29 @@ public class User {
         builder.append("User [firstName=").append(firstName).append("]").append("[lastName=").append(lastName).append("]").append("[username").append(email).append("]");
         return builder.toString();
     }
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Long getVersion() {
+		return version;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
 
 }

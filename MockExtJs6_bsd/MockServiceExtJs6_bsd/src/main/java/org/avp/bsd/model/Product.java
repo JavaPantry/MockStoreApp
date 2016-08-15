@@ -33,8 +33,11 @@ public class Product implements java.io.Serializable {
 	private Boolean active;
 	private Date createDt;
 
+	/*
+	 * transient for json convertor to not call getter
+	 */
 	@OneToMany(fetch=FetchType.LAZY , mappedBy="pk.product",cascade={CascadeType.ALL}, orphanRemoval=true)
-	private Set<ProductPriceInStore> productsInStore;
+	private transient Set<ProductPriceInStore> productsInStore;
 
 	
 	public Product() {

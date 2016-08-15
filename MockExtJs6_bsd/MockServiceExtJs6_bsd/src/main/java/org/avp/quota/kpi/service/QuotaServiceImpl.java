@@ -22,7 +22,7 @@ import org.avp.quota.kpi.model.dao.QuotaDao;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
@@ -116,7 +116,7 @@ public class QuotaServiceImpl implements QuotaService {
 	}
 	
 	@Transactional()
-	public void save(UserDao user){
+	public void save(QuotaUser user){
 		userRepository.save(user);
 	}
 	
@@ -645,8 +645,8 @@ public class QuotaServiceImpl implements QuotaService {
 	
 	
 	@Transactional(readOnly=true)
-	public List<UserDao> getUsers(){
-		List<UserDao> userDaoList = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
+	public List<QuotaUser> getUsers(){
+		List<QuotaUser> userDaoList = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
 		return userDaoList;
 	}
 
@@ -704,10 +704,10 @@ public class QuotaServiceImpl implements QuotaService {
 	}
 	
 	@Transactional(readOnly=true)
-	public UserDao getUserById(String userId) {
+	public QuotaUser getUserById(String userId) {
 //		Collection<UserDao> userDaoList = userRepository.findAll(SearchCriteriaUtility.findUserById(userId));
 //		return CollectionUtility.toList(userDaoList).get(0);
-		UserDao userDao = userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
+		QuotaUser userDao = userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
 		return userDao;
 	}
 	@Transactional(readOnly=true)

@@ -1,10 +1,34 @@
 See file://..\ReadMe.md
 
+## August 15
+
+
+Fix mess with user accounts (user, bsduser, quota user), roles, user_roles, roles_priveleges, authorities etc.
+
+For JPA inheritance types look at [JPA blog](http://www.thejavageek.com/jpa-tutorials/)
+- [JPA table per concrete class example](http://www.thejavageek.com/2014/05/17/jpa-table-per-concrete-class-example/)
+- [JPA Joined Inheritance Example](http://www.thejavageek.com/2014/05/17/jpa-joined-inheritance-example/)
+
+- UserDao(quotaUser) BsdUser(users) extend org/avp/quota/kpi/model/security/User (hibernate inheritance)
+- move BsdUser.email .etc to org/avp/quota/kpi/model/security/User (org/avp/quota/kpi/model/dao/UserDao) 
+- make login against org/avp/quota/kpi/model/security/User instead of org/avp/quota/kpi/model/dao/UserDao 
+
+
+### Angular mile stone v0.1.0.4
+- AngularJs UI removed
+- introduce ProductPriceInStore entity to link product and store
+- updated test case to build database with Store and ProductPriceInStore
+
+##  August 12
+
+### Angular mile stone taken before removing AngularJs UI v0.1.0.3
+- server side reading for products and orders
+- three routes for product list, product detail and order list
+- draft bootstrap orders table
+
 ## August 10
 
-TODO
-
-- continue to work on orders route
+- to work on orders route
 - create store <- prdInStore -> product
 
 

@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <quotausers id="1" enabled="true" password="$2a$11$u4RxXDyzzHpzApCN5UcK8ePfsmjvHRzu7DLMUKJpjDZ9QoJv6WDzm" userId="Alexei Ptitchkin" version="0"/>
-  <quotausers id="2" enabled="true" password="$2a$11$FpHGoJB2NGkbQ7fbAPW4TeDOI6ycQvsXDNuoTGrh6pSXAF3UXfBvS" userId="Tim Adams" version="0"/>
-  <quotausers id="3" enabled="true" password="$2a$11$aZpb6X83yBtPSQLxK3OFJ.8pIp.fPKg9sp8vZVTpmGMc0Ak3Xd3Bm" userId="Angular User" version="0"/>
+  <users USER_TYPE="QuotaUser" id="1" enabled="false" password="$2a$11$D0q0Py8UEyUw5Sddb1u8n.8ZQ4gAyO.6j7E8WGGQTT/WmEvohDG7." tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
+  <users USER_TYPE="QuotaUser" id="2" enabled="false" password="$2a$11$F7X7OEEGea9DI3G6vn4ZUeQum3bcaUJEPbUc0.UcrzuIdyIbuC8va" tokenExpired="false" userId="Tim Adams" version="0"/>
+  <users USER_TYPE="QuotaUser" id="3" enabled="false" password="$2a$11$HININWOopegNtlHcuhe1m.UuDE1pwyOZqjz9oJxZvIPELLJoCttg2" tokenExpired="false" userId="Angular User" version="0"/>
+  <quotausers userAdmin="true" id="1"/>
+  <quotausers userAdmin="true" id="2"/>
+  <quotausers userAdmin="true" id="3"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -11,6 +14,7 @@
   <authorities id="6" role="ROLE_QuotaKPI_ADMIN_ANGULAR" version="0" userId="3"/>
   <company/>
   <billto/>
+  <bsdusers/>
   <dealer/>
   <ids_employee_profile employee_id="C05622" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="* President" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Taizaburo Ted Egawa" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
   <ids_employee_profile employee_id="C08420" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Takayuki Naruo" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
@@ -151,21 +155,15 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-14 20:11:56.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
-  <orders id="2" createDt="2016-08-14 20:11:56.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
-  <orders id="3" createDt="2016-08-14 20:11:56.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
-  <user/>
+  <orders id="1" createDt="2016-08-15 13:31:45.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
+  <orders id="2" createDt="2016-08-15 13:31:45.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
+  <orders id="3" createDt="2016-08-15 13:31:45.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
   <passwordresettoken/>
-  <privilege/>
   <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
   <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
-  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="clientName" createDt="2016-08-14 20:11:30.0" storeDescription="storeDescription" storeName="MyStore"/>
-  <productpriceinstore created="2016-08-14 20:11:50.0" price="9.99" priceSchedule="2016-08-14 20:11:50.0" priceScheduled="15.99" product="tst" store="1"/>
-  <productpriceinstore created="2016-08-14 20:11:53.0" price="6.99" priceSchedule="2016-08-14 20:11:53.0" priceScheduled="5.99" product="tst1" store="1"/>
-  <role/>
-  <roles_privileges/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="clientName" createDt="2016-08-15 13:31:45.0" storeDescription="storeDescription" storeName="MyStore"/>
+  <productpriceinstore created="2016-08-15 13:31:45.0" price="9.99" priceSchedule="2016-08-15 13:31:45.0" priceScheduled="15.99" product="tst" store="1"/>
+  <productpriceinstore created="2016-08-15 13:31:45.0" price="6.99" priceSchedule="2016-08-15 13:31:45.0" priceScheduled="5.99" product="tst1" store="1"/>
   <shippingaddresses/>
-  <users/>
-  <users_roles/>
   <verificationtoken/>
 </dataset>
