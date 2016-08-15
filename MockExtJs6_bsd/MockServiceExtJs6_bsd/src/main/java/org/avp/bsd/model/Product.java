@@ -1,11 +1,17 @@
 package org.avp.bsd.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 
 @Entity
 @Table(name = "products")
@@ -27,6 +33,10 @@ public class Product implements java.io.Serializable {
 	private Boolean active;
 	private Date createDt;
 
+	@OneToMany(fetch=FetchType.LAZY , mappedBy="pk.product",cascade={CascadeType.ALL}, orphanRemoval=true)
+	private Set<ProductPriceInStore> productsInStore;
+
+	
 	public Product() {
 	}
 
@@ -150,6 +160,14 @@ public class Product implements java.io.Serializable {
 
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
+	}
+
+	public Set<ProductPriceInStore> getProductsInStore() {
+		return productsInStore;
+	}
+
+	public void setProductsInStore(Set<ProductPriceInStore> productsInStore) {
+		this.productsInStore = productsInStore;
 	}
 
 }

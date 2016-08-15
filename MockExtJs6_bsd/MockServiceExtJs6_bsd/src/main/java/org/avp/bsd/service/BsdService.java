@@ -6,6 +6,7 @@ import org.avp.bsd.model.Address;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.repository.AddressRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
@@ -21,6 +22,8 @@ public interface BsdService {
 	public List<Product> getProducts();
 	public Product getProduct(String id);
 	public void save(Product product);
+	public void save(Store store);
+	public void save(ProductPriceInStore productPriceInStore);
 	public List<OrderHeader> getOrderHeaders();
 	public void save(OrderHeader orderHeader);
 	public List<Store> getStores();

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <quotausers id="1" enabled="true" password="$2a$11$ueRh9KQrDirDe7W.pLY9T.FJo1fV0PxTYXD9K3X7un20MJ3vv6t4S" userId="Alexei Ptitchkin" version="0"/>
-  <quotausers id="2" enabled="true" password="$2a$11$n6DcYJKu0yIqEZSlpmx3j.72cxGTN6J8bEVwXDZTFEWrWe9gtxuSK" userId="Tim Adams" version="0"/>
-  <quotausers id="3" enabled="true" password="$2a$11$GgLm1YwqhXu2DDgWHjpizez5hqmpnLLcF04LICDFx3qyL9q7UMizm" userId="Angular User" version="0"/>
+  <quotausers id="1" enabled="true" password="$2a$11$u4RxXDyzzHpzApCN5UcK8ePfsmjvHRzu7DLMUKJpjDZ9QoJv6WDzm" userId="Alexei Ptitchkin" version="0"/>
+  <quotausers id="2" enabled="true" password="$2a$11$FpHGoJB2NGkbQ7fbAPW4TeDOI6ycQvsXDNuoTGrh6pSXAF3UXfBvS" userId="Tim Adams" version="0"/>
+  <quotausers id="3" enabled="true" password="$2a$11$aZpb6X83yBtPSQLxK3OFJ.8pIp.fPKg9sp8vZVTpmGMc0Ak3Xd3Bm" userId="Angular User" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -151,18 +151,20 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-08 20:04:12.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
-  <orders id="2" createDt="2016-08-08 20:04:12.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
-  <orders id="3" createDt="2016-08-08 20:04:12.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
+  <orders id="1" createDt="2016-08-14 20:11:56.0" emailAddress="ptit@gmail.com" firstName="Alexei" lastName="Ptitchkin" storeId="1" userId="1"/>
+  <orders id="2" createDt="2016-08-14 20:11:56.0" emailAddress="bohd@gmail.com" firstName="Bohdan" lastName="Valentovic" storeId="1" userId="1"/>
+  <orders id="3" createDt="2016-08-14 20:11:56.0" emailAddress="hong@gmail.com" firstName="Hong" lastName="Li" storeId="1" userId="1"/>
   <user/>
   <passwordresettoken/>
   <privilege/>
   <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
   <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="clientName" createDt="2016-08-14 20:11:30.0" storeDescription="storeDescription" storeName="MyStore"/>
+  <productpriceinstore created="2016-08-14 20:11:50.0" price="9.99" priceSchedule="2016-08-14 20:11:50.0" priceScheduled="15.99" product="tst" store="1"/>
+  <productpriceinstore created="2016-08-14 20:11:53.0" price="6.99" priceSchedule="2016-08-14 20:11:53.0" priceScheduled="5.99" product="tst1" store="1"/>
   <role/>
   <roles_privileges/>
   <shippingaddresses/>
-  <stores/>
   <users/>
   <users_roles/>
   <verificationtoken/>

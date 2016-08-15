@@ -7,10 +7,12 @@ import org.avp.bsd.model.Address;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.repository.AddressRepository;
 import org.avp.bsd.repository.BsdUserRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
+import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
 import org.avp.quota.kpi.model.dao.UserDao;
@@ -61,6 +63,19 @@ public class BsdServiceImpl implements BsdService {
 	public List<Store> getStores(){
 		return storeHeaderRepository.findAll();
 	}
+
+	@Transactional()
+	public void save(Store store){
+		storeHeaderRepository.save(store);
+	}
+
+	@Autowired
+	private ProductPriceInStoreRepository productPriceInStoreRepository;
+	
+	public void save(ProductPriceInStore productPriceInStore){
+		productPriceInStoreRepository.save(productPriceInStore);
+	}
+
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -79,5 +94,6 @@ public class BsdServiceImpl implements BsdService {
 	public void save(Product product){
 		productRepository.save(product);
 	}
+	
 	
 }

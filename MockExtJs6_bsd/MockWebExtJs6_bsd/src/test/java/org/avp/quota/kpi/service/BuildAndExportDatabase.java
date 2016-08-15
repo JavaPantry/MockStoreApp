@@ -16,6 +16,9 @@ import javax.sql.DataSource;
 import org.apache.log4j.Logger;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
+import org.avp.bsd.model.Store;
+import org.avp.bsd.model.StoreProductPK;
 import org.avp.bsd.service.BsdService;
 import org.avp.quota.kpi.configuration.HsqlJUnitDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.JbossTestDataServiceModuleConfiguration;
@@ -174,10 +177,21 @@ public class BuildAndExportDatabase {
 		logger.debug("setup completed.");
 	}
 	private void setupBsd() {
+		
+		Store store = new Store("MyStore",
+				"clientName", "storeDescription", true/*Boolean attSecurity*/,
+				"en", "clientLogo.gif");
+		bsdService.save(store);
+		
 		Product product1 = new Product("tst","test product","test product (fr)");
 		bsdService.save(product1);
 		Product product2 = new Product("tst1","test product 1","test product 1 (fr)");
 		bsdService.save(product2);
+		
+		ProductPriceInStore productPriceInStore1 = new ProductPriceInStore(new StoreProductPK(store, product1), 9.99, 15.99, new Date());
+		bsdService.save(productPriceInStore1);
+		ProductPriceInStore productPriceInStore2 = new ProductPriceInStore(new StoreProductPK(store, product2), 6.99, 5.99, new Date());
+		bsdService.save(productPriceInStore2);
 		
 		OrderHeader order = new OrderHeader(1L, 1L, 1L, "Alexei", "Ptitchkin", "ptit@gmail.com",	new Date());
 		bsdService.save(order);
