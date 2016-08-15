@@ -2,6 +2,17 @@ See file://..\ReadMe.md
 
 ## August 15
 
+TODO: probably these resources requested login jsp   
+"NetworkError: 404 Not Found - http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap/dist/css/bootstrap.min.css"
+bootstrap.min.css
+"NetworkError: 404 Not Found - http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css"
+bootstr...min.css
+"NetworkError: 404 Not Found - http://localhost:8080/MockWebExtJs6_bsd/resources/lib/angularjs-toaster/toaster.min.css"
+toaster.min.css
+"NetworkError: 404 Not Found - http://localhost:8080/MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
+ladda-t...min.css
+"NetworkError: 404 Not Found - http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
+
 
 Fix mess with user accounts (user, bsduser, quota user), roles, user_roles, roles_priveleges, authorities etc.
 
