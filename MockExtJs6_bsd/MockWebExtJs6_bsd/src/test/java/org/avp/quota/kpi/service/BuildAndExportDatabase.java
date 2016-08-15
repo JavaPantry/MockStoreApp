@@ -36,7 +36,7 @@ import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
-import org.avp.quota.kpi.model.security.AuthoritiesDao;
+import org.avp.quota.kpi.model.security.Authority;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.GsonUtil;
@@ -331,33 +331,33 @@ public class BuildAndExportDatabase {
 		 * 
 		 */
 				
-				AuthoritiesDao authoritiy = new AuthoritiesDao();
+				Authority authoritiy = new Authority();
 				authoritiy.setUser(adminUser);
 				authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
 				quotaService.save(authoritiy);
 				
-				AuthoritiesDao authoritiy2 = new AuthoritiesDao();
+				Authority authoritiy2 = new Authority();
 				authoritiy2.setUser(adminUser);
 				authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
 				quotaService.save(authoritiy2);
 				
-				AuthoritiesDao authoritiy3 = new AuthoritiesDao();
+				Authority authoritiy3 = new Authority();
 				authoritiy3.setUser(adminUser);
 				authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
 				quotaService.save(authoritiy3);
 			
 		
-				AuthoritiesDao authoritiy4 = new AuthoritiesDao();
+				Authority authoritiy4 = new Authority();
 				authoritiy4.setUser(adminUser);
 				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
 				quotaService.save(authoritiy4);
 		
-				AuthoritiesDao authoritiy5 = new AuthoritiesDao();
+				Authority authoritiy5 = new Authority();
 				authoritiy5.setUser(bsdUser);
 				authoritiy5.setRole("ROLE_BSD_DEALER");
 				quotaService.save(authoritiy5);
 		
-				AuthoritiesDao authoritiy6 = new AuthoritiesDao();
+				Authority authoritiy6 = new Authority();
 				authoritiy6.setUser(angularUser);
 				authoritiy6.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
 				quotaService.save(authoritiy6);

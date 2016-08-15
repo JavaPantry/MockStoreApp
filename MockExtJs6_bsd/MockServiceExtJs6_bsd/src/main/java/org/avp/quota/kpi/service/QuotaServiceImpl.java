@@ -26,7 +26,7 @@ import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
-import org.avp.quota.kpi.model.security.AuthoritiesDao;
+import org.avp.quota.kpi.model.security.Authority;
 import org.avp.quota.kpi.repository.IAuthoritiesRepository;
 import org.avp.quota.kpi.repository.IBudgetRepository;
 import org.avp.quota.kpi.repository.ICategoryRepository;
@@ -121,7 +121,7 @@ public class QuotaServiceImpl implements QuotaService {
 	}
 	
 	@Transactional()
-	public void save(AuthoritiesDao authoritiy){
+	public void save(Authority authoritiy){
 		authoritiesRepository.save(authoritiy);
 	}
 	

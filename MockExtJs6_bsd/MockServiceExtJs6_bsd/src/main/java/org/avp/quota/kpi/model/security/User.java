@@ -75,7 +75,7 @@ public class User {
 	 * http://www.mastertheboss.com/jboss-frameworks/hibernate-jpa/or-mapping/one-to-many-hibernatejpa-example
 	 */
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-	private List<AuthoritiesDao> authorities = new ArrayList<AuthoritiesDao>();
+	private List<Authority> authorities = new ArrayList<Authority>();
 	
 	@Version
 	@Column(name="version")
@@ -143,10 +143,10 @@ public class User {
         this.tokenExpired = expired;
     }
 
-	public List<AuthoritiesDao> getAuthorities() {
+	public List<Authority> getAuthorities() {
 		return authorities;
 	}
-	public void setAuthorities(List<AuthoritiesDao> authorities) {
+	public void setAuthorities(List<Authority> authorities) {
 		this.authorities = authorities;
 	}
 

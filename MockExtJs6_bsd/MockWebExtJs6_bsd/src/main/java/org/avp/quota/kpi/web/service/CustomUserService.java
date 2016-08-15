@@ -2,7 +2,7 @@ package org.avp.quota.kpi.web.service;
 
 import java.util.List;
 
-import org.avp.quota.kpi.model.security.AuthoritiesDao;
+import org.avp.quota.kpi.model.security.Authority;
 import org.avp.quota.kpi.model.security.User;
 import org.avp.quota.kpi.repository.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class CustomUserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final User foundByUserId = userRepository.findByUserId(username);
-        final List<AuthoritiesDao> authorities = foundByUserId.getAuthorities();
+        final List<Authority> authorities = foundByUserId.getAuthorities();
         final List<GrantedAuthority> authoritiesForSpring = SecurityUtil.convertAuthorityEntieiesIntoSpringAuthorities(authorities);
         return new org.springframework.security.core.userdetails.User(username, foundByUserId.getPassword(), authoritiesForSpring); 
 	}

@@ -29,9 +29,9 @@ import org.avp.quota.kpi.model.dao.QuotaUser;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "authorities")
-public final class AuthoritiesDao  implements Serializable{
+public final class Authority  implements Serializable{
 
-	public AuthoritiesDao() {
+	public Authority() {
 		super();
 	}
 	
@@ -50,7 +50,7 @@ public final class AuthoritiesDao  implements Serializable{
 	 */
     @ManyToOne
     @JoinColumn(name="userId")
-    private QuotaUser user;
+    private User user;
     
 	@Version
 	@Column(name="version")
@@ -62,8 +62,8 @@ public final class AuthoritiesDao  implements Serializable{
 	public void setVersion(Long version) {this.version = version;}
 	public String getRole() {return role;}
 	public void setRole(String role) {this.role = role;}
-	public QuotaUser getUser() {return user;}
-	public void setUser(QuotaUser user) {this.user = user;}
+	public User getUser() {return user;}
+	public void setUser(User user) {this.user = user;}
 
 	@Override
 	public String toString() {
