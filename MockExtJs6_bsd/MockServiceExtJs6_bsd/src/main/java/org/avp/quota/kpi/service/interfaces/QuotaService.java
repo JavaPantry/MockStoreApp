@@ -2,7 +2,6 @@ package org.avp.quota.kpi.service.interfaces;
 
 import java.util.List;
 
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
@@ -16,6 +15,7 @@ import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
+import org.avp.quota.kpi.model.security.AuthoritiesDao;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.SortParameter;
 import org.springframework.data.domain.Page;

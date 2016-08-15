@@ -13,6 +13,10 @@ For JPA inheritance types look at [JPA blog](http://www.thejavageek.com/jpa-tuto
 - move BsdUser.email .etc to org/avp/quota/kpi/model/security/User (org/avp/quota/kpi/model/dao/UserDao) 
 - make login against org/avp/quota/kpi/model/security/User instead of org/avp/quota/kpi/model/dao/UserDao 
 
+Refactor AuthoritiesDao
+- move AuthoritiesDao.java from _org/avp/quota/kpi/model/dao_ to _org/avp/quota/kpi/model/security/_
+- rename AuthoritiesDao to Authority
+- change AuthoritiesDao.user from type QuotaUser to org/avp/quota/kpi/model/security/User
 
 ### Angular mile stone v0.1.0.4
 - AngularJs UI removed

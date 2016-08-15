@@ -13,7 +13,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
@@ -27,6 +26,7 @@ import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
+import org.avp.quota.kpi.model.security.AuthoritiesDao;
 import org.avp.quota.kpi.repository.IAuthoritiesRepository;
 import org.avp.quota.kpi.repository.IBudgetRepository;
 import org.avp.quota.kpi.repository.ICategoryRepository;

@@ -1,4 +1,4 @@
-package org.avp.quota.kpi.model.dao;
+package org.avp.quota.kpi.model.security;
 
 import java.io.Serializable;
 
@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
+
+import org.avp.quota.kpi.model.dao.QuotaUser;
 
 /**
  * app.auth.userGroup=QuotaKPI_USER

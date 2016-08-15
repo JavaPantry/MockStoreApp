@@ -35,8 +35,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
-
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)

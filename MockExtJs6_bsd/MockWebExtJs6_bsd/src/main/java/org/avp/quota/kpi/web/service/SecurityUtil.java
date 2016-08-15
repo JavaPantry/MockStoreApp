@@ -2,7 +2,7 @@ package org.avp.quota.kpi.web.service;
 
 import java.util.List;
 
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
+import org.avp.quota.kpi.model.security.AuthoritiesDao;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
