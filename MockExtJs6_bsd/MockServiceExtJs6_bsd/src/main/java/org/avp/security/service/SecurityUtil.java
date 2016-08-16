@@ -1,8 +1,8 @@
-package org.avp.quota.kpi.web.service;
+package org.avp.security.service;
 
 import java.util.List;
 
-import org.avp.quota.kpi.model.security.Authority;
+import org.avp.security.model.Authority;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 

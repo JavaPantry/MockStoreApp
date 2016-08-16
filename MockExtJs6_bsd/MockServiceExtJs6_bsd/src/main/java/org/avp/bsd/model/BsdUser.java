@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.avp.quota.kpi.model.security.User;
+import org.avp.security.model.User;
 
 @SuppressWarnings("serial")
 @Entity

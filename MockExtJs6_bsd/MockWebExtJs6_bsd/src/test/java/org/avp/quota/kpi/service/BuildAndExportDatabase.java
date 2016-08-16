@@ -14,6 +14,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
+import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
@@ -36,10 +37,12 @@ import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
-import org.avp.quota.kpi.model.security.Authority;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.GsonUtil;
+import org.avp.security.model.Authority;
+import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.DatabaseSequenceFilter;
@@ -151,6 +154,8 @@ public class BuildAndExportDatabase {
 	@Autowired
 	BsdService bsdService;
 
+	@Autowired
+	CustomUserService userService;
 	/*
 	 * org.springframework.beans.factory.BeanCreationException: 
 	 * Error creating bean with name 'org.avp.quota.kpi.service.BuildAndExportDatabase': 
@@ -301,26 +306,25 @@ public class BuildAndExportDatabase {
 		//user.setEnabled(true);
 		//user.setPassword("password");
 		user.setPassword(passwordEncoder.encode("password"));
-		quotaService.save(user);
+		userService.save(user);
 
-		QuotaUser bsdUser = new QuotaUser();
+		BsdUser bsdUser = new BsdUser();
 		bsdUser.setUserId("Tim Adams");
 		//user.setEnabled(true);
 		bsdUser.setPassword(passwordEncoder.encode("password"));
-		quotaService.save(bsdUser);
+		userService.save(bsdUser);
 
 		QuotaUser angularUser = new QuotaUser();
 		angularUser.setUserId("Angular User");
 		//user.setEnabled(true);
 		angularUser.setPassword(passwordEncoder.encode("password"));
-		quotaService.save(angularUser);
+		userService.save(angularUser);
 
 		setupAuthorities(user, bsdUser, angularUser);
 
 	}
 
-	private void setupAuthorities(QuotaUser adminUser, QuotaUser bsdUser,
-			QuotaUser angularUser) {
+	private void setupAuthorities(User adminUser, User bsdUser, User angularUser) {
 		/*
 		 * app.auth.userGroup=QuotaKPI_USER
 		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
@@ -334,33 +338,33 @@ public class BuildAndExportDatabase {
 				Authority authoritiy = new Authority();
 				authoritiy.setUser(adminUser);
 				authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
-				quotaService.save(authoritiy);
+				userService.save(authoritiy);
 				
 				Authority authoritiy2 = new Authority();
 				authoritiy2.setUser(adminUser);
 				authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
-				quotaService.save(authoritiy2);
+				userService.save(authoritiy2);
 				
 				Authority authoritiy3 = new Authority();
 				authoritiy3.setUser(adminUser);
 				authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
-				quotaService.save(authoritiy3);
+				userService.save(authoritiy3);
 			
 		
 				Authority authoritiy4 = new Authority();
 				authoritiy4.setUser(adminUser);
 				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
-				quotaService.save(authoritiy4);
+				userService.save(authoritiy4);
 		
 				Authority authoritiy5 = new Authority();
 				authoritiy5.setUser(bsdUser);
 				authoritiy5.setRole("ROLE_BSD_DEALER");
-				quotaService.save(authoritiy5);
+				userService.save(authoritiy5);
 		
 				Authority authoritiy6 = new Authority();
 				authoritiy6.setUser(angularUser);
 				authoritiy6.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
-				quotaService.save(authoritiy6);
+				userService.save(authoritiy6);
 	}
 
 	@Test

@@ -22,8 +22,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages={"org.avp.quota.kpi.repository", "org.avp.quota.kpi.repository.security", "org.avp.bsd.repository"}, entityManagerFactoryRef="entityManagerFactory")
-@ComponentScan(basePackages={"org.avp.quota.kpi.service","org.avp.bsd.service"})
+@EnableJpaRepositories(basePackages={"org.avp.quota.kpi.repository", "org.avp.security.repository", "org.avp.bsd.repository"}, entityManagerFactoryRef="entityManagerFactory")
+@ComponentScan(basePackages={"org.avp.quota.kpi.service", "org.avp.bsd.service", "org.avp.security.service"})
 @Profile("Tomcat")
 public class TomcatDataServiceModuleConfiguration{
 	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfiguration.class);
@@ -41,7 +41,7 @@ public class TomcatDataServiceModuleConfiguration{
       LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
       em.setDataSource(dataSource());
       em.setPersistenceUnitName("hibernate_bsd");
-      em.setPackagesToScan(new String[] { "org.avp.quota.kpi.model.dao", "org.avp.quota.kpi.model.security", "org.avp.company.model", "org.avp.bsd.model"});
+      em.setPackagesToScan(new String[] { "org.avp.quota.kpi.model.dao", "org.avp.security.model", "org.avp.company.model", "org.avp.bsd.model"});
       JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
       em.setJpaVendorAdapter(vendorAdapter);
       em.setJpaProperties(getJpaProperties());

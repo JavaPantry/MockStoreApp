@@ -1,7 +1,7 @@
-package org.avp.quota.kpi.repository.security;
+package org.avp.security.repository;
 
-import org.avp.quota.kpi.model.security.PasswordResetToken;
-import org.avp.quota.kpi.model.security.User;
+import org.avp.security.model.PasswordResetToken;
+import org.avp.security.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

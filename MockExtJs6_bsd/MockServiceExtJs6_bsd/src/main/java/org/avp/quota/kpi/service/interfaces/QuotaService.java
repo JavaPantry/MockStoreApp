@@ -15,7 +15,6 @@ import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
-import org.avp.quota.kpi.model.security.Authority;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.SortParameter;
 import org.springframework.data.domain.Page;
@@ -67,8 +66,6 @@ public interface QuotaService {
 	public List<CategoryDao> getCategories();
 	
 	public List<ProductLine> getProductLines();
-	public void save(QuotaUser user);
-	public void save(Authority authoritiy);
 	public void save(ProductLine lineA);
 	public void saveSalesRepresentativeHeader(SalesRepresentativeDao salesRepresentative);
 

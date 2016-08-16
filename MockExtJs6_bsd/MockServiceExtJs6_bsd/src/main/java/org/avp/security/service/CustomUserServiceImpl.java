@@ -1,10 +1,11 @@
-package org.avp.quota.kpi.web.service;
+package org.avp.security.service;
 
 import java.util.List;
 
-import org.avp.quota.kpi.model.security.Authority;
-import org.avp.quota.kpi.model.security.User;
-import org.avp.quota.kpi.repository.security.UserRepository;
+import org.avp.security.model.Authority;
+import org.avp.security.model.User;
+import org.avp.security.repository.IAuthoritiesRepository;
+import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,11 +25,16 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service("userDetailsService")
 @Transactional
-public class CustomUserService implements UserDetailsService {
+public class CustomUserServiceImpl implements CustomUserService {
 
     @Autowired 
 	private UserRepository userRepository;
 	
+	
+	@Autowired
+	private IAuthoritiesRepository authoritiesRepository;
+
+    
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final User foundByUserId = userRepository.findByUserId(username);
@@ -37,4 +43,13 @@ public class CustomUserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(username, foundByUserId.getPassword(), authoritiesForSpring); 
 	}
 
+	@Transactional()
+	public void save(User user){
+		userRepository.save(user);
+	}
+	
+	@Transactional()
+	public void save(Authority authoritiy){
+		authoritiesRepository.save(authoritiy);
+	}
 }

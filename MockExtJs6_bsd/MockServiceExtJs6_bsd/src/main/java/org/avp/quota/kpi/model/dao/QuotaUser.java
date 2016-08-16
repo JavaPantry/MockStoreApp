@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import org.avp.quota.kpi.model.security.User;
+import org.avp.security.model.User;
 
 @SuppressWarnings("serial")
 @Entity

@@ -26,8 +26,6 @@ import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
-import org.avp.quota.kpi.model.security.Authority;
-import org.avp.quota.kpi.repository.IAuthoritiesRepository;
 import org.avp.quota.kpi.repository.IBudgetRepository;
 import org.avp.quota.kpi.repository.ICategoryRepository;
 import org.avp.quota.kpi.repository.IEmployeeRepository;
@@ -68,15 +66,11 @@ public class QuotaServiceImpl implements QuotaService {
 	private IBudgetRepository budgetRepository;
 	
 	@Autowired
-	private IUserRepository userRepository;
-	
-	@Autowired
-	private IAuthoritiesRepository authoritiesRepository;
-	
-	
-	@Autowired
 	private IEmployeeRepository employeeRepository;
 	
+	@Autowired
+	private IUserRepository userRepository;
+
 	@Autowired
 	private ITocRepository tocRepository;
 	@Autowired
@@ -115,15 +109,8 @@ public class QuotaServiceImpl implements QuotaService {
 		salesRepresentativeRepository.delete(salesRepresentativeId);
 	}
 	
-	@Transactional()
-	public void save(QuotaUser user){
-		userRepository.save(user);
-	}
 	
-	@Transactional()
-	public void save(Authority authoritiy){
-		authoritiesRepository.save(authoritiy);
-	}
+
 	
 	@Transactional()
 	public void save(ProductLine line){

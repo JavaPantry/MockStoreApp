@@ -105,8 +105,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	CustomUserDetailsContextMapper customUserDetailsContextMapper;
 	*/
-	/*@Autowired
-	CustomUserService customUserService;*/
+	
+	/*	
+	 	This service autowired by service name and/or implemented interface
+	 	@Service("userDetailsService")
+		@Transactional
+		public class CustomUserService implements UserDetailsService
+	 */
 	@Autowired 
 	private UserDetailsService userDetailsService;
 
@@ -154,6 +159,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 	
+	/*
+	 * TODO - <AP> TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 	@Bean
 	public AuthenticationProvider customAuthenticationProvider() {
 		AuthenticationProvider customAuthenticationProvider = new AbstractUserDetailsAuthenticationProvider() {
@@ -174,7 +181,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			}
 		};
 		return customAuthenticationProvider;
-	}
+	}*/
 
 	/** 
 	 * commented out Thursday, April 21, 2016

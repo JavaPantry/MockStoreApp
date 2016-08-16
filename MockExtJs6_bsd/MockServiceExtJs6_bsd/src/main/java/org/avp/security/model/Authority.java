@@ -1,4 +1,4 @@
-package org.avp.quota.kpi.model.security;
+package org.avp.security.model;
 
 import java.io.Serializable;
 
