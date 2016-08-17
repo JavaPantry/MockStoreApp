@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.avp.security.model.User;
@@ -15,8 +17,10 @@ import org.avp.security.model.User;
 @Table(name = "bsdusers")
 public class BsdUser extends User implements java.io.Serializable {
 
-	@Column()
-	private Integer storeId;
+	@ManyToOne
+	@JoinColumn(name="storeId")
+	private Store store;
+	
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean clientAdmin;
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
@@ -31,11 +35,11 @@ public class BsdUser extends User implements java.io.Serializable {
 	public BsdUser() {
 	}
 
-	public BsdUser(Integer storeId, String emailAddress,
+	public BsdUser(Store store, String emailAddress,
 			String password, Boolean clientAdmin, Boolean siteAdmin,
 			String firstName, String lastName, String phone, String fax,
 			String subDivision) {
-		this.storeId = storeId;
+		this.store = store;
 		this.clientAdmin = clientAdmin;
 		this.siteAdmin = siteAdmin;
 		this.phone = phone;
@@ -43,14 +47,6 @@ public class BsdUser extends User implements java.io.Serializable {
 		this.subDivision = subDivision;
 		this.active = false;
 		this.createDt = new Date();
-	}
-
-	public Integer getStoreId() {
-		return this.storeId;
-	}
-
-	public void setStoreId(Integer storeId) {
-		this.storeId = storeId;
 	}
 
 	public Boolean getClientAdmin() {
@@ -107,6 +103,14 @@ public class BsdUser extends User implements java.io.Serializable {
 
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
+	}
+
+	public Store getStore() {
+		return store;
+	}
+
+	public void setStore(Store store) {
+		this.store = store;
 	}
 
 }

@@ -11,6 +11,14 @@ See file://..\ReadMe.md
 - in _src/main/webapp/resources/_ run npm install this will create _node_modules_ folder with all required dependencies
 
 ## August 17
+
+- change security tag attribute "hasRole() or hasRole()" to hasAnyRole(list of roles)  
+
+	<%-- <security:authorize access="hasRole('QuotaKPI_ADMIN_ANGULAR') or hasRole('BSD_DEALER')"> --%>
+	<security:authorize access="hasAnyRole('QuotaKPI_ADMIN_ANGULAR', 'BSD_DEALER')">
+	<c:redirect url="/clientStore"/>
+	</security:authorize>
+
 - Link org/avp/bsd/model/BsdUser with Store and OrderHeader 
 
 1. Store one-to-many BsdUser

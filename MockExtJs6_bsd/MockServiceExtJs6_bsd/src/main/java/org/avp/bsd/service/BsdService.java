@@ -22,9 +22,11 @@ public interface BsdService {
 	public List<Product> getProducts();
 	public Product getProduct(String id);
 	public void save(Product product);
-	public void save(Store store);
 	public void save(ProductPriceInStore productPriceInStore);
+	
 	public List<OrderHeader> getOrderHeaders();
 	public void save(OrderHeader orderHeader);
+
+	public void save(Store store);
 	public List<Store> getStores();
 }

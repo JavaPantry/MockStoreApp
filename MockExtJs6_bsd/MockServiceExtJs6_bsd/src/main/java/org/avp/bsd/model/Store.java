@@ -28,15 +28,19 @@ public class Store implements java.io.Serializable {
 	private String storeName;
 	private String clientName;
 	private String storeDescription;
+	
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean attSecurity;
 	private String attLangPref;
 	private String clientLogo;
 	private Date createDt;
 
-	@OneToMany(fetch=FetchType.EAGER , mappedBy="pk.store",cascade={CascadeType.ALL}, orphanRemoval=true)//CascadeType.PERSIST, CascadeType.MERGE, 
+	@OneToMany(fetch=FetchType.EAGER , mappedBy="pk.store", cascade={CascadeType.ALL}, orphanRemoval=true)//CascadeType.PERSIST, CascadeType.MERGE, 
 	@Fetch(value = FetchMode.SUBSELECT)
 	private Set<ProductPriceInStore> productsInStore;
+
+	@OneToMany(fetch=FetchType.EAGER , mappedBy = "store", cascade={CascadeType.ALL}, orphanRemoval=true)
+	private Set<BsdUser> users;
 
 	
 	public Store() {
@@ -124,6 +128,14 @@ public class Store implements java.io.Serializable {
 
 	public void setProductsInStore(Set<ProductPriceInStore> productsInStore) {
 		this.productsInStore = productsInStore;
+	}
+
+	public Set<BsdUser> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<BsdUser> users) {
+		this.users = users;
 	}
 
 }

@@ -176,17 +176,30 @@ public class BuildAndExportDatabase {
 	@Test
 	public void arunSetup(){
 		
-		setupUsers();
+		setupQuotaUsers();
 		setupQuotaKPI();
 		setupBsd();		
 		logger.debug("setup completed.");
 	}
 	private void setupBsd() {
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
 		Store store = new Store("MyStore",
 				"clientName", "storeDescription", true/*Boolean attSecurity*/,
 				"en", "clientLogo.gif");
 		bsdService.save(store);
+		
+		BsdUser bsdUser = new BsdUser();
+		bsdUser.setUserId("Tim Adams");
+		bsdUser.setPassword(passwordEncoder.encode("password"));
+		bsdUser.setStore(store);
+		userService.save(bsdUser);
+		
+		Authority authoritiy5 = new Authority();
+		authoritiy5.setUser(bsdUser);
+		authoritiy5.setRole("ROLE_BSD_DEALER");
+		userService.save(authoritiy5);
+		
 		
 		Product product1 = new Product("tst","test product","test product (fr)");
 		bsdService.save(product1);
@@ -297,7 +310,7 @@ public class BuildAndExportDatabase {
 		salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
 	}
 
-	private void setupUsers() {
+	private void setupQuotaUsers() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
 //		<users id="1" enabled="true" password="password" userId="Alexei Ptitchkin"/>
@@ -308,11 +321,7 @@ public class BuildAndExportDatabase {
 		user.setPassword(passwordEncoder.encode("password"));
 		userService.save(user);
 
-		BsdUser bsdUser = new BsdUser();
-		bsdUser.setUserId("Tim Adams");
-		//user.setEnabled(true);
-		bsdUser.setPassword(passwordEncoder.encode("password"));
-		userService.save(bsdUser);
+		
 
 		QuotaUser angularUser = new QuotaUser();
 		angularUser.setUserId("Angular User");
@@ -320,11 +329,11 @@ public class BuildAndExportDatabase {
 		angularUser.setPassword(passwordEncoder.encode("password"));
 		userService.save(angularUser);
 
-		setupAuthorities(user, bsdUser, angularUser);
+		setupQuotaAuthorities(user, angularUser);
 
 	}
 
-	private void setupAuthorities(User adminUser, User bsdUser, User angularUser) {
+	private void setupQuotaAuthorities(User adminUser, User angularUser) {
 		/*
 		 * app.auth.userGroup=QuotaKPI_USER
 		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
@@ -355,11 +364,6 @@ public class BuildAndExportDatabase {
 				authoritiy4.setUser(adminUser);
 				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
 				userService.save(authoritiy4);
-		
-				Authority authoritiy5 = new Authority();
-				authoritiy5.setUser(bsdUser);
-				authoritiy5.setRole("ROLE_BSD_DEALER");
-				userService.save(authoritiy5);
 		
 				Authority authoritiy6 = new Authority();
 				authoritiy6.setUser(angularUser);
