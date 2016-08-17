@@ -1,9 +1,11 @@
 See file://..\ReadMe.md
 
-## August 15
+
+## August 16
 
 - fix mess with security/user services
-
+	
+	- rename MockServiceExtJs6_bsd/src/main/java/org/avp/security/repository/IAuthoritiesRepository to AuthoritiesRepository
 	- move security related entities/repositories and service to MockServiceExtJs_bsd
 	- add dependency for org.springframework.security to MockServiceExtJs_bsd
 		<dependency>

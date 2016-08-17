@@ -4,12 +4,11 @@ import java.util.List;
 
 import org.avp.security.model.Authority;
 import org.avp.security.model.User;
-import org.avp.security.repository.IAuthoritiesRepository;
+import org.avp.security.repository.AuthoritiesRepository;
 import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,7 +31,7 @@ public class CustomUserServiceImpl implements CustomUserService {
 	
 	
 	@Autowired
-	private IAuthoritiesRepository authoritiesRepository;
+	private AuthoritiesRepository authoritiesRepository;
 
     
 	@Override
