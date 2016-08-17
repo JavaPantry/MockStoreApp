@@ -8,10 +8,14 @@ import org.avp.security.repository.AuthoritiesRepository;
 import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.google.common.base.Functions;
+import com.google.common.collect.Iterables;
 
 /*
  * 
@@ -38,7 +42,7 @@ public class CustomUserServiceImpl implements CustomUserService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final User foundByUserId = userRepository.findByUserId(username);
         final List<Authority> authorities = foundByUserId.getAuthorities();
-        final List<GrantedAuthority> authoritiesForSpring = SecurityUtil.convertAuthorityEntieiesIntoSpringAuthorities(authorities);
+        final List<GrantedAuthority> authoritiesForSpring = convertAuthorityEntieiesIntoSpringAuthorities(authorities);
         return new org.springframework.security.core.userdetails.User(username, foundByUserId.getPassword(), authoritiesForSpring); 
 	}
 
@@ -51,4 +55,12 @@ public class CustomUserServiceImpl implements CustomUserService {
 	public void save(Authority authoritiy){
 		authoritiesRepository.save(authoritiy);
 	}
+	
+    private List<GrantedAuthority> convertAuthorityEntieiesIntoSpringAuthorities(final List<Authority> authorities) {
+        final Iterable<String> authorityNames = Iterables.transform(authorities, Functions.toStringFunction());
+        final String[] arrayOfAuthorityNames = Iterables.toArray(authorityNames, String.class);
+        final List<GrantedAuthority> authoritiesForSpring = AuthorityUtils.createAuthorityList(arrayOfAuthorityNames);
+        return authoritiesForSpring;
+    }
+
 }

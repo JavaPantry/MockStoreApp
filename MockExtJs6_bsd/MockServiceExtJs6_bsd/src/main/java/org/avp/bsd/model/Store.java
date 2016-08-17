@@ -35,12 +35,18 @@ public class Store implements java.io.Serializable {
 	private String clientLogo;
 	private Date createDt;
 
+	/*
+	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
+	 */
 	@OneToMany(fetch=FetchType.EAGER , mappedBy="pk.store", cascade={CascadeType.ALL}, orphanRemoval=true)//CascadeType.PERSIST, CascadeType.MERGE, 
 	@Fetch(value = FetchMode.SUBSELECT)
-	private Set<ProductPriceInStore> productsInStore;
+	private transient Set<ProductPriceInStore> productsInStore;
 
+	/*
+	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
+	 */
 	@OneToMany(fetch=FetchType.EAGER , mappedBy = "store", cascade={CascadeType.ALL}, orphanRemoval=true)
-	private Set<BsdUser> users;
+	private transient Set<BsdUser> users;
 
 	
 	public Store() {

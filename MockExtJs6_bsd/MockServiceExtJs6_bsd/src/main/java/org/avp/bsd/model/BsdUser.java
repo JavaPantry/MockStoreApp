@@ -1,13 +1,17 @@
 package org.avp.bsd.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.avp.security.model.User;
@@ -17,9 +21,15 @@ import org.avp.security.model.User;
 @Table(name = "bsdusers")
 public class BsdUser extends User implements java.io.Serializable {
 
+	/*
+	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
+	 */
 	@ManyToOne
 	@JoinColumn(name="storeId")
-	private Store store;
+	private transient Store store;
+	
+	@OneToMany(fetch=FetchType.EAGER , mappedBy = "user", cascade={CascadeType.ALL}, orphanRemoval=true)
+	private Set<OrderHeader> orders;
 	
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean clientAdmin;

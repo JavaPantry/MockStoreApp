@@ -184,21 +184,41 @@ public class BuildAndExportDatabase {
 	private void setupBsd() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
-		Store store = new Store("MyStore",
-				"clientName", "storeDescription", true/*Boolean attSecurity*/,
+		Store store = new Store("MissisaugaStore",
+				"Tim Adams", "store in Missisauga", true/*Boolean attSecurity*/,
 				"en", "clientLogo.gif");
 		bsdService.save(store);
+
+		Store storeHq = new Store("HQStore",
+				"Hong Li", "Head Quotar store", true/*Boolean attSecurity*/,
+				"en", "clientLogo.gif");
+		bsdService.save(storeHq);
+
 		
 		BsdUser bsdUser = new BsdUser();
 		bsdUser.setUserId("Tim Adams");
 		bsdUser.setPassword(passwordEncoder.encode("password"));
+		bsdUser.setEmail("timAdams@gmail.com");
 		bsdUser.setStore(store);
 		userService.save(bsdUser);
 		
-		Authority authoritiy5 = new Authority();
-		authoritiy5.setUser(bsdUser);
-		authoritiy5.setRole("ROLE_BSD_DEALER");
-		userService.save(authoritiy5);
+		Authority bsdUserAuthoritiy = new Authority();
+		bsdUserAuthoritiy.setUser(bsdUser);
+		bsdUserAuthoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(bsdUserAuthoritiy);
+		
+		BsdUser bsdUser2 = new BsdUser();
+		bsdUser2.setUserId("Hong Li");
+		bsdUser2.setPassword(passwordEncoder.encode("password"));
+		bsdUser2.setEmail("hongLi@gmail.com");
+		bsdUser2.setStore(storeHq);
+		userService.save(bsdUser2);
+		
+		Authority bsdUser2Authoritiy = new Authority();
+		bsdUser2Authoritiy.setUser(bsdUser2);
+		bsdUser2Authoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(bsdUser2Authoritiy);
+		
 		
 		
 		Product product1 = new Product("tst","test product","test product (fr)");
@@ -211,12 +231,12 @@ public class BuildAndExportDatabase {
 		ProductPriceInStore productPriceInStore2 = new ProductPriceInStore(new StoreProductPK(store, product2), 6.99, 5.99, new Date());
 		bsdService.save(productPriceInStore2);
 		
-		OrderHeader order = new OrderHeader(1L, 1L, 1L, "Alexei", "Ptitchkin", "ptit@gmail.com",	new Date());
-		bsdService.save(order);
-		OrderHeader order1 = new OrderHeader(2L, 1L, 1L, "Bohdan", "Valentovic", "bohd@gmail.com",	new Date());
-		bsdService.save(order1);
-		OrderHeader order2 = new OrderHeader(3L, 1L, 1L, "Hong", "Li", "hong@gmail.com",	new Date());
-		bsdService.save(order2);
+		OrderHeader bsdUserOrder = new OrderHeader(bsdUser);
+		bsdService.save(bsdUserOrder);
+		OrderHeader bsdUserOrder1 = new OrderHeader(bsdUser);
+		bsdService.save(bsdUserOrder1);
+		OrderHeader bsdUserOrder2 = new OrderHeader(bsdUser2);
+		bsdService.save(bsdUserOrder2);
 	}
 	private void setupQuotaKPI() {
 		EmployeeDao employee = new EmployeeDao("C05622","Taizaburo Ted Egawa","A", "* President", 
