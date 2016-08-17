@@ -1,5 +1,21 @@
 See file://..\ReadMe.md
 
+## Setup node_modules
+
+- to update node package manager (npm) 
+
+	- run `npm -v` to confirm current version  
+	- in terminal window run `npm install npm -g`
+	- run `npm -v` again confirm output 3.10.5 (means npm had been updated)
+
+- in _src/main/webapp/resources/_ run npm install this will create _node_modules_ folder with all required dependencies
+
+## August 17
+- Link org/avp/bsd/model/BsdUser with Store and OrderHeader 
+
+1. Store one-to-many BsdUser
+2. BsdUser one-to-many OrderHeader
+3. OrderHeader one-to-many OrderDetails
 
 ## August 16
 
