@@ -73,6 +73,8 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /*
  * See DbUnit maven plugin
@@ -238,6 +240,25 @@ public class BuildAndExportDatabase {
 		OrderHeader bsdUserOrder2 = new OrderHeader(bsdUser2);
 		bsdService.save(bsdUserOrder2);
 	}
+	
+	//TODO - <AP> test circular reference from OrderHeader to BsdUser 
+	@Test
+	public void averifyBsdSetup(){
+		List<OrderHeader> orders = bsdService.getOrderHeaders();
+		assertNotNull(orders);
+		assertThat(orders.size(), is(3));
+		
+		logger.debug("orders size = "+orders.size());
+		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
+		OrderHeader order = orders.get(0);
+		
+		org.avp.bsd.service.DtoFactory.createDtoFromDao(order);
+		String jsonOrderHeader = gson.toJson(order);
+		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
+		//String jsonOrderHeaders = gson.toJson(orders);
+		//logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
+	}
+	
 	private void setupQuotaKPI() {
 		EmployeeDao employee = new EmployeeDao("C05622","Taizaburo Ted Egawa","A", "* President", 
 												"CAN","TMIS","AVP company","TTAS20",
@@ -392,7 +413,7 @@ public class BuildAndExportDatabase {
 	}
 
 	@Test
-	public void averifySetup(){
+	public void averifyQuotaSetup(){
 		QuotaUser user = quotaService.getUserById("Alexei Ptitchkin");
 		assertNotNull(user);
 		assertThat(user.getAuthorities().size(), is(4));

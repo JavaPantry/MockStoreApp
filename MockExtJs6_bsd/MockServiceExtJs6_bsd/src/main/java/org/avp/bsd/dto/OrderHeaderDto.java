@@ -1,4 +1,4 @@
-package org.avp.bsd.model;
+package org.avp.bsd.dto;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "orders")
-public class OrderHeader implements java.io.Serializable {
+public class OrderHeaderDto implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue
@@ -57,9 +57,9 @@ public class OrderHeader implements java.io.Serializable {
 	private String otherInformation;
 	private Date createDt;
 
-	public OrderHeader() {
+	public OrderHeaderDto() {
 	}
-	public OrderHeader( BsdUser user) {
+	public OrderHeaderDto( BsdUser user) {
 		//this.id = id;
 		//this.storeId = storeId;
 		this.user = user;

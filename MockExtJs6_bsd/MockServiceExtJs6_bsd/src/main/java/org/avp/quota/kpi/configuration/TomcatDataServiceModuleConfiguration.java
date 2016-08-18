@@ -28,7 +28,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class TomcatDataServiceModuleConfiguration{
 	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfiguration.class);
 
-
+	private static final boolean BULD_DATABASE = true;
+	
 	/*
 	 * google : Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' is defined
 	 * http://stackoverflow.com/questions/24520602/spring-data-jpa-no-bean-named-entitymanagerfactory-is-defined-injection-of-a 
@@ -100,7 +101,11 @@ public class TomcatDataServiceModuleConfiguration{
    Properties getJpaProperties() {
       Properties properties = new Properties();
       //TODO - <AP> to init database from scratch change hibernate.hbm2ddl.auto to create
-      properties.setProperty("hibernate.hbm2ddl.auto", "validate");//Select: "create" OR "validate" OR "default"
+      if(BULD_DATABASE){
+    	  properties.setProperty("hibernate.hbm2ddl.auto", "create");//Select: "create" OR "validate" OR "default"
+      }else{
+    	  properties.setProperty("hibernate.hbm2ddl.auto", "validate");//Select: "create" OR "validate" OR "default"
+      }
       properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 
       //to output and nicely format HQL: 
