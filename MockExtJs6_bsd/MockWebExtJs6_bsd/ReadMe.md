@@ -28,10 +28,13 @@ See file://..\ReadMe.md
 	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
 
 ---
+### August 18
 
+#### TODOs for the day
 
+- request /angular/orders List<OrderHeader> getOrders reads orders but fail on converting response to json
 
-## August 17
+### August 17
 
 - change security tag attribute "hasRole() or hasRole()" to hasAnyRole(list of roles)  
 
@@ -46,7 +49,7 @@ See file://..\ReadMe.md
 2. BsdUser one-to-many OrderHeader
 3. OrderHeader one-to-many OrderDetails
 
-## August 16
+### August 16
 
 - fix mess with security/user services
 	
@@ -129,7 +132,7 @@ See file://..\ReadMe.md
 	C:\Tmp\npmTmp>
 
 
-## August 15
+### August 15
 
 Fix mess with user accounts (user, bsduser, quota user), roles, user_roles, roles_priveleges, authorities etc.
 
@@ -158,13 +161,13 @@ Refactor AuthoritiesDao
 - three routes for product list, product detail and order list
 - draft bootstrap orders table
 
-## August 10
+### August 10
 
 - to work on orders route
 - create store <- prdInStore -> product
 
 
-## August 09
+### August 09
 
 Read products cause error in parsing standard json response
 
