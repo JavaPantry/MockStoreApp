@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <users USER_TYPE="QuotaUser" id="1" enabled="false" password="$2a$11$6jZEqAWqFWQcFP0I1xZEaeMlUU3f6CG.GrH05Bs41coL9ilJQxuY." tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
-  <users USER_TYPE="QuotaUser" id="2" enabled="false" password="$2a$11$j/kKwoADOPTlxZ4qHxiFEO0mV/e6.owFg6ACzxGqUrC6aYp9CdPd2" tokenExpired="false" userId="Angular User" version="0"/>
-  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" password="$2a$11$iIU6id9EaBODcRIyhjEKYerzpJXXmOYH6CRMq/WpTCtpzWX0TO4sO" tokenExpired="false" userId="Tim Adams" version="0"/>
-  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" password="$2a$11$xzn5TAPDBxr7i2TyqjZGIONOz6slPxrYbNkqB6j8J3i4B.3q/hW.e" tokenExpired="false" userId="Hong Li" version="0"/>
+  <users USER_TYPE="QuotaUser" id="1" enabled="false" password="$2a$11$C51XMv7lYfqm6uaeFTo3U.NW9AuITlzJuAz0ZVabcAAeXZUpVBMa." tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
+  <users USER_TYPE="QuotaUser" id="2" enabled="false" password="$2a$11$9Hby46y7qq6s7kzOFML4cOVfHgvgDoe5pOYNCVT82lozFt3hiQl52" tokenExpired="false" userId="Angular User" version="0"/>
+  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" password="$2a$11$x/pzWGKY4rNbdK/nchDABerjlqU4ovSY6QC/4u.eKsF.URsN2Ufuq" tokenExpired="false" userId="Tim Adams" version="0"/>
+  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" password="$2a$11$kIpLmcBtb16uUfCG4ibNiO9RwbQKDL0ob1hTT7udlg2VCRBtcMbWe" tokenExpired="false" userId="Hong Li" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -13,10 +13,8 @@
   <authorities id="7" role="ROLE_BSD_DEALER" version="0" userId="4"/>
   <company/>
   <billto/>
-  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-17 14:02:31.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
-  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-17 14:02:31.0" storeDescription="Head Quotar store" storeName="HQStore"/>
-  <bsdusers id="3" storeId="1"/>
-  <bsdusers id="4" storeId="2"/>
+  <bsdusers id="3"/>
+  <bsdusers id="4"/>
   <dealer/>
   <ids_employee_profile employee_id="C05622" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="* President" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Taizaburo Ted Egawa" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
   <ids_employee_profile employee_id="C08420" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Takayuki Naruo" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
@@ -157,14 +155,16 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-17 14:02:32.0" userId="3"/>
-  <orders id="2" createDt="2016-08-17 14:02:32.0" userId="3"/>
-  <orders id="3" createDt="2016-08-17 14:02:32.0" userId="4"/>
+  <orders id="1" createDt="2016-08-17 20:17:18.0" userId="3"/>
+  <orders id="2" createDt="2016-08-17 20:17:18.0" userId="3"/>
+  <orders id="3" createDt="2016-08-17 20:17:19.0" userId="4"/>
   <passwordresettoken/>
   <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
   <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
-  <productpriceinstore created="2016-08-17 14:02:32.0" price="9.99" priceSchedule="2016-08-17 14:02:32.0" priceScheduled="15.99" product="tst" store="1"/>
-  <productpriceinstore created="2016-08-17 14:02:32.0" price="6.99" priceSchedule="2016-08-17 14:02:32.0" priceScheduled="5.99" product="tst1" store="1"/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-17 20:17:18.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
+  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-17 20:17:18.0" storeDescription="Head Quotar store" storeName="HQStore"/>
+  <productpriceinstore created="2016-08-17 20:17:18.0" price="9.99" priceSchedule="2016-08-17 20:17:18.0" priceScheduled="15.99" product="tst" store="1"/>
+  <productpriceinstore created="2016-08-17 20:17:18.0" price="6.99" priceSchedule="2016-08-17 20:17:18.0" priceScheduled="5.99" product="tst1" store="1"/>
   <quotausers userAdmin="true" id="1"/>
   <quotausers userAdmin="true" id="2"/>
   <shippingaddresses/>

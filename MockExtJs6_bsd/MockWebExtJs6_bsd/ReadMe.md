@@ -10,6 +10,27 @@ See file://..\ReadMe.md
 
 - in _src/main/webapp/resources/_ run npm install this will create _node_modules_ folder with all required dependencies
 
+---
+## TODOs 
+
+- TODO - <AP>: Switch from gson to jackson
+
+	- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
+
+- TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
+- TODO - <AP>: these resources requested login jsp   
+
+	"NetworkError: 404 Not Found:
+	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap/dist/css/bootstrap.min.css"
+	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css"
+	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/angularjs-toaster/toaster.min.css"
+	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
+	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
+
+---
+
+
+
 ## August 17
 
 - change security tag attribute "hasRole() or hasRole()" to hasAnyRole(list of roles)  
@@ -52,17 +73,6 @@ See file://..\ReadMe.md
 		- avp.quota.kpi.repository.IUserRepository for QuotaUser
 		- avp.quota.kpi.repository.security.UserRepository for User
 	- move User under security domain avp.security.model from org.avp.quota.kpi.model.security
-
-- TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-- TODO - <AP>: probably these resources requested login jsp   
-
-	"NetworkError: 404 Not Found:
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap/dist/css/bootstrap.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/angularjs-toaster/toaster.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
-
 
 - __Side note__ : datatables.net
 
