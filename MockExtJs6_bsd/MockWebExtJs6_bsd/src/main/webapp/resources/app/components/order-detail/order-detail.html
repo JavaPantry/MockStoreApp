@@ -13,10 +13,10 @@
                 <tbody>
                     <tr *ngFor="let order of orders | async" >
                         <th class="col-md-1"  scope="row">{{ order?.id}}</th>
-                        <td class="col-md-1">{{order?.storeId}}</td>
+                        <td class="col-md-1">{{order?.userId}}</td>
                         <td class="col-md-2">{{order?.firstName}}</td>
                         <td class="col-md-3">{{order?.lastName}}</td>
-                        <td class="col-md-5">{{order?.emailAddress}}</td>
+                        <td class="col-md-5">{{order?.email}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class TomcatDataServiceModuleConfiguration{
 	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfiguration.class);
 
-	private static final boolean BULD_DATABASE = true;
+	private static final boolean BULD_DATABASE = false;
 	
 	/*
 	 * google : Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' is defined

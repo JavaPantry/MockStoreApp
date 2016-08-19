@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.service.BsdService;
@@ -157,7 +158,7 @@ public class BsdController extends AbstractExtJsController {
 	
 	@RequestMapping(value={"/angular/orders"}, method=RequestMethod.GET)
 	@ResponseBody
-	public List<OrderHeader> getOrders(
+	public List<OrderHeaderDto> getOrders(
 			@RequestParam(value="dealer", required=false) Integer dealerId,
 			@RequestParam(value="limit", required=false) Integer limit, 
 			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
@@ -179,10 +180,12 @@ public class BsdController extends AbstractExtJsController {
 //		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
 //		List<QuotaDao> quotas = quotaDaoPage.getContent();
     	List<OrderHeader> orders = bsdService.getOrderHeaders();
+    	
+    	List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
 //    	response.add(orders);
 //    	response.setTotal(100);
 //        response.setSuccess(true);
-        return orders;
+        return orderDtos;
 	}	
 	
 	

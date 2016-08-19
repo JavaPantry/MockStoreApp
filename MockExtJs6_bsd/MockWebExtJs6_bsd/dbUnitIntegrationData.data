@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <users USER_TYPE="QuotaUser" id="1" enabled="false" password="$2a$11$eFa38I2uTwtTnZaBYmw2IeA55prmkX0KZHKVbkSusiZvokz5xzI7q" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
-  <users USER_TYPE="QuotaUser" id="2" enabled="false" password="$2a$11$avBoFVbXl1gAs5LaLH/jsuxsoGP11YHcR0r.Cp5eDceCw7.KqMXTu" tokenExpired="false" userId="Angular User" version="0"/>
-  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" password="$2a$11$5fS7GbJ474fH8wO9XUeBeOeb5iqRFO2Ea4SGA/8g/MMgI9H7Ie3Ba" tokenExpired="false" userId="Tim Adams" version="0"/>
-  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" password="$2a$11$TWxrjVBFQriLd/LuQjsw1e.EDJcgpLbs20ZYrodox9josFvdt.CQG" tokenExpired="false" userId="Hong Li" version="0"/>
+  <users USER_TYPE="QuotaUser" id="1" enabled="false" firstName="Alexei" lastName="Ptitchkin" password="$2a$11$Ds/zqHBtYcpawtk8DVNC/..SgGFsvtDL7BimmFmV/.uxzD6heCE.C" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
+  <users USER_TYPE="QuotaUser" id="2" enabled="false" firstName="Angular" lastName="User" password="$2a$11$evoGzOlxrgL4PdCc/41q1etRFUsPMB1jT6e36xHjxJQu0ql4ahaSe" tokenExpired="false" userId="Angular User" version="0"/>
+  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" firstName="Tim" lastName="Adams" password="$2a$11$bCjgYAZZ0dIdYvBxX8.SB.AidpaIfg0H5vESYYlDkFqNNd8kQAXKi" tokenExpired="false" userId="Tim Adams" version="0"/>
+  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" firstName="Hong" lastName="Li" password="$2a$11$912/c.wWwwYwe0ln2lkdLeiRpy.isnjpuTfHMri/CFOze/Wen.veK" tokenExpired="false" userId="Hong Li" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -155,16 +155,16 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-18 21:46:16.0" userId="3"/>
-  <orders id="2" createDt="2016-08-18 21:46:16.0" userId="3"/>
-  <orders id="3" createDt="2016-08-18 21:46:16.0" userId="4"/>
+  <orders id="1" createDt="2016-08-19 10:20:33.0" userId="3"/>
+  <orders id="2" createDt="2016-08-19 10:20:33.0" userId="3"/>
+  <orders id="3" createDt="2016-08-19 10:20:33.0" userId="4"/>
   <passwordresettoken/>
   <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
   <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
-  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-18 21:46:15.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
-  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-18 21:46:15.0" storeDescription="Head Quotar store" storeName="HQStore"/>
-  <productpriceinstore created="2016-08-18 21:46:16.0" price="9.99" priceSchedule="2016-08-18 21:46:16.0" priceScheduled="15.99" product="tst" store="1"/>
-  <productpriceinstore created="2016-08-18 21:46:16.0" price="6.99" priceSchedule="2016-08-18 21:46:16.0" priceScheduled="5.99" product="tst1" store="1"/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-19 10:20:32.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
+  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-19 10:20:32.0" storeDescription="Head Quotar store" storeName="HQStore"/>
+  <productpriceinstore created="2016-08-19 10:20:33.0" price="9.99" priceSchedule="2016-08-19 10:20:33.0" priceScheduled="15.99" product="tst" store="1"/>
+  <productpriceinstore created="2016-08-19 10:20:33.0" price="6.99" priceSchedule="2016-08-19 10:20:33.0" priceScheduled="5.99" product="tst1" store="1"/>
   <quotausers userAdmin="true" id="1"/>
   <quotausers userAdmin="true" id="2"/>
   <shippingaddresses/>

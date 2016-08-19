@@ -200,6 +200,8 @@ public class BuildAndExportDatabase {
 		
 		BsdUser bsdUser = new BsdUser();
 		bsdUser.setUserId("Tim Adams");
+		bsdUser.setFirstName("Tim");
+		bsdUser.setLastName("Adams");
 		bsdUser.setPassword(passwordEncoder.encode("password"));
 		bsdUser.setEmail("timAdams@gmail.com");
 		bsdUser.setStore(store);
@@ -212,6 +214,8 @@ public class BuildAndExportDatabase {
 		
 		BsdUser bsdUser2 = new BsdUser();
 		bsdUser2.setUserId("Hong Li");
+		bsdUser2.setFirstName("Hong");
+		bsdUser2.setLastName("Li");
 		bsdUser2.setPassword(passwordEncoder.encode("password"));
 		bsdUser2.setEmail("hongLi@gmail.com");
 		bsdUser2.setStore(storeHq);
@@ -363,6 +367,9 @@ public class BuildAndExportDatabase {
 //		<users id="1" enabled="true" password="password" userId="Alexei Ptitchkin"/>
 		QuotaUser user = new QuotaUser();
 		user.setUserId("Alexei Ptitchkin");
+		user.setFirstName("Alexei");
+		user.setLastName("Ptitchkin");
+
 		//user.setEnabled(true);
 		//user.setPassword("password");
 		user.setPassword(passwordEncoder.encode("password"));
@@ -372,6 +379,8 @@ public class BuildAndExportDatabase {
 
 		QuotaUser angularUser = new QuotaUser();
 		angularUser.setUserId("Angular User");
+		angularUser.setFirstName("Angular");
+		angularUser.setLastName("User");
 		//user.setEnabled(true);
 		angularUser.setPassword(passwordEncoder.encode("password"));
 		userService.save(angularUser);

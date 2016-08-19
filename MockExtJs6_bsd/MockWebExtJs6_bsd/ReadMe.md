@@ -28,7 +28,11 @@ See file://..\ReadMe.md
 	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
 
 ---
+### August 19
+
 ### August 18
+- orders not rendered because of circular reference 
+- introduce orderHeaderDto without circular references
 
 #### TODOs for the day
 
