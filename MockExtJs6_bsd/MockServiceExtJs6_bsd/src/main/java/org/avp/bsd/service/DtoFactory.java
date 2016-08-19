@@ -39,7 +39,7 @@ public class DtoFactory {
 		return dto;
 	}
 	
-	public static List<OrderHeaderDto> createQuotaDtoList(List<OrderHeader> entities) {
+	public static List<OrderHeaderDto> createDtoList(List<OrderHeader> entities) {
 		List<OrderHeaderDto> dtos = new ArrayList<OrderHeaderDto>();
 		for (OrderHeader entity : entities) {
 			dtos.add(DtoFactory.createDtoFromDao(entity));

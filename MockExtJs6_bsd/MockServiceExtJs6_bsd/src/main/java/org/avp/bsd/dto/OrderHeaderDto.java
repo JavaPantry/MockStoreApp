@@ -9,31 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "orders")
 public class OrderHeaderDto implements java.io.Serializable {
 
-	@Id
-	@GeneratedValue
 	private Long id;
-	
-	//private Long storeId;
-	
-	/*
-	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
-	 * @JoinColumn transient
-	 */
-	@ManyToOne
-	@JoinColumn(name="userId")
-	private BsdUser user;
-	
-	
-//	private Long userId;
-//	private String firstName;
-//	private String lastName;
-//	private String emailAddress;
-//	private String phone;
-//	private String fax;
 	
 	private String subDivision;
 	private String shippingFirstName;
@@ -58,15 +36,6 @@ public class OrderHeaderDto implements java.io.Serializable {
 	private Date createDt;
 
 	public OrderHeaderDto() {
-	}
-	public OrderHeaderDto( BsdUser user) {
-		//this.id = id;
-		//this.storeId = storeId;
-		this.user = user;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.emailAddress = emailAddress;
-		this.createDt = new Date();
 	}
 	public Long getId() {
 		return this.id;
@@ -242,12 +211,6 @@ public class OrderHeaderDto implements java.io.Serializable {
 
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
-	}
-	public BsdUser getUser() {
-		return user;
-	}
-	public void setUser(BsdUser user) {
-		this.user = user;
 	}
 
 }

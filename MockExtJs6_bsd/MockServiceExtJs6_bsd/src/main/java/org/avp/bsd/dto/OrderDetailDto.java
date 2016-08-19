@@ -5,11 +5,9 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//Entity
+
 public class OrderDetailDto implements java.io.Serializable {
 
-	@Id
-	@GeneratedValue
 	private Long id;
 	private Long orderId;
 	
@@ -78,55 +76,4 @@ public class OrderDetailDto implements java.io.Serializable {
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
 	}
-
-	public boolean equals(Object other) {
-		if ((this == other))
-			return true;
-		if ((other == null))
-			return false;
-		if (!(other instanceof OrderDetail))
-			return false;
-		OrderDetail castOther = (OrderDetail) other;
-
-		return ((this.getId() == castOther.getId()) || (this.getId() != null
-				&& castOther.getId() != null && this.getId().equals(
-				castOther.getId())))
-				&& ((this.getOrderId() == castOther.getOrderId()) || (this
-						.getOrderId() != null && castOther.getOrderId() != null && this
-						.getOrderId().equals(castOther.getOrderId())))
-				&& ((this.getSku() == castOther.getSku()) || (this.getSku() != null
-						&& castOther.getSku() != null && this.getSku().equals(
-						castOther.getSku())))
-				&& ((this.getPriceValue() == castOther.getPriceValue()) || (this
-						.getPriceValue() != null
-						&& castOther.getPriceValue() != null && this
-						.getPriceValue().equals(castOther.getPriceValue())))
-				&& ((this.getQty() == castOther.getQty()) || (this.getQty() != null
-						&& castOther.getQty() != null && this.getQty().equals(
-						castOther.getQty())))
-				&& ((this.getCreateDt() == castOther.getCreateDt()) || (this
-						.getCreateDt() != null
-						&& castOther.getCreateDt() != null && this
-						.getCreateDt().equals(castOther.getCreateDt())));
-	}
-
-	public int hashCode() {
-		int result = 17;
-
-		result = 37 * result + (getId() == null ? 0 : this.getId().hashCode());
-		result = 37 * result
-				+ (getOrderId() == null ? 0 : this.getOrderId().hashCode());
-		result = 37 * result
-				+ (getSku() == null ? 0 : this.getSku().hashCode());
-		result = 37
-				* result
-				+ (getPriceValue() == null ? 0 : this.getPriceValue()
-						.hashCode());
-		result = 37 * result
-				+ (getQty() == null ? 0 : this.getQty().hashCode());
-		result = 37 * result
-				+ (getCreateDt() == null ? 0 : this.getCreateDt().hashCode());
-		return result;
-	}
-
 }

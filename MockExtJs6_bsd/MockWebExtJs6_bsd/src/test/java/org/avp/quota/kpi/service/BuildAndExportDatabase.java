@@ -14,6 +14,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
+import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
@@ -252,11 +253,16 @@ public class BuildAndExportDatabase {
 		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
 		OrderHeader order = orders.get(0);
 		
-		org.avp.bsd.service.DtoFactory.createDtoFromDao(order);
-		String jsonOrderHeader = gson.toJson(order);
+		OrderHeaderDto orderDto = org.avp.bsd.service.DtoFactory.createDtoFromDao(order);
+		String jsonOrderHeader = gson.toJson(orderDto);
 		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
-		//String jsonOrderHeaders = gson.toJson(orders);
-		//logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
+
+		List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
+		String jsonOrderHeaders = gson.toJson(orderDtos);
+		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
+		
+//		String jsonOrderHeaders = gson.toJson(orders);
+//		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
 	}
 	
 	private void setupQuotaKPI() {
