@@ -29,7 +29,13 @@ See file://..\ReadMe.md
 
 ---
 ### August 19
+Google: spring security access/retrieve user object
+Read http://www.baeldung.com/get-user-in-spring-security
+Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
 
+	Authentication a = SecurityContextHolder.getContext().getAuthentication();
+	User currentUser = (User)a.getPrincipal();
+	
 ### August 18
 - orders not rendered because of circular reference 
 - introduce orderHeaderDto without circular references
