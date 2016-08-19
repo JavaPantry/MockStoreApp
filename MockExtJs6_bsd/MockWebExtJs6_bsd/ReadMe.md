@@ -30,15 +30,8 @@ See file://..\ReadMe.md
 ---
 ### August 19
 Google: spring security access/retrieve user object
-Google: spring security access/retrieve user object
-Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
-Google: spring security access/retrieve user object
-Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
-
 - Read http://www.baeldung.com/get-user-in-spring-security
 - Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
-Google: spring security access/retrieve user object
-Read http://stackoverflow.com/questions/8764117/spring-3-spring-securit
 	Authentication a = SecurityContextHolder.getContext().getAuthentication();
 	User currentUser = (User)a.getPrincipal();
 	
