@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.sql.DataSource;
 
@@ -228,15 +229,38 @@ public class BuildAndExportDatabase {
 		
 		
 		
-		Product product1 = new Product("tst","test product","test product (fr)");
+		Product product1 = new Product("tst1","test product","test product (fr)");
 		bsdService.save(product1);
-		Product product2 = new Product("tst1","test product 1","test product 1 (fr)");
+		Product product2 = new Product("tst2","test product 1","test product 1 (fr)");
 		bsdService.save(product2);
+		Product product3 = new Product("tst3","test product 1","test product 1 (fr)");
+		bsdService.save(product3);
+		Product product4 = new Product("tst4","test product 1","test product 1 (fr)");
+		bsdService.save(product4);
+		Product product5 = new Product("tst5","test product 1","test product 1 (fr)");
+		bsdService.save(product5);
+		Product product6 = new Product("tst6","test product 1","test product 1 (fr)");
+		bsdService.save(product6);
+		Product product7 = new Product("tst7","test product 1","test product 1 (fr)");
+		bsdService.save(product7);
 		
 		ProductPriceInStore productPriceInStore1 = new ProductPriceInStore(new StoreProductPK(store, product1), 9.99, 15.99, new Date());
 		bsdService.save(productPriceInStore1);
 		ProductPriceInStore productPriceInStore2 = new ProductPriceInStore(new StoreProductPK(store, product2), 6.99, 5.99, new Date());
 		bsdService.save(productPriceInStore2);
+		ProductPriceInStore productPriceInStore3 = new ProductPriceInStore(new StoreProductPK(store, product3), 136.99, 136.99, new Date());
+		bsdService.save(productPriceInStore3);
+		ProductPriceInStore productPriceInStore4 = new ProductPriceInStore(new StoreProductPK(store, product4), 16.99, 15.66, new Date());
+		bsdService.save(productPriceInStore4);
+		ProductPriceInStore productPriceInStore5 = new ProductPriceInStore(new StoreProductPK(store, product5), 16.99, 15.89, new Date());
+		bsdService.save(productPriceInStore5);
+
+		//storeHq
+		ProductPriceInStore productPriceInStore6 = new ProductPriceInStore(new StoreProductPK(storeHq, product6), 9.99, 8.99, new Date());
+		bsdService.save(productPriceInStore6);
+		ProductPriceInStore productPriceInStore7 = new ProductPriceInStore(new StoreProductPK(storeHq, product7), 1.99, 7.99, new Date());
+		bsdService.save(productPriceInStore7);
+		
 		
 		OrderHeader bsdUserOrder = new OrderHeader(bsdUser);
 		bsdService.save(bsdUserOrder);
@@ -249,6 +273,21 @@ public class BuildAndExportDatabase {
 	//TODO - <AP> test circular reference from OrderHeader to BsdUser 
 	@Test
 	public void averifyBsdSetup(){
+		String userName = "Tim Adams";
+        BsdUser user = (BsdUser) bsdService.getDomainUser(userName);
+        Store store = user.getStore();
+        assertNotNull(store);
+    	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();
+    	assertNotNull(productsPriceInStore);
+    	List<Product> products = new ArrayList<Product>();//bsdService.getProducts();
+    	for (ProductPriceInStore productPriceInStore : productsPriceInStore) {
+    		assertNotNull(productPriceInStore.getPk());
+    		Product product = productPriceInStore.getPk().getProduct();
+    		assertNotNull(product);
+    		products.add(product);
+		}    	
+    	assertThat(products.size(), is(5));
+		//--------------------------------------------------------------------------------------------------
 		List<OrderHeader> orders = bsdService.getOrderHeaders();
 		assertNotNull(orders);
 		assertThat(orders.size(), is(3));
@@ -257,7 +296,7 @@ public class BuildAndExportDatabase {
 		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
 		OrderHeader order = orders.get(0);
 		
-		OrderHeaderDto orderDto = org.avp.bsd.service.DtoFactory.createDtoFromDao(order);
+		OrderHeaderDto orderDto = org.avp.bsd.service.DtoFactory.createDtoFrom(order);
 		String jsonOrderHeader = gson.toJson(orderDto);
 		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
 

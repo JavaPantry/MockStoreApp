@@ -31,6 +31,13 @@ See file://..\ReadMe.md
 ---
 ### August 21
 
+- pass Authentication to action method to access user
+- refine test case to correctly populate bsd database
+- add test ValidateDatabase to validate only (no database rebuild)
+- add ProductDto and createProductDto(...) in DtoFactory
+
+Committed:
+
 - refactor build database
 - fix the mess after merge in readme
 

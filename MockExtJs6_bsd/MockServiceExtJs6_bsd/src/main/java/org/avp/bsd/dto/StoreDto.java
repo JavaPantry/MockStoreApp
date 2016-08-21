@@ -1,67 +1,25 @@
-package org.avp.bsd.model;
+package org.avp.bsd.dto;
 
 import java.util.Date;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+@SuppressWarnings("serial")
+public class StoreDto implements java.io.Serializable {
 
-import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-@Entity
-@Table(name = "stores")
-public class Store implements java.io.Serializable {
-
-	@Id
-	@GeneratedValue
 	private Long id;
-	
 	
 	private String storeName;
 	private String clientName;
 	private String storeDescription;
 	
-	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean attSecurity;
 	private String attLangPref;
 	private String clientLogo;
 	private Date createDt;
 
-	/*
-	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
-	 */
-	@OneToMany(fetch=FetchType.EAGER , mappedBy="pk.store", cascade={CascadeType.ALL}, orphanRemoval=true)//CascadeType.PERSIST, CascadeType.MERGE, 
-	@Fetch(value = FetchMode.SUBSELECT)
-	private Set<ProductPriceInStore> productsInStore;
-
-	/*
-	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
-	 */
-	@OneToMany(fetch=FetchType.EAGER , mappedBy = "store", cascade={CascadeType.ALL}, orphanRemoval=true)
-	private Set<BsdUser> users;
-
+	//private Set<ProductPriceInStore> productsInStore;
+	//private Set<BsdUser> users;
 	
-	public Store() {
-	}
-
-	public Store(String storeName,
-			String clientName, String storeDescription, Boolean attSecurity,
-			String attLangPref, String clientLogo) {
-		this.storeName = storeName;
-		this.clientName = clientName;
-		this.storeDescription = storeDescription;
-		this.attSecurity = attSecurity;
-		this.attLangPref = attLangPref;
-		this.clientLogo = clientLogo;
-		this.createDt = new Date();
+	public StoreDto() {
 	}
 
 	public Long getId() {
@@ -128,6 +86,7 @@ public class Store implements java.io.Serializable {
 		this.createDt = createDt;
 	}
 
+/*
 	public Set<ProductPriceInStore> getProductsInStore() {
 		return productsInStore;
 	}
@@ -143,5 +102,6 @@ public class Store implements java.io.Serializable {
 	public void setUsers(Set<BsdUser> users) {
 		this.users = users;
 	}
-
+*/
+	
 }

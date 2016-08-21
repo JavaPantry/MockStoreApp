@@ -2,11 +2,16 @@ package org.avp.quota.kpi.web.web;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.avp.bsd.dto.OrderHeaderDto;
+import org.avp.bsd.dto.ProductDto;
+import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
+import org.avp.bsd.model.Store;
 import org.avp.bsd.service.BsdService;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
@@ -24,6 +29,7 @@ import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.web.web.MaintenanceController.SalesRepTocLink;
+import org.avp.security.model.User;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.sporcic.extjs.ExtData;
 import org.sporcic.extjs.ExtResponse;
@@ -36,6 +42,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.security.core.Authentication;
 
 @Controller
 public class BsdController extends AbstractExtJsController {
@@ -44,6 +51,8 @@ public class BsdController extends AbstractExtJsController {
 	
 	@Autowired
 	protected BsdService bsdService;
+	
+	
 	
 	public BsdController() {}
 	
@@ -82,7 +91,8 @@ public class BsdController extends AbstractExtJsController {
 
 	@RequestMapping(value={"/angular/products"}, method=RequestMethod.GET)
 	@ResponseBody
-	public List<Product> findProductsAngular(
+	public List<ProductDto> findProductsAngular(
+			Authentication authentication,
 			@RequestParam(value="dealer", required=false) Integer dealerId,
 			@RequestParam(value="limit", required=false) Integer limit, 
 			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
@@ -91,9 +101,16 @@ public class BsdController extends AbstractExtJsController {
 			@RequestParam(value="filter", required=false) String filter,
 			@RequestParam(value="summary", required=false) String summary
 			) {
-        ExtData response = new ExtData();
-        logger.debug("/angular/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
-    	//FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+        //ExtData response = new ExtData();
+        
+        String userName = authentication.getName();
+        BsdUser user = (BsdUser) bsdService.getDomainUser(userName);
+        Store store = user.getStore();
+
+        logger.debug("/angular/products userName"+userName);
+        logger.debug("/angular/products store"+store.getStoreName());
+        
+        //FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
     	//SortParameter[] sortParameters = getSortFromJson(sort);;
     	
     	//TODO - <AP> do something with that Integer crap
@@ -104,11 +121,21 @@ public class BsdController extends AbstractExtJsController {
 //		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
 //		List<QuotaDao> quotas = quotaDaoPage.getContent();
     	
-    	List<Product> products = bsdService.getProducts();
-    	response.add(products);
-    	response.setTotal(100);
-        response.setSuccess(true);
-        return products;
+    	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();
+    	List<Product> products = new ArrayList<Product>();//bsdService.getProducts();
+    	for (ProductPriceInStore productPriceInStore : productsPriceInStore) {
+    		Product product = productPriceInStore.getPk().getProduct();
+    		products.add(product);
+    		logger.debug("/angular/products read "+product.getSku()+" product");
+            
+		}    	
+    	logger.debug("/angular/products read "+products.size()+" products");
+		List<ProductDto> productsDtos = org.avp.bsd.service.DtoFactory.createProductDtoList(products);
+
+//    	response.add(products);
+//    	response.setTotal(100);
+//      response.setSuccess(true);
+        return productsDtos;
 	}
 	
 	

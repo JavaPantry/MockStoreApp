@@ -37,7 +37,12 @@ public class CustomUserServiceImpl implements CustomUserService {
 	@Autowired
 	private AuthoritiesRepository authoritiesRepository;
 
-    
+    /*
+     * This method isn't for loading domain specific user profile, but for authenticate user during login
+     * 
+     * (non-Javadoc)
+     * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
+     */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final User foundByUserId = userRepository.findByUserId(username);
@@ -51,10 +56,13 @@ public class CustomUserServiceImpl implements CustomUserService {
 		userRepository.save(user);
 	}
 	
+	
 	@Transactional()
 	public void save(Authority authoritiy){
 		authoritiesRepository.save(authoritiy);
 	}
+	
+	
 	
     private List<GrantedAuthority> convertAuthorityEntieiesIntoSpringAuthorities(final List<Authority> authorities) {
         final Iterable<String> authorityNames = Iterables.transform(authorities, Functions.toStringFunction());

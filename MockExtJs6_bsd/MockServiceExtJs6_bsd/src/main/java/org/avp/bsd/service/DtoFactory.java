@@ -4,13 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.avp.bsd.dto.OrderHeaderDto;
+import org.avp.bsd.dto.ProductDto;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
+import org.avp.bsd.model.Product;
 import org.avp.quota.kpi.util.BeanUtility;
 
 public class DtoFactory {
 
-	static public OrderHeaderDto createDtoFromDao(OrderHeader entity){
+	static public ProductDto createDtoFrom(Product entity){
+		ProductDto dto = null;
+		if(entity == null)
+			return dto;
+		
+		dto = new ProductDto();
+		BeanUtility.nullSafeMergeTo(entity, dto, null);//new String[]{"+salesRepresentative","category"}
+		
+		return dto;
+	}
+
+	public static List<ProductDto> createProductDtoList(List<Product> entities) {
+		List<ProductDto> dtos = new ArrayList<ProductDto>();
+		for (Product entity : entities) {
+			dtos.add(DtoFactory.createDtoFrom(entity));
+		}
+		return dtos;
+	}
+
+	static public OrderHeaderDto createDtoFrom(OrderHeader entity){
 		OrderHeaderDto dto = null;
 		if(entity == null)
 			return dto;
@@ -33,7 +54,7 @@ public class DtoFactory {
 	public static List<OrderHeaderDto> createDtoList(List<OrderHeader> entities) {
 		List<OrderHeaderDto> dtos = new ArrayList<OrderHeaderDto>();
 		for (OrderHeader entity : entities) {
-			dtos.add(DtoFactory.createDtoFromDao(entity));
+			dtos.add(DtoFactory.createDtoFrom(entity));
 		}
 		return dtos;
 	}

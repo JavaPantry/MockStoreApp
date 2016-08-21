@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <users USER_TYPE="QuotaUser" id="1" enabled="false" firstName="Alexei" lastName="Ptitchkin" password="$2a$11$Ds/zqHBtYcpawtk8DVNC/..SgGFsvtDL7BimmFmV/.uxzD6heCE.C" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
-  <users USER_TYPE="QuotaUser" id="2" enabled="false" firstName="Angular" lastName="User" password="$2a$11$evoGzOlxrgL4PdCc/41q1etRFUsPMB1jT6e36xHjxJQu0ql4ahaSe" tokenExpired="false" userId="Angular User" version="0"/>
-  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" firstName="Tim" lastName="Adams" password="$2a$11$bCjgYAZZ0dIdYvBxX8.SB.AidpaIfg0H5vESYYlDkFqNNd8kQAXKi" tokenExpired="false" userId="Tim Adams" version="0"/>
-  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" firstName="Hong" lastName="Li" password="$2a$11$912/c.wWwwYwe0ln2lkdLeiRpy.isnjpuTfHMri/CFOze/Wen.veK" tokenExpired="false" userId="Hong Li" version="0"/>
+  <users USER_TYPE="QuotaUser" id="1" enabled="false" firstName="Alexei" lastName="Ptitchkin" password="$2a$11$rX8eeCc9qHkRy8y3jQLR7u/QTf7qSTm8UVNPt9rQwql3DLJ3JnLxm" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
+  <users USER_TYPE="QuotaUser" id="2" enabled="false" firstName="Angular" lastName="User" password="$2a$11$vsSoSulGLjgHdoX355FD/uQZkzGjWYZUQz0Aw1KjjTVk1wGZwGphC" tokenExpired="false" userId="Angular User" version="0"/>
+  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" firstName="Tim" lastName="Adams" password="$2a$11$MJ9ktvJWbhErI9nOUfeU2OfTLr91vKsHK43Zkv8GlvZ/rMPXkrzzq" tokenExpired="false" userId="Tim Adams" version="0"/>
+  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" firstName="Hong" lastName="Li" password="$2a$11$BMVllZ2qy/0pgcFkf.hn4.2297AJZ8UhirQqM6dvrjKBoyR.qxdkm" tokenExpired="false" userId="Hong Li" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -13,8 +13,10 @@
   <authorities id="7" role="ROLE_BSD_DEALER" version="0" userId="4"/>
   <company/>
   <billto/>
-  <bsdusers id="3"/>
-  <bsdusers id="4"/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-21 15:15:32.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
+  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-21 15:15:32.0" storeDescription="Head Quotar store" storeName="HQStore"/>
+  <bsdusers id="3" storeId="1"/>
+  <bsdusers id="4" storeId="2"/>
   <dealer/>
   <ids_employee_profile employee_id="C05622" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="* President" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Taizaburo Ted Egawa" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
   <ids_employee_profile employee_id="C08420" company="CAN" dept_id="TTAS20" dept_nm="TR Camera Service Admin" job_title="*Mgr, Service &amp; Bus Analysis" location="TMIS" location_nm="AVP company" manager_id="T01592" manager_level="16" employee_nm="Takayuki Naruo" report_path="T01592,T02899,C05622" report_path_name="Steve Mackay;Justin Lam;Taizaburo Ted Egawa" status="A"/>
@@ -155,16 +157,24 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-19 10:20:33.0" userId="3"/>
-  <orders id="2" createDt="2016-08-19 10:20:33.0" userId="3"/>
-  <orders id="3" createDt="2016-08-19 10:20:33.0" userId="4"/>
+  <orders id="1" createDt="2016-08-21 15:15:32.0" userId="3"/>
+  <orders id="2" createDt="2016-08-21 15:15:32.0" userId="3"/>
+  <orders id="3" createDt="2016-08-21 15:15:32.0" userId="4"/>
   <passwordresettoken/>
-  <products sku="tst" EProductName="test product" FProductName="test product (fr)"/>
-  <products sku="tst1" EProductName="test product 1" FProductName="test product 1 (fr)"/>
-  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-19 10:20:32.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
-  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-19 10:20:32.0" storeDescription="Head Quotar store" storeName="HQStore"/>
-  <productpriceinstore created="2016-08-19 10:20:33.0" price="9.99" priceSchedule="2016-08-19 10:20:33.0" priceScheduled="15.99" product="tst" store="1"/>
-  <productpriceinstore created="2016-08-19 10:20:33.0" price="6.99" priceSchedule="2016-08-19 10:20:33.0" priceScheduled="5.99" product="tst1" store="1"/>
+  <products sku="tst1" EProductName="test product" FProductName="test product (fr)"/>
+  <products sku="tst2" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <products sku="tst3" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <products sku="tst4" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <products sku="tst5" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <products sku="tst6" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <products sku="tst7" EProductName="test product 1" FProductName="test product 1 (fr)"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="9.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="15.99" product="tst1" store="1"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="6.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="5.99" product="tst2" store="1"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="136.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="136.99" product="tst3" store="1"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="16.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="15.66" product="tst4" store="1"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="16.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="15.89" product="tst5" store="1"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="9.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="8.99" product="tst6" store="2"/>
+  <productpriceinstore created="2016-08-21 15:15:32.0" price="1.99" priceSchedule="2016-08-21 15:15:32.0" priceScheduled="7.99" product="tst7" store="2"/>
   <quotausers userAdmin="true" id="1"/>
   <quotausers userAdmin="true" id="2"/>
   <shippingaddresses/>

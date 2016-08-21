@@ -12,12 +12,15 @@ import org.avp.bsd.repository.AddressRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
+import org.avp.security.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface BsdService {
 
-	public List<BsdUser> getBsdUsers();
+	public List<BsdUser> getDomainUsers();
+	public User getDomainUser(String username);
+	
 	public List<Address> getAddresses();
 	public List<Product> getProducts();
 	public Product getProduct(String id);

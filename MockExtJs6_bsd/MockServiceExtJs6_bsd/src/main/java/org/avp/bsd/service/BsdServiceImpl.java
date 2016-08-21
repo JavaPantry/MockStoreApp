@@ -16,6 +16,8 @@ import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
 import org.avp.quota.kpi.model.dao.QuotaUser;
+import org.avp.security.model.User;
+import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,11 +30,20 @@ public class BsdServiceImpl implements BsdService {
 	@Autowired
 	private BsdUserRepository bsdUserRepository;
 	
+	@Autowired 
+	private UserRepository userRepository;
 	
 	@Transactional(readOnly=true)
-	public List<BsdUser> getBsdUsers(){
+	public List<BsdUser> getDomainUsers(){
 		return bsdUserRepository.findAll();
 	}
+	
+	@Transactional()
+	public User getDomainUser(String username){
+        return userRepository.findByUserId(username);
+	}
+
+
 
 	@Autowired
 	private AddressRepository addressRepository;

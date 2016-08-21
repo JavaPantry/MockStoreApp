@@ -1,4 +1,4 @@
-package org.avp.bsd.model;
+package org.avp.bsd.dto;
 
 import java.util.Date;
 import java.util.Set;
@@ -14,50 +14,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.avp.security.dto.UserDto;
 import org.avp.security.model.User;
 
-@SuppressWarnings("serial")
-@Entity
-@Table(name = "bsdusers")
-public class BsdUser extends User implements java.io.Serializable {
+public class BsdUserDto extends UserDto implements java.io.Serializable {
 
-	/*
-	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
-	 */
-	@ManyToOne
-	@JoinColumn(name="storeId")
-	private Store store;
+	private StoreDto store;
 	
-	@OneToMany(fetch=FetchType.EAGER , mappedBy = "user", cascade={CascadeType.ALL}, orphanRemoval=true)
-	private Set<OrderHeader> orders;
+	private Set<OrderHeaderDto> orders;
 	
-	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean clientAdmin;
-	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean siteAdmin;
 	private String phone;
 	private String fax;
 	private String subDivision;
-	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean active;
 	private Date createDt;
 
-	public BsdUser() {
+	public BsdUserDto() {
 	}
 
-	public BsdUser(Store store, String emailAddress,
-			String password, Boolean clientAdmin, Boolean siteAdmin,
-			String firstName, String lastName, String phone, String fax,
-			String subDivision) {
-		this.store = store;
-		this.clientAdmin = clientAdmin;
-		this.siteAdmin = siteAdmin;
-		this.phone = phone;
-		this.fax = fax;
-		this.subDivision = subDivision;
-		this.active = false;
-		this.createDt = new Date();
-	}
 
 	public Boolean getClientAdmin() {
 		return this.clientAdmin;
@@ -115,11 +91,11 @@ public class BsdUser extends User implements java.io.Serializable {
 		this.createDt = createDt;
 	}
 
-	public Store getStore() {
+	public StoreDto getStore() {
 		return store;
 	}
 
-	public void setStore(Store store) {
+	public void setStore(StoreDto store) {
 		this.store = store;
 	}
 
