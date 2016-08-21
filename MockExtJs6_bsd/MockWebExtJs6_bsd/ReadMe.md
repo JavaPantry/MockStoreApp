@@ -27,31 +27,29 @@ See file://..\ReadMe.md
 	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
 	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
 
+
 ---
+### August 21
+
+- refactor build database
+- fix the mess after merge in readme
+
 ### August 19
 Google: spring security access/retrieve user object
 - Read http://www.baeldung.com/get-user-in-spring-security
 - Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
+
 	Authentication a = SecurityContextHolder.getContext().getAuthentication();
 	User currentUser = (User)a.getPrincipal();
 	
 y-extract-authenticated-user-object
 Google: spring security access/retrieve user object
 Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
-Google: spring security access/retrieve user object
-Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract-authenticated-user-object
 
 	Authentication a = SecurityContextHolder.getContext().getAuthentication();
 	User currentUser = (User)a.getPrincipal();
 	
-	Authentication a = SecurityContextHolder.getContext().getAuthentication();
-	User currentUser = (User)a.getPrincipal();
-	
-	Authentication a = SecurityContextHolder.getContext().getAuthentication();
-	User currentUser = (User)a.getPrincipal();
-	
-	Authentication a = SecurityContextHolder.getContext().getAuthentication();
-	User currentUser = (User)a.getPrincipal();
+
 	
 ### August 18
 - orders not rendered because of circular reference 

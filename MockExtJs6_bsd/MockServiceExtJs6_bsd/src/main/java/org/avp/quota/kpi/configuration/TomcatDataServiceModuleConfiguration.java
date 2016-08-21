@@ -101,11 +101,11 @@ public class TomcatDataServiceModuleConfiguration{
    Properties getJpaProperties() {
       Properties properties = new Properties();
       //TODO - <AP> to init database from scratch change hibernate.hbm2ddl.auto to create
+      String operation = "validate";
       if(BULD_DATABASE){
-    	  properties.setProperty("hibernate.hbm2ddl.auto", "create");//Select: "create" OR "validate" OR "default"
-      }else{
-    	  properties.setProperty("hibernate.hbm2ddl.auto", "validate");//Select: "create" OR "validate" OR "default"
+    	  operation ="create";//Select: "create" OR "validate" OR "default"
       }
+      properties.setProperty("hibernate.hbm2ddl.auto", operation);//Select: "create" OR "validate" OR "default"
       properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 
       //to output and nicely format HQL: 
