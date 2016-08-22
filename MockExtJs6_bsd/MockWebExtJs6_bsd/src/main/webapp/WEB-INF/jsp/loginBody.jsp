@@ -15,14 +15,12 @@
 		<link rel="icon" href="${pageContext.request.contextPath}/resources/fast/images/chart_curve.png">
         <title><spring:message code="label.login.page_title"/></title>
 
-        <link href="${pageContext.request.contextPath}/resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
-		<link href="${pageContext.request.contextPath}/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css" rel="stylesheet" >
-		<link href="${pageContext.request.contextPath}/resources/lib/angularjs-toaster/toaster.min.css" rel="stylesheet" >
-		<link href="${pageContext.request.contextPath}/resources/lib/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
-		<link href="${pageContext.request.contextPath}/resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" >
+		<script src="${pageContext.request.contextPath}/resources/node_modules/jquery/dist/jquery.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" >
-		<link href="${pageContext.request.contextPath}/resources/css/paper.css" rel="stylesheet" >
-        <link type="text/css" href="${pageContext.request.contextPath}/resources/css/signin.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/resources/css/paper.css" rel="stylesheet" >
+        <link href="${pageContext.request.contextPath}/resources/css/signin.css" rel="stylesheet">
         
     </head>
     

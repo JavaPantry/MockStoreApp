@@ -18,18 +18,23 @@ See file://..\ReadMe.md
 	- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
 
 - TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-- TODO - <AP>: these resources requested login jsp   
-
-	"NetworkError: 404 Not Found:
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap/dist/css/bootstrap.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/angularjs-toaster/toaster.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
-	- http://localhost:8080/MockWebExtJs6_bsd/resources/lib/font-awesome/css/font-awesome.min.css"
-
 
 ---
 ### August 22
+
+committed:
+
+- TODO - <AP>: missing resources requested from login jsp
+- remove references to old bootstrap distribution from MockWebExtJs6_bsd/src/main/webapp/WEB-INF/jsp/loginBody.jsp
+
+	"NetworkError: 404 Not Found:
+	- MockWebExtJs6_bsd/resources/lib/bootstrap/dist/css/bootstrap.min.css"
+	- MockWebExtJs6_bsd/resources/lib/bootstrap-additions/dist/bootstrap-additions.min.css"
+	- MockWebExtJs6_bsd/resources/lib/angularjs-toaster/toaster.min.css"
+	- MockWebExtJs6_bsd/resources/lib/ladda/dist/ladda-themeless.min.css"
+
+
+committed:
 
 - add "log4j.logger.com.google.gson=DEBUG" to src/test/resources/log4j.properties and src/main/resources/log4j.properties
 - rename test logging output to MockStub`Test`.log
