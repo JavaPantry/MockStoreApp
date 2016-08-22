@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.dto.ProductDto;
@@ -92,7 +94,8 @@ public class BsdController extends AbstractExtJsController {
 	@RequestMapping(value={"/angular/products"}, method=RequestMethod.GET)
 	@ResponseBody
 	public List<ProductDto> findProductsAngular(
-			Authentication authentication,
+			//Authentication authentication,
+			HttpSession session,
 			@RequestParam(value="dealer", required=false) Integer dealerId,
 			@RequestParam(value="limit", required=false) Integer limit, 
 			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
@@ -103,11 +106,15 @@ public class BsdController extends AbstractExtJsController {
 			) {
         //ExtData response = new ExtData();
         
-        String userName = authentication.getName();
+        /*String userName = authentication.getName();
         BsdUser user = (BsdUser) bsdService.getDomainUser(userName);
-        Store store = user.getStore();
+        */
 
-        logger.debug("/angular/products userName"+userName);
+		BsdUser user = (BsdUser) session.getAttribute("appuser");
+		Store store = user.getStore();
+		
+		
+        logger.debug("/angular/products userName"+user.getUserId());
         logger.debug("/angular/products store"+store.getStoreName());
         
         //FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);

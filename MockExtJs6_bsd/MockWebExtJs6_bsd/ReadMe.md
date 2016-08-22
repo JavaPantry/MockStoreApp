@@ -23,6 +23,11 @@ See file://..\ReadMe.md
 ### August 22
 
 committed:
+- add `Authentication authentication` parameter to all methods in src/main/java/org/avp/quota/kpi/web/web/IndexController.java to store User profile in session
+- remove  `Authentication authentication` from BsdController to rely on session previously stored User profile
+- add `HttpSession session` arg-t to bsdController to retrieve previously stored user
+
+committed:
 
 - TODO - <AP>: missing resources requested from login jsp
 - remove references to old bootstrap distribution from MockWebExtJs6_bsd/src/main/webapp/WEB-INF/jsp/loginBody.jsp
