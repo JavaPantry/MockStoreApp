@@ -23,6 +23,11 @@ See file://..\ReadMe.md
 ---
 ### August 22
 
+- retrieve orders for user
+	List<OrderHeaderDto> getOrders()
+		BsdUser user = (BsdUser) session.getAttribute("appuser");
+		List<OrderHeader> orders = bsdService.getOrderHeadersByUser(user);
+
 committed:
 
 - remove direct use of UserRepository, use CustomUserService instead (QuotaService and BsdService may use CustomUserService as front-end instead of directly request repository)

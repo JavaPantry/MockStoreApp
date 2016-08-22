@@ -25,6 +25,7 @@ public interface BsdService {
 	public void save(ProductPriceInStore productPriceInStore);
 	
 	public List<OrderHeader> getOrderHeaders();
+	public List<OrderHeader> getOrderHeadersByUser(User user);
 	public void save(OrderHeader orderHeader);
 
 	public void save(Store store);
