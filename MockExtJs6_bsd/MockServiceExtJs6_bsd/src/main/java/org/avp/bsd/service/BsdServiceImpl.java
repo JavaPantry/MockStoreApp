@@ -13,7 +13,7 @@ import org.avp.bsd.repository.OrderHeaderRepository;
 import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
-import org.avp.security.repository.UserRepository;
+import org.avp.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +23,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class BsdServiceImpl implements BsdService {
 	private static Logger logger = Logger.getLogger(BsdServiceImpl.class);
 	
-	@Autowired 
-	private UserRepository userRepository;
+	@Autowired
+	private CustomUserService userService;
 	
 	@Autowired
 	private AddressRepository addressRepository;

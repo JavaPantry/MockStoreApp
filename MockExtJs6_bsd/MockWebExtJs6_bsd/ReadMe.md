@@ -23,7 +23,9 @@ See file://..\ReadMe.md
 ---
 ### August 22
 
-- TODO - <AP>: remove direct use of UserRepository, use CustomUserService instead
+committed:
+
+- remove direct use of UserRepository, use CustomUserService instead (QuotaService and BsdService may use CustomUserService as front-end instead of directly request repository)
 
 committed:
 

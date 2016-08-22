@@ -42,7 +42,7 @@ import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.security.model.User;
-import org.avp.security.repository.UserRepository;
+import org.avp.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -68,7 +68,7 @@ public class QuotaServiceImpl implements QuotaService {
 	private IEmployeeRepository employeeRepository;
 	
 	@Autowired
-	private UserRepository userRepository;
+	private CustomUserService userService; 
 
 	@Autowired
 	private ITocRepository tocRepository;
@@ -632,7 +632,7 @@ public class QuotaServiceImpl implements QuotaService {
 	
 	@Transactional(readOnly=true)
 	public List<User> getUsers(){
-		List<User> users = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
+		List<User> users = userService.getDomainUsers();//.findAll();//SearchCriteriaUtility.findAdminUsers()			
 		return users;
 	}
 
@@ -692,7 +692,7 @@ public class QuotaServiceImpl implements QuotaService {
 	//TODO - <AP>: TBR
 	@Transactional(readOnly=true)
 	public QuotaUser getUserById(String userId) {
-		QuotaUser userDao = (QuotaUser) userRepository.findByUserId(userId);//userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
+		QuotaUser userDao = (QuotaUser) userService.getDomainUser(userId);
 		return userDao;
 	}
 	@Transactional(readOnly=true)
