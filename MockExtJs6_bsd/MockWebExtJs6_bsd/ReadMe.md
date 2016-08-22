@@ -12,7 +12,6 @@ See file://..\ReadMe.md
 
 ---
 ## TODOs 
-- TODO - <AP>: laptop wi-fi for guest: Guest-WPA2, q1w2e3r4t5!, wpa2 
 - TODO - <AP>: Switch from gson to jackson
 
 	- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
