@@ -18,8 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface BsdService {
 
-	public List<BsdUser> getDomainUsers();
-	public User getDomainUser(String username);
+	//	moved to org/avp/security/service/CustomUserService.java 
+	//	public List<BsdUser> getDomainUsers();
+	//	public User getDomainUser(String username);
 	
 	public List<Address> getAddresses();
 	public List<Product> getProducts();

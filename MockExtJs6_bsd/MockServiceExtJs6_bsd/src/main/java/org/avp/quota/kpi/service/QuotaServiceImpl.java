@@ -18,10 +18,10 @@ import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
 import org.avp.quota.kpi.model.dao.ProductLine;
 import org.avp.quota.kpi.model.dao.QuotaDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
@@ -34,16 +34,15 @@ import org.avp.quota.kpi.repository.IQuotaRepository;
 import org.avp.quota.kpi.repository.ISalesRepEmployeeJoinRepository;
 import org.avp.quota.kpi.repository.ISalesRepresentativeRepository;
 import org.avp.quota.kpi.repository.ITocRepository;
-import org.avp.quota.kpi.repository.IUserRepository;
 import org.avp.quota.kpi.repository.searchspec.SearchCriteriaUtility;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
-import org.avp.quota.kpi.util.CollectionUtility;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.FilterOperator;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
-import org.avp.quota.kpi.util.FilterType;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
+import org.avp.security.model.User;
+import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -69,7 +68,7 @@ public class QuotaServiceImpl implements QuotaService {
 	private IEmployeeRepository employeeRepository;
 	
 	@Autowired
-	private IUserRepository userRepository;
+	private UserRepository userRepository;
 
 	@Autowired
 	private ITocRepository tocRepository;
@@ -632,9 +631,9 @@ public class QuotaServiceImpl implements QuotaService {
 	
 	
 	@Transactional(readOnly=true)
-	public List<QuotaUser> getUsers(){
-		List<QuotaUser> userDaoList = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
-		return userDaoList;
+	public List<User> getUsers(){
+		List<User> users = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
+		return users;
 	}
 
 	@Transactional(readOnly=true)
@@ -690,11 +689,10 @@ public class QuotaServiceImpl implements QuotaService {
 		return tocDaoList;
 	}
 	
+	//TODO - <AP>: TBR
 	@Transactional(readOnly=true)
 	public QuotaUser getUserById(String userId) {
-//		Collection<UserDao> userDaoList = userRepository.findAll(SearchCriteriaUtility.findUserById(userId));
-//		return CollectionUtility.toList(userDaoList).get(0);
-		QuotaUser userDao = userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
+		QuotaUser userDao = (QuotaUser) userRepository.findByUserId(userId);//userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
 		return userDao;
 	}
 	@Transactional(readOnly=true)

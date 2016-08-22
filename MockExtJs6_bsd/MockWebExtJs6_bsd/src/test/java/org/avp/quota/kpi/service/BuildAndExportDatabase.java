@@ -274,7 +274,7 @@ public class BuildAndExportDatabase {
 	@Test
 	public void averifyBsdSetup(){
 		String userName = "Tim Adams";
-        BsdUser user = (BsdUser) bsdService.getDomainUser(userName);
+        BsdUser user = (BsdUser) userService.getDomainUser(userName);
         Store store = user.getStore();
         assertNotNull(store);
     	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();

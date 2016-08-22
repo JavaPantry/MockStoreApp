@@ -4,19 +4,15 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.avp.bsd.model.Address;
-import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.repository.AddressRepository;
-import org.avp.bsd.repository.BsdUserRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
 import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
-import org.avp.quota.kpi.model.dao.QuotaUser;
-import org.avp.security.model.User;
 import org.avp.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,24 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class BsdServiceImpl implements BsdService {
 	private static Logger logger = Logger.getLogger(BsdServiceImpl.class);
 	
-	@Autowired
-	private BsdUserRepository bsdUserRepository;
-	
 	@Autowired 
 	private UserRepository userRepository;
 	
-	@Transactional(readOnly=true)
-	public List<BsdUser> getDomainUsers(){
-		return bsdUserRepository.findAll();
-	}
-	
-	@Transactional()
-	public User getDomainUser(String username){
-        return userRepository.findByUserId(username);
-	}
-
-
-
 	@Autowired
 	private AddressRepository addressRepository;
 	
@@ -52,7 +33,6 @@ public class BsdServiceImpl implements BsdService {
 	public List<Address> getAddresses(){
 		return addressRepository.findAll();
 	}
-	
 	
 	@Autowired
 	private OrderHeaderRepository orderHeaderRepository;

@@ -56,13 +56,20 @@ public class CustomUserServiceImpl implements CustomUserService {
 		userRepository.save(user);
 	}
 	
-	
 	@Transactional()
 	public void save(Authority authoritiy){
 		authoritiesRepository.save(authoritiy);
 	}
 	
+	@Transactional(readOnly=true)
+	public List<User> getDomainUsers(){
+		return userRepository.findAll();
+	}
 	
+	@Transactional()
+	public User getDomainUser(String username){
+        return userRepository.findByUserId(username);
+	}
 	
     private List<GrantedAuthority> convertAuthorityEntieiesIntoSpringAuthorities(final List<Authority> authorities) {
         final Iterable<String> authorityNames = Iterables.transform(authorities, Functions.toStringFunction());

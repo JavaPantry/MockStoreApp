@@ -12,17 +12,29 @@ See file://..\ReadMe.md
 
 ---
 ## TODOs 
-
+- TODO - <AP>: laptop wi-fi for guest: Guest-WPA2, q1w2e3r4t5!, wpa2 
 - TODO - <AP>: Switch from gson to jackson
 
 	- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
 
 - TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
+- TODO - <AP>: later need to build separate org/avp/security jar project
+
 
 ---
 ### August 22
 
+- TODO - <AP>: remove direct use of UserRepository, use CustomUserService instead
+
 committed:
+
+- remove package org/avp/quota/kpi/model/security (all security related service/entity/repositories moved under org/avp/security package. __later need to build separate jar project__)
+- remove package org/avp/quota/kpi/repository/security (same reason as above)
+- replace BsdUserRepository & IUserRepository with org/avp/security/repository/UserRepository.java from common security package
+- remove BsdUserRepository & IUserRepository
+
+committed:
+
 - add `Authentication authentication` parameter to all methods in src/main/java/org/avp/quota/kpi/web/web/IndexController.java to store User profile in session
 - remove  `Authentication authentication` from BsdController to rely on session previously stored User profile
 - add `HttpSession session` arg-t to bsdController to retrieve previously stored user

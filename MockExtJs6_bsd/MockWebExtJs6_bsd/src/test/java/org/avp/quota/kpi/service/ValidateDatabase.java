@@ -146,7 +146,7 @@ public class ValidateDatabase {
 		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
 		
 		String userName = "Tim Adams";
-        BsdUser user = (BsdUser) bsdService.getDomainUser(userName);
+        BsdUser user = (BsdUser) userService.getDomainUser(userName);
         Store store = user.getStore();
         assertNotNull(store);
     	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();

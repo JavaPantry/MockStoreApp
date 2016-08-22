@@ -17,6 +17,7 @@ import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.SortParameter;
+import org.avp.security.model.User;
 import org.springframework.data.domain.Page;
 
 public interface QuotaService {
@@ -44,7 +45,7 @@ public interface QuotaService {
 	public void updateBudgetDto(QuotaDto dto);
 	public void updateBudgetsValues(BudgetDao budgetDao);
 	
-	public List<QuotaUser> getUsers();
+	public List<User> getUsers();
 	public List<EmployeeDao> getFilteredEmployee( final FilterParameterExtJs6[] filterParameters, SortParameter[] sortParameters);
 	public List<EmployeeDao> getEmployees();
 	public List<EmployeeDao> getEmployeesNotInSalesRep(String salesRepId, String managerId, String strQuery);
