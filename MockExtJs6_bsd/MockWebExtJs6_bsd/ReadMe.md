@@ -29,6 +29,12 @@ See file://..\ReadMe.md
 
 
 ---
+### August 22
+
+- add "log4j.logger.com.google.gson=DEBUG" to src/test/resources/log4j.properties and src/main/resources/log4j.properties
+- rename test logging output to MockStub`Test`.log
+- remove struts2 logging log4j.logger.com.opensymphony.xwork2=ERROR, ROLLING_FILE, stdout
+
 ### August 21
 
 - pass Authentication to action method to access user
