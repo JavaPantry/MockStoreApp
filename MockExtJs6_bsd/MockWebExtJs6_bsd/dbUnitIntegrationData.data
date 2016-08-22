@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <users USER_TYPE="QuotaUser" id="1" enabled="false" firstName="Alexei" lastName="Ptitchkin" password="$2a$11$eETWfnMfNgg8E3FYBGb2KOvs2UvuFh7uOX5pG./k9Q7eI.LycwkvS" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
-  <users USER_TYPE="QuotaUser" id="2" enabled="false" firstName="Angular" lastName="User" password="$2a$11$JK.2anP5VNPSAUakwFBpWOaL.b0uXRDEZao4t1JOAFPiaTHa0O9qS" tokenExpired="false" userId="Angular User" version="0"/>
-  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" firstName="Tim" lastName="Adams" password="$2a$11$w3.6ttcfbXyYSq/BGyAWu.3MSD1baafF8iHz6MaRCZsE1NCq133Ue" tokenExpired="false" userId="Tim Adams" version="0"/>
-  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" firstName="Hong" lastName="Li" password="$2a$11$8ooaLxxgBh2jKg4k69xZQekod.VbDfvXLkbpskXv9aDXWyZzx32jW" tokenExpired="false" userId="Hong Li" version="0"/>
+  <users USER_TYPE="QuotaUser" id="1" enabled="false" firstName="Alexei" lastName="Ptitchkin" password="$2a$11$9.kQia0Apr.6g.pALtLwEeAjok2FTH5jBiMymkKZGV.SvL0Te9Way" tokenExpired="false" userId="Alexei Ptitchkin" version="0"/>
+  <users USER_TYPE="QuotaUser" id="2" enabled="false" firstName="Angular" lastName="User" password="$2a$11$g/alaW6r.VnRI1Zt1DvWY.qMUN3ArY6yuW3aGn4A1d4zcoKoJy7hK" tokenExpired="false" userId="Angular User" version="0"/>
+  <users USER_TYPE="BsdUser" id="3" email="timAdams@gmail.com" enabled="false" firstName="Tim" lastName="Adams" password="$2a$11$rRw5JVx7RrRwXq/E7WD5DuwN5DLQ7prZnB/7Py5GVzc5LQuoYUvyi" tokenExpired="false" userId="Tim Adams" version="0"/>
+  <users USER_TYPE="BsdUser" id="4" email="hongLi@gmail.com" enabled="false" firstName="Hong" lastName="Li" password="$2a$11$Vy7PHmZpd6EW0pbSIMYQLe8nX55b6fmpr5eUfGNM1WFGKjL17ke2u" tokenExpired="false" userId="Hong Li" version="0"/>
   <authorities id="1" role="ROLE_QuotaKPI_COMPANY" version="0" userId="1"/>
   <authorities id="2" role="ROLE_QuotaKPI_QUOTA" version="0" userId="1"/>
   <authorities id="3" role="ROLE_QuotaKPI_BUDGET" version="0" userId="1"/>
@@ -13,8 +13,8 @@
   <authorities id="7" role="ROLE_BSD_DEALER" version="0" userId="4"/>
   <company/>
   <billto/>
-  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-22 09:20:21.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
-  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-22 09:20:21.0" storeDescription="Head Quotar store" storeName="HQStore"/>
+  <stores id="1" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Tim Adams" createDt="2016-08-22 18:46:49.0" storeDescription="store in Missisauga" storeName="MissisaugaStore"/>
+  <stores id="2" attLangPref="en" attSecurity="true" clientLogo="clientLogo.gif" clientName="Hong Li" createDt="2016-08-22 18:46:49.0" storeDescription="Head Quotar store" storeName="HQStore"/>
   <bsdusers id="3" storeId="1"/>
   <bsdusers id="4" storeId="2"/>
   <dealer/>
@@ -57,7 +57,7 @@
   <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADB" third_prod_ctrl_nm="PHATSTRAPS" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
   <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADC" third_prod_ctrl_nm="UMBRA" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
   <ids_mdse_stru_lv3 third_prod_ctrl_cd="ADD" third_prod_ctrl_nm="CAPTURING COUTURE" first_prod_ctrl_cd="A" first_prod_ctrl_nm="CAMERA" zeroth_prod_ctrl_cd="1A" zeroth_prod_ctrl_nm="PHOTO"/>
-  <ids_quota DISCRIMINATOR="Q" idsQuotaId="1" AmtType="1" A1="1" A10="0" A11="0" A12="0" A2="2" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
+  <ids_quota DISCRIMINATOR="Q" idsQuotaId="1" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
   <ids_quota DISCRIMINATOR="B" idsQuotaId="2" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2013" third_prod_ctrl_cd="A9J"/>
   <ids_quota DISCRIMINATOR="Q" idsQuotaId="3" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9J" alt_salesrep_cd="CIG001"/>
   <ids_quota DISCRIMINATOR="B" idsQuotaId="4" AmtType="1" A1="0" A10="0" A11="0" A12="0" A2="0" A3="0" A4="0" A5="0" A6="0" A7="0" A8="0" A9="0" Year="2014" third_prod_ctrl_cd="A9J"/>
@@ -157,9 +157,9 @@
   <ids_security_toc alt_salesrep_cd="CIG001" toc_cd="TOCID"/>
   <shipto/>
   <machine/>
-  <orders id="1" createDt="2016-08-22 09:20:22.0" userId="3"/>
-  <orders id="2" createDt="2016-08-22 09:20:22.0" userId="3"/>
-  <orders id="3" createDt="2016-08-22 09:20:22.0" userId="4"/>
+  <orders id="1" createDt="2016-08-22 18:46:50.0" userId="3"/>
+  <orders id="2" createDt="2016-08-22 18:46:50.0" userId="3"/>
+  <orders id="3" createDt="2016-08-22 18:46:50.0" userId="4"/>
   <passwordresettoken/>
   <products sku="tst1" EProductName="test product" FProductName="test product (fr)"/>
   <products sku="tst2" EProductName="test product 1" FProductName="test product 1 (fr)"/>
@@ -168,13 +168,13 @@
   <products sku="tst5" EProductName="test product 1" FProductName="test product 1 (fr)"/>
   <products sku="tst6" EProductName="test product 1" FProductName="test product 1 (fr)"/>
   <products sku="tst7" EProductName="test product 1" FProductName="test product 1 (fr)"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="9.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="15.99" product="tst1" store="1"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="6.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="5.99" product="tst2" store="1"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="136.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="136.99" product="tst3" store="1"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="16.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="15.66" product="tst4" store="1"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="16.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="15.89" product="tst5" store="1"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="9.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="8.99" product="tst6" store="2"/>
-  <productpriceinstore created="2016-08-22 09:20:22.0" price="1.99" priceSchedule="2016-08-22 09:20:22.0" priceScheduled="7.99" product="tst7" store="2"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="9.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="15.99" product="tst1" store="1"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="6.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="5.99" product="tst2" store="1"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="136.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="136.99" product="tst3" store="1"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="16.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="15.66" product="tst4" store="1"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="16.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="15.89" product="tst5" store="1"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="9.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="8.99" product="tst6" store="2"/>
+  <productpriceinstore created="2016-08-22 18:46:50.0" price="1.99" priceSchedule="2016-08-22 18:46:50.0" priceScheduled="7.99" product="tst7" store="2"/>
   <quotausers userAdmin="true" id="1"/>
   <quotausers userAdmin="true" id="2"/>
   <shippingaddresses/>

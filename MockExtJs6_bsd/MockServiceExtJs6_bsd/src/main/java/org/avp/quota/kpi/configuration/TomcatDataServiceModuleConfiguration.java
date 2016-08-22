@@ -28,6 +28,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class TomcatDataServiceModuleConfiguration{
 	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfiguration.class);
 
+	/*
+	 * !WARNING!: - The true value of this constant will rebuld and populate database with default data set
+	 */
 	private static final boolean BULD_DATABASE = false;
 	
 	/*

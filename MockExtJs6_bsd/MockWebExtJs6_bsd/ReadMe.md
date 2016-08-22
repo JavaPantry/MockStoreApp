@@ -23,6 +23,11 @@ See file://..\ReadMe.md
 ---
 ### August 22
 
+- Break src/test/java/org/avp/quota/kpi/service/ValidateDatabase.java to ValidateBsdTables and ValidateQuotaTables
+
+
+committed:
+
 - retrieve orders for user
 	List<OrderHeaderDto> getOrders()
 		BsdUser user = (BsdUser) session.getAttribute("appuser");

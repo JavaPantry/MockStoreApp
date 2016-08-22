@@ -79,6 +79,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /*
+ * To run BuildAndExportDatabase with tomcat/mysql use ActiveProfiles("Tomcat") 
+ * NOTE: To really build database from scratch change in TomcatDataServiceModuleConfiguration.java 
+ * set BULD_DATABASE constant to true
+ * 
  * See DbUnit maven plugin
  * http://mojo.codehaus.org/dbunit-maven-plugin/index.html
  * Use http://mvnrepository.com/artifact/org.codehaus.mojo/dbunit-maven-plugin/1.0-beta-3
@@ -131,9 +135,6 @@ import com.google.gson.GsonBuilder;
 						})
 
 /*
- * to run BuildAndExportDatabase with tomcat/mysql use ActiveProfiles("Tomcat") 
- * NOTE: change in TomcatDataServiceModuleConfiguration.java 
- * properties.setProperty("hibernate.hbm2ddl.auto", "create");//"create","validate"
  */
 
 //@ActiveProfiles("JBossTest")
@@ -185,6 +186,7 @@ public class BuildAndExportDatabase {
 		setupBsd();		
 		logger.debug("setup completed.");
 	}
+	
 	private void setupBsd() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
@@ -270,43 +272,6 @@ public class BuildAndExportDatabase {
 		bsdService.save(bsdUserOrder2);
 	}
 	
-	//TODO - <AP> test circular reference from OrderHeader to BsdUser 
-	@Test
-	public void averifyBsdSetup(){
-		String userName = "Tim Adams";
-        BsdUser user = (BsdUser) userService.getDomainUser(userName);
-        Store store = user.getStore();
-        assertNotNull(store);
-    	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();
-    	assertNotNull(productsPriceInStore);
-    	List<Product> products = new ArrayList<Product>();//bsdService.getProducts();
-    	for (ProductPriceInStore productPriceInStore : productsPriceInStore) {
-    		assertNotNull(productPriceInStore.getPk());
-    		Product product = productPriceInStore.getPk().getProduct();
-    		assertNotNull(product);
-    		products.add(product);
-		}    	
-    	assertThat(products.size(), is(5));
-		//--------------------------------------------------------------------------------------------------
-		List<OrderHeader> orders = bsdService.getOrderHeaders();
-		assertNotNull(orders);
-		assertThat(orders.size(), is(3));
-		
-		logger.debug("orders size = "+orders.size());
-		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
-		OrderHeader order = orders.get(0);
-		
-		OrderHeaderDto orderDto = org.avp.bsd.service.DtoFactory.createDtoFrom(order);
-		String jsonOrderHeader = gson.toJson(orderDto);
-		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
-
-		List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
-		String jsonOrderHeaders = gson.toJson(orderDtos);
-		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
-		
-//		String jsonOrderHeaders = gson.toJson(orders);
-//		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
-	}
 	
 	private void setupQuotaKPI() {
 		EmployeeDao employee = new EmployeeDao("C05622","Taizaburo Ted Egawa","A", "* President", 
@@ -466,108 +431,6 @@ public class BuildAndExportDatabase {
 				userService.save(authoritiy6);
 	}
 
-	@Test
-	public void averifyQuotaSetup(){
-		QuotaUser user = quotaService.getUserById("Alexei Ptitchkin");
-		assertNotNull(user);
-		assertThat(user.getAuthorities().size(), is(4));
-		logger.debug("user " + user + " in averifySetup()");
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		assertNotNull(salesRepresentative);
-		EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		assertNotNull(employee);
-		
-		List<ProductLine> lines = quotaService.getProductLines();
-		for (ProductLine productLine : lines) {
-			assertNotNull(productLine);
-			logger.debug("productLine = "+productLine);
-		}
-
-		ProductLine productLine = quotaService.getProductLineByCode("Q");
-		assertNotNull(productLine);
-		logger.debug("productLine = "+productLine);
-
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(1));
-		
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoinsWithProdLines = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622","A");
-		assertNotNull(salesRepEmployeeJoinsWithProdLines);
-		assertThat(salesRepEmployeeJoinsWithProdLines.size(), is(1));
-
-		SalesRepEmployeeJoin salesRepEmployeeJoinWithProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","A");
-		assertNotNull(salesRepEmployeeJoinWithProdLine);
-		
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoinsWithNotExistProdLine = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		assertNotNull(salesRepEmployeeJoinsWithNotExistProdLine);
-		assertThat(salesRepEmployeeJoinsWithNotExistProdLine.size(), is(0));
-
-		SalesRepEmployeeJoin salesRepEmployeeJoinWithNotExistProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		assertNull(salesRepEmployeeJoinWithNotExistProdLine);
-		
-		//test create new join with new prodLine
-		//see above: SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		//see above: EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		ProductLine line = quotaService.getProductLineByCode("Q");
-		SalesRepEmployeeJoin salesRepEmployeeJoin = new SalesRepEmployeeJoin(new SalesRepEmployeePK(salesRepresentative, employee, line));
-		quotaService.save(salesRepEmployeeJoin);
-		
-		salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(2));
-		
-		//and test to delete that just created join 
-		SalesRepEmployeeJoin salesRepEmployeeJoinWith_Q_ExistProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		quotaService.delete(salesRepEmployeeJoinWith_Q_ExistProdLine);
-		salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(1));
-
-		List<QuotaDto> quotaDtos = new ArrayList<QuotaDto>();
-		List<QuotaDao> quotas = quotaService.getQuotas();
-		for (QuotaDao quota : quotas) {
-			assertNotNull(quota);
-			assertNotNull(quota.getSalesRepresentative());
-			logger.debug("quota = " + quota);
-			
-			QuotaDto dto = DtoFactory.createDtoFromDao(quota);
-			assertNotNull(dto.getSalesRepresentativeId());
-			assertNotNull(dto.getSalesRepresentativeName());
-			quotaDtos.add(dto);
-		}
-		
-		List<QuotaDto> quotaDtos2 = DtoFactory.createQuotaDtoList(quotas);
-		//assertThat(quotaDtos2.size(), is(4));
-
-		QuotaDto first = quotaDtos2.get(0);
-		first.setValue1(1);
-		first.setValue2(2);
-		QuotaDao dao = quotaService.getQuotaById(first.getId());
-		dao.setValue1(first.getValue1());
-		dao.setValue2(first.getValue2());
-		
-		quotaService.updateQuotasValues(dao);
-		
-		QuotaDao dao2 = quotaService.getQuotaById(first.getId());
-		assertThat(dao2.getValue1(), is(first.getValue1()));
-		assertThat(dao2.getValue2(), is(first.getValue2()));
-		
-/*
-		//ERROR: obj2json(quotas) throws StackOverflowException
-		String jsonStr = GsonUtil.obj2json(quotas);
-		logger.debug("quotas jsonStr = " + jsonStr);
-*/		
-		List<BudgetDao> budgets = quotaService.getBudgets();
-		for (BudgetDao budget : budgets) {
-			assertNotNull(budget);
-			logger.debug("budget = " + budget);
-		}
-
-		List<BudgetDto> budgetDtos = DtoFactory.createBudgetDtoList(budgets);
-		//assertThat(budgetDtos.size(), is(4));
-
-		logger.debug("end");
-	}
 
 	//See: http://ralf.schaeftlein.de/2009/01/05/dbunit-with-junit-4x-and-spring-for-testing-oracle-db-application/
 	@Test
@@ -589,57 +452,4 @@ public class BuildAndExportDatabase {
 			e.printStackTrace();
 		}
 	}
-
-	//moved to QuotaServiceImplTest.java @ Test
-	public void testSalesRepDelete(){
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		quotaService.deleteSalesRepresentative(salesRepresentative.getSalesRepresentativeId());
-		salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		logger.debug("salesRepresentative = "+salesRepresentative);
-		//assertNull(salesRepresentative);
-	}
-
-	//@ - Test
-	public void verifyData() {
-		String salesRepresentativeId = "CIG001";
-		String managerId = "C05622";
-
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		assertNotNull(salesRepresentative);
-		EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		assertNotNull(employee);
-		ProductLine line = quotaService.getProductLineByCode("A");
-		assertNotNull(line);
-		
-		List<ProductLineDTO> dtos = new ArrayList<ProductLineDTO>();
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor(salesRepresentativeId, managerId);
-		
-    	List<ProductLine> productLines = quotaService.getProductLines();
-		for (ProductLine productLine:productLines) {
-			ProductLineDTO dto = DtoFactory.createDtoFromDao(productLine);
-			dto.setExists(false);
-			dto.setManagerId(managerId);
-			dto.setSalesRepresentativeId(salesRepresentativeId);
-			if(doesExistsIn(salesRepEmployeeJoins, dto))
-				dto.setExists(true);
-			dtos.add(dto);
-		}
-		for (ProductLineDTO dto : dtos) {
-			logger.debug(dto);
-		}
-		logger.debug("End of testMangerProductLines");
-		
-		
-		
-	}
-	
-	private boolean doesExistsIn(List<SalesRepEmployeeJoin> salesRepEmployeeJoins, ProductLineDTO dto){
-		for (SalesRepEmployeeJoin salesRepEmployeeJoin : salesRepEmployeeJoins) {
-			if(salesRepEmployeeJoin.getProductLine().getCode().equals(dto.getCode()))
-				return true;
-		}
-		return false;
-	}
-
-
 }
