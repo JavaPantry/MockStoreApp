@@ -13,16 +13,12 @@ See file://..\ReadMe.md
 ---
 ## TODOs 
 
-1. TODO make an abstract MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfiguration.java
-
-
-
-2. TODO - <AP>: Switch from gson to jackson
+1. TODO - <AP>: Switch from gson to jackson
 
 - @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
 
-3. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-4. TODO - <AP>: later need to build separate org/avp/security jar project
+2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
+3. TODO - <AP>: later need to build separate org/avp/security jar project
 
 
 ---
@@ -36,7 +32,7 @@ Solution
 - for dangerous build database test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return true;}_ 
 - ? _use different profiles to build database and run tests_ ?
 
-
+---
 ### August 22
 
 committed:
@@ -84,7 +80,7 @@ committed:
 - add "log4j.logger.com.google.gson=DEBUG" to src/test/resources/log4j.properties and src/main/resources/log4j.properties
 - rename test logging output to MockStub`Test`.log
 - remove struts2 logging log4j.logger.com.opensymphony.xwork2=ERROR, ROLLING_FILE, stdout
-
+---
 ### August 21
 
 - pass Authentication to action method to access user
@@ -97,6 +93,7 @@ Committed:
 - refactor build database
 - fix the mess after merge in readme
 
+---
 ### August 19
 Google: spring security access/retrieve user object
 - Read http://www.baeldung.com/get-user-in-spring-security
@@ -113,7 +110,7 @@ Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract
 	User currentUser = (User)a.getPrincipal();
 	
 
-	
+---	
 ### August 18
 - orders not rendered because of circular reference 
 - introduce orderHeaderDto without circular references
@@ -122,6 +119,7 @@ Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract
 
 - request /angular/orders List<OrderHeader> getOrders reads orders but fail on converting response to json
 
+---
 ### August 17
 
 - change security tag attribute "hasRole() or hasRole()" to hasAnyRole(list of roles)  
@@ -137,6 +135,7 @@ Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract
 2. BsdUser one-to-many OrderHeader
 3. OrderHeader one-to-many OrderDetails
 
+---
 ### August 16
 
 - fix mess with security/user services
@@ -219,7 +218,7 @@ Read http://stackoverflow.com/questions/8764117/spring-3-spring-security-extract
 	npm WARN dymmy_project@1.0.0 No repository field.
 	C:\Tmp\npmTmp>
 
-
+---
 ### August 15
 
 Fix mess with user accounts (user, bsduser, quota user), roles, user_roles, roles_priveleges, authorities etc.
@@ -242,19 +241,21 @@ Refactor AuthoritiesDao
 - introduce ProductPriceInStore entity to link product and store
 - updated test case to build database with Store and ProductPriceInStore
 
-##  August 12
+---
+###  August 12
 
 ### Angular mile stone taken before removing AngularJs UI v0.1.0.3
 - server side reading for products and orders
 - three routes for product list, product detail and order list
 - draft bootstrap orders table
 
+---
 ### August 10
 
 - to work on orders route
 - create store <- prdInStore -> product
 
-
+---
 ### August 09
 
 Read products cause error in parsing standard json response
@@ -274,7 +275,7 @@ to
 
 
 
-
+---
 # References
 
 1. Eclipse TypeScript Plug-in
