@@ -12,32 +12,30 @@ See file://..\ReadMe.md
 
 ---
 ## TODOs 
-- TODO - <AP>: Switch from gson to jackson
 
-	- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
+1. TODO make an abstract MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfiguration.java
 
-- TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-- TODO - <AP>: later need to build separate org/avp/security jar project
+
+
+2. TODO - <AP>: Switch from gson to jackson
+
+- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
+
+3. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
+4. TODO - <AP>: later need to build separate org/avp/security jar project
 
 
 ---
 ### August 23
 
-### TODO make an abstract MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfiguration.java
+committed
+Problem:  currently project have one __DB__ configuration for build __DB__ and for run web application
+Solution    
+- create `AbstractTomcatDataServiceModuleConfiguration` with abstract boolean isInBuildMode()
+- for normal validation test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return false;}_  
+- for dangerous build database test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return true;}_ 
+- ? _use different profiles to build database and run tests_ ?
 
-- in subclasses assign BUILD_DATABASE flag
-- __!OR!__ use different profiles to build database and run tests
-
-
-Google: `java can I assign const in subclass`
-
-- Best [http://stackoverflow.com/questions/8467494/overriding-constants-in-java](http://stackoverflow.com/questions/8467494/overriding-constants-in-java)
-- Force subclasses to include constant in abstract java class [stackoverflow](http://stackoverflow.com/questions/11896955/force-subclasses-to-include-constant-in-abstract-java-class)
-
-Also good to read:
-
-- [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
-- [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
 
 ### August 22
 
@@ -277,15 +275,27 @@ to
 
 
 
-### TODO
-#### Eclipse TypeScript Plug-in
+# References
 
-An Eclipse plug-in for developing in the TypeScript language.
-https://github.com/palantir/eclipse-typescript
-Installation
+1. Eclipse TypeScript Plug-in
+
+An Eclipse [plug-in for developing in the TypeScript language](https://github.com/palantir/eclipse-typescript)
+_Installation_
 
 - Install Node.js
 - Open Eclipse and go to Help->Install New Software
 - Add the update site: http://eclipse-update.palantir.com/eclipse-typescript/
 - Reboot Eclipse
 - (optional) Right-click on a project and select Configure->Enable TypeScript Builder
+
+
+2. What to choose in subclasses assign BUILD_DATABASE flag _OR_ use abstract method to override in subclasses
+2.1. Google: `java can I assign const in subclass`
+
+2.1.1. Best [http://stackoverflow.com/questions/8467494/overriding-constants-in-java](http://stackoverflow.com/questions/8467494/overriding-constants-in-java)
+2.1.2. Force subclasses to include constant in abstract java class [stackoverflow](http://stackoverflow.com/questions/11896955/force-subclasses-to-include-constant-in-abstract-java-class)
+
+2.1.3 Also good to read:
+
+- [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
+- [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)

@@ -25,12 +25,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages={"org.avp.quota.kpi.repository", "org.avp.security.repository", "org.avp.bsd.repository"}, entityManagerFactoryRef="entityManagerFactory")
 @ComponentScan(basePackages={"org.avp.quota.kpi.service", "org.avp.bsd.service", "org.avp.security.service"})
 @Profile("Tomcat")
-public class TomcatDataServiceModuleConfiguration extends AbstractTomcatDataServiceModuleConfiguration{
-	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfiguration.class);
+public class TomcatDataServiceModuleConfigurationForBuild extends AbstractTomcatDataServiceModuleConfiguration{
+	private static Logger logger = Logger.getLogger(TomcatDataServiceModuleConfigurationForBuild.class);
 
 	@Override
 	public boolean isInBuildMode() {
-		return false;
+		return true;
 	}
-
 }

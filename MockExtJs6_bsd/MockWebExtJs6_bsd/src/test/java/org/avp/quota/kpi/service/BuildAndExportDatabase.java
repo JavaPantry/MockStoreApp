@@ -26,6 +26,7 @@ import org.avp.bsd.service.BsdService;
 import org.avp.quota.kpi.configuration.HsqlJUnitDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.JbossTestDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfiguration;
+import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfigurationForBuild;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
@@ -139,12 +140,13 @@ import com.google.gson.GsonBuilder;
 
 //@ActiveProfiles("JBossTest")
 //@ContextConfiguration(classes = {JbossTestDataServiceModuleConfiguration.class})
-
-@ActiveProfiles("Tomcat")
-@ContextConfiguration(classes = {TomcatDataServiceModuleConfiguration.class})
-
+//@ContextConfiguration(classes = {{TomcatDataServiceModuleConfiguration.class})
 //@ActiveProfiles("HSQL_JUNIT")
 //@ContextConfiguration(classes = {HsqlJUnitDataServiceModuleConfiguration.class})
+
+@ActiveProfiles("Tomcat")
+@ContextConfiguration(classes = {TomcatDataServiceModuleConfigurationForBuild.class})
+
 
 public class BuildAndExportDatabase {
 	private static Logger logger = Logger.getLogger(BuildAndExportDatabase.class);
