@@ -1,16 +1,3 @@
-See file://..\ReadMe.md
-
-## Setup node_modules
-
-- to update node package manager (npm) 
-
-	- run `npm -v` to confirm current version  
-	- in terminal window run `npm install npm -g`
-	- run `npm -v` again confirm output 3.10.5 (means npm had been updated)
-
-- in _src/main/webapp/resources/_ run npm install this will create _node_modules_ folder with all required dependencies
-
----
 ## TODOs 
 
 1. TODO - <AP>: Switch from gson to jackson
@@ -24,12 +11,23 @@ See file://..\ReadMe.md
 ---
 ### August 23
 
+- TODO ExtJs SiteAdmin and StoreAdmin page (myself for now)   
+- Very draft look&feel 
+
+![SiteOrStoreAdminUI](Documents/SiteOrStoreAdminUI.PNG)
+
+---
 committed
-Problem:  currently project have one __DB__ configuration for build __DB__ and for run web application
+
+#### Problem:  currently project have one _DataBase_ configuration for build _DataBase_ and for run web application
+
 Solution    
+
 - create `AbstractTomcatDataServiceModuleConfiguration` with abstract boolean isInBuildMode()
 - for normal validation test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return false;}_  
-- for dangerous build database test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return true;}_ 
+- for dangerous build database test cases use `TomcatDataServiceModuleConfiguration` _extends AbstractTomcatDataServiceModuleConfiguration implement isInBuildMode(){return true;}_
+![AbstractTomcatDataServiceModuleConfiguration](Documents/AbstractTomcatDataServiceModuleConfiguration.PNG)
+ 
 - ? _use different profiles to build database and run tests_ ?
 
 ---
@@ -300,3 +298,17 @@ _Installation_
 
 - [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
 - [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
+
+---
+
+## Setup node_modules
+
+- to update node package manager (npm) 
+
+	- run `npm -v` to confirm current version  
+	- in terminal window run `npm install npm -g`
+	- run `npm -v` again confirm output 3.10.5 (means npm had been updated)
+
+- in _src/main/webapp/resources/_ run npm install this will create `node_modules` folder with all required dependencies
+
+---
