@@ -21,10 +21,29 @@ See file://..\ReadMe.md
 
 
 ---
+### August 23
+
+### TODO make an abstract MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfiguration.java
+
+- in subclasses assign BUILD_DATABASE flag
+- __!OR!__ use different profiles to build database and run tests
+
+
+Google: `java can I assign const in subclass`
+
+- Best [http://stackoverflow.com/questions/8467494/overriding-constants-in-java](http://stackoverflow.com/questions/8467494/overriding-constants-in-java)
+- Force subclasses to include constant in abstract java class [stackoverflow](http://stackoverflow.com/questions/11896955/force-subclasses-to-include-constant-in-abstract-java-class)
+
+Also good to read:
+
+- [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
+- [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
+
 ### August 22
 
-- Break src/test/java/org/avp/quota/kpi/service/ValidateDatabase.java to ValidateBsdTables and ValidateQuotaTables
+committed:
 
+- Break src/test/java/org/avp/quota/kpi/service/ValidateDatabase.java to ValidateBsdTables and ValidateQuotaTables
 
 committed:
 
