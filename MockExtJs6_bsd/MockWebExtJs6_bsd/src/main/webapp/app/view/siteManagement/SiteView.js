@@ -1,9 +1,10 @@
 Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
 	extend: 'Ext.tab.Panel',
     alias : 'widget.SiteView',
-    layout: 'anchor',
-
     items:[	
-		{xtype:'SiteGrid',anchor: '100% 100%'}
+		{iconCls: 'icon-organisation', title: 'Bsd Site Admin', xtype:'SiteGrid'}
+		,{iconCls: 'icon-organisation', title: 'Bsd Store Admin', xtype:'panel'}
+		,{iconCls: 'icon-organisation', title: 'Products', xtype:'panel'}
+		,{iconCls: 'icon-organisation', title: 'Users', xtype:'panel'}
     ]
 });

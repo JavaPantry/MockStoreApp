@@ -1,6 +1,6 @@
 Ext.define('QuotaKPI.view.Viewer', {
     extend: 'Ext.tab.Panel',
-    alias: 'widget.viewer',
+    alias: 'widget.rootViewer',
     title: 'QuotaKPI', activeItem: 0, margins: '1 1 1 1', cls: 'preview',
     iconCls: 'icon-chart',
     requires: [
@@ -17,7 +17,7 @@ var adminUser = false;
 
     ,initComponent: function() {
         this.items = [
-              		{iconCls: 'tabs', xtype:'QuotaView', title: 'Quota',disabled: !quotaUser 
+                		{iconCls: 'tabs', xtype:'QuotaView', title: 'Quota',disabled: !quotaUser 
             			,listeners: {
             	             activate: function(tab){
             	            	
@@ -81,7 +81,19 @@ var adminUser = false;
 		         }
 			,{iconCls: 'icon-organisation', xtype: 'ImportView', title: 'Import entities'}
 			,{iconCls: 'icon-organisation', xtype: 'ChartView', title: 'Charts'}
-			
+			,{iconCls: 'tabs', xtype:'SiteView', title: 'Bsd Store'//,disabled: !quotaUser 
+    			,listeners: {
+   	             activate: function(tab){
+		             var rootViewer = this.up('rootViewer');
+		             rootViewer.setTitle('BSD: Store list'); 
+   	            	 var theGrid = tab.down('SiteGrid');
+   	            	 var theStore = theGrid.store;
+   	            	 theStore.remoteSort = true;
+   	            	 theStore.remoteFilter = true;
+   	            	 theStore.load();
+   	            	 console.log('QuotaKPI.view.Viewer theStore='+theStore);
+   	             	}
+   			}}
 			];
         this.callParent(arguments);
     }

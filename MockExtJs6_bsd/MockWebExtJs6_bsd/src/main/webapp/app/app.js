@@ -1,6 +1,3 @@
-//extJs 6.0.1.x:Ext.Loader.setConfig({enabled: true});
-//extJs 6.0.1.x:Ext.Loader.setPath('Ext.ux', 'resources/js/extjs-4.2.1/ux');
-/* extJs 6.0.1.x:*/
 Ext.require([
     'Ext.grid.*',
     'Ext.data.*',
@@ -8,8 +5,6 @@ Ext.require([
     'Ext.state.*',
     'Ext.form.*',
     'Ext.QuickTips.*',
-    //'Ext.ux.CheckColumn',
-    //'Ext.ux.grid.FiltersFeature',
     'Ext.grid.filters.Filters',
     'Ext.toolbar.Toolbar',
     'Ext.toolbar.Paging'
@@ -83,17 +78,21 @@ Ext.application({
             'QuotaKPI.store.accounting.Quota',
             'QuotaKPI.store.accounting.Budget'
         ],
+
     // Define all the controllers that should initialize at boot up of your application
     controllers: [
         'ImportController'
         ,'accounting.ChartController'
         ,'accounting.AccountingController'
         ,'company.MaintenanceController'
+        ,'siteManagement.SiteManagementController'
     ],
+
     init: function(app){
     	//debugger;
 		//As a bad alternative to spring security Here you may set control flags isProductAccessible = isProductAccessible=='true'?false:true; 
 		////console.log('QuotaKPI app loaded controllers = '+controllers);    	
     },
+    
     autoCreateViewport: true
 });
