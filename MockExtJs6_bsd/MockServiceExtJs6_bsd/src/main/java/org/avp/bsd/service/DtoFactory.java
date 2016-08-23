@@ -5,12 +5,31 @@ import java.util.List;
 
 import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.dto.ProductDto;
+import org.avp.bsd.dto.StoreDto;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.Store;
 import org.avp.quota.kpi.util.BeanUtility;
 
 public class DtoFactory {
+
+	static public StoreDto createDtoFrom(Store entity){
+		StoreDto dto = null;
+		if(entity == null)
+			return dto;
+		dto = new StoreDto();
+		BeanUtility.nullSafeMergeTo(entity, dto, null);//new String[]{"+salesRepresentative","category"}
+		return dto;
+	}
+
+	public static List<StoreDto> createStoreDtoList(List<Store> entities) {
+		List<StoreDto> dtos = new ArrayList<StoreDto>();
+		for (Store entity : entities) {
+			dtos.add(DtoFactory.createDtoFrom(entity));
+		}
+		return dtos;
+	}
 
 	static public ProductDto createDtoFrom(Product entity){
 		ProductDto dto = null;

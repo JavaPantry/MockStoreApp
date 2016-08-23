@@ -9,12 +9,14 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.dto.ProductDto;
+import org.avp.bsd.dto.StoreDto;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.service.BsdService;
+import org.avp.bsd.service.DtoFactory;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.QuotaDao;
@@ -26,7 +28,6 @@ import org.avp.quota.kpi.model.dto.SalesRepresentativeDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.BeanUtility;
-import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
@@ -54,21 +55,45 @@ public class BsdController extends AbstractExtJsController {
 	@Autowired
 	protected BsdService bsdService;
 	
-	
-	
 	public BsdController() {}
 	
-
-	@RequestMapping(value={"/bsd/products"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/bsd/stores"}, method=RequestMethod.GET)
 	@ResponseBody
-	public ExtResponse findProducts(
-			@RequestParam(value="dealer", required=false) Integer dealerId,
+	public ExtResponse findStores(
 			@RequestParam(value="limit", required=false) Integer limit, 
 			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
 			@RequestParam(value="start", required=false) Integer start,
 			@RequestParam(value="sort", required=false) String sort,
-			@RequestParam(value="filter", required=false) String filter,
-			@RequestParam(value="summary", required=false) String summary
+			@RequestParam(value="filter", required=false) String filter
+			) {
+        ExtData response = new ExtData();
+        logger.debug("/bsd/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
+    	FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+    	SortParameter[] sortParameters = getSortFromJson(sort);;
+    	
+    	//TODO - <AP> do something with that Integer crap
+    	if(limit == null) limit=20;
+    	if(pageIndex == null) pageIndex=1;
+    	if(start == null) start=0;
+    	
+//		Page<Store> storePage = bsdService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
+//		List<Store> quotas = storePage.getContent();
+    	List<Store> stores = bsdService.getStores();
+    	List<StoreDto> storeDtos = DtoFactory.createStoreDtoList(stores);
+    	
+    	response.add(storeDtos);
+    	response.setTotal(storeDtos.size());
+        response.setSuccess(true);
+        return response;
+	}
+	@RequestMapping(value={"/bsd/products"}, method=RequestMethod.GET)
+	@ResponseBody
+	public ExtResponse findProducts(
+			@RequestParam(value="limit", required=false) Integer limit, 
+			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
+			@RequestParam(value="start", required=false) Integer start,
+			@RequestParam(value="sort", required=false) String sort,
+			@RequestParam(value="filter", required=false) String filter
 			) {
         ExtData response = new ExtData();
         logger.debug("/bsd/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
@@ -90,128 +115,14 @@ public class BsdController extends AbstractExtJsController {
         return response;
 	}
 	
-
-	@RequestMapping(value={"/angular/products"}, method=RequestMethod.GET)
-	@ResponseBody
-	public List<ProductDto> findProductsAngular(
-			HttpSession session,
-			@RequestParam(value="dealer", required=false) Integer dealerId,
-			@RequestParam(value="limit", required=false) Integer limit, 
-			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
-			@RequestParam(value="start", required=false) Integer start,
-			@RequestParam(value="sort", required=false) String sort,
-			@RequestParam(value="filter", required=false) String filter,
-			@RequestParam(value="summary", required=false) String summary
-			) {
-		BsdUser user = (BsdUser) session.getAttribute("appuser");
-		Store store = user.getStore();
-		
-		
-        logger.debug("/angular/products userName"+user.getUserId());
-        logger.debug("/angular/products store"+store.getStoreName());
-        
-        //FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
-    	//SortParameter[] sortParameters = getSortFromJson(sort);;
-    	
-    	//TODO - <AP> do something with that Integer crap
-    	if(limit == null) limit=20;
-    	if(pageIndex == null) pageIndex=1;
-    	if(start == null) start=0;
-    	
-//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
-//		List<QuotaDao> quotas = quotaDaoPage.getContent();
-    	
-    	Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();
-    	List<Product> products = new ArrayList<Product>();//bsdService.getProducts();
-    	for (ProductPriceInStore productPriceInStore : productsPriceInStore) {
-    		Product product = productPriceInStore.getPk().getProduct();
-    		products.add(product);
-    		logger.debug("/angular/products read "+product.getSku()+" product");
-            
-		}    	
-    	logger.debug("/angular/products read "+products.size()+" products");
-		List<ProductDto> productsDtos = org.avp.bsd.service.DtoFactory.createProductDtoList(products);
-
-//    	response.add(products);
-//    	response.setTotal(100);
-//      response.setSuccess(true);
-        return productsDtos;
-	}
-	
-	
-	@RequestMapping(value={"/angular/products/{id}"}, method=RequestMethod.GET)
-	@ResponseBody
-	public Product getProductAngular(@PathVariable String id ) {
-        logger.debug("/angular/products(id="+id+")");
-    	Product product = bsdService.getProduct(id);
-        return product;
-	}
-	
-	
-	/*
-	 * TODO - <AP> TBR request from AngularJs 
-	 * 
-	 * use angular/orders for request from Angular II
-	 */
-	@RequestMapping(value={"/bsd/orders"}, method=RequestMethod.GET)
-	@ResponseBody
-	public ExtResponse findOrders(
-			HttpSession session,
-			@RequestParam(value="dealer", required=false) Integer dealerId,
-			@RequestParam(value="limit", required=false) Integer limit, 
-			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
-			@RequestParam(value="start", required=false) Integer start,
-			@RequestParam(value="sort", required=false) String sort,
-			@RequestParam(value="filter", required=false) String filter,
-			@RequestParam(value="summary", required=false) String summary
-			) {
-        ExtData response = new ExtData();
-        logger.debug("/bsd/orders(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
-    	FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
-    	SortParameter[] sortParameters = getSortFromJson(sort);;
-    	
-    	//TODO - <AP> do something with that Integer crap
-    	if(limit == null) limit=20;
-    	if(pageIndex == null) pageIndex=1;
-    	if(start == null) start=0;
-    	
-//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
-//		List<QuotaDao> quotas = quotaDaoPage.getContent();
-    	List<OrderHeader> orders = bsdService.getOrderHeaders();
-    	response.add(orders);
-    	response.setTotal(100);
-        response.setSuccess(true);
-        return response;
-	}	
-	
-	@RequestMapping(value={"/angular/orders"}, method=RequestMethod.GET)
-	@ResponseBody
-	public List<OrderHeaderDto> getOrders(
-			HttpSession session,
-			@RequestParam(value="limit", required=false) Integer limit, 
-			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
-			@RequestParam(value="start", required=false) Integer start,
-			@RequestParam(value="sort", required=false) String sort,
-			@RequestParam(value="filter", required=false) String filter,
-			@RequestParam(value="summary", required=false) String summary
-			) {
-		BsdUser user = (BsdUser) session.getAttribute("appuser");
-		List<OrderHeader> orders = bsdService.getOrderHeadersByUser(user);
-    	List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
-        return orderDtos;
-	}	
-	
-	
 	@RequestMapping(value={"/bsd/products/dealer"}, method=RequestMethod.GET)
 	@ResponseBody
 	public ExtResponse findAjaxQuotas(
-			@RequestParam(value="dealer", required=false) Integer dealerId,
 			@RequestParam(value="limit", required=false) Integer limit, 
 			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
 			@RequestParam(value="start", required=false) Integer start,
 			@RequestParam(value="sort", required=false) String sort,
-			@RequestParam(value="filter", required=false) String filter,
-			@RequestParam(value="summary", required=false) String summary
+			@RequestParam(value="filter", required=false) String filter
 			) {
         ExtData response = new ExtData();
         logger.debug("/bsd/products/dealer(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
@@ -232,7 +143,4 @@ public class BsdController extends AbstractExtJsController {
         response.setSuccess(true);
         return response;
 	}
-	
-
-	
 }

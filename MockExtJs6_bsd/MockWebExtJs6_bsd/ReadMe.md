@@ -6,11 +6,19 @@
 
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 3. TODO - <AP>: later need to build separate org/avp/security jar project
+4. TODO rename BsdController to ?_BsdSiteManagementController?_ 
+5. TODO rename BsdClientController to ?_BsdClientUIController?_
 
 
 ---
 ### August 23
 
+---
+committed
+
+- Extract angular requests from BsdController to BsdClientController
+- implement server side @RequestMapping(value={"/bsd/stores"}, method=RequestMethod.GET)
+- implement browser side basic grid/model/store/controller 
 
 ---
 committed

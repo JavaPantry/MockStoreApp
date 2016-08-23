@@ -15,8 +15,10 @@ Ext.define('QuotaKPI.view.siteManagement.SiteGrid', {
     ,columnLines: true
     ,store: 'siteManagement.Site'
 
-	,columns: [  {header     : 'Id'			, dataIndex: 'id'}
-				,{header     : 'SalesRep Id', sortable: true,dataIndex: 'salesRepresentative.salesRepresentativeId',width:70}
+	,columns: [ {header     : 'Id',					dataIndex: 'id'},
+			    {header     : 'storeName',			dataIndex: 'storeName'},
+			    {header     : 'clientName',			dataIndex: 'clientName'},
+			    {header     : 'storeDescription',	dataIndex: 'storeDescription'}
 	]
 
 	,dockedItems : [/*{xtype: 'toolbar',dock: 'top',

@@ -12,10 +12,10 @@ Ext.define('QuotaKPI.store.siteManagement.Site', {
 
     proxy: {
         type: 'ajax',
-        api: {read	: 'ajax/quotas'
-        	,update : 'ajax/quotas/update'
+        api: {read	: 'bsd/stores'
+        	/*,update : 'ajax/quotas/update'
             ,create : 'ajax/quotas/create'
-            ,destroy: 'ajax/quotas/delete'},
+            ,destroy: 'ajax/quotas/delete'*/},
         reader: {type: 'json',
 	            rootProperty: 'data',
 	            successProperty: 'success',
