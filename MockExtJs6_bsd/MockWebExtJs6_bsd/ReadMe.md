@@ -11,7 +11,12 @@
 ---
 ### August 23
 
-- TODO ExtJs SiteAdmin and StoreAdmin page (myself for now)   
+
+---
+committed
+
+- Add Draft Bsd Site Viewer with SiteGrid (no server requests for data)
+- ExtJs SiteAdmin and StoreAdmin page (myself for now)   
 - Very draft look&feel 
 
 ![SiteOrStoreAdminUI](Documents/SiteOrStoreAdminUI.PNG)
