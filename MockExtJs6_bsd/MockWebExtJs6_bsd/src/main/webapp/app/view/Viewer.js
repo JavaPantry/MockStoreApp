@@ -1,6 +1,6 @@
 Ext.define('QuotaKPI.view.Viewer', {
     extend: 'Ext.tab.Panel',
-    alias: 'widget.rootViewer',
+    alias: 'widget.viewer',
     title: 'QuotaKPI', activeItem: 0, margins: '1 1 1 1', cls: 'preview',
     iconCls: 'icon-chart',
     requires: [

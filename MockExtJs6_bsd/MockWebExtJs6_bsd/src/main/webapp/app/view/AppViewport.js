@@ -29,7 +29,7 @@ Ext.define('QuotaKPI.view.AppViewport', {
 	},
     {
         region: 'center',
-        xtype: 'rootViewer'
+        xtype: 'viewer'
     }
     ]
 });
