@@ -3,6 +3,7 @@ package org.avp.bsd.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.avp.bsd.dto.BsdUserDto;
 import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.dto.ProductDto;
 import org.avp.bsd.dto.StoreDto;
@@ -14,6 +15,24 @@ import org.avp.quota.kpi.util.BeanUtility;
 
 public class DtoFactory {
 
+	static public BsdUserDto createDtoFrom(BsdUser entity){
+		BsdUserDto dto = null;
+		if(entity == null)
+			return dto;
+		dto = new BsdUserDto();
+		BeanUtility.nullSafeMergeTo(entity, dto, null);//new String[]{"+salesRepresentative","category"}
+		dto.setStore(createDtoFrom(entity.getStore()));
+		return dto;
+	}
+
+	public static List<BsdUserDto> createBsdUserDtoList(List<BsdUser> entities) {
+		List<BsdUserDto> dtos = new ArrayList<BsdUserDto>();
+		for (BsdUser entity : entities) {
+			dtos.add(DtoFactory.createDtoFrom(entity));
+		}
+		return dtos;
+	}
+	
 	static public StoreDto createDtoFrom(Store entity){
 		StoreDto dto = null;
 		if(entity == null)

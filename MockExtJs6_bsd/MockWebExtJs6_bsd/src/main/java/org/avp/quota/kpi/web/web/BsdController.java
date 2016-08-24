@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.avp.bsd.dto.BsdUserDto;
 import org.avp.bsd.dto.OrderHeaderDto;
 import org.avp.bsd.dto.ProductDto;
 import org.avp.bsd.dto.StoreDto;
@@ -33,6 +34,7 @@ import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.web.web.MaintenanceController.SalesRepTocLink;
 import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.sporcic.extjs.ExtData;
 import org.sporcic.extjs.ExtResponse;
@@ -54,6 +56,9 @@ public class BsdController extends AbstractExtJsController {
 	
 	@Autowired
 	protected BsdService bsdService;
+	
+	@Autowired
+	protected CustomUserService userService;
 	
 	public BsdController() {}
 	
@@ -109,8 +114,39 @@ public class BsdController extends AbstractExtJsController {
 //		List<QuotaDao> quotas = quotaDaoPage.getContent();
     	
     	List<Product> products = bsdService.getProducts();
-    	response.add(products);
+    	List<ProductDto> productDtos = DtoFactory.createProductDtoList(products);
+    	response.add(productDtos);
     	response.setTotal(100);
+        response.setSuccess(true);
+        return response;
+	}
+
+	@RequestMapping(value={"/bsd/users"}, method=RequestMethod.GET)
+	@ResponseBody
+	public ExtResponse findUsers(
+			@RequestParam(value="limit", required=false) Integer limit, 
+			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
+			@RequestParam(value="start", required=false) Integer start,
+			@RequestParam(value="sort", required=false) String sort,
+			@RequestParam(value="filter", required=false) String filter
+			) {
+        ExtData response = new ExtData();
+        logger.debug("/users(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
+    	FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+    	SortParameter[] sortParameters = getSortFromJson(sort);;
+    	
+    	//TODO - <AP> do something with that Integer crap
+    	if(limit == null) limit=20;
+    	if(pageIndex == null) pageIndex=1;
+    	if(start == null) start=0;
+    	
+//		Page<Store> storePage = bsdService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
+//		List<Store> quotas = storePage.getContent();
+    	List<BsdUser> users = bsdService.getBsdUsers();//userService.getDomainUsers();
+    	List<BsdUserDto> bsdUserDtos = DtoFactory.createBsdUserDtoList(users);
+    	
+    	response.add(bsdUserDtos);
+    	response.setTotal(bsdUserDtos.size());
         response.setSuccess(true);
         return response;
 	}

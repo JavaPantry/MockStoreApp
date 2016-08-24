@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface BsdService {
 
+	public List<BsdUser> getBsdUsers();
 	public List<Address> getAddresses();
 	public List<Product> getProducts();
 	public Product getProduct(String id);

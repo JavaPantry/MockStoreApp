@@ -9,15 +9,17 @@
  * summary	false
  */
 
-Ext.define('QuotaKPI.view.siteManagement.ProductGrid', {
+Ext.define('QuotaKPI.view.siteManagement.BsdUserGrid', {
 	extend: 'Ext.grid.Panel'
-	,xtype: 'ProductGrid'
+	,xtype: 'BsdUserGrid'
     ,columnLines: true
-    ,store: 'siteManagement.Product'
-	,columns: [ {header     : 'sku',					dataIndex: 'sku'}
-			    ,{header     : 'Product Name',			dataIndex: 'EProductName'}
-			    ,{header     : 'Product Description',			dataIndex: 'EProductDescription'}
-	]
+    ,store: 'siteManagement.BsdUser'
+	,columns: [ {header     : 'id',					dataIndex: 'id'}
+			    ,{header     : 'userId',			dataIndex: 'userId'}
+			    ,{header     : 'firstName',			dataIndex: 'firstName'}
+			    ,{header     : 'lastName',			dataIndex: 'lastName'}
+			    ,{header     : 'email',			dataIndex: ''}
+			    ]
 
 	,dockedItems : [/*{xtype: 'toolbar',dock: 'top',
 							    items: [//{iconCls: 'icon-save',		itemId: 'quotaDetailSave',text: 'Save',action: 'quotaDetailSave'}

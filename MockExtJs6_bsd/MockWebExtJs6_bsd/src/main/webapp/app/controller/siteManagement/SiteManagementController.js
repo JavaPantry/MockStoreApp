@@ -3,11 +3,13 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 
     stores: ['siteManagement.Site'
              ,'siteManagement.Product'
+             ,'siteManagement.BsdUser'
              ],
     models: ['siteManagement.SiteModel'],
     views: ['siteManagement.SiteView'
             ,'siteManagement.SiteGrid'
             ,'siteManagement.ProductGrid'
+            ,'siteManagement.BsdUserGrid'
             ],
     refs: [  {ref: 'SiteView',		selector: 'SiteView'}
 			,{ref: 'SiteGrid',		selector: 'SiteGrid'}

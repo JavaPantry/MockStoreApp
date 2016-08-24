@@ -18,7 +18,8 @@
 
 ### August 23
 
-- Continue to work on extJs's ProductGrid 
+- Continue to work on extJs's ProductGrid
+- add activation listeners to ProductGrid and SiteGrid 
 
 ---
 ### August 23

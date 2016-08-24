@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.avp.bsd.model.Address;
+import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.repository.AddressRepository;
+import org.avp.bsd.repository.BsdUserRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
 import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
@@ -26,6 +28,14 @@ public class BsdServiceImpl implements BsdService {
 	
 	@Autowired
 	private CustomUserService userService;
+
+	@Autowired
+	private BsdUserRepository bsdUserRepository;
+	
+	@Transactional(readOnly=true)
+	public List<BsdUser> getBsdUsers(){
+		return bsdUserRepository.findAll();
+	}
 	
 	@Autowired
 	private AddressRepository addressRepository;

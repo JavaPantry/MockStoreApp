@@ -1,7 +1,7 @@
-Ext.define('QuotaKPI.store.siteManagement.Product', {
+Ext.define('QuotaKPI.store.siteManagement.BsdUser', {
     extend: 'Ext.data.Store',
-    model: 'QuotaKPI.model.siteManagement.SiteModel',
-    storeId: 'siteManagement.Product',
+    model: 'QuotaKPI.model.siteManagement.BsdUserModel',
+    storeId: 'siteManagement.BsdUser',
     autoLoad: false,
     pageSize: 20,
     remoteSort: false,
@@ -9,7 +9,7 @@ Ext.define('QuotaKPI.store.siteManagement.Product', {
 
     proxy: {
         type: 'ajax',
-        api: {read	: 'bsd/products'
+        api: {read	: 'bsd/users'
         	/*,update : 'ajax/quotas/update'
             ,create : 'ajax/quotas/create'
             ,destroy: 'ajax/quotas/delete'*/},
