@@ -64,7 +64,7 @@ public class BeanUtility {
 			Set<String> keys = srcPropertyMap.keySet();
 			for (Iterator iterator = keys.iterator(); iterator.hasNext();) {
 				String key = (String) iterator.next();
-				//logger.debug("key = "+key);
+				logger.debug("key = "+key);
 				if(ArrayUtils.contains(exludeProperties,key))
 					continue;
 				if(!dstPropertyMap.containsKey(key))

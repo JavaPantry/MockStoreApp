@@ -18,6 +18,15 @@
 
 ### August 23
 
+---
+committed
+
+- Fix error `type mismatch` in `BsdUserDto dtoFactory.createDtoFrom(BsdUser entity)`
+- implement server side @RequestMapping(value={"/bsd/users"}, method=RequestMethod.GET)
+
+---
+committed
+
 - Continue to work on extJs's ProductGrid
 - add activation listeners to ProductGrid and SiteGrid 
 

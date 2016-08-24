@@ -6,7 +6,7 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
    	             activate: function(tab){
  	            	
 		            var rootViewer = this.up('rootViewer');
-		            rootViewer.setTitle('Store list'); 
+		            rootViewer.setTitle('Stores list'); 
  	            	var theGrid = tab;
  	            	var theStore = theGrid.store;//theStore.remoteSort = true;//theStore.remoteFilter = true;
  	            	theStore.load();
@@ -24,7 +24,7 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
 		,{iconCls: 'icon-organisation', title: 'Users', xtype:'BsdUserGrid',listeners: {
 	             activate: function(tab){
 			            var rootViewer = this.up('rootViewer');
-			            rootViewer.setTitle('Products list'); 
+			            rootViewer.setTitle('Users list'); 
 	 	            	var theGrid = tab;
 	 	            	var theStore = theGrid.store;
 	 	            	theStore.load();

@@ -20,7 +20,7 @@ public class DtoFactory {
 		if(entity == null)
 			return dto;
 		dto = new BsdUserDto();
-		BeanUtility.nullSafeMergeTo(entity, dto, null);//new String[]{"+salesRepresentative","category"}
+		BeanUtility.nullSafeMergeTo(entity, dto, new String[]{"+store", "orders"});//new String[]{"+salesRepresentative","category"}
 		dto.setStore(createDtoFrom(entity.getStore()));
 		return dto;
 	}
