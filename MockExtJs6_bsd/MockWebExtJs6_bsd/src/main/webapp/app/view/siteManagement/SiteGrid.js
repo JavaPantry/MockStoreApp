@@ -15,7 +15,7 @@ Ext.define('QuotaKPI.view.siteManagement.SiteGrid', {
     ,columnLines: true
     ,store: 'siteManagement.Site'
 
-	,columns: [ {header     : 'Id',					dataIndex: 'id'},
+	,columns: [ //{header     : 'Id',					dataIndex: 'id'},
 			    {header     : 'storeName',			dataIndex: 'storeName'},
 			    {header     : 'clientName',			dataIndex: 'clientName'},
 			    {header     : 'storeDescription',	dataIndex: 'storeDescription'}
