@@ -3,8 +3,8 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
     alias : 'widget.SiteView',
     items:[	
 		{iconCls: 'icon-organisation', title: 'Bsd Site Admin', xtype:'SiteGrid'}
+		,{iconCls: 'icon-organisation', title: 'Products', xtype:'ProductGrid'}
 		,{iconCls: 'icon-organisation', title: 'Bsd Store Admin', xtype:'panel'}
-		,{iconCls: 'icon-organisation', title: 'Products', xtype:'panel'}
 		,{iconCls: 'icon-organisation', title: 'Users', xtype:'panel'}
     ]
 });

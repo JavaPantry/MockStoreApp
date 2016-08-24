@@ -13,6 +13,14 @@
 ---
 ### August 23
 
+- Introduce ProductGrid
+
+	Error in `if (!column.processed && column.locked) in`
+
+	if (!column.processed && column.locked) {
+	                return true;
+	            } 
+
 ---
 committed
 
