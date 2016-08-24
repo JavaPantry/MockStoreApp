@@ -2,12 +2,12 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     extend: 'Ext.app.Controller',
 
     stores: ['siteManagement.Site'
-             //, 'siteManagement.Product'
+             ,'siteManagement.Product'
              ],
     models: ['siteManagement.SiteModel'],
     views: ['siteManagement.SiteView'
             ,'siteManagement.SiteGrid'
-            //,'siteManagement.ProductGrid'
+            ,'siteManagement.ProductGrid'
             ],
     refs: [  {ref: 'SiteView',		selector: 'SiteView'}
 			,{ref: 'SiteGrid',		selector: 'SiteGrid'}
@@ -20,8 +20,6 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 //        	'QuotaGrid button[action=quotaDetailCreate]'	:	{click: this.quotaDetailCreate}
         });
     }
-
-    
 });
 
 

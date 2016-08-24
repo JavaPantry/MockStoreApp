@@ -1,4 +1,7 @@
-## TODOs 
+# Mock project
+---
+
+### TODOs 
 
 1. TODO - <AP>: Switch from gson to jackson
 
@@ -6,9 +9,16 @@
 
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 3. TODO - <AP>: later need to build separate org/avp/security jar project
-4. TODO rename BsdController to ?_BsdSiteManagementController?_ 
-5. TODO rename BsdClientController to ?_BsdClientUIController?_
+4. TODO - <AP>: rename BsdController to ?_BsdSiteManagementController?_ 
+5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 
+---
+
+## Work flow
+
+### August 23
+
+- Continue to work on extJs's ProductGrid 
 
 ---
 ### August 23
@@ -16,7 +26,6 @@
 - Introduce ProductGrid
 
 	Error in `if (!column.processed && column.locked) in`
-
 	if (!column.processed && column.locked) {
 	                return true;
 	            } 

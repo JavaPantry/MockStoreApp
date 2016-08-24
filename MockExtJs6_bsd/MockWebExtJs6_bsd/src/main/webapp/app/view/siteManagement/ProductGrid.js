@@ -16,7 +16,7 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGrid', {
     ,store: 'siteManagement.Product'
 
 	,columns: [ //{header     : 'sku',					dataIndex: 'sku'}
-	            {header     : 'Id',					dataIndex: 'id'},
+	            {header     : 'Id',					dataIndex: 'id'}
 			    ,{header     : 'storeName',			dataIndex: 'storeName'}
 			    ,{header     : 'clientName',			dataIndex: 'clientName'}
 			    ,{header     : 'storeDescription',	dataIndex: 'storeDescription'}
