@@ -19,8 +19,10 @@
 
 ### August 23
 
-
 AngularII merged to master
+
+- safe to switch back to master
+
 ---
 committed
 
