@@ -27,10 +27,14 @@ import org.avp.quota.kpi.web.service.CustomUserDetailsContextMapper;
 //don't need if Windows defined groups are used
 
 /**
+ * On Aug 8 added angular user
+ * app.auth.adminGroupAngular=ROLE_QuotaKPI_ADMIN_ANGULAR
+ * 
  * Existing groups:
  * 	app.auth.userGroup=QuotaKPI_USER  - TBR
  * 	app.auth.adminGroup=QuotaKPI_ADMIN
- * 
+ *  
+ *  
  * On Jan 19 add new groups:
  * 	app.auth.quotaGroup=QuotaKPI_QUOTA
  * 	app.auth.budgetGroup=QuotaKPI_BUDGET
@@ -81,6 +85,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${app.auth.adminGroup}")
 	private String adminGroup;
 	
+	//app.auth.adminGroupAngular=ROLE_QuotaKPI_ADMIN_ANGULAR
+	@Value("${app.auth.adminGroupAngular}")
+	private String adminGroupAngular;
+
+	
 	@Value("${app.auth.quotaGroup}")
 	private String quotaGroup;
 	@Value("${app.auth.budgetGroup}")
@@ -96,8 +105,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	CustomUserDetailsContextMapper customUserDetailsContextMapper;
 	*/
-	/*@Autowired
-	CustomUserService customUserService;*/
+	
+	/*	
+	 	This service autowired by service name and/or implemented interface
+	 	@Service("userDetailsService")
+		@Transactional
+		public class CustomUserService implements UserDetailsService
+	 */
 	@Autowired 
 	private UserDetailsService userDetailsService;
 
@@ -105,11 +119,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		logger.debug("configure(HttpSecurity "+http+")");
 		http.authorizeRequests()
-				.antMatchers("/","/exthome","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
-				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, "ROLE_BSD_DEALER")
-				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup)
-				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup)
-				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup)
+				.antMatchers("/","/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
+				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, "ROLE_BSD_DEALER",adminGroupAngular)
+				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
+				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
+				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				//jan 19 .antMatchers( "/ajax/**").permitAll()
 				//.antMatchers( "/ajax/users/**").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
@@ -145,6 +159,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 	
+	/*
+	 * TODO - <AP> TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 	@Bean
 	public AuthenticationProvider customAuthenticationProvider() {
 		AuthenticationProvider customAuthenticationProvider = new AbstractUserDetailsAuthenticationProvider() {
@@ -165,7 +181,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			}
 		};
 		return customAuthenticationProvider;
-	}
+	}*/
 
 	/** 
 	 * commented out Thursday, April 21, 2016

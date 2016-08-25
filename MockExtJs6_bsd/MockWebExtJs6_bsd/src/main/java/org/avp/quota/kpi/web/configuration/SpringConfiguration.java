@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@ComponentScan(basePackages={"org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.bsd.service"})
+@ComponentScan(basePackages={"org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.bsd.service","org.avp.security.service"})
 
 //exlude: 
 //TomcatDataServiceBsdModuleConfiguration.class from at.Import

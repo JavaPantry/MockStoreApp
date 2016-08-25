@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * This is web-app replica of UserDao. Represents currently logged-in user. Filled by CustomUserDetailsContextMapper
  * TODO - <AP> add List of org.springframework.security.core.authority.SimpleGrantedAuthority
- * 
+ * TODO - <AP> This class TBR
  * @author Q05459
  *
  */

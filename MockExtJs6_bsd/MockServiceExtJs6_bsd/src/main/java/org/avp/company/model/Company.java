@@ -25,6 +25,7 @@ public class Company extends Named {
 	 *
 	 * class BillTo{
 	 *		@ManyToOne
+	 *		@JoinColumn(name="companyId")
 	 *		private Company company;
 	 * }
 	 *

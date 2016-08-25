@@ -7,13 +7,16 @@ import org.avp.bsd.model.Address;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.repository.AddressRepository;
 import org.avp.bsd.repository.BsdUserRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
+import org.avp.bsd.repository.ProductPriceInStoreRepository;
 import org.avp.bsd.repository.ProductRepository;
 import org.avp.bsd.repository.StoreRepository;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,14 +27,16 @@ public class BsdServiceImpl implements BsdService {
 	private static Logger logger = Logger.getLogger(BsdServiceImpl.class);
 	
 	@Autowired
+	private CustomUserService userService;
+
+	@Autowired
 	private BsdUserRepository bsdUserRepository;
-	
 	
 	@Transactional(readOnly=true)
 	public List<BsdUser> getBsdUsers(){
 		return bsdUserRepository.findAll();
 	}
-
+	
 	@Autowired
 	private AddressRepository addressRepository;
 	
@@ -40,13 +45,17 @@ public class BsdServiceImpl implements BsdService {
 		return addressRepository.findAll();
 	}
 	
-	
 	@Autowired
 	private OrderHeaderRepository orderHeaderRepository;
 	
 	@Transactional(readOnly=true)
 	public List<OrderHeader> getOrderHeaders(){
 		return orderHeaderRepository.findAll();
+	}
+	
+	@Transactional(readOnly=true)
+	public List<OrderHeader> getOrderHeadersByUser(User user){
+		return orderHeaderRepository.findByUser(user);
 	}
 	
 	@Transactional()
@@ -61,6 +70,19 @@ public class BsdServiceImpl implements BsdService {
 	public List<Store> getStores(){
 		return storeHeaderRepository.findAll();
 	}
+
+	@Transactional()
+	public void save(Store store){
+		storeHeaderRepository.save(store);
+	}
+
+	@Autowired
+	private ProductPriceInStoreRepository productPriceInStoreRepository;
+	
+	public void save(ProductPriceInStore productPriceInStore){
+		productPriceInStoreRepository.save(productPriceInStore);
+	}
+
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -70,9 +92,15 @@ public class BsdServiceImpl implements BsdService {
 		return productRepository.findAll();
 	}
 	
+	@Transactional(readOnly=true)
+	public Product getProduct(String id){
+		return productRepository.findOne(id);
+	}	
+	
 	@Transactional()
 	public void save(Product product){
 		productRepository.save(product);
 	}
+	
 	
 }

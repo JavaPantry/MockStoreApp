@@ -13,21 +13,19 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
 import org.avp.quota.kpi.model.dao.ProductLine;
 import org.avp.quota.kpi.model.dao.QuotaDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.EmployeeDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.model.dto.TotalDto;
-import org.avp.quota.kpi.repository.IAuthoritiesRepository;
 import org.avp.quota.kpi.repository.IBudgetRepository;
 import org.avp.quota.kpi.repository.ICategoryRepository;
 import org.avp.quota.kpi.repository.IEmployeeRepository;
@@ -36,16 +34,15 @@ import org.avp.quota.kpi.repository.IQuotaRepository;
 import org.avp.quota.kpi.repository.ISalesRepEmployeeJoinRepository;
 import org.avp.quota.kpi.repository.ISalesRepresentativeRepository;
 import org.avp.quota.kpi.repository.ITocRepository;
-import org.avp.quota.kpi.repository.IUserRepository;
 import org.avp.quota.kpi.repository.searchspec.SearchCriteriaUtility;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
-import org.avp.quota.kpi.util.CollectionUtility;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.FilterOperator;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
-import org.avp.quota.kpi.util.FilterType;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
+import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -68,15 +65,11 @@ public class QuotaServiceImpl implements QuotaService {
 	private IBudgetRepository budgetRepository;
 	
 	@Autowired
-	private IUserRepository userRepository;
-	
-	@Autowired
-	private IAuthoritiesRepository authoritiesRepository;
-	
-	
-	@Autowired
 	private IEmployeeRepository employeeRepository;
 	
+	@Autowired
+	private CustomUserService userService; 
+
 	@Autowired
 	private ITocRepository tocRepository;
 	@Autowired
@@ -115,15 +108,8 @@ public class QuotaServiceImpl implements QuotaService {
 		salesRepresentativeRepository.delete(salesRepresentativeId);
 	}
 	
-	@Transactional()
-	public void save(UserDao user){
-		userRepository.save(user);
-	}
 	
-	@Transactional()
-	public void save(AuthoritiesDao authoritiy){
-		authoritiesRepository.save(authoritiy);
-	}
+
 	
 	@Transactional()
 	public void save(ProductLine line){
@@ -645,9 +631,9 @@ public class QuotaServiceImpl implements QuotaService {
 	
 	
 	@Transactional(readOnly=true)
-	public List<UserDao> getUsers(){
-		List<UserDao> userDaoList = userRepository.findAll();//SearchCriteriaUtility.findAdminUsers()			
-		return userDaoList;
+	public List<User> getUsers(){
+		List<User> users = userService.getDomainUsers();//.findAll();//SearchCriteriaUtility.findAdminUsers()			
+		return users;
 	}
 
 	@Transactional(readOnly=true)
@@ -703,11 +689,10 @@ public class QuotaServiceImpl implements QuotaService {
 		return tocDaoList;
 	}
 	
+	//TODO - <AP>: TBR
 	@Transactional(readOnly=true)
-	public UserDao getUserById(String userId) {
-//		Collection<UserDao> userDaoList = userRepository.findAll(SearchCriteriaUtility.findUserById(userId));
-//		return CollectionUtility.toList(userDaoList).get(0);
-		UserDao userDao = userRepository.findOne(SearchCriteriaUtility.findUserById(userId));
+	public QuotaUser getUserById(String userId) {
+		QuotaUser userDao = (QuotaUser) userService.getDomainUser(userId);
 		return userDao;
 	}
 	@Transactional(readOnly=true)

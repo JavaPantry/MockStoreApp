@@ -16,7 +16,7 @@ import org.avp.quota.kpi.model.dao.EmployeeDao;
 import org.avp.quota.kpi.model.dao.QuotaDao;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.util.GeneralUtil;
@@ -51,10 +51,10 @@ public final class SearchCriteriaUtility {
 		};
 	}*/	
 
-	public static Specification<UserDao> findUserById(final String userId) {
-		return new Specification<UserDao>() {
+	public static Specification<QuotaUser> findUserById(final String userId) {
+		return new Specification<QuotaUser>() {
 			@Override
-			public Predicate toPredicate(Root<UserDao> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+			public Predicate toPredicate(Root<QuotaUser> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 				Predicate userIdPredicate = cb.equal(root.<String>get(FIELD_USER_ID), userId.trim());
 				return cb.and(userIdPredicate);
 			}

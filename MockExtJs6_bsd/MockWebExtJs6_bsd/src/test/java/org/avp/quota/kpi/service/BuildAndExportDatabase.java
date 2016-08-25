@@ -10,17 +10,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
+import org.avp.bsd.dto.OrderHeaderDto;
+import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
+import org.avp.bsd.model.Store;
+import org.avp.bsd.model.StoreProductPK;
 import org.avp.bsd.service.BsdService;
 import org.avp.quota.kpi.configuration.HsqlJUnitDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.JbossTestDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfiguration;
-import org.avp.quota.kpi.model.dao.AuthoritiesDao;
+import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfigurationForBuild;
 import org.avp.quota.kpi.model.dao.BudgetDao;
 import org.avp.quota.kpi.model.dao.CategoryDao;
 import org.avp.quota.kpi.model.dao.EmployeeDao;
@@ -30,13 +36,16 @@ import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.avp.quota.kpi.model.dao.SalesRepEmployeePK;
 import org.avp.quota.kpi.model.dao.SalesRepresentativeDao;
 import org.avp.quota.kpi.model.dao.TocDao;
-import org.avp.quota.kpi.model.dao.UserDao;
+import org.avp.quota.kpi.model.dao.QuotaUser;
 import org.avp.quota.kpi.model.dto.BudgetDto;
 import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.GsonUtil;
+import org.avp.security.model.Authority;
+import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.DatabaseSequenceFilter;
@@ -67,8 +76,14 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /*
+ * To run BuildAndExportDatabase with tomcat/mysql use ActiveProfiles("Tomcat") 
+ * NOTE: To really build database from scratch change in TomcatDataServiceModuleConfiguration.java 
+ * set BULD_DATABASE constant to true
+ * 
  * See DbUnit maven plugin
  * http://mojo.codehaus.org/dbunit-maven-plugin/index.html
  * Use http://mvnrepository.com/artifact/org.codehaus.mojo/dbunit-maven-plugin/1.0-beta-3
@@ -121,19 +136,17 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 						})
 
 /*
- * to run BuildAndExportDatabase with tomcat/mysql use ActiveProfiles("Tomcat") 
- * NOTE: change in TomcatDataServiceModuleConfiguration.java 
- * properties.setProperty("hibernate.hbm2ddl.auto", "create");//"create","validate"
  */
 
 //@ActiveProfiles("JBossTest")
 //@ContextConfiguration(classes = {JbossTestDataServiceModuleConfiguration.class})
-
-@ActiveProfiles("Tomcat")
-@ContextConfiguration(classes = {TomcatDataServiceModuleConfiguration.class})
-
+//@ContextConfiguration(classes = {{TomcatDataServiceModuleConfiguration.class})
 //@ActiveProfiles("HSQL_JUNIT")
 //@ContextConfiguration(classes = {HsqlJUnitDataServiceModuleConfiguration.class})
+
+@ActiveProfiles("Tomcat")
+@ContextConfiguration(classes = {TomcatDataServiceModuleConfigurationForBuild.class})
+
 
 public class BuildAndExportDatabase {
 	private static Logger logger = Logger.getLogger(BuildAndExportDatabase.class);
@@ -148,6 +161,8 @@ public class BuildAndExportDatabase {
 	@Autowired
 	BsdService bsdService;
 
+	@Autowired
+	CustomUserService userService;
 	/*
 	 * org.springframework.beans.factory.BeanCreationException: 
 	 * Error creating bean with name 'org.avp.quota.kpi.service.BuildAndExportDatabase': 
@@ -168,24 +183,98 @@ public class BuildAndExportDatabase {
 	@Test
 	public void arunSetup(){
 		
-		setupUsers();
+		setupQuotaUsers();
 		setupQuotaKPI();
 		setupBsd();		
 		logger.debug("setup completed.");
 	}
+	
 	private void setupBsd() {
-		Product product1 = new Product("tst","test product","test product (fr)");
-		bsdService.save(product1);
-		Product product2 = new Product("tst1","test product 1","test product 1 (fr)");
-		bsdService.save(product2);
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
-		OrderHeader order = new OrderHeader(1L, 1L, 1L, "Alexei", "Ptitchkin", "ptit@gmail.com",	new Date());
-		bsdService.save(order);
-		OrderHeader order1 = new OrderHeader(2L, 1L, 1L, "Bohdan", "Valentovic", "bohd@gmail.com",	new Date());
-		bsdService.save(order1);
-		OrderHeader order2 = new OrderHeader(3L, 1L, 1L, "Hong", "Li", "hong@gmail.com",	new Date());
-		bsdService.save(order2);
+		Store store = new Store("MissisaugaStore",
+				"Tim Adams", "store in Missisauga", true/*Boolean attSecurity*/,
+				"en", "clientLogo.gif");
+		bsdService.save(store);
+
+		Store storeHq = new Store("HQStore",
+				"Hong Li", "Head Quotar store", true/*Boolean attSecurity*/,
+				"en", "clientLogo.gif");
+		bsdService.save(storeHq);
+
+		
+		BsdUser bsdUser = new BsdUser();
+		bsdUser.setUserId("Tim Adams");
+		bsdUser.setFirstName("Tim");
+		bsdUser.setLastName("Adams");
+		bsdUser.setPassword(passwordEncoder.encode("password"));
+		bsdUser.setEmail("timAdams@gmail.com");
+		bsdUser.setStore(store);
+		userService.save(bsdUser);
+		
+		Authority bsdUserAuthoritiy = new Authority();
+		bsdUserAuthoritiy.setUser(bsdUser);
+		bsdUserAuthoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(bsdUserAuthoritiy);
+		
+		BsdUser bsdUser2 = new BsdUser();
+		bsdUser2.setUserId("Hong Li");
+		bsdUser2.setFirstName("Hong");
+		bsdUser2.setLastName("Li");
+		bsdUser2.setPassword(passwordEncoder.encode("password"));
+		bsdUser2.setEmail("hongLi@gmail.com");
+		bsdUser2.setStore(storeHq);
+		userService.save(bsdUser2);
+		
+		Authority bsdUser2Authoritiy = new Authority();
+		bsdUser2Authoritiy.setUser(bsdUser2);
+		bsdUser2Authoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(bsdUser2Authoritiy);
+		
+		
+		
+		Product product1 = new Product("tst1","test product","test product (fr)");
+		bsdService.save(product1);
+		Product product2 = new Product("tst2","test product 1","test product 1 (fr)");
+		bsdService.save(product2);
+		Product product3 = new Product("tst3","test product 1","test product 1 (fr)");
+		bsdService.save(product3);
+		Product product4 = new Product("tst4","test product 1","test product 1 (fr)");
+		bsdService.save(product4);
+		Product product5 = new Product("tst5","test product 1","test product 1 (fr)");
+		bsdService.save(product5);
+		Product product6 = new Product("tst6","test product 1","test product 1 (fr)");
+		bsdService.save(product6);
+		Product product7 = new Product("tst7","test product 1","test product 1 (fr)");
+		bsdService.save(product7);
+		
+		ProductPriceInStore productPriceInStore1 = new ProductPriceInStore(new StoreProductPK(store, product1), 9.99, 15.99, new Date());
+		bsdService.save(productPriceInStore1);
+		ProductPriceInStore productPriceInStore2 = new ProductPriceInStore(new StoreProductPK(store, product2), 6.99, 5.99, new Date());
+		bsdService.save(productPriceInStore2);
+		ProductPriceInStore productPriceInStore3 = new ProductPriceInStore(new StoreProductPK(store, product3), 136.99, 136.99, new Date());
+		bsdService.save(productPriceInStore3);
+		ProductPriceInStore productPriceInStore4 = new ProductPriceInStore(new StoreProductPK(store, product4), 16.99, 15.66, new Date());
+		bsdService.save(productPriceInStore4);
+		ProductPriceInStore productPriceInStore5 = new ProductPriceInStore(new StoreProductPK(store, product5), 16.99, 15.89, new Date());
+		bsdService.save(productPriceInStore5);
+
+		//storeHq
+		ProductPriceInStore productPriceInStore6 = new ProductPriceInStore(new StoreProductPK(storeHq, product6), 9.99, 8.99, new Date());
+		bsdService.save(productPriceInStore6);
+		ProductPriceInStore productPriceInStore7 = new ProductPriceInStore(new StoreProductPK(storeHq, product7), 1.99, 7.99, new Date());
+		bsdService.save(productPriceInStore7);
+		
+		
+		OrderHeader bsdUserOrder = new OrderHeader(bsdUser);
+		bsdService.save(bsdUserOrder);
+		OrderHeader bsdUserOrder1 = new OrderHeader(bsdUser);
+		bsdService.save(bsdUserOrder1);
+		OrderHeader bsdUserOrder2 = new OrderHeader(bsdUser2);
+		bsdService.save(bsdUserOrder2);
 	}
+	
+	
 	private void setupQuotaKPI() {
 		EmployeeDao employee = new EmployeeDao("C05622","Taizaburo Ted Egawa","A", "* President", 
 												"CAN","TMIS","AVP company","TTAS20",
@@ -278,163 +367,72 @@ public class BuildAndExportDatabase {
 		salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
 	}
 
-	private void setupUsers() {
+	private void setupQuotaUsers() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
 //		<users id="1" enabled="true" password="password" userId="Alexei Ptitchkin"/>
-		UserDao user = new UserDao();
+		QuotaUser user = new QuotaUser();
 		user.setUserId("Alexei Ptitchkin");
+		user.setFirstName("Alexei");
+		user.setLastName("Ptitchkin");
+
 		//user.setEnabled(true);
 		//user.setPassword("password");
 		user.setPassword(passwordEncoder.encode("password"));
-		quotaService.save(user);
+		userService.save(user);
 
-		UserDao bsdUser = new UserDao();
-		bsdUser.setUserId("Tim Adams");
+		
+
+		QuotaUser angularUser = new QuotaUser();
+		angularUser.setUserId("Angular User");
+		angularUser.setFirstName("Angular");
+		angularUser.setLastName("User");
 		//user.setEnabled(true);
-		bsdUser.setPassword(passwordEncoder.encode("password"));
-		quotaService.save(bsdUser);
+		angularUser.setPassword(passwordEncoder.encode("password"));
+		userService.save(angularUser);
 
+		setupQuotaAuthorities(user, angularUser);
 
-/*
- * app.auth.userGroup=QuotaKPI_USER
- * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
- * app.auth.budgetGroup=ROLE_QuotaKPI_BUDGET
- * app.auth.companyGroup=ROLE_QuotaKPI_COMPANY
- * app.auth.reportGroup=ROLE_QuotaKPI_REPORT
- * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
- * 
- */
-		
-		AuthoritiesDao authoritiy = new AuthoritiesDao();
-		authoritiy.setUser(user);
-		authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
-		quotaService.save(authoritiy);
-		
-		AuthoritiesDao authoritiy2 = new AuthoritiesDao();
-		authoritiy2.setUser(user);
-		authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
-		quotaService.save(authoritiy2);
-		
-		AuthoritiesDao authoritiy3 = new AuthoritiesDao();
-		authoritiy3.setUser(user);
-		authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
-		quotaService.save(authoritiy3);
-	
-
-		AuthoritiesDao authoritiy4 = new AuthoritiesDao();
-		authoritiy4.setUser(user);
-		authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
-		quotaService.save(authoritiy4);
-
-		AuthoritiesDao authoritiy5 = new AuthoritiesDao();
-		authoritiy5.setUser(bsdUser);
-		authoritiy5.setRole("ROLE_BSD_DEALER");
-		quotaService.save(authoritiy5);
 	}
 
-	@Test
-	public void averifySetup(){
-		UserDao user = quotaService.getUserById("Alexei Ptitchkin");
-		assertNotNull(user);
-		assertThat(user.getAuthorities().size(), is(4));
-		logger.debug("user " + user + " in averifySetup()");
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		assertNotNull(salesRepresentative);
-		EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		assertNotNull(employee);
-		
-		List<ProductLine> lines = quotaService.getProductLines();
-		for (ProductLine productLine : lines) {
-			assertNotNull(productLine);
-			logger.debug("productLine = "+productLine);
-		}
-
-		ProductLine productLine = quotaService.getProductLineByCode("Q");
-		assertNotNull(productLine);
-		logger.debug("productLine = "+productLine);
-
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(1));
-		
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoinsWithProdLines = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622","A");
-		assertNotNull(salesRepEmployeeJoinsWithProdLines);
-		assertThat(salesRepEmployeeJoinsWithProdLines.size(), is(1));
-
-		SalesRepEmployeeJoin salesRepEmployeeJoinWithProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","A");
-		assertNotNull(salesRepEmployeeJoinWithProdLine);
-		
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoinsWithNotExistProdLine = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		assertNotNull(salesRepEmployeeJoinsWithNotExistProdLine);
-		assertThat(salesRepEmployeeJoinsWithNotExistProdLine.size(), is(0));
-
-		SalesRepEmployeeJoin salesRepEmployeeJoinWithNotExistProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		assertNull(salesRepEmployeeJoinWithNotExistProdLine);
-		
-		//test create new join with new prodLine
-		//see above: SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		//see above: EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		ProductLine line = quotaService.getProductLineByCode("Q");
-		SalesRepEmployeeJoin salesRepEmployeeJoin = new SalesRepEmployeeJoin(new SalesRepEmployeePK(salesRepresentative, employee, line));
-		quotaService.save(salesRepEmployeeJoin);
-		
-		salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(2));
-		
-		//and test to delete that just created join 
-		SalesRepEmployeeJoin salesRepEmployeeJoinWith_Q_ExistProdLine = quotaService.getOneSalesRepEmployeeJoinsFor("CIG001","C05622","Q");
-		quotaService.delete(salesRepEmployeeJoinWith_Q_ExistProdLine);
-		salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor("CIG001","C05622");
-		assertNotNull(salesRepEmployeeJoins);
-		assertThat(salesRepEmployeeJoins.size(), is(1));
-
-		List<QuotaDto> quotaDtos = new ArrayList<QuotaDto>();
-		List<QuotaDao> quotas = quotaService.getQuotas();
-		for (QuotaDao quota : quotas) {
-			assertNotNull(quota);
-			assertNotNull(quota.getSalesRepresentative());
-			logger.debug("quota = " + quota);
+	private void setupQuotaAuthorities(User adminUser, User angularUser) {
+		/*
+		 * app.auth.userGroup=QuotaKPI_USER
+		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
+		 * app.auth.budgetGroup=ROLE_QuotaKPI_BUDGET
+		 * app.auth.companyGroup=ROLE_QuotaKPI_COMPANY
+		 * app.auth.reportGroup=ROLE_QuotaKPI_REPORT
+		 * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
+		 * 
+		 */
+				
+				Authority authoritiy = new Authority();
+				authoritiy.setUser(adminUser);
+				authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
+				userService.save(authoritiy);
+				
+				Authority authoritiy2 = new Authority();
+				authoritiy2.setUser(adminUser);
+				authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
+				userService.save(authoritiy2);
+				
+				Authority authoritiy3 = new Authority();
+				authoritiy3.setUser(adminUser);
+				authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
+				userService.save(authoritiy3);
 			
-			QuotaDto dto = DtoFactory.createDtoFromDao(quota);
-			assertNotNull(dto.getSalesRepresentativeId());
-			assertNotNull(dto.getSalesRepresentativeName());
-			quotaDtos.add(dto);
-		}
 		
-		List<QuotaDto> quotaDtos2 = DtoFactory.createQuotaDtoList(quotas);
-		//assertThat(quotaDtos2.size(), is(4));
-
-		QuotaDto first = quotaDtos2.get(0);
-		first.setValue1(1);
-		first.setValue2(2);
-		QuotaDao dao = quotaService.getQuotaById(first.getId());
-		dao.setValue1(first.getValue1());
-		dao.setValue2(first.getValue2());
+				Authority authoritiy4 = new Authority();
+				authoritiy4.setUser(adminUser);
+				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
+				userService.save(authoritiy4);
 		
-		quotaService.updateQuotasValues(dao);
-		
-		QuotaDao dao2 = quotaService.getQuotaById(first.getId());
-		assertThat(dao2.getValue1(), is(first.getValue1()));
-		assertThat(dao2.getValue2(), is(first.getValue2()));
-		
-/*
-		//ERROR: obj2json(quotas) throws StackOverflowException
-		String jsonStr = GsonUtil.obj2json(quotas);
-		logger.debug("quotas jsonStr = " + jsonStr);
-*/		
-		List<BudgetDao> budgets = quotaService.getBudgets();
-		for (BudgetDao budget : budgets) {
-			assertNotNull(budget);
-			logger.debug("budget = " + budget);
-		}
-
-		List<BudgetDto> budgetDtos = DtoFactory.createBudgetDtoList(budgets);
-		//assertThat(budgetDtos.size(), is(4));
-
-		logger.debug("end");
+				Authority authoritiy6 = new Authority();
+				authoritiy6.setUser(angularUser);
+				authoritiy6.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
+				userService.save(authoritiy6);
 	}
+
 
 	//See: http://ralf.schaeftlein.de/2009/01/05/dbunit-with-junit-4x-and-spring-for-testing-oracle-db-application/
 	@Test
@@ -456,57 +454,4 @@ public class BuildAndExportDatabase {
 			e.printStackTrace();
 		}
 	}
-
-	//moved to QuotaServiceImplTest.java @ Test
-	public void testSalesRepDelete(){
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		quotaService.deleteSalesRepresentative(salesRepresentative.getSalesRepresentativeId());
-		salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		logger.debug("salesRepresentative = "+salesRepresentative);
-		//assertNull(salesRepresentative);
-	}
-
-	//@ - Test
-	public void verifyData() {
-		String salesRepresentativeId = "CIG001";
-		String managerId = "C05622";
-
-		SalesRepresentativeDao salesRepresentative = quotaService.getSalesRepresentativeById("CIG001");
-		assertNotNull(salesRepresentative);
-		EmployeeDao employee = quotaService.getEmployeeById("C05622");
-		assertNotNull(employee);
-		ProductLine line = quotaService.getProductLineByCode("A");
-		assertNotNull(line);
-		
-		List<ProductLineDTO> dtos = new ArrayList<ProductLineDTO>();
-		List<SalesRepEmployeeJoin> salesRepEmployeeJoins = quotaService.getSalesRepEmployeeJoinsFor(salesRepresentativeId, managerId);
-		
-    	List<ProductLine> productLines = quotaService.getProductLines();
-		for (ProductLine productLine:productLines) {
-			ProductLineDTO dto = DtoFactory.createDtoFromDao(productLine);
-			dto.setExists(false);
-			dto.setManagerId(managerId);
-			dto.setSalesRepresentativeId(salesRepresentativeId);
-			if(doesExistsIn(salesRepEmployeeJoins, dto))
-				dto.setExists(true);
-			dtos.add(dto);
-		}
-		for (ProductLineDTO dto : dtos) {
-			logger.debug(dto);
-		}
-		logger.debug("End of testMangerProductLines");
-		
-		
-		
-	}
-	
-	private boolean doesExistsIn(List<SalesRepEmployeeJoin> salesRepEmployeeJoins, ProductLineDTO dto){
-		for (SalesRepEmployeeJoin salesRepEmployeeJoin : salesRepEmployeeJoins) {
-			if(salesRepEmployeeJoin.getProductLine().getCode().equals(dto.getCode()))
-				return true;
-		}
-		return false;
-	}
-
-
 }
