@@ -21,12 +21,18 @@
 
 1. ExtJs UI
 
-- function Add BsdUser
-- add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
+
 - Add Product
 - Add Store
 - Assign/Remove BsdUser to Store
 - Assign/Remove Product to Store
+
+---
+
+committed:
+- function Add BsdUser
+- add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
+- weaving button actions on BsdUserGrid and BsdUserForm
 
 ---
 

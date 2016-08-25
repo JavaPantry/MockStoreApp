@@ -24,7 +24,7 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     init: function() {
         this.control({
         	'BsdUserGrid button[action=bsdUserCreate]'		:	{click: this.bsdUserCreate}
-        	,'BsdUserGrid button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
+        	,'BsdUserForm button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
         });
     },
 	
@@ -41,8 +41,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 		this._cancelDetailView(button, 'BsdUserGrid');
 	},
 	_cancelDetailView : function(button, pageItemId) {
-    	//var gridPanel	= button.up('panel');
-		var cardPanel 	= button.up('panel');//gridPanel.up('panel');
+    	var formPanel	= button.up('panel');
+		var cardPanel 	= formPanel.up('panel');
 		var cardLayout 	= cardPanel.getLayout();
 		cardLayout.setActiveItem(pageItemId); //either idx, varRef or itemId
     }
