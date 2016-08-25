@@ -11,7 +11,8 @@
 3. TODO - <AP>: later need to build separate org/avp/security jar project
 4. TODO - <AP>: rename BsdController to ?_BsdSiteManagementController?_ 
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
-6. Really need to understand how to resolve conflicts in merging 
+6. TODO - <AP>: Really need to understand how to resolve conflicts in merging 
+
 ---
 
 ## Work flow
