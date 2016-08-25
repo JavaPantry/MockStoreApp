@@ -21,11 +21,11 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
  	            	theStore.load();
  	             	}
  			}}
-		,{iconCls: 'icon-organisation', title: 'Users', xtype:'BsdUserGrid',listeners: {
+		,{iconCls: 'icon-organisation', title: 'Users', xtype:'BsdUserView',listeners: {
 	             activate: function(tab){
 			            var rootViewer = this.up('rootViewer');
 			            rootViewer.setTitle('Users list'); 
-	 	            	var theGrid = tab;
+	 	            	var theGrid = tab.down('BsdUserGrid');
 	 	            	var theStore = theGrid.store;
 	 	            	theStore.load();
 	 	             	}

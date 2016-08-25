@@ -17,7 +17,20 @@
 
 ## Work flow
 
-### August 23
+### August 24
+
+1. ExtJs UI
+
+- function Add BsdUser
+- add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
+- Add Product
+- Add Store
+- Assign/Remove BsdUser to Store
+- Assign/Remove Product to Store
+
+---
+
+### August 24
 
 ---
 Confirmed

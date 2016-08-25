@@ -21,14 +21,10 @@ Ext.define('QuotaKPI.view.siteManagement.BsdUserGrid', {
 			    ,{header     : 'email',			dataIndex: ''}
 			    ]
 
-	,dockedItems : [/*{xtype: 'toolbar',dock: 'top',
-							    items: [//{iconCls: 'icon-save',		itemId: 'quotaDetailSave',text: 'Save',action: 'quotaDetailSave'}
-										//,{iconCls: 'icon-add',		itemId: 'quotaDetailCreate',text: 'Create Quota',action: 'quotaDetailCreate'}
-										//,{iconCls: 'icon-reset',	itemId: 'quotaDetailReset',text: 'Reset Quota',action: 'quotaDetailReset'}
-										//,{iconCls: 'icon-delete',	itemId: 'quotaDetailDelete',text: 'Delete Quota',action: 'quotaDetailDelete'}
-										//,{iconCls: 'icon-chart',	itemId: 'quotaChart',text: 'Quota Chart',action: 'quotaChart'}
-										//,'->',{iconCls: 'icon-return',itemId: 'quotaDetailReturn',text: 'Cancel',action: 'quotaDetailReturn'}
-					]}*/
+	,dockedItems : [{xtype: 'toolbar',dock: 'top',
+							    items:	[
+										{iconCls: 'icon-add',		itemId: 'bsdUserCreate',text: 'Create User',action: 'bsdUserCreate'}
+										]}
 	               /*,{xtype: 'pagingtoolbar', 
 	            	   	dock:'bottom',
 	            	   	store: 'siteManagement.Product',
