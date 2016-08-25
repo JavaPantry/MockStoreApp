@@ -2,12 +2,12 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
 	extend: 'Ext.tab.Panel',
     alias : 'widget.SiteView',
     items:[	
-		{iconCls: 'icon-organisation', title: 'Bsd Site Admin', xtype:'SiteGrid',listeners: {
+		{iconCls: 'icon-organisation', title: 'Bsd Site Admin', xtype:'StoreView',listeners: {
    	             activate: function(tab){
  	            	
 		            var rootViewer = this.up('rootViewer');
 		            rootViewer.setTitle('Stores list'); 
- 	            	var theGrid = tab;
+ 	            	var theGrid = tab.down('StoreGrid');
  	            	var theStore = theGrid.store;//theStore.remoteSort = true;//theStore.remoteFilter = true;
  	            	theStore.load();
  	             	}

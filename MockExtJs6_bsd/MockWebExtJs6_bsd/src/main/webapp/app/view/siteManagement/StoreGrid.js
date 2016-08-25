@@ -9,9 +9,10 @@
  * summary	false
  * 
  */
-Ext.define('QuotaKPI.view.siteManagement.SiteGrid', {
+Ext.define('QuotaKPI.view.siteManagement.StoreGrid', {
 	extend: 'Ext.grid.Panel'
-	,xtype: 'SiteGrid'
+	,xtype: 'StoreGrid'
+	,itemId	: 'StoreGrid'
     ,columnLines: true
     ,store: 'siteManagement.Site'
 
@@ -21,14 +22,10 @@ Ext.define('QuotaKPI.view.siteManagement.SiteGrid', {
 			    {header     : 'storeDescription',	dataIndex: 'storeDescription'}
 	]
 
-	,dockedItems : [/*{xtype: 'toolbar',dock: 'top',
-							    items: [//{iconCls: 'icon-save',		itemId: 'quotaDetailSave',text: 'Save',action: 'quotaDetailSave'}
-										//,{iconCls: 'icon-add',		itemId: 'quotaDetailCreate',text: 'Create Quota',action: 'quotaDetailCreate'}
-										//,{iconCls: 'icon-reset',	itemId: 'quotaDetailReset',text: 'Reset Quota',action: 'quotaDetailReset'}
-										//,{iconCls: 'icon-delete',	itemId: 'quotaDetailDelete',text: 'Delete Quota',action: 'quotaDetailDelete'}
-										//,{iconCls: 'icon-chart',	itemId: 'quotaChart',text: 'Quota Chart',action: 'quotaChart'}
-										//,'->',{iconCls: 'icon-return',itemId: 'quotaDetailReturn',text: 'Cancel',action: 'quotaDetailReturn'}
-					]}*/
+	,dockedItems : [{xtype: 'toolbar',dock: 'top',
+					    items:	[
+								{iconCls: 'icon-add',		itemId: 'storeCreate', text: 'Create Store', action: 'storeCreate'}
+								]}
 	               /*,{xtype: 'pagingtoolbar', 
 	            	   	dock:'bottom',
 	            	   	store: 'accounting.Quota',

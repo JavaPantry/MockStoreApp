@@ -86,7 +86,7 @@ var adminUser = false;
    	             activate: function(tab){
 		             var rootViewer = this.up('rootViewer');
 		             rootViewer.setTitle('BSD: Store list'); 
-   	            	 var theGrid = tab.down('SiteGrid');
+   	            	 var theGrid = tab.down('StoreGrid');
    	            	 var theStore = theGrid.store;
    	            	 theStore.remoteSort = true;
    	            	 theStore.remoteFilter = true;

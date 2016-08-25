@@ -7,7 +7,10 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
              ],
     models: ['siteManagement.SiteModel'],
     views: ['siteManagement.SiteView'
-            ,'siteManagement.SiteGrid'
+            
+            ,'siteManagement.StoreView'
+            ,'siteManagement.StoreGrid'
+            ,'siteManagement.StoreForm'
             
             ,'siteManagement.ProductView'
             ,'siteManagement.ProductGrid'
@@ -18,7 +21,10 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
             ,'siteManagement.BsdUserForm'
             ],
     refs: [  {ref: 'SiteView',		selector: 'SiteView'}
-			,{ref: 'SiteGrid',		selector: 'SiteGrid'}
+			
+			,{ref: 'StoreView',	selector: 'StoreView'}
+			,{ref: 'StoreGrid',	selector: 'StoreGrid'}
+			,{ref: 'StoreForm',	selector: 'StoreForm'}
 			
 			,{ref: 'ProductView',	selector: 'ProductView'}
 			,{ref: 'ProductGrid',	selector: 'ProductGrid'}
@@ -31,7 +37,10 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 
     init: function() {
         this.control({
-        	'BsdUserGrid button[action=bsdUserCreate]'		:	{click: this.bsdUserCreate}
+        	'StoreGrid button[action=storeCreate]'		:	{click: this.storeCreate}
+        	,'StoreForm button[action=storeEditCancel]'	:	{click: this.storeEditCancel}
+
+        	,'BsdUserGrid button[action=bsdUserCreate]'		:	{click: this.bsdUserCreate}
         	,'BsdUserForm button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
 
         	,'ProductGrid button[action=productCreate]'		:	{click: this.productCreate}
@@ -40,6 +49,20 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         });
     },
 	
+    
+    storeCreate: function(button) {
+    	var gridPanel		= this.getStoreGrid();
+    	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
+    	//this._editSalesRepDetail(gridPanel, selectedRecord, true);
+		var cardPanel = gridPanel.up('panel');
+		var cardLayout = cardPanel.getLayout();
+		cardLayout.setActiveItem('StoreForm'); //either idx=1, varRef or itemId
+	},
+	
+	storeEditCancel: function(button) {
+		this._cancelDetailView(button, 'StoreGrid');
+	},
+    
     bsdUserCreate: function(button) {
     	var gridPanel		= this.getBsdUserGrid();
     	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');

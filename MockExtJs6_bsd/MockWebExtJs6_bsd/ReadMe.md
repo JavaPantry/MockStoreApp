@@ -22,17 +22,24 @@
 1. ExtJs UI
 
 
-- Add Store
-- Assign/Remove BsdUser to Store
-- Assign/Remove Product to Store
+TODO <AP>: - Assign/Remove BsdUser to Store
+TODO <AP>: - Assign/Remove Product to Store
+
+---
+
+committed:
+
+- function Add Store
+- add 'siteManagement.StoreView' and 'siteManagement.StoreForm'
+- weaving button actions on StoreGrid and StoreForm
 
 ---
 
 committed:
 
 - function Add Product
-- add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
-- weaving button actions on BsdUserGrid and BsdUserForm
+- add 'siteManagement.ProductView' and 'siteManagement.ProductForm'
+- weaving button actions on ProductGrid and ProductForm
 
 ---
 
