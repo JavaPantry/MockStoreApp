@@ -19,6 +19,8 @@
 
 ### August 23
 
+
+AngularII merged to master
 ---
 committed
 
