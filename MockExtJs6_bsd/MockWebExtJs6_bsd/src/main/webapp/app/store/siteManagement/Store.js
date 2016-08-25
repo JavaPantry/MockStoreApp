@@ -1,6 +1,6 @@
-Ext.define('QuotaKPI.store.siteManagement.Site', {
+Ext.define('QuotaKPI.store.siteManagement.Store', {
     extend: 'Ext.data.Store',
-    model: 'QuotaKPI.model.siteManagement.SiteModel',
+    model: 'QuotaKPI.model.siteManagement.StoreModel',
     storeId: 'siteManagement.Site',
     autoLoad: false,
     pageSize: 20,

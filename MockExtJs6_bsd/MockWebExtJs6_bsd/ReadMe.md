@@ -21,14 +21,16 @@
 
 1. ExtJs UI
 
-
 TODO <AP>: - Assign/Remove BsdUser to Store
 TODO <AP>: - Assign/Remove Product to Store
+
+ 
 
 ---
 
 committed:
 
+- Rename SiteModel/Site/SiteGrid to StoreModel/Store/StoreGrid
 - function Add Store
 - add 'siteManagement.StoreView' and 'siteManagement.StoreForm'
 - weaving button actions on StoreGrid and StoreForm

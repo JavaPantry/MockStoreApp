@@ -1,11 +1,11 @@
 Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     extend: 'Ext.app.Controller',
 
-    stores: ['siteManagement.Site'
+    stores: ['siteManagement.Store'
              ,'siteManagement.Product'
              ,'siteManagement.BsdUser'
              ],
-    models: ['siteManagement.SiteModel'],
+    models: [],
     views: ['siteManagement.SiteView'
             
             ,'siteManagement.StoreView'

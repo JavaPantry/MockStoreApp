@@ -1,4 +1,4 @@
-Ext.define('QuotaKPI.model.siteManagement.SiteModel', {
+Ext.define('QuotaKPI.model.siteManagement.StoreModel', {
     extend: 'Ext.data.Model',
 	fields: [
 	     {name: 'id', type: 'number'},
