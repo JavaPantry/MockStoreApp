@@ -12,11 +12,11 @@ Ext.define('QuotaKPI.view.siteManagement.SiteView' ,{
  	            	theStore.load();
  	             	}
  			}}
-		,{iconCls: 'icon-organisation', title: 'Products', xtype:'ProductGrid',listeners: {
+		,{iconCls: 'icon-organisation', title: 'Products', xtype:'ProductView',listeners: {
    	             activate: function(tab){
 		            var rootViewer = this.up('rootViewer');
 		            rootViewer.setTitle('Products list'); 
- 	            	var theGrid = tab;
+ 	            	var theGrid = tab.down('ProductGrid');
  	            	var theStore = theGrid.store;
  	            	theStore.load();
  	             	}

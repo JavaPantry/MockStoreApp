@@ -12,6 +12,7 @@
 Ext.define('QuotaKPI.view.siteManagement.ProductGrid', {
 	extend: 'Ext.grid.Panel'
 	,xtype: 'ProductGrid'
+	,itemId	: 'ProductGrid'
     ,columnLines: true
     ,store: 'siteManagement.Product'
 	,columns: [ {header     : 'sku',					dataIndex: 'sku'}
@@ -19,14 +20,11 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGrid', {
 			    ,{header     : 'Product Description',			dataIndex: 'EProductDescription'}
 	]
 
-	,dockedItems : [/*{xtype: 'toolbar',dock: 'top',
-							    items: [//{iconCls: 'icon-save',		itemId: 'quotaDetailSave',text: 'Save',action: 'quotaDetailSave'}
-										//,{iconCls: 'icon-add',		itemId: 'quotaDetailCreate',text: 'Create Quota',action: 'quotaDetailCreate'}
-										//,{iconCls: 'icon-reset',	itemId: 'quotaDetailReset',text: 'Reset Quota',action: 'quotaDetailReset'}
-										//,{iconCls: 'icon-delete',	itemId: 'quotaDetailDelete',text: 'Delete Quota',action: 'quotaDetailDelete'}
-										//,{iconCls: 'icon-chart',	itemId: 'quotaChart',text: 'Quota Chart',action: 'quotaChart'}
-										//,'->',{iconCls: 'icon-return',itemId: 'quotaDetailReturn',text: 'Cancel',action: 'quotaDetailReturn'}
-					]}*/
+	,dockedItems : [
+					{xtype: 'toolbar',dock: 'top',
+					    items:	[
+								{iconCls: 'icon-add',		itemId: 'productCreate', text: 'Create Product', action: 'productCreate'}
+								]}
 	               /*,{xtype: 'pagingtoolbar', 
 	            	   	dock:'bottom',
 	            	   	store: 'siteManagement.Product',

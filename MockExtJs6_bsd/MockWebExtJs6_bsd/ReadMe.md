@@ -17,12 +17,11 @@
 
 ## Work flow
 
-### August 24
+### August 25
 
 1. ExtJs UI
 
 
-- Add Product
 - Add Store
 - Assign/Remove BsdUser to Store
 - Assign/Remove Product to Store
@@ -30,6 +29,15 @@
 ---
 
 committed:
+
+- function Add Product
+- add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
+- weaving button actions on BsdUserGrid and BsdUserForm
+
+---
+
+committed:
+
 - function Add BsdUser
 - add 'siteManagement.BsdUserView' and 'siteManagement.BsdUserForm'
 - weaving button actions on BsdUserGrid and BsdUserForm
