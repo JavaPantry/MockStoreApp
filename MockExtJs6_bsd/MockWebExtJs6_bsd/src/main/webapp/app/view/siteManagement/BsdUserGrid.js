@@ -12,6 +12,7 @@
 Ext.define('QuotaKPI.view.siteManagement.BsdUserGrid', {
 	extend: 'Ext.grid.Panel'
 	,xtype: 'BsdUserGrid'
+	,itemId	: 'BsdUserGrid'
     ,columnLines: true
     ,store: 'siteManagement.BsdUser'
 	,columns: [ {header     : 'id',					dataIndex: 'id'}

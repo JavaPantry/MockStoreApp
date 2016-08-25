@@ -2,6 +2,7 @@ var defaultLabelWidth = 150;
 Ext.define('QuotaKPI.view.siteManagement.BsdUserForm' ,{
 		extend	: 'Ext.Panel',
 		alias	: 'widget.BsdUserForm',
+		itemId	: 'BsdUserForm',
 		layout:'vbox',
 		items:[
 				{xtype: 'fieldcontainer',

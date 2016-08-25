@@ -24,17 +24,28 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     init: function() {
         this.control({
         	'BsdUserGrid button[action=bsdUserCreate]'		:	{click: this.bsdUserCreate}
-//        	,'QuotaGrid button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
+        	,'BsdUserGrid button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
         });
     },
 	
-    bsdUserCreate: function() {
-		
+    bsdUserCreate: function(button) {
+    	var gridPanel		= this.getBsdUserGrid();
+    	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
+    	//this._editSalesRepDetail(gridPanel, selectedRecord, true);
+		var cardPanel = gridPanel.up('panel');
+		var cardLayout = cardPanel.getLayout();
+		cardLayout.setActiveItem('BsdUserForm'); //either idx=1, varRef or itemId
 	},
 	
-	bsdUserDetailEditCancel: function() {
-		
-	}
+	bsdUserDetailEditCancel: function(button) {
+		this._cancelDetailView(button, 'BsdUserGrid');
+	},
+	_cancelDetailView : function(button, pageItemId) {
+    	//var gridPanel	= button.up('panel');
+		var cardPanel 	= button.up('panel');//gridPanel.up('panel');
+		var cardLayout 	= cardPanel.getLayout();
+		cardLayout.setActiveItem(pageItemId); //either idx, varRef or itemId
+    }
 });
 
 
