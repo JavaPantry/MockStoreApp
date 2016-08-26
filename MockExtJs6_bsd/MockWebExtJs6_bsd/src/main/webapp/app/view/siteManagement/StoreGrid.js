@@ -22,10 +22,13 @@ Ext.define('QuotaKPI.view.siteManagement.StoreGrid', {
 			    {header     : 'storeDescription',	dataIndex: 'storeDescription'}
 	]
 
-	,dockedItems : [{xtype: 'toolbar',dock: 'top',
+	,dockedItems : [
+	                {xtype: 'toolbar',dock: 'top',
 					    items:	[
 								{iconCls: 'icon-add',		itemId: 'storeCreate', text: 'Create Store', action: 'storeCreate'}
-								]}
+								,{iconCls: 'icon-add',		itemId: 'storeManage', text: 'Manage Products in Store', action: 'storeManage'}
+						]
+					}
 	               /*,{xtype: 'pagingtoolbar', 
 	            	   	dock:'bottom',
 	            	   	store: 'accounting.Quota',

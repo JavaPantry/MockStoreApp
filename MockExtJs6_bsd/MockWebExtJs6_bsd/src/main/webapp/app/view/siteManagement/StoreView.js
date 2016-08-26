@@ -5,5 +5,6 @@ Ext.define('QuotaKPI.view.siteManagement.StoreView' ,{
     items:[	
 		{xtype:'StoreGrid',anchor: '100% 100%'}
 		,{xtype:'StoreForm',anchor: '100% 100%'}
+		,{xtype:'StoreMangeProductsForm',anchor: '100% 100%'}
     ]
 });

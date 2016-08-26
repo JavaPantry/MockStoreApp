@@ -3,6 +3,10 @@
 
 ### August 26
 
+8. TODO - <AP>: on store tab add button [manage selected store] or listener to double click on grid
+9. on click switch to new panel in card layout
+
+---
 Server side support for update
 fix productEditCancel button
 ---

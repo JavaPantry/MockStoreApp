@@ -11,7 +11,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
             ,'siteManagement.StoreView'
             ,'siteManagement.StoreGrid'
             ,'siteManagement.StoreForm'
-            
+            ,'siteManagement.StoreMangeProductsForm'
+                        
             ,'siteManagement.ProductView'
             ,'siteManagement.ProductGrid'
             ,'siteManagement.ProductForm'
@@ -25,6 +26,7 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 			,{ref: 'StoreView',	selector: 'StoreView'}
 			,{ref: 'StoreGrid',	selector: 'StoreGrid'}
 			,{ref: 'StoreForm',	selector: 'StoreForm'}
+			,{ref: 'StoreMangeProductsForm',	selector: 'StoreMangeProductsForm'}
 			
 			,{ref: 'ProductView',	selector: 'ProductView'}
 			,{ref: 'ProductGrid',	selector: 'ProductGrid'}
@@ -38,9 +40,12 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     init: function() {
         this.control({
         	'StoreGrid button[action=storeCreate]'		:	{click: this.storeCreate}
+        	,'StoreGrid button[action=storeManage]'		:	{click: this.storeManageProducts}
         	,'StoreForm button[action=editCancel]'		:	{click: this.storeEditCancel}
         	,'StoreForm button[action=actionSave]'		:	{click: this.bsdUserActionSave}
-
+        	,'StoreMangeProductsForm button[action=editCancel]'		:	{click: this.storeEditCancel}
+        	,'StoreMangeProductsForm button[action=actionSave]'		:	{click: this.bsdUserActionSave}
+        	
         	,'BsdUserGrid button[action=bsdUserCreate]'	:	{click: this.bsdUserCreate}
         	,'BsdUserForm button[action=editCancel]'	:	{click: this.bsdUserDetailEditCancel}
         	,'BsdUserForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
@@ -50,10 +55,18 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         	,'ProductForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
 
         });
-    },
+    }
 	
+    ,storeManageProducts:function(button){
+    	var gridPanel		= this.getStoreGrid();
+    	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
+    	//this._editSalesRepDetail(gridPanel, selectedRecord, true);
+		var cardPanel = gridPanel.up('panel');
+		var cardLayout = cardPanel.getLayout();
+		cardLayout.setActiveItem('StoreMangeProductsForm'); //either idx=1, varRef or itemId
+    }
     
-	bsdUserActionSave:function(button){
+	,bsdUserActionSave:function(button){
 		
 		var formPanel	= button.up('panel');//this.getBsdUserForm();
 		var form		= formPanel.down('form');
@@ -83,27 +96,6 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 		});
 	},
 	
-    _formSave: function(button){
-		var formPanel	= button.up('window');//.QuotaCreateWnd');
-		var form		= wnd.down('form');
-		var formRef		= form.getForm();
-
-		var values	= form.getValues();
-		var record	= Ext.create('QuotaKPI.model.accounting.QuotaModel');
-		record.set(values);
-		
-		var theGrid = null; 
-		theGrid = this.getBudgetGrid();
-       	var theStore = theGrid.getStore();
-       	theStore.add(record);
-       	
-       	var syncOptions = {	theStore:theStore,
-       						wnd:wnd,
-							success:this.updateQuotaCallback
-							};
-       	theStore.sync(syncOptions);
-	},
-
     storeCreate: function(button) {
     	var gridPanel		= this.getStoreGrid();
     	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
