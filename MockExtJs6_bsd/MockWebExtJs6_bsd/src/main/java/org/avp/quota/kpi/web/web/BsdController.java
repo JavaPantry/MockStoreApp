@@ -155,25 +155,9 @@ public class BsdController extends AbstractExtJsController {
 	
 	@RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
 	@ResponseBody
-	public String updateUser(@RequestBody QuotaJsonData requestQuotas){
-		logger.debug("updateQuotas(jsonRequest = '"+requestQuotas+"')");
-		for (QuotaDao quota : requestQuotas.getQuotas()) {
-			QuotaDao quotaDao = quotaService.getQuotaById(quota.getId());
-			//BeanUtility.nullSafeMergeTo(quota, quotaDao, new String[]{"+salesRepresentative","category","amountType","year"});
-			quotaDao.setValue1(quota.getValue1());
-			quotaDao.setValue2(quota.getValue2());
-			quotaDao.setValue3(quota.getValue3());
-			quotaDao.setValue4(quota.getValue4());
-			quotaDao.setValue5(quota.getValue5());
-			quotaDao.setValue6(quota.getValue6());
-			quotaDao.setValue7(quota.getValue7());
-			quotaDao.setValue8(quota.getValue8());
-			quotaDao.setValue9(quota.getValue9());
-			quotaDao.setValue10(quota.getValue10());
-			quotaDao.setValue11(quota.getValue11());
-			quotaDao.setValue12(quota.getValue12());
-			quotaService.updateQuotasValues(quotaDao);
-		}
+	public String updateUser(BsdUserDto requestUser){
+		logger.debug("updateUser(jsonRequest = '"+requestUser+"')");
+		
 		return SUCCESS_RESPONSE;
 		}
 	

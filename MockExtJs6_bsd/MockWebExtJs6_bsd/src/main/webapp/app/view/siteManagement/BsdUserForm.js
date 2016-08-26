@@ -30,11 +30,11 @@ Ext.define('QuotaKPI.view.siteManagement.BsdUserForm' ,{
 									defaults: {xtype: 'fieldcontainer',layout:'hbox',margin:'1',labelPad:2}
 									,items: [   
 											{	defaults: {xtype: 'textfield', labelWidth:defaultLabelWidth,labelCls:'fast-label'},
-												items: [{fieldLabel:'User Id',itemId:'userId'}
+												items: [{fieldLabel:'User Id',itemId:'userId', name:'userId' }
 														/*,{fieldLabel:'Sales Representative Name',itemId:'salesRepresentativeName'}*/]},
 											{	defaults: {xtype: 'textfield', labelWidth:defaultLabelWidth,labelCls:'fast-label'},
-												items: [{fieldLabel:'First Name',itemId:'firstName'}
-														,{fieldLabel:'User Name',itemId:'lastName'}]}
+												items: [{fieldLabel:'First Name',name:'firstName'}
+														,{fieldLabel:'User Name',name:'lastName'}]}
 											]//eof fieldcontainer items
 									}//eof fieldcontainer
 								]//eof form items

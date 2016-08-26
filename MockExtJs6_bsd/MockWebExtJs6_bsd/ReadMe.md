@@ -28,6 +28,10 @@ TODO <AP>: - Assign/Remove Product to Store
 
 committed:
 
+- Resolved: error request mapping localhost:8080/MockWebExtJs6_bsd/bsd/updateuser
+
+committed:
+
 - experiment with bsdForm layout
 - extResponse already use jackson.map.annotate.JsonSerialize
 - submit siteManagement.BsdUserForm as form.submit 

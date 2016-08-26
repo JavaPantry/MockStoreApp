@@ -19,6 +19,13 @@ import org.avp.security.model.User;
 
 public class BsdUserDto extends UserDto implements java.io.Serializable {
 
+	@Override
+	public String toString() {
+		return String.format(
+				"BsdUserDto [ userId=%s, firstName=%s, clientAdmin=%s, siteAdmin=%s, phone=%s, fax=%s, subDivision=%s, active=%s, createDt=%s]",
+				 getUserId(), getFirstName(), clientAdmin, siteAdmin, phone, fax, subDivision, active, createDt);
+	}
+
 	private StoreDto store;
 	
 	private Set<OrderHeaderDto> orders;
