@@ -157,22 +157,35 @@ public class BsdController extends AbstractExtJsController {
 	@ResponseBody
 	public String updateUser(BsdUserDto requestUser){
 		logger.debug("updateUser(jsonRequest = '"+requestUser+"')");
-		
+		BsdUser user = new BsdUser();
+		user.setUserId(requestUser.getUserId());
+		user.setFirstName(requestUser.getFirstName());
+		user.setLastName(requestUser.getLastName());
+		userService.save(user);
 		return SUCCESS_RESPONSE;
 		}
 	
 	@RequestMapping(value={"/bsd/updateproduct"}, method=RequestMethod.POST)
 	@ResponseBody
-	public String updateProduct(BsdUserDto requestProduct){
-		logger.debug("updateUser(jsonRequest = '"+requestProduct+"')");
-		
+	public String updateProduct(ProductDto requestProduct){
+		logger.debug("updateProduct(jsonRequest = '"+requestProduct+"')");
+		Product product = new Product();
+		product.setSku(requestProduct.getSku());
+		product.setEProductName(requestProduct.getEProductName());
+		product.setEProductDescription(requestProduct.getEProductDescription());
+		bsdService.save(product);
 		return SUCCESS_RESPONSE;
 		}
 
 	@RequestMapping(value={"/bsd/updatestore"}, method=RequestMethod.POST)
 	@ResponseBody
-	public String updateStore(BsdUserDto requestStore){
-		logger.debug("updateUser(jsonRequest = '"+requestStore+"')");
+	public String updateStore(StoreDto requestStore){
+		logger.debug("updateStore(jsonRequest = '"+requestStore+"')");
+		Store store = new Store();
+		store.setStoreName(requestStore.getStoreName());
+		store.setStoreDescription(requestStore.getStoreDescription());
+		store.setClientName(requestStore.getClientName());
+		bsdService.save(store);
 		
 		return SUCCESS_RESPONSE;
 		}

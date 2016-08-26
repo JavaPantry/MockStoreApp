@@ -25,6 +25,8 @@
 TODO <AP>: - Assign/Remove BsdUser to Store
 TODO <AP>: - Assign/Remove Product to Store
 
+
+server side support for update
 ---
 TODO <AP>: - public String updateProduct(ProductDto requestUser){
 TODO <AP>: - public String updateStore(StoreDto requestUser){

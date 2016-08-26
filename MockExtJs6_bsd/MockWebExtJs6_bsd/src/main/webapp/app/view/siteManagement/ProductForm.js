@@ -31,11 +31,11 @@ Ext.define('QuotaKPI.view.siteManagement.ProductForm' ,{
 									defaults: {xtype: 'fieldcontainer',layout:'hbox',margin:'1',labelPad:2}
 									,items: [   
 											{	defaults: {xtype: 'textfield', labelWidth:defaultLabelWidth,labelCls:'fast-label'},
-												items: [{fieldLabel:'User Id',itemId:'userId', name:'userId' }
+												items: [{fieldLabel:'Sku',itemId:'sku', name:'sku' }
 														/*,{fieldLabel:'Sales Representative Name',itemId:'salesRepresentativeName'}*/]},
 											{	defaults: {xtype: 'textfield', labelWidth:defaultLabelWidth,labelCls:'fast-label'},
-												items: [{fieldLabel:'First Name',name:'firstName'}
-														,{fieldLabel:'User Name',name:'lastName'}]}
+												items: [{fieldLabel:'Product Name',name:'eProductName'}
+														,{fieldLabel:'Product Description',name:'eProductDescription'}]}
 											]//eof fieldcontainer items
 									}//eof fieldcontainer
 								]//eof form items
