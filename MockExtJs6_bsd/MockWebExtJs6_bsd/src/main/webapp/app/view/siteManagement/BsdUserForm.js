@@ -41,7 +41,7 @@ Ext.define('QuotaKPI.view.siteManagement.BsdUserForm' ,{
 				}//eof form
 			]//eof items of BsdUserForm				
 				
-			,dockedItems: [{
+		,dockedItems: [{
 			    xtype: 'toolbar',
 			    dock: 'top',
 			    layout: {pack: 'left'},
@@ -53,7 +53,7 @@ Ext.define('QuotaKPI.view.siteManagement.BsdUserForm' ,{
 						]
 			}]//eof dockedItems
 
-			,initComponent: function() {
+		,initComponent: function() {
 				this.callParent(arguments);
 			}
 

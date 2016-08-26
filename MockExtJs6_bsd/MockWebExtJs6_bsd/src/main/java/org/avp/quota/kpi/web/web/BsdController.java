@@ -161,6 +161,22 @@ public class BsdController extends AbstractExtJsController {
 		return SUCCESS_RESPONSE;
 		}
 	
+	@RequestMapping(value={"/bsd/updateproduct"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String updateProduct(BsdUserDto requestProduct){
+		logger.debug("updateUser(jsonRequest = '"+requestProduct+"')");
+		
+		return SUCCESS_RESPONSE;
+		}
+
+	@RequestMapping(value={"/bsd/updatestore"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String updateStore(BsdUserDto requestStore){
+		logger.debug("updateUser(jsonRequest = '"+requestStore+"')");
+		
+		return SUCCESS_RESPONSE;
+		}
+	
 	
 	@RequestMapping(value={"/bsd/products/dealer"}, method=RequestMethod.GET)
 	@ResponseBody

@@ -12,23 +12,30 @@
 4. TODO - <AP>: rename BsdController to ?_BsdSiteManagementController?_ 
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 6. TODO - <AP>: Really need to understand how to resolve conflicts in merging 
-
+7. TODO - <AP>: Should I make extJs form submit json in bsd/update* ?
 ---
 
 ## Work flow
 
 
-### August 25
+### August 26
 
 1. ExtJs UI
 
 TODO <AP>: - Assign/Remove BsdUser to Store
 TODO <AP>: - Assign/Remove Product to Store
+
 ---
+TODO <AP>: - public String updateProduct(ProductDto requestUser){
+TODO <AP>: - public String updateStore(StoreDto requestUser){
+All three bsd forms POST data 
+POST http://localhost:8080/MockWebExtJs6_bsd/bsd/updatestore
+POST http://localhost:8080/MockWebExtJs6_bsd/bsd/updateproduct
+POST http://localhost:8080/MockWebExtJs6_bsd/bsd/updateuser
 
 
 ---
-Resolved and committed:
+HttpMediaTypeNotSupportedException Resolved and committed:
 @RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
 @ResponseBody
 public String updateUser(@RequestBody BsdUserDto requestUser){
