@@ -17,18 +17,37 @@
 
 ## Work flow
 
+
 ### August 25
 
 1. ExtJs UI
 
 TODO <AP>: - Assign/Remove BsdUser to Store
 TODO <AP>: - Assign/Remove Product to Store
+---
+
+
+---
+Resolved and committed:
+@RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
+@ResponseBody
+public String updateUser(@RequestBody BsdUserDto requestUser){
+vs.
+public String updateUser(BsdUserDto requestUser){
+
+@RequestBody - cause HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported
+
+### August 25
 
 ---
 
 committed:
 
 - Resolved: error request mapping localhost:8080/MockWebExtJs6_bsd/bsd/updateuser
+- http://localhost:8080/MockWebExtJs6_bsd/bsd/updateuser"
+firstName	bbbbb
+lastName	cccccc
+userId		aaaaa
 
 committed:
 
