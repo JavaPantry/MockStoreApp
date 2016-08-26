@@ -46,7 +46,7 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         	,'BsdUserForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
         	
         	,'ProductGrid button[action=productCreate]'	:	{click: this.productCreate}
-        	,'ProductForm button[action=editCancel]'	:	{click: this.storeEditCancel}
+        	,'ProductForm button[action=editCancel]'	:	{click: this.productEditCancel}
         	,'ProductForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
 
         });
