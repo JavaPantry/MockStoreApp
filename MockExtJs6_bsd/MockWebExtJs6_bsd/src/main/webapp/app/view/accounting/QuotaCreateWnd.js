@@ -48,7 +48,7 @@ Ext.define('QuotaKPI.view.accounting.QuotaCreateWnd', {
          {name: 'amountType', type: 'number'},
          {name: 'year', type: 'number'},
 	*/
-	items:[	{xtype: 'form',padding: '5 5 0 5',border: false, style: 'background-color: #fff;',
+	items:[	{xtype: 'form',padding: '5 5 0 5',border: false, style: 'background-color: #faa;',
 			defaults: {labelWidth:200, anchor: '100%',labelPad:2/*labelAlign: 'left',allowBlank: false,combineErrors: true,msgTarget: 'side', */},
 			items: [{fieldLabel: 'Budget or Quota',xtype: 'displayfield',name : 'quotaOrBudget',hidden:true, value: 'Quota',allowBlank: false, labelCls:'fast-label'}
 					//{fieldLabel: 'Sales Representative Code',xtype: 'textfield',name : 'salesRepCode',value: '',allowBlank: false, labelCls:'fast-label'}

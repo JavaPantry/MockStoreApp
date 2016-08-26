@@ -24,7 +24,14 @@
 TODO <AP>: - Assign/Remove BsdUser to Store
 TODO <AP>: - Assign/Remove Product to Store
 
- 
+---
+
+committed:
+
+- experiment with bsdForm layout
+- extResponse already use jackson.map.annotate.JsonSerialize
+- submit siteManagement.BsdUserForm as form.submit 
+- add method RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
 
 ---
 

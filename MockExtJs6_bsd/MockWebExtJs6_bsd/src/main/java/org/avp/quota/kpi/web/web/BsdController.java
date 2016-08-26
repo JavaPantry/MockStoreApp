@@ -33,6 +33,7 @@ import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.web.web.MaintenanceController.SalesRepTocLink;
+import org.avp.quota.kpi.web.web.QuotaController.QuotaJsonData;
 import org.avp.security.model.User;
 import org.avp.security.service.CustomUserService;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -150,6 +151,32 @@ public class BsdController extends AbstractExtJsController {
         response.setSuccess(true);
         return response;
 	}
+	
+	
+	@RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String updateUser(@RequestBody QuotaJsonData requestQuotas){
+		logger.debug("updateQuotas(jsonRequest = '"+requestQuotas+"')");
+		for (QuotaDao quota : requestQuotas.getQuotas()) {
+			QuotaDao quotaDao = quotaService.getQuotaById(quota.getId());
+			//BeanUtility.nullSafeMergeTo(quota, quotaDao, new String[]{"+salesRepresentative","category","amountType","year"});
+			quotaDao.setValue1(quota.getValue1());
+			quotaDao.setValue2(quota.getValue2());
+			quotaDao.setValue3(quota.getValue3());
+			quotaDao.setValue4(quota.getValue4());
+			quotaDao.setValue5(quota.getValue5());
+			quotaDao.setValue6(quota.getValue6());
+			quotaDao.setValue7(quota.getValue7());
+			quotaDao.setValue8(quota.getValue8());
+			quotaDao.setValue9(quota.getValue9());
+			quotaDao.setValue10(quota.getValue10());
+			quotaDao.setValue11(quota.getValue11());
+			quotaDao.setValue12(quota.getValue12());
+			quotaService.updateQuotasValues(quotaDao);
+		}
+		return SUCCESS_RESPONSE;
+		}
+	
 	
 	@RequestMapping(value={"/bsd/products/dealer"}, method=RequestMethod.GET)
 	@ResponseBody

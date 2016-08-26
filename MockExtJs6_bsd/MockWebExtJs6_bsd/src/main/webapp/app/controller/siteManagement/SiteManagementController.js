@@ -41,8 +41,9 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         	,'StoreForm button[action=storeEditCancel]'	:	{click: this.storeEditCancel}
 
         	,'BsdUserGrid button[action=bsdUserCreate]'		:	{click: this.bsdUserCreate}
-        	,'BsdUserForm button[action=bsdUserDetailEditCancel]'	:	{click: this.bsdUserDetailEditCancel}
-
+        	,'BsdUserForm button[action=editCancel]'	:	{click: this.bsdUserDetailEditCancel}
+        	,'BsdUserForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
+        	
         	,'ProductGrid button[action=productCreate]'		:	{click: this.productCreate}
         	,'ProductForm button[action=productEditCancel]'	:	{click: this.productEditCancel}
 
@@ -58,6 +59,58 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 		var cardLayout = cardPanel.getLayout();
 		cardLayout.setActiveItem('StoreForm'); //either idx=1, varRef or itemId
 	},
+	
+	bsdUserActionSave:function(button){
+		
+		var formPanel	= this.getBsdUserForm();//button.up('panel');
+		var form		= formPanel.down('form');
+		var formRef		= form.getForm();
+		
+		formRef.submit({
+//		    clientValidation: true,
+//		    url: 'updateConsignment.php',
+//		    params: {
+//		        newStatus: 'delivered'
+//		    },
+		    success: function(form, action) {
+		       Ext.Msg.alert('Success', action.result.msg);
+		    },
+		    failure: function(form, action) {
+		        switch (action.failureType) {
+		            case Ext.form.action.Action.CLIENT_INVALID:
+		                Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+		                break;
+		            case Ext.form.action.Action.CONNECT_FAILURE:
+		                Ext.Msg.alert('Failure', 'Ajax communication failed');
+		                break;
+		            case Ext.form.action.Action.SERVER_INVALID:
+		               Ext.Msg.alert('Failure', action.result.msg);
+		       }
+		    }
+		});
+	},
+	
+    _formSave: function(button){
+		var formPanel	= button.up('window');//.QuotaCreateWnd');
+		var form		= wnd.down('form');
+		var formRef		= form.getForm();
+
+		var values	= form.getValues();
+		var record	= Ext.create('QuotaKPI.model.accounting.QuotaModel');
+		record.set(values);
+		
+		var theGrid = null; 
+		theGrid = this.getBudgetGrid();
+       	var theStore = theGrid.getStore();
+       	theStore.add(record);
+       	
+       	var syncOptions = {	theStore:theStore,
+       						wnd:wnd,
+							success:this.updateQuotaCallback
+							};
+       	theStore.sync(syncOptions);
+	},
+
 	
 	storeEditCancel: function(button) {
 		this._cancelDetailView(button, 'StoreGrid');
@@ -84,6 +137,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 		var cardLayout = cardPanel.getLayout();
 		cardLayout.setActiveItem('ProductForm'); //either idx=1, varRef or itemId
 	},
+	
+	
 	
 	productEditCancel: function(button) {
 		this._cancelDetailView(button, 'ProductGrid');
