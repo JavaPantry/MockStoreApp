@@ -3,6 +3,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 
     stores: ['siteManagement.Store'
              ,'siteManagement.Product'
+             ,'siteManagement.ProductAvailableForStore'
+             ,'siteManagement.ProductInStore'
              ,'siteManagement.BsdUser'
              ],
     models: [],
@@ -15,6 +17,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
                         
             ,'siteManagement.ProductView'
             ,'siteManagement.ProductGrid'
+            ,'siteManagement.ProductGridInStore'
+            ,'siteManagement.ProductGridAvailableForStore'
             ,'siteManagement.ProductForm'
             
             ,'siteManagement.BsdUserView'
@@ -30,6 +34,8 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 			
 			,{ref: 'ProductView',	selector: 'ProductView'}
 			,{ref: 'ProductGrid',	selector: 'ProductGrid'}
+			,{ref: 'ProductGridInStore',	selector: 'ProductGridInStore'}
+			,{ref: 'ProductGridAvailableForStore',	selector: 'ProductGridAvailableForStore'}
 			,{ref: 'ProductForm',	selector: 'ProductForm'}
 			
 			,{ref: 'BsdUserGrid',	selector: 'BsdUserGrid'}

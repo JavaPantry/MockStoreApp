@@ -13,9 +13,7 @@
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 6. TODO - <AP>: Really need to understand how to resolve conflicts in merging 
 7. TODO - <AP>: Should I make extJs form submit json in bsd/update* ?
-8. TODO - <AP>: on store tab add button [manage selected store] or listener to double click on grid
-9. on click switch to new panel in card layout
-10. this panel contains two same tables with stores pointed to two data sources
+
 11. left one pointed to products within store (assigned to store)
 12. right one pointed to products not within store (globally available but not assigned to selected store)
 13. there are buttons between grids
@@ -23,9 +21,10 @@
 15. [<] - move product from right to left (add product to store)
 16. left (store content) grid have inline editor plugin to edit price
 17. both grids have filter entry field in toolbar and beside it [clear filter] button enabled when filter is active
+18. Remove ExtJs Trial water mark ![water mark](Documents/ExtJsTrialWatermark.PNG)
+19. Store management page layout ![layout](Documents/AssignProductsToStore.PNG)
 
 
----
 # References
 
 1. Eclipse TypeScript Plug-in
@@ -50,6 +49,8 @@ _Installation_
 
 - [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
 - [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
+
+3. [multiple instances of same grid](http://stackoverflow.com/questions/15777134/ext-js-multiple-instances-of-same-grid)
 
 ---
 

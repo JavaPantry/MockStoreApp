@@ -1,13 +1,21 @@
 # Mock project
 ---
+### August 27
+
+- Manage selected store content (assign products to store)
+- 10. TODO - <AP>: this panel contains two same tables with stores pointed to two data sources
+- Add specific grids with stores
+
+	ProductGridAvailableForStore -> ProductAvailableForStore
+	ProductGridInStore -> ProductInStore
 
 ### August 26
 
-8. TODO - <AP>: on store tab add button [manage selected store] or listener to double click on grid
-9. on click switch to new panel in card layout
+8. done TODO - <AP>: on store tab add button [manage selected store] or listener to double click on grid
+9. done on click switch to new panel in card layout
 
 ---
-Server side support for update
+Server side support for bsd entities update
 fix productEditCancel button
 ---
 - public String updateProduct(ProductDto requestUser){
