@@ -52,6 +52,8 @@ Ext.define('QuotaKPI.view.siteManagement.StoreMangeProductsForm' ,{
 			}]//eof dockedItems
 
 			,initComponent: function() {
+				var group1 = this.id + 'group1',
+	            group2 = this.id + 'group2';
 				this.callParent(arguments);
 			}
 

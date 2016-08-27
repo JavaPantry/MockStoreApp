@@ -9,6 +9,9 @@
 	ProductGridAvailableForStore -> ProductAvailableForStore
 	ProductGridInStore -> ProductInStore
 
+- support DnD between ProductGridAvailableForStore and ProductGridInStore grids
+
+
 ### August 26
 
 8. done TODO - <AP>: on store tab add button [manage selected store] or listener to double click on grid
@@ -385,42 +388,3 @@ to
 
 
 
----
-# References
-
-1. Eclipse TypeScript Plug-in
-
-An Eclipse [plug-in for developing in the TypeScript language](https://github.com/palantir/eclipse-typescript)
-_Installation_
-
-- Install Node.js
-- Open Eclipse and go to Help->Install New Software
-- Add the update site: http://eclipse-update.palantir.com/eclipse-typescript/
-- Reboot Eclipse
-- (optional) Right-click on a project and select Configure->Enable TypeScript Builder
-
-
-2. What to choose in subclasses assign BUILD_DATABASE flag _OR_ use abstract method to override in subclasses
-2.1. Google: `java can I assign const in subclass`
-
-2.1.1. Best [http://stackoverflow.com/questions/8467494/overriding-constants-in-java](http://stackoverflow.com/questions/8467494/overriding-constants-in-java)
-2.1.2. Force subclasses to include constant in abstract java class [stackoverflow](http://stackoverflow.com/questions/11896955/force-subclasses-to-include-constant-in-abstract-java-class)
-
-2.1.3 Also good to read:
-
-- [petrikainulainen abstract test classes](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-it-starts-from-the-configuration/)
-- [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
-
----
-
-## Setup node_modules
-
-- to update node package manager (npm) 
-
-	- run `npm -v` to confirm current version  
-	- in terminal window run `npm install npm -g`
-	- run `npm -v` again confirm output 3.10.5 (means npm had been updated)
-
-- in _src/main/webapp/resources/_ run npm install this will create `node_modules` folder with all required dependencies
-
----

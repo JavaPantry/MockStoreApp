@@ -17,19 +17,19 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGridInStore', {
     ,multiSelect: true
     ,stripeRows: true
     ,store: 'siteManagement.ProductInStore'
-    /*,viewConfig: {
+    ,viewConfig: {
         plugins: {
             ptype: 'gridviewdragdrop',
-            dragGroup: group1,
-            dropGroup: group2
+//            dragGroup: group1,
+//            dropGroup: group2
         },
         listeners: {
             drop: function(node, data, dropRec, dropPosition) {
                 var dropOn = dropRec ? ' ' + dropPosition + ' ' + dropRec.get('name') : ' on empty view';
-                Ext.example.msg('Drag from right to left', 'Dropped ' + data.records[0].get('name') + dropOn);
+                //Ext.example.msg('Drag from right to left', 'Dropped ' + data.records[0].get('name') + dropOn);
             }
         }
-    }*/
+    }
 	,columns: [ {header		: 'sku', flex:1,					dataIndex: 'sku'}
 			    ,{header	: 'Product Name', flex:2,			dataIndex: 'EProductName'}
 			    ,{header	: 'Product Description', flex:4,	dataIndex: 'EProductDescription'}
