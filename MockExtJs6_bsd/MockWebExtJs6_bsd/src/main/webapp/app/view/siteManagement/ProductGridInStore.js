@@ -30,10 +30,18 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGridInStore', {
             }
         }
     }
+	,plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+	   	clicksToEdit: 1
+	   	,pluginId : 'productPriceInStoreEditor' // to find editor by grid.getPlugin('rowEditingMonthEditGridExt').editor.form.findField('name')
+	   	//,listeners : {'beforeedit' : function(editor, e, eOpts) {}}
+	})
+	//,'gridfilters'
+	] // plugins
+
 	,columns: [ {header		: 'sku', flex:1,					dataIndex: 'sku'}
 			    ,{header	: 'Product Name', flex:2,			dataIndex: 'EProductName'}
 			    ,{header	: 'Product Description', flex:4,	dataIndex: 'EProductDescription'}
-			    ,{header	: 'Price in Store', flex:1,			dataIndex: 'EProductDescription'}
+			    ,{header	: 'Price in Store', flex:1,			dataIndex: 'price',editor:{xtype:'numberfield',minValue: 0}}
 	]
 
 	,dockedItems : [

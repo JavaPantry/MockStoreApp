@@ -10,7 +10,8 @@
 	ProductGridInStore -> ProductInStore
 
 - support DnD between ProductGridAvailableForStore and ProductGridInStore grids
-
+- add editor to ProductGridInStore
+- add model ProductPriceInStore
 
 ### August 26
 
