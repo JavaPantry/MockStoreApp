@@ -10,6 +10,7 @@ import org.avp.bsd.dto.StoreDto;
 import org.avp.bsd.model.BsdUser;
 import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.quota.kpi.util.BeanUtility;
 
@@ -68,6 +69,19 @@ public class DtoFactory {
 		}
 		return dtos;
 	}
+	public static List<ProductDto> createProductDtoListFromProductPriceInStore(List<ProductPriceInStore> productPricesInStore) {
+		List<ProductDto> dtos = new ArrayList<ProductDto>();
+		for (ProductPriceInStore productPriceInStore : productPricesInStore) {
+			Product product = productPriceInStore.getPk().getProduct();
+			ProductDto dto = DtoFactory.createDtoFrom(product);
+			dto.setPrice(productPriceInStore.getPrice());
+			dto.setPriceScheduled(productPriceInStore.getPriceScheduled());
+			dto.setPriceSchedule(productPriceInStore.getPriceSchedule());
+			dto.setCreated(productPriceInStore.getCreated());
+			dtos.add(dto);
+		}
+		return dtos;
+	}
 
 	static public OrderHeaderDto createDtoFrom(OrderHeader entity){
 		OrderHeaderDto dto = null;
@@ -96,5 +110,6 @@ public class DtoFactory {
 		}
 		return dtos;
 	}
+
 
 }

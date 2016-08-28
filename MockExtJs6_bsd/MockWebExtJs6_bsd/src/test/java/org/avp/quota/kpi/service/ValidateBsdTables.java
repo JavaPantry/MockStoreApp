@@ -166,6 +166,12 @@ public class ValidateBsdTables {
 		List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
 		String jsonOrderHeaders = gson.toJson(orderDtos);
 		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
+		
+		//------------------------------- TEST PRODUCT in STORE and AVAILABLE for STORE --------------------
+		List<ProductDto> productsInStore = bsdService.getProductPriceInStore(store.getId());
+		logger.debug("productsInStore = \""+productsInStore+"\"");
+		List<ProductDto> productsAvailableForStore = bsdService.getProductNotInStore(store.getId());
+		logger.debug("productsAvailableForStore = \""+productsAvailableForStore+"\"");
 	}
 	
 }

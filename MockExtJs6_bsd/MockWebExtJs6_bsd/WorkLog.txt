@@ -1,5 +1,15 @@
 # Mock project
 ---
+
+
+### August 28
+
+- data source for products in store (select products by storeId)
+	public List<ProductDto> getProductPriceInStore(Long storeId);
+- data source for products in store (select products by storeId)
+	public List<ProductDto> getProductNotInStore(Long storeId);
+- add priceInStore properties to ProductDto (should be sufficient)
+---
 ### August 27
 
 - Manage selected store content (assign products to store)

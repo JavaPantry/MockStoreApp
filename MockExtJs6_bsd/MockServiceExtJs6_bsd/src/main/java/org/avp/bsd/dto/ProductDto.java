@@ -18,6 +18,12 @@ public class ProductDto{
 	private Boolean active;
 	private Date createDt;
 
+	// properties from ProductPriceInStore
+	private Double	price;
+	private Double	priceScheduled;
+	private Date	priceSchedule;
+	private Date	created;
+
 	//private Set<ProductPriceInStore> productsInStore;
 	
 	public ProductDto() {
@@ -117,6 +123,38 @@ public class ProductDto{
 
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Double getPriceScheduled() {
+		return priceScheduled;
+	}
+
+	public void setPriceScheduled(Double priceScheduled) {
+		this.priceScheduled = priceScheduled;
+	}
+
+	public Date getPriceSchedule() {
+		return priceSchedule;
+	}
+
+	public void setPriceSchedule(Date priceSchedule) {
+		this.priceSchedule = priceSchedule;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 /*	public Set<ProductPriceInStore> getProductsInStore() {
