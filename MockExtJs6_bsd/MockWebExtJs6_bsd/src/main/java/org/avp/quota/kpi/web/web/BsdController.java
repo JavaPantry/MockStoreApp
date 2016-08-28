@@ -122,6 +122,68 @@ public class BsdController extends AbstractExtJsController {
         return response;
 	}
 
+	@RequestMapping(value={"/bsd/products/instore"}, method=RequestMethod.GET)
+	@ResponseBody
+	public ExtResponse findProductsInStore(
+			@RequestParam(value="storeId", required=true) Long storeId,
+			@RequestParam(value="limit", required=false) Integer limit, 
+			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
+			@RequestParam(value="start", required=false) Integer start,
+			@RequestParam(value="sort", required=false) String sort,
+			@RequestParam(value="filter", required=false) String filter
+			) {
+        ExtData response = new ExtData();
+        logger.debug("/bsd/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
+    	//FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+    	//SortParameter[] sortParameters = getSortFromJson(sort);;
+    	
+    	//TODO - <AP> do something with that Integer crap
+    	if(limit == null) limit=20;
+    	if(pageIndex == null) pageIndex=1;
+    	if(start == null) start=0;
+    	
+//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
+//		List<QuotaDao> quotas = quotaDaoPage.getContent();
+    	
+    	//List<Product> products = bsdService.getProducts();
+    	List<ProductDto> productDtos = bsdService.getProductPriceInStore(storeId);//DtoFactory.createProductDtoList(products);
+    	response.add(productDtos);
+    	response.setTotal(100);
+        response.setSuccess(true);
+        return response;
+	}
+
+	@RequestMapping(value={"/bsd/products/available"}, method=RequestMethod.GET)
+	@ResponseBody
+	public ExtResponse findAvailableForStoreProducts(
+			@RequestParam(value="storeId", required=true) Long storeId,
+			@RequestParam(value="limit", required=false) Integer limit, 
+			@RequestParam(value="page", required=false) Integer pageIndex, //1-based
+			@RequestParam(value="start", required=false) Integer start,
+			@RequestParam(value="sort", required=false) String sort,
+			@RequestParam(value="filter", required=false) String filter
+			) {
+        ExtData response = new ExtData();
+        logger.debug("/bsd/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
+    	//FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
+    	//SortParameter[] sortParameters = getSortFromJson(sort);;
+    	
+    	//TODO - <AP> do something with that Integer crap
+    	if(limit == null) limit=20;
+    	if(pageIndex == null) pageIndex=1;
+    	if(start == null) start=0;
+    	
+//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
+//		List<QuotaDao> quotas = quotaDaoPage.getContent();
+    	
+    	//List<Product> products = bsdService.getProducts();
+    	List<ProductDto> productDtos = bsdService.getProductNotInStore(storeId);//DtoFactory.createProductDtoList(products);
+    	response.add(productDtos);
+    	response.setTotal(100);
+        response.setSuccess(true);
+        return response;
+	}
+	
 	@RequestMapping(value={"/bsd/users"}, method=RequestMethod.GET)
 	@ResponseBody
 	public ExtResponse findUsers(

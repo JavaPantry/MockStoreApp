@@ -2,14 +2,14 @@ Ext.define('QuotaKPI.store.siteManagement.ProductInStore', {
     extend: 'Ext.data.Store',
     model: 'QuotaKPI.model.siteManagement.ProductPriceInStore',
     storeId: 'siteManagement.ProductInStore',
-    autoLoad: true,
+    autoLoad: false,
     pageSize: 20,
     remoteSort: false,
     remoteFilter: false,
 
     proxy: {
         type: 'ajax',
-        api: {read	: 'bsd/products'
+        api: {read	: 'bsd/products/instore'
         	/*,update : 'ajax/quotas/update'
             ,create : 'ajax/quotas/create'
             ,destroy: 'ajax/quotas/delete'*/},

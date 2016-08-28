@@ -65,24 +65,43 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     }
 	
     ,storeManageProducts:function(button){
-    	var gridPanel		= this.getStoreGrid();
+    	var theGrid		= this.getStoreGrid();
     	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
     	//this._editSalesRepDetail(gridPanel, selectedRecord, true);
 		
     	//var cardPanel = gridPanel.up('panel');
 		//var cardLayout = cardPanel.getLayout();
 		//cardLayout.setActiveItem('StoreMangeProductsForm'); //either idx=1, varRef or itemId
-    	this._editStore(gridPanel, null);
+    	var selectedRecord	= theGrid.getSelectionModel().getSelection()[0];
+		if (selectedRecord == null || selectedRecord == undefined ){
+			Ext.MessageBox.show({title: 'ERROR',
+		    			msg: "Please select a Store to load!",
+		    			icon: Ext.MessageBox.ERROR,
+		    			buttons: Ext.Msg.OK});
+			return;
+		}
+    	
+    	this._editStore(theGrid, selectedRecord);
     }
     
     ,editStoreOnDblClk: function(gridPanel, selectedRecord){
-    	this._editStore(gridPanel, selectedRecord);
+    	//gridPanel point to something else, cause exception in cardLayout.setActiveItem('StoreMangeProductsForm');
+    	var theGrid		= this.getStoreGrid();
+
+    	this._editStore(theGrid, selectedRecord);
     }
     
     ,_editStore: function(gridPanel, selectedRecord){
 		var cardPanel = gridPanel.up('panel');
 		var cardLayout = cardPanel.getLayout();
 		cardLayout.setActiveItem('StoreMangeProductsForm'); //either idx=1, varRef or itemId
+		
+		// reload productInStore grid with store Id
+		var productInStoreStore =  Ext.getStore('siteManagement.ProductInStore')
+		productInStoreStore.load({params:{'storeId': selectedRecord.get('id')}});
+		
+		var productInStoreStore =  Ext.getStore('siteManagement.ProductAvailableForStore');
+		productInStoreStore.load({params:{'storeId': selectedRecord.get('id')}});
     }
     
 	,bsdUserActionSave:function(button){

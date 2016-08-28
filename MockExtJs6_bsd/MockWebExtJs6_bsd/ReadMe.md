@@ -19,7 +19,6 @@
 13. there are buttons between grids
 14. [>] - move product from left to right (delete product from store)
 15. [<] - move product from right to left (add product to store)
-16. left (store content) grid have inline editor plugin to edit price
 17. both grids have filter entry field in toolbar and beside it [clear filter] button enabled when filter is active
 18. Remove ExtJs Trial water mark ![water mark](Documents/ExtJsTrialWatermark.PNG)
 19. Store management page layout ![layout](Documents/AssignProductsToStore.PNG)
