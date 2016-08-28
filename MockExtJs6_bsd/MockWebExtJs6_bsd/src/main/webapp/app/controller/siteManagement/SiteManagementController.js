@@ -47,6 +47,7 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         this.control({
         	'StoreGrid button[action=storeCreate]'		:	{click: this.storeCreate}
         	,'StoreGrid button[action=storeManage]'		:	{click: this.storeManageProducts}
+        	,'StoreGrid dataview':{itemdblclick: this.editStoreOnDblClk}    
         	,'StoreForm button[action=editCancel]'		:	{click: this.storeEditCancel}
         	,'StoreForm button[action=actionSave]'		:	{click: this.bsdUserActionSave}
         	,'StoreMangeProductsForm button[action=editCancel]'		:	{click: this.storeEditCancel}
@@ -67,6 +68,18 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     	var gridPanel		= this.getStoreGrid();
     	//var selectedRecord = Ext.create('QuotaKPI.model.company.SalesRepresentativeModel');
     	//this._editSalesRepDetail(gridPanel, selectedRecord, true);
+		
+    	//var cardPanel = gridPanel.up('panel');
+		//var cardLayout = cardPanel.getLayout();
+		//cardLayout.setActiveItem('StoreMangeProductsForm'); //either idx=1, varRef or itemId
+    	this._editStore(gridPanel, null);
+    }
+    
+    ,editStoreOnDblClk: function(gridPanel, selectedRecord){
+    	this._editStore(gridPanel, selectedRecord);
+    }
+    
+    ,_editStore: function(gridPanel, selectedRecord){
 		var cardPanel = gridPanel.up('panel');
 		var cardLayout = cardPanel.getLayout();
 		cardLayout.setActiveItem('StoreMangeProductsForm'); //either idx=1, varRef or itemId

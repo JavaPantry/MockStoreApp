@@ -12,6 +12,7 @@
 - support DnD between ProductGridAvailableForStore and ProductGridInStore grids
 - add editor to ProductGridInStore
 - add model ProductPriceInStore
+- add double click to store grid to open (Manage selected store)  
 
 ### August 26
 
