@@ -1,6 +1,20 @@
 # Mock project
 ---
 
+### August 29
+
+Server side support for Update, Create, Delete fpr products in store
+
+- Save implementation for manage products in store
+     need to save assigned product list. 
+     Products may be:
+     - assigned (create new ProductPriceInStore)
+     - edited (update existing ProductPriceInStore)
+     - deleted (ProductPriceInStore server need to detect record absense in submitted json)
+     
+     Form should be validated before submission at least for zero price for assigned products
+     	- http://www.mysamplecode.com/2012/02/extjs-grid-validation-error-qtip.html
+
 
 ### August 28
 

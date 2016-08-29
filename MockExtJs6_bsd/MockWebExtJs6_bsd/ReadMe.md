@@ -5,7 +5,7 @@
 
 1. TODO - <AP>: Switch from gson to jackson
 
-- @Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
+	@Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
 
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 3. TODO - <AP>: later need to build separate org/avp/security jar project
@@ -13,15 +13,22 @@
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 6. TODO - <AP>: Really need to understand how to resolve conflicts in merging 
 7. TODO - <AP>: Should I make extJs form submit json in bsd/update* ?
+8. left one pointed to products within store (assigned to store)
+9. right one pointed to products not within store (globally available but not assigned to selected store)
+10. there are buttons between grids
+11. [>] - move product from left to right (delete product from store)
+12. [<] - move product from right to left (add product to store)
+13. both grids have filter entry field in toolbar and beside it [clear filter] button enabled when filter is active
 
-11. left one pointed to products within store (assigned to store)
-12. right one pointed to products not within store (globally available but not assigned to selected store)
-13. there are buttons between grids
-14. [>] - move product from left to right (delete product from store)
-15. [<] - move product from right to left (add product to store)
-17. both grids have filter entry field in toolbar and beside it [clear filter] button enabled when filter is active
-18. Remove ExtJs Trial water mark ![water mark](Documents/ExtJsTrialWatermark.PNG)
-19. Store management page layout ![layout](Documents/AssignProductsToStore.PNG)
+---
+
+- Remove ExtJs Trial water mark
+
+![water mark](Documents/ExtJsTrialWatermark.PNG)
+
+- Store management page layout
+ 
+![layout](Documents/AssignProductsToStore.PNG)
 
 
 # References

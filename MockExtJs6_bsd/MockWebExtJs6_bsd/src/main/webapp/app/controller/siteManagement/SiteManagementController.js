@@ -49,17 +49,18 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
         	,'StoreGrid button[action=storeManage]'		:	{click: this.storeManageProducts}
         	,'StoreGrid dataview':{itemdblclick: this.editStoreOnDblClk}    
         	,'StoreForm button[action=editCancel]'		:	{click: this.storeEditCancel}
-        	,'StoreForm button[action=actionSave]'		:	{click: this.bsdUserActionSave}
+        	,'StoreForm button[action=actionSave]'		:	{click: this.commonFormActionSave}
+
         	,'StoreMangeProductsForm button[action=editCancel]'		:	{click: this.storeEditCancel}
-        	,'StoreMangeProductsForm button[action=actionSave]'		:	{click: this.bsdUserActionSave}
+        	,'StoreMangeProductsForm button[action=actionSave]'		:	{click: this.storeMangeActionSave}
         	
         	,'BsdUserGrid button[action=bsdUserCreate]'	:	{click: this.bsdUserCreate}
         	,'BsdUserForm button[action=editCancel]'	:	{click: this.bsdUserDetailEditCancel}
-        	,'BsdUserForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
+        	,'BsdUserForm button[action=actionSave]'	:	{click: this.commonFormActionSave}
         	
         	,'ProductGrid button[action=productCreate]'	:	{click: this.productCreate}
         	,'ProductForm button[action=editCancel]'	:	{click: this.productEditCancel}
-        	,'ProductForm button[action=actionSave]'	:	{click: this.bsdUserActionSave}
+        	,'ProductForm button[action=actionSave]'	:	{click: this.commonFormActionSave}
 
         });
     }
@@ -98,13 +99,72 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
 		
 		// reload productInStore grid with store Id
 		var productInStoreStore =  Ext.getStore('siteManagement.ProductInStore')
-		productInStoreStore.load({params:{'storeId': selectedRecord.get('id')}});
+		var storeId = selectedRecord.get('id');
+		productInStoreStore.appStoreId = storeId;
+		productInStoreStore.load({params:{'storeId': storeId}});
 		
-		var productInStoreStore =  Ext.getStore('siteManagement.ProductAvailableForStore');
-		productInStoreStore.load({params:{'storeId': selectedRecord.get('id')}});
+		var productAvailableForStoreStore =  Ext.getStore('siteManagement.ProductAvailableForStore');
+		productAvailableForStoreStore.load({params:{'storeId': storeId}});
+    }
+
+    /*
+     * need to save assigned product list. 
+     * Products may be:
+     * - assigned (create new ProductPriceInStore)
+     * - edited (update existing ProductPriceInStore)
+     * - deleted (ProductPriceInStore server need to detect record absense in submitted json)
+     * 
+     * Form should be validated before submission at least for zero price for assigned products
+     * http://www.mysamplecode.com/2012/02/extjs-grid-validation-error-qtip.html
+     */
+    ,storeMangeActionSave:function(button){
+    	var theGrid = this.getProductGridInStore();
+    	var theStore = theGrid.getStore();
+    	var view = theGrid.getView();
+    	var error = false;
+    	var columnLength = theGrid.columns.length;
+    	
+    	theStore.each(function(record,idx){
+    		var errors = record.validate();
+			for (var i = 0; i < columnLength; i++) {
+				cell = view.getCellByPosition({row: idx, column: i});
+				cell.removeCls("x-form-invalid-field-default");
+				cell.set({'data-errorqtip': ''});
+				fieldName = theGrid.columns[i].dataIndex;
+				if (fieldName === 'price') {
+					//Do your validation here
+					var price = record.get('price');
+					
+					if(price == undefined || price <= 0) {
+					cell.addCls("x-form-invalid-field-default");
+					cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
+					error = true;
+					}
+				}
+			}
+    	});//eof each(...
+    	
+    	if(error){
+    		Ext.MessageBox.show({title: 'Validation failed.', msg: 'Price should be defined and greater than zero',
+				icon: Ext.MessageBox.ERROR,buttons: Ext.Msg.OK});
+    		return;
+    	}
+    	
+    	var syncOptions = {	theStore:theStore,success:this.updateQuotaCallback};
+       	theStore.sync(syncOptions);
+
+    }
+    ,updateQuotaCallback:function (batch, syncOptions){
+    	var appStoreId = syncOptions.theStore.appStoreId; 
+        syncOptions.theStore.load({params:{'storeId': appStoreId}});
     }
     
-	,bsdUserActionSave:function(button){
+    /*
+     * common save function for new/update store/product/user forms
+     * 
+     * - common because form submit to url property taken from form
+     */
+	,commonFormActionSave:function(button){
 		
 		var formPanel	= button.up('panel');//this.getBsdUserForm();
 		var form		= formPanel.down('form');

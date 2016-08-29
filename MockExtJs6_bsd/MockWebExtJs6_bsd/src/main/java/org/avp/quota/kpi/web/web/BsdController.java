@@ -33,6 +33,7 @@ import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.web.web.MaintenanceController.SalesRepTocLink;
+import org.avp.quota.kpi.web.web.QuotaController.BudgetJsonData;
 import org.avp.quota.kpi.web.web.QuotaController.QuotaJsonData;
 import org.avp.security.model.User;
 import org.avp.security.service.CustomUserService;
@@ -152,7 +153,47 @@ public class BsdController extends AbstractExtJsController {
         response.setSuccess(true);
         return response;
 	}
+	
+	
+	/*for (BudgetDao budget : requestBudgets.getBudgets()) {
+			BudgetDao budgetDao = quotaService.getBudgetById(budget.getId());
+			//BeanUtility.nullSafeMergeTo(budget, budgetDao, new String[]{"+salesRepresentative","category","amountType","year"});
+			budgetDao.setValue1(budget.getValue1());
+			quotaService.updateBudgetsValues(budgetDao);
+		}*/
+	@RequestMapping(value={"bsd/products/instore/update"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String updateInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
+		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+		}
+		return SUCCESS_RESPONSE;
+	}
+	@RequestMapping(value={"bsd/products/instore/create"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String createInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
+		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+		}
+		return SUCCESS_RESPONSE;
+	}
+	@RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST)
+	@ResponseBody
+	public String deleteInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
+		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+		}
+		return SUCCESS_RESPONSE;
+	}
+	class ProductInStoreJsonData extends ExtResponse {
+		@JsonProperty("data")
+	    private List<ProductDto> data = new ArrayList<ProductDto>();
+		public List<ProductDto> getProducts() {return data;}
+		public void setProducts(List<ProductDto> quotas) {this.data = quotas;}
+	}
 
+	
+	
 	@RequestMapping(value={"/bsd/products/available"}, method=RequestMethod.GET)
 	@ResponseBody
 	public ExtResponse findAvailableForStoreProducts(
@@ -213,7 +254,6 @@ public class BsdController extends AbstractExtJsController {
         response.setSuccess(true);
         return response;
 	}
-	
 	
 	@RequestMapping(value={"/bsd/updateuser"}, method=RequestMethod.POST)
 	@ResponseBody

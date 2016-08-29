@@ -6,13 +6,13 @@ Ext.define('QuotaKPI.store.siteManagement.ProductInStore', {
     pageSize: 20,
     remoteSort: false,
     remoteFilter: false,
-
+    appStoreId: 0,
     proxy: {
         type: 'ajax',
         api: {read	: 'bsd/products/instore'
-        	/*,update : 'ajax/quotas/update'
-            ,create : 'ajax/quotas/create'
-            ,destroy: 'ajax/quotas/delete'*/},
+        	,update : 'bsd/products/instore/update'
+            ,create : 'bsd/products/instore/create'
+            ,destroy: 'bsd/products/instore/delete'},
         reader: {type: 'json',
 	            rootProperty: 'data',
 	            successProperty: 'success',

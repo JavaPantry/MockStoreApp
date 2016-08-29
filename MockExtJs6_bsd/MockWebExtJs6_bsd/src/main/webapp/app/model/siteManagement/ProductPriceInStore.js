@@ -6,4 +6,7 @@ Ext.define('QuotaKPI.model.siteManagement.ProductPriceInStore', {
          ,{name: 'EProductDescription', type: 'string'}
          ,{name: 'price', type: 'number'}
      ]
+	,validations: [
+	     {type: 'presence',  field: 'price'}
+	     ]
 });

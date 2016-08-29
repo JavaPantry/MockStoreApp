@@ -157,6 +157,15 @@ public class ProductDto{
 		this.created = created;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductDto [sku=" + sku + ", EProductName=" + EProductName
+				+ ", EProductDescription=" + EProductDescription + ", price="
+				+ price + ", priceScheduled=" + priceScheduled
+				+ ", priceSchedule=" + priceSchedule + ", created=" + created
+				+ "]";
+	}
+
 /*	public Set<ProductPriceInStore> getProductsInStore() {
 		return productsInStore;
 	}
