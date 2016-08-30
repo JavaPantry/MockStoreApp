@@ -1,9 +1,44 @@
 # Mock project
 ---
 
+### August 30
+
+!!! commenting out `public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{`
+
+- implement update and delete ProductPriceInStore method:
+	-- implement search by PK(store, product) in bsdService
+		>public ProductPriceInStore findProductPriceInStoreByPk(StoreProductPK pk);
+		>public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku);
+	
+	-- need to decide how to pass storeId in request or extend ProductDto with transient storeId property
+		pass `storeId` as request par-r
+		
+			store.getProxy().setExtraParams({
+						    'storeId':storeId
+						    });
+			store.sync();
+			
+			
+	-- need to brake data from ProductDto into Product and ProductPriceInStore entities  
+
+
+
+
+
+* Google: 'jpa repository find by composite primary key'
+
+	* http://uaihebert.com/tutorial-jpa-composite-primary-key/
+		- Tutorial JPA Composite Primary-Key
+		- SIMPLES COMPOSITE KEY: http://uaihebert.com/?p=1674&page=8
+		- COMPLEX COMPOSITE KEY: http://uaihebert.com/?p=1674&page=9
+
+	* spring-data-jpa/RepositoryWithCompositeKeyTests.java
+		- https://github.com/spring-projects/spring-data-jpa/blob/master/src/test/java/org/springframework/data/jpa/repository/RepositoryWithCompositeKeyTests.java	
+
+---
 ### August 29
 
-Server side support for Update, Create, Delete fpr products in store
+Server side support for Update, Create, Delete for products in store
 
 - Save implementation for manage products in store
      need to save assigned product list. 

@@ -17,6 +17,7 @@ import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
+import org.avp.bsd.model.StoreProductPK;
 import org.avp.bsd.repository.AddressRepository;
 import org.avp.bsd.repository.BsdUserRepository;
 import org.avp.bsd.repository.OrderHeaderRepository;
@@ -135,7 +136,74 @@ public class BsdServiceImpl implements BsdService {
 
 		};
 	}
+	
+	/*
+	 * Use findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku) instead
+	 */
+	@Transactional()
+	public ProductPriceInStore findProductPriceInStoreByPk(StoreProductPK pk){
+		//StoreProductPK pk = new StoreProductPK();
+		ProductPriceInStore ppis =  productPriceInStoreRepository.findOne(pk);
+		return ppis;
+	}
+	/*
+	 * Use findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku)
+	 * findProductPriceInStoreByPk(StoreProductPK pk)works but not used
+	 */
+	@Transactional()
+	public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku){
+		ProductPriceInStore ppis =  productPriceInStoreRepository.findOne(findProductInStore( storeId, sku));
+		return ppis;
+	}
 
+	private Specification<ProductPriceInStore> findProductInStore( final Long storeId, final String sku) {
+		return new Specification<ProductPriceInStore>() {
+			@Override
+			public Predicate toPredicate(Root<ProductPriceInStore> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+				Collection<Predicate> predicates = new ArrayList<Predicate>();
+				Predicate storeIdPredicate = cb.and(cb.equal(root.get("pk").get("store").get("id"), storeId), cb.equal(root.get("pk").get("product").get("sku"), sku));
+				predicates.add(storeIdPredicate);
+				return cb.and(predicates.toArray(new Predicate[predicates.size()]));
+			}
+
+		};
+	}
+	
+	@Transactional()
+	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception{
+
+		Store store = storeHeaderRepository.findOne(storeId);
+		if (store == null) {
+			throw new Exception("Could not find '"+storeId+"' store id");
+		}
+		for (ProductDto productDto : products) {
+			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
+			if(productPriceInStore == null){
+				productPriceInStore = new ProductPriceInStore();
+				Product product = productRepository.findOne(productDto.getSku());
+				StoreProductPK pk = new StoreProductPK(store, product);
+				productPriceInStore.setPk(pk);
+			}
+			// update from extended ProductDto fields
+			productPriceInStore.setPrice(productDto.getPrice());
+			productPriceInStore.setPriceSchedule(productDto.getPriceSchedule());
+			productPriceInStore.setPriceScheduled(productDto.getPriceScheduled());
+			productPriceInStoreRepository.save(productPriceInStore);
+		}
+	}
+	
+	/*@Transactional()
+	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{
+		Store store = storeHeaderRepository.findOne(storeId);
+		if (store == null) {
+			throw new Exception("Could not find '"+storeId+"' store id");
+		}
+		for (ProductDto productDto : products) {
+			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
+			productPriceInStoreRepository.delete(productPriceInStore);
+		}
+	}*/
+	
 	@Transactional()
 	public List<ProductDto> getProductNotInStore(Long storeId){
 		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));

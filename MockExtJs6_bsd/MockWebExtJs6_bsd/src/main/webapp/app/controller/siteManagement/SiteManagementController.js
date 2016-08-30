@@ -151,12 +151,17 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     	}
     	
     	var syncOptions = {	theStore:theStore,success:this.updateQuotaCallback};
+    	//add request par-r theStore.appStoreId
+    	theStore.getProxy().setExtraParams({
+		    'storeId':theStore.appStoreId
+		    });
+    	
        	theStore.sync(syncOptions);
 
     }
     ,updateQuotaCallback:function (batch, syncOptions){
     	var appStoreId = syncOptions.theStore.appStoreId; 
-        //syncOptions.theStore.load({params:{'storeId': appStoreId}});
+        syncOptions.theStore.load({params:{'storeId': appStoreId}});
     }
     
     /*

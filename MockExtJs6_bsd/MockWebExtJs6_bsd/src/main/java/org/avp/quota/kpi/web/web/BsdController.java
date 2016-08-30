@@ -155,36 +155,36 @@ public class BsdController extends AbstractExtJsController {
 	}
 	
 	
-	/*for (BudgetDao budget : requestBudgets.getBudgets()) {
-			BudgetDao budgetDao = quotaService.getBudgetById(budget.getId());
-			//BeanUtility.nullSafeMergeTo(budget, budgetDao, new String[]{"+salesRepresentative","category","amountType","year"});
-			budgetDao.setValue1(budget.getValue1());
-			quotaService.updateBudgetsValues(budgetDao);
-		}*/
+	/*
+	 * Remove mapping for 'bsd/products/instore/create' because all new records goes to update
+	 * RequestMapping(value={"bsd/products/instore/create"}, method=RequestMethod.POST)
+	 * public String createInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
+	 * 
+	 */
 	@RequestMapping(value={"bsd/products/instore/update"}, method=RequestMethod.POST)
 	@ResponseBody
-	public String updateInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
-		for (ProductDto productInStore : requestProductInStore.getProducts()) {
-			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
-		}
+	public String updateInStoreProducts(
+						@RequestBody ProductInStoreJsonData requestProductInStore,
+						@RequestParam(value="storeId", required=true) Long storeId) throws Exception{
+//		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+//			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+//		}
+		bsdService.updateProductsPricesInStore(storeId, requestProductInStore.getProducts());
+		
 		return SUCCESS_RESPONSE;
 	}
-	@RequestMapping(value={"bsd/products/instore/create"}, method=RequestMethod.POST)
+	
+/*	@RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST)
 	@ResponseBody
-	public String createInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
-		for (ProductDto productInStore : requestProductInStore.getProducts()) {
-			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
-		}
+	public String deleteInStoreProducts(
+			@RequestBody ProductInStoreJsonData requestProductInStore,
+			@RequestParam(value="storeId", required=true) Long storeId) throws Exception{
+//		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+//			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+//		}
+		bsdService.deleteProductsFromStore(storeId, requestProductInStore.getProducts());
 		return SUCCESS_RESPONSE;
-	}
-	@RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST)
-	@ResponseBody
-	public String deleteInStoreProducts(@RequestBody ProductInStoreJsonData requestProductInStore){
-		for (ProductDto productInStore : requestProductInStore.getProducts()) {
-			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
-		}
-		return SUCCESS_RESPONSE;
-	}
+	}*/
 	class ProductInStoreJsonData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<ProductDto> data = new ArrayList<ProductDto>();

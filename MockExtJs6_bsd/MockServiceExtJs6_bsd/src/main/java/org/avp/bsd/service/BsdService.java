@@ -9,6 +9,7 @@ import org.avp.bsd.model.OrderHeader;
 import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
+import org.avp.bsd.model.StoreProductPK;
 import org.avp.security.model.User;
 
 public interface BsdService {
@@ -29,4 +30,9 @@ public interface BsdService {
 	
 	public List<ProductDto> getProductPriceInStore(Long storeId);
 	public List<ProductDto> getProductNotInStore(Long storeId);
+	
+	public ProductPriceInStore findProductPriceInStoreByPk(StoreProductPK pk);
+	public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku);
+	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception;
+	//public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
 }

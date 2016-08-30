@@ -172,6 +172,17 @@ public class ValidateBsdTables {
 		logger.debug("productsInStore = \""+productsInStore+"\"");
 		List<ProductDto> productsAvailableForStore = bsdService.getProductNotInStore(store.getId());
 		logger.debug("productsAvailableForStore = \""+productsAvailableForStore+"\"");
+		
+		//------------------------------- TEST find ProductPriceInStore  --------------------
+		StoreProductPK pk = new StoreProductPK();
+		pk.setStore(store);
+		pk.setProduct(products.get(0));
+		ProductPriceInStore ppis = bsdService.findProductPriceInStoreByPk(pk);
+		assertNotNull(ppis);
+		
+		ppis = bsdService.findProductPriceInStoreByStoreIdAndProductSku(1L, "tst1");
+		assertNotNull(ppis);
+
 	}
 	
 }
