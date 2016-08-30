@@ -156,7 +156,7 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     }
     ,updateQuotaCallback:function (batch, syncOptions){
     	var appStoreId = syncOptions.theStore.appStoreId; 
-        syncOptions.theStore.load({params:{'storeId': appStoreId}});
+        //syncOptions.theStore.load({params:{'storeId': appStoreId}});
     }
     
     /*

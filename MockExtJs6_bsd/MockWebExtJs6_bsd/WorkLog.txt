@@ -14,7 +14,17 @@ Server side support for Update, Create, Delete fpr products in store
      
      Form should be validated before submission at least for zero price for assigned products
      	- http://www.mysamplecode.com/2012/02/extjs-grid-validation-error-qtip.html
-
+---
+	`var syncOptions = {	theStore:theStore,success:this.updateQuotaCallback};
+    theStore.sync(syncOptions);` suppose to call update,delete and create urls, but:
+    	
+		- @RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST) 
+			receive records deleted
+		- @RequestMapping(value={"bsd/products/instore/update"}, method=RequestMethod.POST)
+			receives new and edited records 
+		- @RequestMapping(value={"bsd/products/instore/create"}, method=RequestMethod.POST)
+			(wasn't called) receives nothing - new records come to 'update'
+---
 
 ### August 28
 
