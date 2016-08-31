@@ -2,6 +2,10 @@
 ---
 
 ### August 30
+- add test for bsdService.deleteProductsFromStore(1L, products);
+
+	-- no exception
+	-- ProductsPriceInStore not deleted
 
 !!! commenting out `public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{`
 

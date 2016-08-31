@@ -34,5 +34,5 @@ public interface BsdService {
 	public ProductPriceInStore findProductPriceInStoreByPk(StoreProductPK pk);
 	public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku);
 	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception;
-	//public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
+	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
 }

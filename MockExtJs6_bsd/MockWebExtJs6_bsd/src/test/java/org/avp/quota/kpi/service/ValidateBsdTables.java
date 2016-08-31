@@ -184,5 +184,22 @@ public class ValidateBsdTables {
 		assertNotNull(ppis);
 
 	}
+
+	@Test
+	public void deleteProductInStore(){
+		List<ProductDto> products = new ArrayList<ProductDto>();
+		ProductDto p = new ProductDto();
+		p.setSku("tst1");
+		products.add(p);
+		try {
+			bsdService.deleteProductsFromStore(1L, products);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ProductPriceInStore ppis = bsdService.findProductPriceInStoreByStoreIdAndProductSku(1L, "tst1");
+		assertNull(ppis);
+	}
+
 	
 }

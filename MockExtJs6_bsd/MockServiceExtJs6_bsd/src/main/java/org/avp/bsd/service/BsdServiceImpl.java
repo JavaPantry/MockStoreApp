@@ -192,7 +192,7 @@ public class BsdServiceImpl implements BsdService {
 		}
 	}
 	
-	/*@Transactional()
+	@Transactional()
 	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{
 		Store store = storeHeaderRepository.findOne(storeId);
 		if (store == null) {
@@ -202,7 +202,7 @@ public class BsdServiceImpl implements BsdService {
 			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
 			productPriceInStoreRepository.delete(productPriceInStore);
 		}
-	}*/
+	}
 	
 	@Transactional()
 	public List<ProductDto> getProductNotInStore(Long storeId){

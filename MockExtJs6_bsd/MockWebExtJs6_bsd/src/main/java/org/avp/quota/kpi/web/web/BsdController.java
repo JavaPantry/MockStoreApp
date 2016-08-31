@@ -174,17 +174,18 @@ public class BsdController extends AbstractExtJsController {
 		return SUCCESS_RESPONSE;
 	}
 	
-/*	@RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST)
+	@RequestMapping(value={"bsd/products/instore/delete"}, method=RequestMethod.POST)
 	@ResponseBody
 	public String deleteInStoreProducts(
 			@RequestBody ProductInStoreJsonData requestProductInStore,
 			@RequestParam(value="storeId", required=true) Long storeId) throws Exception{
-//		for (ProductDto productInStore : requestProductInStore.getProducts()) {
-//			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
-//		}
+		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
+		}
 		bsdService.deleteProductsFromStore(storeId, requestProductInStore.getProducts());
 		return SUCCESS_RESPONSE;
-	}*/
+	}
+	
 	class ProductInStoreJsonData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<ProductDto> data = new ArrayList<ProductDto>();
