@@ -127,17 +127,17 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     	theStore.each(function(record,idx){
     		var errors = record.validate();
 			for (var i = 0; i < columnLength; i++) {
-				cell = view.getCellByPosition({row: idx, column: i});
-				cell.removeCls("x-form-invalid-field-default");
-				cell.set({'data-errorqtip': ''});
+//				cell = view.getCellByPosition({row: idx, column: i});
+//				cell.removeCls("x-form-invalid-field-default");
+//				cell.set({'data-errorqtip': ''});
 				fieldName = theGrid.columns[i].dataIndex;
 				if (fieldName === 'price') {
 					//Do your validation here
 					var price = record.get('price');
 					
 					if(price == undefined || price <= 0) {
-					cell.addCls("x-form-invalid-field-default");
-					cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
+//					cell.addCls("x-form-invalid-field-default");
+//					cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
 					error = true;
 					}
 				}

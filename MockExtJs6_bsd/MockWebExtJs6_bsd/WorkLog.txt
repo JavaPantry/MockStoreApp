@@ -2,7 +2,7 @@
 ---
 ### August 31
 
-Delete product in store
+1.Delete product in store
 
 - add test for bsdService.deleteProductsFromStore(1L, products);
 
@@ -16,7 +16,13 @@ Delete product in store
 
 - add test deleteProductInStore() to validate bsd tables in suitcase
 
+2. Disable error highlighting in empty product price cell (dragManager still working and conflict with cell editor)
 
+	cell.addCls("x-form-invalid-field-default");
+	cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
+
+
+ 
 ### August 30
 
 !!! commenting out `public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{`
