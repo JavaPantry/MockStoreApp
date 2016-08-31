@@ -1,11 +1,23 @@
 # Mock project
 ---
+### August 31
 
-### August 30
+Delete product in store
+
 - add test for bsdService.deleteProductsFromStore(1L, products);
 
-	-- no exception
-	-- ProductsPriceInStore not deleted
+	-- ProductsPriceInStore not deleted without exception (either store or product relationships cancel deletion)
+	-- remove ProductsPriceInStore from store as well and removal start working
+
+- add finders for product and store to bsdService
+
+	- public Product findProductBySku(String string);
+	- public Store findStoreById(Long l);
+
+- add test deleteProductInStore() to validate bsd tables in suitcase
+
+
+### August 30
 
 !!! commenting out `public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{`
 
@@ -24,9 +36,6 @@
 			
 			
 	-- need to brake data from ProductDto into Product and ProductPriceInStore entities  
-
-
-
 
 
 * Google: 'jpa repository find by composite primary key'

@@ -30,6 +30,16 @@
  
 ![layout](Documents/AssignProductsToStore.PNG)
 
+# Test database
+
+- select tables populated @ build
+
+	SELECT * FROM gitmockauth.users;
+	SELECT * FROM gitmockauth.orders;
+	SELECT * FROM gitmockauth.stores;
+	SELECT * FROM gitmockauth.products;
+	SELECT * FROM gitmockauth.productpriceinstore;
+
 
 # References
 

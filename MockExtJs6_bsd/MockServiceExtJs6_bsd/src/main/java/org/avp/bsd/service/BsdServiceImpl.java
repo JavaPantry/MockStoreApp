@@ -3,6 +3,7 @@ package org.avp.bsd.service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -156,6 +157,14 @@ public class BsdServiceImpl implements BsdService {
 		return ppis;
 	}
 
+	public Product findProductBySku(String sku){
+		return productRepository.findOne(sku);
+	}
+	public Store findStoreById(Long id){
+		return storeHeaderRepository.findOne(id);
+	}
+
+	
 	private Specification<ProductPriceInStore> findProductInStore( final Long storeId, final String sku) {
 		return new Specification<ProductPriceInStore>() {
 			@Override
@@ -194,13 +203,20 @@ public class BsdServiceImpl implements BsdService {
 	
 	@Transactional()
 	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{
-		Store store = storeHeaderRepository.findOne(storeId);
+		/*Store store = storeHeaderRepository.findOne(storeId);
 		if (store == null) {
 			throw new Exception("Could not find '"+storeId+"' store id");
-		}
+		}*/
 		for (ProductDto productDto : products) {
 			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
+			if(productPriceInStore == null){
+				continue;
+			}
+			Store store = productPriceInStore.getPk().getStore();
+			Set<ProductPriceInStore> productsInStore = store.getProductsInStore();
+			productsInStore.remove(productPriceInStore);
 			productPriceInStoreRepository.delete(productPriceInStore);
+			storeHeaderRepository.save(store);
 		}
 	}
 	

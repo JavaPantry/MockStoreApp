@@ -26,6 +26,7 @@ public interface BsdService {
 	public void save(OrderHeader orderHeader);
 
 	public void save(Store store);
+	
 	public List<Store> getStores();
 	
 	public List<ProductDto> getProductPriceInStore(Long storeId);
@@ -35,4 +36,7 @@ public interface BsdService {
 	public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku);
 	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception;
 	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
+	public Product findProductBySku(String sku);
+	public Store findStoreById(Long id);
+	
 }

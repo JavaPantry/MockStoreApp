@@ -23,6 +23,7 @@ import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.model.StoreProductPK;
+import org.avp.bsd.repository.StoreRepository;
 import org.avp.bsd.service.BsdService;
 import org.avp.quota.kpi.configuration.HsqlJUnitDataServiceModuleConfiguration;
 import org.avp.quota.kpi.configuration.JbossTestDataServiceModuleConfiguration;
@@ -185,6 +186,17 @@ public class ValidateBsdTables {
 
 	}
 
+	
+	/*
+	 *
+	 * 		ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
+			Store store = productPriceInStore.getPk().getStore();
+			Set<ProductPriceInStore> productsInStore = store.getProductsInStore();
+			productsInStore.remove(productPriceInStore);
+			productPriceInStoreRepository.delete(productPriceInStore);
+			storeHeaderRepository.save(store);
+
+	 */
 	@Test
 	public void deleteProductInStore(){
 		List<ProductDto> products = new ArrayList<ProductDto>();
@@ -199,6 +211,21 @@ public class ValidateBsdTables {
 		}
 		ProductPriceInStore ppis = bsdService.findProductPriceInStoreByStoreIdAndProductSku(1L, "tst1");
 		assertNull(ppis);
+		
+		// insert product 'tst1' back to store
+		
+		Store s = bsdService.findStoreById(1L);
+		Product product = bsdService.findProductBySku("tst1");
+		
+		ppis = new ProductPriceInStore();
+		ppis.setPk(new StoreProductPK(s, product));
+		ppis.setPrice(12.34);
+		bsdService.save(ppis);
+		
+		ProductPriceInStore ppisEntity = bsdService.findProductPriceInStoreByStoreIdAndProductSku(1L, "tst1");
+		assertNotNull(ppisEntity);
+		
+		
 	}
 
 	
