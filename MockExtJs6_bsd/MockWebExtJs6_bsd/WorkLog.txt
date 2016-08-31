@@ -16,10 +16,10 @@
 
 - add test deleteProductInStore() to validate bsd tables in suitcase
 
-2. Disable error highlighting in empty product price cell (dragManager still working and conflict with cell editor)
 
-	cell.addCls("x-form-invalid-field-default");
-	cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
+2.[W] QuotaKPI.model.siteManagement.ProductPriceInStore: validations has been deprecated. Please use validators instead.
+    	'validate' may be about 'validate form fields' and 'not grid cells' 
+
 
 
  
@@ -99,6 +99,8 @@ Draft implementation for manage products in store
 - Manage selected store content (assign products to store)
 - 10. TODO - <AP>: this panel contains two same tables with stores pointed to two data sources
 - Add specific grids with stores
+8. left one pointed to products within store (assigned to store)
+9. right one pointed to products not within store (globally available but not assigned to selected store)
 
 	ProductGridAvailableForStore -> ProductAvailableForStore
 	ProductGridInStore -> ProductInStore

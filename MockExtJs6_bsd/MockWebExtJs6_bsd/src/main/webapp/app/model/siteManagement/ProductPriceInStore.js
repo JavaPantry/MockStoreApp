@@ -6,7 +6,8 @@ Ext.define('QuotaKPI.model.siteManagement.ProductPriceInStore', {
          ,{name: 'EProductDescription', type: 'string'}
          ,{name: 'price', type: 'number'}
      ]
-	,validations: [
+//QuotaKPI.model.siteManagement.ProductPriceInStore: validations has been deprecated. Please use validators instead.
+	/*,validators: [
 	     {type: 'presence',  field: 'price'}
-	     ]
+	     ]*/
 });

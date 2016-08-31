@@ -125,19 +125,21 @@ Ext.define('QuotaKPI.controller.siteManagement.SiteManagementController', {
     	var columnLength = theGrid.columns.length;
     	
     	theStore.each(function(record,idx){
-    		var errors = record.validate();
+    		// destroy cell editor > var errors = record.validate();
+    		//also console warning that's deprecated: [W] QuotaKPI.model.siteManagement.ProductPriceInStore: validations has been deprecated. Please use validators instead.
+    		//'validate' may be about 'validate form fields' and 'not grid cells' 
 			for (var i = 0; i < columnLength; i++) {
-//				cell = view.getCellByPosition({row: idx, column: i});
-//				cell.removeCls("x-form-invalid-field-default");
-//				cell.set({'data-errorqtip': ''});
+				var cell = view.getCellByPosition({row: idx, column: i});
+				cell.removeCls("x-form-invalid-field-default");
+				cell.set({'data-errorqtip': ''});
 				fieldName = theGrid.columns[i].dataIndex;
 				if (fieldName === 'price') {
 					//Do your validation here
 					var price = record.get('price');
 					
 					if(price == undefined || price <= 0) {
-//					cell.addCls("x-form-invalid-field-default");
-//					cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
+					cell.addCls("x-form-invalid-field-default");
+					cell.set({'data-errorqtip': 'Price should be defined and greater than zero'});
 					error = true;
 					}
 				}
