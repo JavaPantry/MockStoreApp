@@ -77,6 +77,9 @@ _Installation_
 - [http://stackoverflow.com/questions/2211002/why-not-abstract-fields](http://stackoverflow.com/questions/2211002/why-not-abstract-fields)
 
 3. [multiple instances of same grid](http://stackoverflow.com/questions/15777134/ext-js-multiple-instances-of-same-grid)
+4. [Why are Data Transfer Objects an anti-pattern?](http://stackoverflow.com/questions/1440952/why-are-data-transfer-objects-an-anti-pattern)
+5. [Spring 3.1 JSON date format](http://stackoverflow.com/questions/9038005/spring-3-1-json-date-format) from src [How to control Date formatting when Jackson JSON Processor is used with Spring 3.0](http://blog.seyfi.net/2010/03/how-to-control-date-formatting-when.html)
+
 
 ---
 

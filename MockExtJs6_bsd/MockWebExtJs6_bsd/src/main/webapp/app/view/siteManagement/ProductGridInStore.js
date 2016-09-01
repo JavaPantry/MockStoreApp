@@ -38,10 +38,13 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGridInStore', {
 	//,'gridfilters'
 	] // plugins
 
-	,columns: [ {header		: 'sku', flex:1,					dataIndex: 'sku'}
-			    ,{header	: 'Product Name', flex:2,			dataIndex: 'EProductName'}
-			    ,{header	: 'Product Description', flex:4,	dataIndex: 'EProductDescription'}
-			    ,{header	: 'Price in Store', flex:1,			dataIndex: 'price',editor:{xtype:'numberfield',minValue: 0}}
+	,columns: [ {header		: 'sku', flex:1,					dataIndex:'sku'}
+			    ,{header	: 'Product Name', flex:2,			dataIndex:'EProductName'}
+			    ,{header	: 'Product Description', flex:4,	dataIndex:'EProductDescription'}
+			    
+				,{header	: 'Scheduled Price', flex:4,	dataIndex:'priceScheduled',editor:{xtype:'numberfield',minValue: 0}}
+				,{header	: 'Scheduled Date', flex:4,	dataIndex:'priceSchedule', xtype:'datecolumn', format:'m-d-Y', renderer : Ext.util.Format.dateRenderer('m-d-Y')}
+			    ,{header	: 'Price in Store', flex:1,			dataIndex:'price',editor:{xtype:'numberfield',minValue: 0}}
 	]
 
 	,dockedItems : [

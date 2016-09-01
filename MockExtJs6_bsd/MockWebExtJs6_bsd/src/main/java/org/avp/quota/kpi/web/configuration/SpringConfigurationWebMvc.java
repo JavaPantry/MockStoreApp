@@ -1,6 +1,7 @@
 package org.avp.quota.kpi.web.configuration;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.web.context.support.ServletContextAttributeExporter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -21,6 +24,9 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.ResourceBundleViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 @Configuration
@@ -88,5 +94,29 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter {
 		servletContextAttributeExporter.setAttributes(attributes);
 		return servletContextAttributeExporter;
 	}
+	
+	/*
+	 * Temporarily fix GSON Date conversion problem
+	 * - Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
+	 * - also this is adding @Expose annotation 
+	 */
+	@Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(createGsonHttpMessageConverter());
+        super.configureMessageConverters(converters);
+    }
+
+    private GsonHttpMessageConverter createGsonHttpMessageConverter() {
+        Gson gson = new GsonBuilder()
+                //.excludeFieldsWithoutExposeAnnotation()
+                //.setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
+        		.setDateFormat("MM'-'dd'-'yyyy")
+                .create();
+
+        GsonHttpMessageConverter gsonConverter = new GsonHttpMessageConverter();
+        gsonConverter.setGson(gson);
+        return gsonConverter;
+    }
+
 	
 }

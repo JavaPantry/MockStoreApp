@@ -1,5 +1,41 @@
 # Mock project
 ---
+
+### September 1
+
+- Polish ProductGridInStore (add priceInStore columns)
+	- add	priceScheduled and priceSchedule date columns
+	- refactor names in product&productDto
+	- problem with Date coming to grid in json format "priceSchedule":"Sep 1, 2016 10:51:36 AM" 
+		other direction (from request to action method) springframework.web.bind.annotation.InitBinder on java action side to format incoming data object [What is the purpose of init binder in spring MVC](http://stackoverflow.com/questions/5211323/what-is-the-purpose-of-init-binder-in-spring-mvc)
+- Resize ProductGridInStore and ProductGridAvailableForStore (make 2-nd smaller)
+- Make order on angular UI (from product page?)
+
+
+Project's JSON converter
+	- to get an idea which json library is used in spring mvc add two loggers in log4j
+		log4j.logger.com.google.gson=DEBUG
+		log4j.logger.org.codehaus.jackson=DEBUG
+		- none logging from them but:
+		org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor 
+		- Written [org.sporcic.extjs.ExtData] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.GsonHttpMessageConverter]
+		
+	- google: how to select GsonHttpMessageConverter for RequestResponseBodyMethodProcessor (all refer to _class AppConfig extends WebMvcConfigurerAdapter  { public void configureMessageConverters){...}_ )
+		- [how to Configure HttpMessageConverter in Spring](http://www.baeldung.com/spring-httpmessageconverter-rest)
+		- [Spring 4 MVC GsonHttpMessageConverter Example with configureMessageConverters()](http://www.concretepage.com/spring-4/spring-4-mvc-gsonhttpmessageconverter-example-with-configuremessageconverters)
+		- google [spring mvc default list of converters]()
+	- currently /MockServiceExtJs6_bsd/pom.xml project list
+		- net.sf.flexjson
+		- jackson-mapper-asl
+		- com.google.code.gson  
+	- MPS doesn't have gson dependencies (not required because have no support for extJs filters)
+	- Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
+		- also this is adding @Expose annotation
+		- after adding date format priceSchedule changed from:
+			from "priceSchedule":"Sep 1, 2016 10:51:36 AM"
+			to   "priceSchedule":"2016-09-01T10:51:36.000Z","created":"2016-09-01T10:51:36.000Z"
+---
+
 ### August 31
 
 1.Delete product in store
@@ -7,7 +43,7 @@
 - add test for bsdService.deleteProductsFromStore(1L, products);
 
 	-- ProductsPriceInStore not deleted without exception (either store or product relationships cancel deletion)
-	-- remove ProductsPriceInStore from store as well and removal start working
+	-- remove ProductsPriceInStore from store entity as well and `removal transaction` start working
 
 - add finders for product and store to bsdService
 
@@ -20,9 +56,6 @@
 2.[W] QuotaKPI.model.siteManagement.ProductPriceInStore: validations has been deprecated. Please use validators instead.
     	'validate' may be about 'validate form fields' and 'not grid cells' 
 
-
-
- 
 ### August 30
 
 !!! commenting out `public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception{`
