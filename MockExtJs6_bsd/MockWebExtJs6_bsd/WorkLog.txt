@@ -1,18 +1,23 @@
 # Mock project
+
 ---
 
+### September 2
+
+	- TODO refactor names in product&productDto
+
+---
 ### September 1
 
 - Polish ProductGridInStore (add priceInStore columns)
 	- add	priceScheduled and priceSchedule date columns
-	- refactor names in product&productDto
 	- problem with Date coming to grid in json format "priceSchedule":"Sep 1, 2016 10:51:36 AM" 
 		other direction (from request to action method) springframework.web.bind.annotation.InitBinder on java action side to format incoming data object [What is the purpose of init binder in spring MVC](http://stackoverflow.com/questions/5211323/what-is-the-purpose-of-init-binder-in-spring-mvc)
 - Resize ProductGridInStore and ProductGridAvailableForStore (make 2-nd smaller)
 - Make order on angular UI (from product page?)
 
 
-Project's JSON converter
+Project's active JSON converter for responses:
 	- to get an idea which json library is used in spring mvc add two loggers in log4j
 		log4j.logger.com.google.gson=DEBUG
 		log4j.logger.org.codehaus.jackson=DEBUG
@@ -24,10 +29,11 @@ Project's JSON converter
 		- [how to Configure HttpMessageConverter in Spring](http://www.baeldung.com/spring-httpmessageconverter-rest)
 		- [Spring 4 MVC GsonHttpMessageConverter Example with configureMessageConverters()](http://www.concretepage.com/spring-4/spring-4-mvc-gsonhttpmessageconverter-example-with-configuremessageconverters)
 		- google [spring mvc default list of converters]()
-	- currently /MockServiceExtJs6_bsd/pom.xml project list
+	- currently /MockServiceExtJs6_bsd/pom.xml project list in order
 		- net.sf.flexjson
 		- jackson-mapper-asl
-		- com.google.code.gson  
+		- com.google.code.gson
+	- experiment with dependency order for Gson and Jackson. Regardles Spring MVC pick Gson.
 	- MPS doesn't have gson dependencies (not required because have no support for extJs filters)
 	- Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
 		- also this is adding @Expose annotation
