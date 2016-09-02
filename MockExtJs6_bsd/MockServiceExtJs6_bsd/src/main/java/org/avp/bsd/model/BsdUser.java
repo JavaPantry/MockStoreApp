@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import org.avp.security.model.User;
 
+import com.google.gson.annotations.Expose;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "bsdusers")
@@ -31,15 +33,27 @@ public class BsdUser extends User implements java.io.Serializable {
 	@OneToMany(fetch=FetchType.EAGER , mappedBy = "user", cascade={CascadeType.ALL}, orphanRemoval=true)
 	private Set<OrderHeader> orders;
 	
+	@Expose
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean clientAdmin;
+	
+	@Expose
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean siteAdmin;
+	
+	@Expose
 	private String phone;
+	
+	@Expose
 	private String fax;
+	
+	@Expose
 	private String subDivision;
+	
+	@Expose
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean active;
+	
 	private Date createDt;
 
 	public BsdUser() {

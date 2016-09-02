@@ -5,7 +5,29 @@
 ### September 2
 
 	- TODO refactor names in product&productDto
+	- TODO reduce number of DTO by using Gson's @Expose
+		 - add @Expose to properties in BsdUser and User classes
+		 - public class GsonTest = new GsonBuilder()//.serializeNulls()
+						.setPrettyPrinting()
+						.excludeFieldsWithoutExposeAnnotation()
+						.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer())// TODO - <AP> get rid of it
+						.setDateFormat(DateFormat.LONG)// TODO - <AP> 
+						.create();
+						
+			String jsonStr = gson.toJson(bsdUser);
+			System.out.println("GsonTest.testClientSerialization() bsdUser = \n"+jsonStr);
+		 
 
+### September 2 Tag version v0.1.1
+Since v0.1.1 'AngularII' branch merged to 'master'
+add priceScheduled and priceSchedule date columns
+problem with Date coming to grid in json format "priceSchedule":"Sep 1, 2016 10:51:36 AM"
+fix Date conversion problem
+implement Delete product from store
+Server side support for Update, Create, Delete for products in store (extJs)
+implement Save for created/updated products in managed store
+support DnD between ProductGridAvailableForStore and ProductGridInStore grids (extJs)
+Server side support for entities update (extJs)
 ---
 ### September 1
 
@@ -33,7 +55,7 @@ Project's active JSON converter for responses:
 		- net.sf.flexjson
 		- jackson-mapper-asl
 		- com.google.code.gson
-	- experiment with dependency order for Gson and Jackson. Regardles Spring MVC pick Gson.
+	- experiment with dependency order for Gson and Jackson. Regardless Spring MVC pick Gson.
 	- MPS doesn't have gson dependencies (not required because have no support for extJs filters)
 	- Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
 		- also this is adding @Expose annotation
