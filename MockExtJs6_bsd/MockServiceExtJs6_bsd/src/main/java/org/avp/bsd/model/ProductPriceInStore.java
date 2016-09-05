@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 
 @SuppressWarnings("serial")
 @Entity
@@ -19,13 +21,17 @@ import javax.persistence.Table;
     })
 public class ProductPriceInStore implements java.io.Serializable {
 
+	@Expose
 	@EmbeddedId
 	private StoreProductPK pk;
 
-	
+	@Expose
 	private Double price;
+	@Expose
 	private Double priceScheduled;
+	@Expose
 	private Date priceSchedule;
+
 	private Date created;
 
 	public ProductPriceInStore() {

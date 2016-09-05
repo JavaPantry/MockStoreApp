@@ -108,7 +108,7 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter {
 
     private GsonHttpMessageConverter createGsonHttpMessageConverter() {
         Gson gson = new GsonBuilder()
-                //.excludeFieldsWithoutExposeAnnotation()
+                .excludeFieldsWithoutExposeAnnotation()
                 //.setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
         		.setDateFormat("MM'-'dd'-'yyyy")
                 .create();

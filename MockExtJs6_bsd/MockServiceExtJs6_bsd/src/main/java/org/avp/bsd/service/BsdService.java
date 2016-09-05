@@ -29,13 +29,17 @@ public interface BsdService {
 	
 	public List<Store> getStores();
 	
-	public List<ProductDto> getProductPriceInStore(Long storeId);
-	public List<ProductDto> getProductNotInStore(Long storeId);
+	public List<ProductDto> getProductPriceInStoreDto(Long storeId);
+	public List<ProductPriceInStore> getProductPriceInStore(Long storeId);
+	
+	public List<ProductDto> getProductNotInStoreDto(Long storeId);
+	public List<Product> getProductNotInStore(Long storeId);
+	public List<ProductPriceInStore> getProductsPricesNotInStore(Long storeId) throws Exception;
 	
 	public ProductPriceInStore findProductPriceInStoreByPk(StoreProductPK pk);
 	public ProductPriceInStore findProductPriceInStoreByStoreIdAndProductSku(Long storeId, String sku);
-	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception;
-	public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
+	public void updateProductsPricesInStore(Long storeId, List<ProductPriceInStore> products) throws Exception;
+	//public void deleteProductsFromStore(Long storeId, List<ProductDto> products) throws Exception;
 	public Product findProductBySku(String sku);
 	public Store findStoreById(Long id);
 	

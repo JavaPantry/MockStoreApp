@@ -3,6 +3,8 @@ package org.sporcic.extjs;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -16,16 +18,19 @@ import java.util.List;
  */
 public class ExtData extends ExtResponse {
 
-    @ JsonProperty("data")
+	//@ JsonProperty("data")
+	@Expose
     private final List<Object> data = new ArrayList<Object>();
 
-    @JsonProperty("total")
+	//@JsonProperty("total")
+	@Expose
     private long total = 0;
 
     /**
      * Summary field to support remote Summary feature see:QuotaGrid.js referred as 'Ext.grid.feature.RemoteSummary'
      * TODO - <AP> Meta 'grid.feature.RemoteSummary'
      */
+	@Expose
     @ JsonProperty("summary")
     Object summary	= null; 
     

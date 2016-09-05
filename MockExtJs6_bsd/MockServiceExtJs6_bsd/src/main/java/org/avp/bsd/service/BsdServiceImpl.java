@@ -114,7 +114,7 @@ public class BsdServiceImpl implements BsdService {
 	}
 	
 	@Transactional()
-	public List<ProductDto> getProductPriceInStore(Long storeId){
+	public List<ProductDto> getProductPriceInStoreDto(Long storeId){
 		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));
 		// !!! - very dummy implementation - !!!
 		List<Product> products = new ArrayList<Product>();
@@ -125,6 +125,13 @@ public class BsdServiceImpl implements BsdService {
 		List<ProductDto> productsInStore = DtoFactory.createProductDtoListFromProductPriceInStore(productPricesInStore);
 		return productsInStore;
 	}
+
+	@Transactional()
+	public List<ProductPriceInStore> getProductPriceInStore(Long storeId){
+		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));
+		return productPricesInStore;
+	}
+
 	private Specification<ProductPriceInStore> findProductInStore( final Long storeId) {
 		return new Specification<ProductPriceInStore>() {
 			@Override
@@ -179,17 +186,17 @@ public class BsdServiceImpl implements BsdService {
 	}
 	
 	@Transactional()
-	public void updateProductsPricesInStore(Long storeId, List<ProductDto> products) throws Exception{
+	public void updateProductsPricesInStore(Long storeId, List<ProductPriceInStore> products) throws Exception{
 
 		Store store = storeHeaderRepository.findOne(storeId);
 		if (store == null) {
 			throw new Exception("Could not find '"+storeId+"' store id");
 		}
-		for (ProductDto productDto : products) {
-			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getSku());
+		for (ProductPriceInStore productDto : products) {
+			ProductPriceInStore productPriceInStore = findProductPriceInStoreByStoreIdAndProductSku(storeId, productDto.getPk().getProduct().getSku());
 			if(productPriceInStore == null){
 				productPriceInStore = new ProductPriceInStore();
-				Product product = productRepository.findOne(productDto.getSku());
+				Product product = productRepository.findOne(productDto.getPk().getProduct().getSku());
 				StoreProductPK pk = new StoreProductPK(store, product);
 				productPriceInStore.setPk(pk);
 			}
@@ -221,7 +228,7 @@ public class BsdServiceImpl implements BsdService {
 	}
 	
 	@Transactional()
-	public List<ProductDto> getProductNotInStore(Long storeId){
+	public List<ProductDto> getProductNotInStoreDto(Long storeId){
 		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));
 		List<String> skus = new ArrayList<String>();
 		for (ProductPriceInStore productPriceInStore : productPricesInStore) {
@@ -232,6 +239,42 @@ public class BsdServiceImpl implements BsdService {
 		List<ProductDto> productsNotInStore = DtoFactory.createProductDtoList(products); //new ArrayList<ProductDto>();
 		return productsNotInStore;
 	}
+	
+	@Transactional()
+	public List<Product> getProductNotInStore(Long storeId){
+		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));
+		List<String> skus = new ArrayList<String>();
+		for (ProductPriceInStore productPriceInStore : productPricesInStore) {
+			skus.add(productPriceInStore.getPk().getProduct().getSku());
+		}
+		List<Product> productsNotInStore = productRepository.findAll(findProductsNotInStore(skus));
+		return productsNotInStore;
+	}
+	
+	
+	@Transactional()
+	public List<ProductPriceInStore> getProductsPricesNotInStore(Long storeId) throws Exception{
+		Store store = storeHeaderRepository.findOne(storeId);
+		if (store == null) {
+			throw new Exception("Could not find '"+storeId+"' store id");
+		}
+
+		List<ProductPriceInStore> productPricesInStore = productPriceInStoreRepository.findAll(findProductInStore(storeId));
+		List<String> skus = new ArrayList<String>();
+		for (ProductPriceInStore productPriceInStore : productPricesInStore) {
+			skus.add(productPriceInStore.getPk().getProduct().getSku());
+		}
+		List<Product> productsNotInStore = productRepository.findAll(findProductsNotInStore(skus));
+		List<ProductPriceInStore> productPricesForStore = new ArrayList<ProductPriceInStore>();
+		for (Product product : productsNotInStore) {
+			ProductPriceInStore productPriceForStore = new ProductPriceInStore();
+			StoreProductPK pk = new StoreProductPK(store, product);
+			productPriceForStore.setPk(pk);
+			productPricesForStore.add(productPriceForStore);
+		}
+		return productPricesForStore;
+	}
+
 	private Specification<Product> findProductsNotInStore( final List<String> skus) {
 		return new Specification<Product>() {
 			@Override

@@ -86,10 +86,10 @@ public class BsdController extends AbstractExtJsController {
 //		Page<Store> storePage = bsdService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
 //		List<Store> quotas = storePage.getContent();
     	List<Store> stores = bsdService.getStores();
-    	List<StoreDto> storeDtos = DtoFactory.createStoreDtoList(stores);
+    	//List<StoreDto> storeDtos = DtoFactory.createStoreDtoList(stores);
     	
-    	response.add(storeDtos);
-    	response.setTotal(storeDtos.size());
+    	response.add(stores);//(storeDtos);
+    	response.setTotal(stores.size());//storeDtos.size()
         response.setSuccess(true);
         return response;
 	}
@@ -116,9 +116,9 @@ public class BsdController extends AbstractExtJsController {
 //		List<QuotaDao> quotas = quotaDaoPage.getContent();
     	
     	List<Product> products = bsdService.getProducts();
-    	List<ProductDto> productDtos = DtoFactory.createProductDtoList(products);
-    	response.add(productDtos);
-    	response.setTotal(100);
+    	//List<ProductDto> productDtos = DtoFactory.createProductDtoList(products);
+    	response.add(products);//productDtos
+    	response.setTotal(products.size());
         response.setSuccess(true);
         return response;
 	}
@@ -147,9 +147,9 @@ public class BsdController extends AbstractExtJsController {
 //		List<QuotaDao> quotas = quotaDaoPage.getContent();
     	
     	//List<Product> products = bsdService.getProducts();
-    	List<ProductDto> productDtos = bsdService.getProductPriceInStore(storeId);//DtoFactory.createProductDtoList(products);
-    	response.add(productDtos);
-    	response.setTotal(100);
+    	List<ProductPriceInStore> productPricesInStore = bsdService.getProductPriceInStore(storeId);//DtoFactory.createProductDtoList(products);
+    	response.add(productPricesInStore);
+    	response.setTotal(productPricesInStore.size());
         response.setSuccess(true);
         return response;
 	}
@@ -166,7 +166,7 @@ public class BsdController extends AbstractExtJsController {
 	public String updateInStoreProducts(
 						@RequestBody ProductInStoreJsonData requestProductInStore,
 						@RequestParam(value="storeId", required=true) Long storeId) throws Exception{
-//		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+//		for (ProductPriceInStore productInStore : requestProductInStore.getProducts()) {
 //			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
 //		}
 		bsdService.updateProductsPricesInStore(storeId, requestProductInStore.getProducts());
@@ -179,18 +179,21 @@ public class BsdController extends AbstractExtJsController {
 	public String deleteInStoreProducts(
 			@RequestBody ProductInStoreJsonData requestProductInStore,
 			@RequestParam(value="storeId", required=true) Long storeId) throws Exception{
-		for (ProductDto productInStore : requestProductInStore.getProducts()) {
+		for (ProductPriceInStore productInStore : requestProductInStore.getProducts()) {
 			logger.debug("updateInStoreProducts: productInStore "+productInStore+"\n");
 		}
-		bsdService.deleteProductsFromStore(storeId, requestProductInStore.getProducts());
+		//bsdService.deleteProductsFromStore(storeId, requestProductInStore.getProducts());
 		return SUCCESS_RESPONSE;
 	}
 	
-	class ProductInStoreJsonData extends ExtResponse {
-		@JsonProperty("data")
-	    private List<ProductDto> data = new ArrayList<ProductDto>();
-		public List<ProductDto> getProducts() {return data;}
-		public void setProducts(List<ProductDto> quotas) {this.data = quotas;}
+	public class ProductInStoreJsonData extends ExtResponse {
+		// annotation 'at' JsonProperty("data")
+		private List<ProductPriceInStore> data = new ArrayList<ProductPriceInStore>();
+	    //private List<ProductDto> data = new ArrayList<ProductDto>();
+		public List<ProductPriceInStore> getProducts() {return data;}
+		public void setProducts(List<ProductPriceInStore> quotas) {this.data = quotas;}
+		public List<ProductPriceInStore> getData() {return data;}
+		public void setData(List<ProductPriceInStore> data) {this.data = data;}
 	}
 
 	
@@ -204,7 +207,7 @@ public class BsdController extends AbstractExtJsController {
 			@RequestParam(value="start", required=false) Integer start,
 			@RequestParam(value="sort", required=false) String sort,
 			@RequestParam(value="filter", required=false) String filter
-			) {
+			) throws Exception {
         ExtData response = new ExtData();
         logger.debug("/bsd/products(limit="+limit+", page="+pageIndex+", start="+start+", sort="+sort+", filter="+filter+")");
     	//FilterParameterExtJs6[] filterParameters = getFiltersFromJson(filter);
@@ -214,13 +217,10 @@ public class BsdController extends AbstractExtJsController {
     	if(limit == null) limit=20;
     	if(pageIndex == null) pageIndex=1;
     	if(start == null) start=0;
-    	
-//		Page<QuotaDao> quotaDaoPage = quotaService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
-//		List<QuotaDao> quotas = quotaDaoPage.getContent();
-    	
-    	//List<Product> products = bsdService.getProducts();
-    	List<ProductDto> productDtos = bsdService.getProductNotInStore(storeId);//DtoFactory.createProductDtoList(products);
-    	response.add(productDtos);
+
+    	//List<ProductPriceInStore> productAvailableForStore = bsdService.getProductNotInStore(storeId);//DtoFactory.createProductDtoList(products);
+    	List<ProductPriceInStore> productAvailableForStore = bsdService.getProductsPricesNotInStore(storeId);
+    	response.add(productAvailableForStore);
     	response.setTotal(100);
         response.setSuccess(true);
         return response;
@@ -248,10 +248,10 @@ public class BsdController extends AbstractExtJsController {
 //		Page<Store> storePage = bsdService.getPaginatedFilteredQuotas(limit, pageIndex, start, filterParameters, sortParameters);
 //		List<Store> quotas = storePage.getContent();
     	List<BsdUser> users = bsdService.getBsdUsers();//userService.getDomainUsers();
-    	List<BsdUserDto> bsdUserDtos = DtoFactory.createBsdUserDtoList(users);
+    	//List<BsdUserDto> bsdUserDtos = DtoFactory.createBsdUserDtoList(users);
     	
-    	response.add(bsdUserDtos);
-    	response.setTotal(bsdUserDtos.size());
+    	response.add(users);//bsdUserDtos
+    	response.setTotal(users.size());//bsdUserDtos
         response.setSuccess(true);
         return response;
 	}

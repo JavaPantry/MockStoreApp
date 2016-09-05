@@ -3,6 +3,8 @@ package org.sporcic.extjs;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Base class which represents a minimal payload to be returned
  * to an ExtJS AJAX request, containing the success flag and an optional
@@ -17,8 +19,9 @@ public class ExtResponse {
      */
     public final static ExtResponse SUCCESS = new ExtResponse(true, null);
 
+    @Expose
     protected String message = null;
-
+    @Expose
     protected boolean success = false;
 
     public ExtResponse() {

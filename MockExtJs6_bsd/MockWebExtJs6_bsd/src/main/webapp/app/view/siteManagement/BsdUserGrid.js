@@ -15,11 +15,11 @@ Ext.define('QuotaKPI.view.siteManagement.BsdUserGrid', {
 	,itemId	: 'BsdUserGrid'
     ,columnLines: true
     ,store: 'siteManagement.BsdUser'
-	,columns: [ {header     : 'id',					dataIndex: 'id'}
+	,columns: [ {header     : 'id',					dataIndex: 'id'}//TODO - <AP> remove id BsdUser grid
 			    ,{header     : 'userId',			dataIndex: 'userId'}
 			    ,{header     : 'firstName',			dataIndex: 'firstName'}
 			    ,{header     : 'lastName',			dataIndex: 'lastName'}
-			    ,{header     : 'email',			dataIndex: ''}
+			    ,{header     : 'email',				dataIndex: 'email'}
 			    ]
 
 	,dockedItems : [{xtype: 'toolbar',dock: 'top',

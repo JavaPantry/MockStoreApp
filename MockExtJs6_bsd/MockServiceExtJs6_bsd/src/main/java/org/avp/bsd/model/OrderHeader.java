@@ -9,20 +9,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 @Table(name = "orders")
 public class OrderHeader implements java.io.Serializable {
 
+	@Expose
 	@Id
 	@GeneratedValue
 	private Long id;
 	
 	//private Long storeId;
 	
-	/*
-	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
-	 * @JoinColumn transient
-	 */
+	@Expose
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private BsdUser user;
@@ -35,25 +35,45 @@ public class OrderHeader implements java.io.Serializable {
 //	private String phone;
 //	private String fax;
 	
+	@Expose
 	private String subDivision;
+	@Expose
 	private String shippingFirstName;
+	@Expose
 	private String shippingLastName;
+	@Expose
 	private String shippingAddressAlias;
+	@Expose
 	private String shippingPhone;
+	@Expose
 	private String shippingpAddress;
+	@Expose
 	private String shippingCity;
+	@Expose
 	private String shippingPostalCode;
+	@Expose
 	private String shippingProvince;
+	@Expose
 	private String shippingCountry;
+	@Expose
 	private String shippingCode;
+	@Expose
 	private String shippingHours;
+	@Expose
 	private String shippingInstructions;
+	@Expose
 	private String shippingCostCentre;
+	@Expose
 	private String billAddress;
+	@Expose
 	private String billCity;
+	@Expose
 	private String billPostalCode;
+	@Expose
 	private String billProvince;
+	@Expose
 	private String ponumber;
+	@Expose
 	private String otherInformation;
 	private Date createDt;
 

@@ -3,7 +3,9 @@ package org.avp.quota.kpi.web.util;
 import static org.junit.Assert.*;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.avp.bsd.model.BsdUser;
@@ -12,11 +14,17 @@ import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.model.StoreProductPK;
+import org.avp.quota.kpi.util.FilterParameterExtJs6;
+import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.util.UtilDateSerializer;
+import org.avp.quota.kpi.web.web.BsdController.ProductInStoreJsonData;
 import org.avp.security.model.Authority;
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.sporcic.extjs.ExtData;
+import org.sporcic.extjs.ExtResponse;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -28,6 +36,30 @@ public class GsonTest {
 	Gson gson;
 
 	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
+	
+	
+	String priceInStoreJsonStr = "{\"data\":"
+									+ "["
+										+ "{\"pk\":{"
+													+ "\"product\":{"
+																+ "\"sku\":\"tst7\""
+																+ ",\"EProductName\":\"test product 1\""
+																+ ",\"FProductName\":\"test product 1 (fr)\""
+																+ "}"
+													+ "}"
+										//	+ ",\"sku\":\"tst7\""
+										//	+ ",\"EProductName\":\"test product 1\""
+										//	+ ",\"EProductDescription\":\"\""
+											+ ",\"price\":99.77"
+											+ ",\"priceScheduled\":0"
+											+ ",\"priceSchedule\":null"
+										//	+ ",\"id\":\"QuotaKPI.model.siteManagement.ProductPriceInStore-7\""
+										+ "}"
+									+ "]"
+								+ "}";
+	/*
+	{"data":[{"pk":{"product":{"sku":"tst7","EProductName":"test product 1","FProductName":"test product 1 (fr)"}},"sku":"tst7","EProductName":"test product 1","EProductDescription":"","price":99.77,"priceScheduled":0,"priceSchedule":null,"id":"QuotaKPI.model.siteManagement.ProductPriceInStore-7"}]}
+	*/
 	
 	Store store;
 	Store storeHq;
@@ -65,7 +97,7 @@ public class GsonTest {
 						.setPrettyPrinting()
 						.excludeFieldsWithoutExposeAnnotation()
 						.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer())// TODO - <AP> get rid of it
-						.setDateFormat(DateFormat.LONG)// TODO - <AP> 
+						.setDateFormat(DateFormat.LONG)// TODO - <AP> make date format same as set in spring mvc config
 						.create();
 
 		
@@ -91,7 +123,6 @@ public class GsonTest {
 		bsdUser.setEmail("timAdams@gmail.com");
 		bsdUser.setStore(store);
 
-		
 		bsdUserAuthoritiy = new Authority();
 		bsdUserAuthoritiy.setUser(bsdUser);
 		bsdUserAuthoritiy.setRole("ROLE_BSD_DEALER");
@@ -126,6 +157,9 @@ public class GsonTest {
 		productPriceInStore7 = new ProductPriceInStore(new StoreProductPK(storeHq, product7), 1.99, 7.99, new Date());
 		
 		bsdUserOrder = new OrderHeader(bsdUser);
+		bsdUserOrder.setId(1L);
+		bsdUserOrder.setShippingFirstName("Tim");
+		bsdUserOrder.setShippingLastName("Adams");
 		bsdUserOrder1 = new OrderHeader(bsdUser);
 		bsdUserOrder2 = new OrderHeader(bsdUser2);
 		
@@ -140,14 +174,57 @@ public class GsonTest {
 		String jsonStr = gson.toJson(bsdUser);
 		System.out.println("GsonTest.testClientSerialization() bsdUser = \n"+jsonStr);
 		
-		jsonStr = gson.toJson(bsdUser2);
-		System.out.println("GsonTest.testClientSerialization() bsdUser2 = \n"+jsonStr);
-
 		jsonStr = gson.toJson(store);
 		System.out.println("GsonTest.testClientSerialization() store = \n"+jsonStr);
 		
 		jsonStr = gson.toJson(product1);
 		System.out.println("GsonTest.testClientSerialization() product1 = \n"+jsonStr);
+		
+		jsonStr = gson.toJson(productPriceInStore1);
+		System.out.println("GsonTest.testClientSerialization() productPriceInStore1 = \n"+jsonStr);
+		
+		jsonStr = gson.toJson(bsdUserOrder);
+		System.out.println("GsonTest.testClientSerialization() bsdUserOrder = \n"+jsonStr);
+
 	}
+	@Test
+	public void testExtDataResponse(){
+		ExtData response = new ExtData();
+    	
+    	List<BsdUser> users = new ArrayList<BsdUser>();
+    	users.add(bsdUser);
+    	users.add(bsdUser2);
+    	response.add(users);//bsdUserDtos
+    	response.setTotal(users.size());//bsdUserDtos
+        response.setSuccess(true);
+		String jsonStr = gson.toJson(response);
+		System.out.println("GsonTest.testClientSerialization() ExtDataResponse = \n"+jsonStr);
+	}
+/*
+ * http://stackoverflow.com/questions/18397342/deserializing-generic-types-with-gson
+ *  -> Google Gson - deserialize list<class> object? (generic type) -> http://stackoverflow.com/questions/5554217/google-gson-deserialize-listclass-object-generic-type
+ *  
+ *  -> Gson fromJson to java class structure where property names are not known [duplicate] -> http://stackoverflow.com/questions/28548380/gson-fromjson-to-java-class-structure-where-property-names-are-not-known
+ * Very Close!!! -> Using gson fromjson to parse sub classes -> http://stackoverflow.com/questions/23749161/using-gson-fromjson-to-parse-sub-classes?rq=1
+ * Gson cheatsheet for Map, List и Array -> https://habrahabr.ru/post/253266/ 	
+ */
+	@Test
+	public void testRequestParsing(){
+		ExtData response = new ExtData();
+
+		ProductInStoreJsonData requestProductInStore = gson.fromJson(priceInStoreJsonStr, ProductInStoreJsonData.class);
+
+		logger.debug("GsonTest.testRequestParsing() jsonStr = \n"+ requestProductInStore);
+		assertNotNull(requestProductInStore.getData());
+		System.out.println("GsonTest.testRequestParsing() requestProductInStore.getData() = \n"+ requestProductInStore.getData());
+
+	}
+	/*class ProductInStoreJsonData extends ExtResponse {
+		@JsonProperty("data")
+		private List<ProductPriceInStore> data = new ArrayList<ProductPriceInStore>();
+	    //private List<ProductDto> data = new ArrayList<ProductDto>();
+		public List<ProductPriceInStore> getProducts() {return data;}
+		public void setProducts(List<ProductPriceInStore> quotas) {this.data = quotas;}
+	}*/
 
 }

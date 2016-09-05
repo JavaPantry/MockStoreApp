@@ -13,22 +13,35 @@ import javax.persistence.Table;
 
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 @Table(name = "products")
 public class Product implements java.io.Serializable {
 
+	@Expose
 	@Id
 	private String sku;  
-	
+	@Expose
 	private String EProductName;
+	@Expose
 	private String FProductName;
+	@Expose
 	private String EProductDescription;
+	@Expose
 	private String FProductDescription;
+	@Expose
 	private String EPackaging;
+	@Expose
 	private String FPackaging;
+	@Expose
 	private String EPriceUnit;
+	@Expose
 	private String FPriceUnit;
+	@Expose
 	private Integer ordinal;
+
+	@Expose
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean active;
 	private Date createDt;

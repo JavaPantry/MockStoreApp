@@ -16,22 +16,30 @@ import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 @Table(name = "stores")
 public class Store implements java.io.Serializable {
 
+	@Expose
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	
+	@Expose
 	private String storeName;
+	@Expose
 	private String clientName;
+	@Expose
 	private String storeDescription;
 	
+	@Expose
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean attSecurity;
+	@Expose
 	private String attLangPref;
+	@Expose
 	private String clientLogo;
 	private Date createDt;
 

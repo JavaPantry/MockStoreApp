@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.google.gson.annotations.Expose;
 /**
  * For usage see SalesRepEmployeeJoin and for description see
  * 1) http://en.wikibooks.org/wiki/Java_Persistence/ManyToMany#Example_of_a_ManyToMany_relationship_annotation
@@ -27,6 +29,7 @@ public class StoreProductPK implements Serializable {
 	@ManyToOne
 	private Store store;
 
+	@Expose
 	@ManyToOne
 	private Product product; 					
 

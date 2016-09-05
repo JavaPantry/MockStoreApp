@@ -169,10 +169,10 @@ public class ValidateBsdTables {
 		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
 		
 		//------------------------------- TEST PRODUCT in STORE and AVAILABLE for STORE --------------------
-		List<ProductDto> productsInStore = bsdService.getProductPriceInStore(store.getId());
-		logger.debug("productsInStore = \""+productsInStore+"\"");
-		List<ProductDto> productsAvailableForStore = bsdService.getProductNotInStore(store.getId());
-		logger.debug("productsAvailableForStore = \""+productsAvailableForStore+"\"");
+//		List<ProductDto> productsInStore = bsdService.getProductPriceInStore(store.getId());
+//		logger.debug("productsInStore = \""+productsInStore+"\"");
+//		List<ProductDto> productsAvailableForStore = bsdService.getProductNotInStore(store.getId());
+//		logger.debug("productsAvailableForStore = \""+productsAvailableForStore+"\"");
 		
 		//------------------------------- TEST find ProductPriceInStore  --------------------
 		StoreProductPK pk = new StoreProductPK();
@@ -204,7 +204,7 @@ public class ValidateBsdTables {
 		p.setSku("tst1");
 		products.add(p);
 		try {
-			bsdService.deleteProductsFromStore(1L, products);
+//			bsdService.deleteProductsFromStore(1L, products);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

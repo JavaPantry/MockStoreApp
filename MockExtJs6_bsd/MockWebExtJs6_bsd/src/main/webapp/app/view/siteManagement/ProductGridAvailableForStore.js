@@ -28,7 +28,8 @@ Ext.define('QuotaKPI.view.siteManagement.ProductGridAvailableForStore', {
             }
         }
     }
-	,columns: [ {header		: 'sku', flex:1,					dataIndex: 'sku'}
+	,columns: [ 
+	            {header		: 'sku', flex:1,					dataIndex: 'sku'}
 			    ,{header	: 'Product Name', flex:2,			dataIndex: 'EProductName'}
 			    ,{header	: 'Product Description', flex:4,	dataIndex: 'EProductDescription'}
 				]
