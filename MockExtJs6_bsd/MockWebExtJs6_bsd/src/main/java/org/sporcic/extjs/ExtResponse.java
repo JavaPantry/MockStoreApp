@@ -1,7 +1,8 @@
 package org.sporcic.extjs;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonSerializable;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * Base class which represents a minimal payload to be returned
@@ -42,7 +43,6 @@ public class ExtResponse {
         this.success = success;
     }
 
-    @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
     public String getMessage() {
         return message;
     }

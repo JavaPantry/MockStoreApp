@@ -35,7 +35,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 @Entity
 @Table(name = "users")
@@ -43,24 +44,24 @@ import com.google.gson.annotations.Expose;
 @DiscriminatorColumn(name = "USER_TYPE")
 public class User {
 
-	@Expose
+	@JsonProperty
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-	@Expose
+	@JsonProperty
 	@Column(name="userId",length = 30)//@ColumnTransformer(read="RTRIM(LTRIM(userId))")
 	private String userId;
 
-	@Expose
+	@JsonProperty
 	@Column(length = 30)
     private String firstName;
 
-	@Expose
+	@JsonProperty
 	@Column(length = 30)
     private String lastName;
 
-	@Expose
+	@JsonProperty
 	@Column(length = 60)
     private String email;
 
@@ -68,7 +69,7 @@ public class User {
 	@Column(length = 60)
     private String password;
 
-	@Expose
+	@JsonProperty
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
     private boolean tokenExpired;
 
@@ -77,7 +78,7 @@ public class User {
 	 * Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'userdao0_.enabled' in 'field list'
 	 * 
 	 */
-	@Expose
+	@JsonProperty
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="BIT boolean default false", nullable=false, 
 	private boolean enabled = true;
 	

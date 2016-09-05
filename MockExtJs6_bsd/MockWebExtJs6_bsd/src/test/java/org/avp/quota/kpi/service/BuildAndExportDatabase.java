@@ -42,7 +42,6 @@ import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
-import org.avp.quota.kpi.util.GsonUtil;
 import org.avp.security.model.Authority;
 import org.avp.security.model.User;
 import org.avp.security.service.CustomUserService;
@@ -76,8 +75,6 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 /*
  * To run BuildAndExportDatabase with tomcat/mysql use ActiveProfiles("Tomcat") 

@@ -12,7 +12,7 @@ import org.avp.bsd.model.Product;
 import org.avp.bsd.model.ProductPriceInStore;
 import org.avp.bsd.model.Store;
 import org.avp.bsd.model.StoreProductPK;
-import org.avp.quota.kpi.util.UtilDateSerializer;
+//import org.avp.quota.kpi.util.UtilDateSerializer;
 import org.avp.security.model.Authority;
 import org.junit.After;
 import org.junit.Before;
@@ -20,12 +20,12 @@ import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+//import com.google.gson.Gson;
+//import com.google.gson.GsonBuilder;
 
 public class GsonTest {
 	private static Logger logger = Logger.getLogger(GsonTest.class);
-	Gson gson;
+	//Gson gson;
 
 	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 	
@@ -61,12 +61,12 @@ public class GsonTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		gson = new GsonBuilder()//.serializeNulls()
-						.setPrettyPrinting()
-						.excludeFieldsWithoutExposeAnnotation()
-						.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer())// TODO - <AP> get rid of it
-						.setDateFormat(DateFormat.LONG)// TODO - <AP> 
-						.create();
+//		gson = new GsonBuilder()//.serializeNulls()
+//						.setPrettyPrinting()
+//						.excludeFieldsWithoutExposeAnnotation()
+//						.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer())// TODO - <AP> get rid of it
+//						.setDateFormat(DateFormat.LONG)// TODO - <AP> 
+//						.create();
 
 		
 		store = new Store("MissisaugaStore",
@@ -137,16 +137,16 @@ public class GsonTest {
 	
 	@Test
 	public void testClientSerialization() {
-		String jsonStr = gson.toJson(bsdUser);
+		String jsonStr = null;//gson.toJson(bsdUser);
 		System.out.println("GsonTest.testClientSerialization() bsdUser = \n"+jsonStr);
 		
-		jsonStr = gson.toJson(bsdUser2);
+//		jsonStr = gson.toJson(bsdUser2);
 		System.out.println("GsonTest.testClientSerialization() bsdUser2 = \n"+jsonStr);
 
-		jsonStr = gson.toJson(store);
+//		jsonStr = gson.toJson(store);
 		System.out.println("GsonTest.testClientSerialization() store = \n"+jsonStr);
 		
-		jsonStr = gson.toJson(product1);
+//		jsonStr = gson.toJson(product1);
 		System.out.println("GsonTest.testClientSerialization() product1 = \n"+jsonStr);
 	}
 

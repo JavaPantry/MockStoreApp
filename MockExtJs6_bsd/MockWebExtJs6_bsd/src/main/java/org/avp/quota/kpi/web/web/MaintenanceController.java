@@ -22,7 +22,6 @@ import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.FilterType;
 import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.sporcic.extjs.ExtData;
 import org.sporcic.extjs.ExtResponse;
 import org.springframework.data.domain.Page;
@@ -33,9 +32,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-//import com.fasterxml.jackson.core.JsonParseException;
-//import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Controller
 public class MaintenanceController extends AbstractQuotaKPIController {

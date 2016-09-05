@@ -3,7 +3,6 @@ package org.avp.quota.kpi.web.web;
 
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
-import org.avp.quota.kpi.util.GsonUtil;
 import org.avp.quota.kpi.util.SortParameter;
 
 public class AbstractExtJsController {
@@ -15,25 +14,25 @@ public class AbstractExtJsController {
 	}
 
 	protected SortParameter[] getSortFromJson(String sortStr) {
-		if(GeneralUtil.isEmpty(sortStr))
+//		if(GeneralUtil.isEmpty(sortStr))
 			return null;
-		SortParameter[] sortParameters = GsonUtil.getArrayFromJson(sortStr, SortParameter[].class);
-		return sortParameters;
+//		SortParameter[] sortParameters = GsonUtil.getArrayFromJson(sortStr, SortParameter[].class);
+//		return sortParameters;
 	}
 
 	/* 
 	 * TODO - <AP> extract to static method in ExtJsUtility class otherwise need to copy this function to test case
 	 */
 	protected FilterParameterExtJs6[] getFiltersFromJson(String filterStr) {
-		if(GeneralUtil.isEmpty(filterStr))
+//		if(GeneralUtil.isEmpty(filterStr))
 			return null;
-		FilterParameterExtJs6[] filterParameters  = GsonUtil.getArrayFromJson(filterStr, FilterParameterExtJs6[].class);
-		//TODO - <AP> sometime ExtJs sends not 'property' but 'field'. Is it true for ExtJs 6.0.#?
-		for (FilterParameterExtJs6 filterParameter : filterParameters) {
-			if(!GeneralUtil.isEmpty(filterParameter.getProperty()))
-					filterParameter.setField(filterParameter.getProperty());
-		}
-		return filterParameters;
+//		FilterParameterExtJs6[] filterParameters  = GsonUtil.getArrayFromJson(filterStr, FilterParameterExtJs6[].class);
+//		//TODO - <AP> sometime ExtJs sends not 'property' but 'field'. Is it true for ExtJs 6.0.#?
+//		for (FilterParameterExtJs6 filterParameter : filterParameters) {
+//			if(!GeneralUtil.isEmpty(filterParameter.getProperty()))
+//					filterParameter.setField(filterParameter.getProperty());
+//		}
+//		return filterParameters;
 	}
 
 	

@@ -27,7 +27,7 @@ import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
 import org.avp.quota.kpi.util.FilterParameterExtJs6;
 import org.avp.quota.kpi.util.GeneralUtil;
-import org.avp.quota.kpi.util.GsonUtil;
+//import org.avp.quota.kpi.util.GsonUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.hamcrest.core.Is;
 import org.junit.After;
@@ -189,15 +189,15 @@ public class QuotaExt6FilteringTest {
 	 * TODO - <AP> extract to static method in ExtJsUtility class
 	 */
 	protected FilterParameterExtJs6[] getFiltersFromJson(String filterStr) {
-		if(GeneralUtil.isEmpty(filterStr))
+//		if(GeneralUtil.isEmpty(filterStr))
 			return null;
-		FilterParameterExtJs6[] filterParameters  = GsonUtil.getArrayFromJson(filterStr, FilterParameterExtJs6[].class);
-		//sometime ExtJs sends not 'property' but 'field'
-		for (FilterParameterExtJs6 filterParameter : filterParameters) {
-			if(!GeneralUtil.isEmpty(filterParameter.getProperty()))
-					filterParameter.setField(filterParameter.getProperty());
-		}
-		return filterParameters;
+//		FilterParameterExtJs6[] filterParameters  = GsonUtil.getArrayFromJson(filterStr, FilterParameterExtJs6[].class);
+//		//sometime ExtJs sends not 'property' but 'field'
+//		for (FilterParameterExtJs6 filterParameter : filterParameters) {
+//			if(!GeneralUtil.isEmpty(filterParameter.getProperty()))
+//					filterParameter.setField(filterParameter.getProperty());
+//		}
+//		return filterParameters;
 	}
 
 }

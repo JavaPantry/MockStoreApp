@@ -15,8 +15,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.avp.security.model.User;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import com.google.gson.annotations.Expose;
+//import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("serial")
 @Entity
@@ -33,24 +34,24 @@ public class BsdUser extends User implements java.io.Serializable {
 	@OneToMany(fetch=FetchType.EAGER , mappedBy = "user", cascade={CascadeType.ALL}, orphanRemoval=true)
 	private Set<OrderHeader> orders;
 	
-	@Expose
+	@JsonProperty
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean clientAdmin;
 	
-	@Expose
+	@JsonProperty
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean siteAdmin;
 	
-	@Expose
+	@JsonProperty
 	private String phone;
 	
-	@Expose
+	@JsonProperty
 	private String fax;
 	
-	@Expose
+	@JsonProperty
 	private String subDivision;
 	
-	@Expose
+	@JsonProperty
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean active;
 	

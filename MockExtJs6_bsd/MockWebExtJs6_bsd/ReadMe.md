@@ -1,5 +1,7 @@
 # Mock project
 ---
+### September 5
+commit unstaged Changes to new branch GsonNotCompleted (Abandoned)
 
 ### TODOs 
 
@@ -30,6 +32,8 @@
 ![Activate Cell Editor Error](Documents/ActivateCellEditorError.png)
 	
 11. On angular client Product page need add [Refresh] button 
+12. move FilterParameterExtJs6 from service to web project
+
 ---
 
 - Remove ExtJs Trial water mark

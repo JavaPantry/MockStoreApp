@@ -43,7 +43,6 @@ import org.avp.quota.kpi.model.dto.ProductLineDTO;
 import org.avp.quota.kpi.model.dto.QuotaDto;
 import org.avp.quota.kpi.service.interfaces.QuotaService;
 import org.avp.quota.kpi.util.DtoFactory;
-import org.avp.quota.kpi.util.GsonUtil;
 import org.avp.security.model.Authority;
 import org.avp.security.model.User;
 import org.avp.security.service.CustomUserService;
@@ -77,8 +76,6 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 /*
 SELECT * FROM gitmockauth.stores;
@@ -131,7 +128,7 @@ public class ValidateBsdTables {
 	
 	@Test
 	public void averifyBsdSetup(){
-		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
+//		Gson gson = new GsonBuilder().create();//.registerTypeAdapter(java.util.Date.class, new UtilDateSerializer()).setDateFormat(DateFormat.LONG).create()
 		
 		String userName = "Tim Adams";
         BsdUser user = (BsdUser) userService.getDomainUser(userName);
@@ -149,8 +146,8 @@ public class ValidateBsdTables {
     	assertThat(products.size(), is(5));
 		//String jsonProducts = gson.toJson(products);
 		List<ProductDto> productsDtos = org.avp.bsd.service.DtoFactory.createProductDtoList(products);
-		String jsonProducts = gson.toJson(productsDtos);
-		logger.debug(" jsonProducts = \""+jsonProducts+"\"");
+//		String jsonProducts = gson.toJson(productsDtos);
+//		logger.debug(" jsonProducts = \""+jsonProducts+"\"");
     	
 		//--------------------------------------------------------------------------------------------------
 		List<OrderHeader> orders = bsdService.getOrderHeaders();
@@ -161,12 +158,12 @@ public class ValidateBsdTables {
 		OrderHeader order = orders.get(0);
 		
 		OrderHeaderDto orderDto = org.avp.bsd.service.DtoFactory.createDtoFrom(order);
-		String jsonOrderHeader = gson.toJson(orderDto);
-		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
+//		String jsonOrderHeader = gson.toJson(orderDto);
+//		logger.debug("jsonOrderHeader = \""+jsonOrderHeader+"\"");
 
 		List<OrderHeaderDto> orderDtos = org.avp.bsd.service.DtoFactory.createDtoList(orders);
-		String jsonOrderHeaders = gson.toJson(orderDtos);
-		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
+//		String jsonOrderHeaders = gson.toJson(orderDtos);
+//		logger.debug("jsonOrderHeaders = \""+jsonOrderHeaders+"\"");
 		
 		//------------------------------- TEST PRODUCT in STORE and AVAILABLE for STORE --------------------
 		List<ProductDto> productsInStore = bsdService.getProductPriceInStore(store.getId());

@@ -37,7 +37,6 @@ import org.avp.quota.kpi.web.web.QuotaController.BudgetJsonData;
 import org.avp.quota.kpi.web.web.QuotaController.QuotaJsonData;
 import org.avp.security.model.User;
 import org.avp.security.service.CustomUserService;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.sporcic.extjs.ExtData;
 import org.sporcic.extjs.ExtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +48,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.springframework.security.core.Authentication;
 
 @Controller
@@ -193,8 +195,6 @@ public class BsdController extends AbstractExtJsController {
 		public void setProducts(List<ProductDto> quotas) {this.data = quotas;}
 	}
 
-	
-	
 	@RequestMapping(value={"/bsd/products/available"}, method=RequestMethod.GET)
 	@ResponseBody
 	public ExtResponse findAvailableForStoreProducts(

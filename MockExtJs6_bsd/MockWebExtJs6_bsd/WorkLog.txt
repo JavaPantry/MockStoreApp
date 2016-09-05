@@ -1,7 +1,21 @@
 # Mock project
 
+### September 5
+commit unstaged Changes to new branch GsonNotCompleted (Abandoned)
+check-out new branch RemoveGsonDependency and remove Gson from service/pom.xml
+upgrade jackson version to 2.8.#
+
+
 ---
 
+### September 3,4
+
+- add @Expose to properties in store, product, order header classes
+- problem with unSerialization 
+	http://stackoverflow.com/questions/18397342/deserializing-generic-types-with-gson
+		 -> Google Gson - deserialize list<class> object? (generic type) http://stackoverflow.com/questions/5554217/google-gson-deserialize-listclass-object-generic-type
+		 	-> What I tried after looking at this (BalusC's answer): http://stackoverflow.com/questions/5554217/google-gson-deserialize-listclass-object-generic-type
+		 	
 ### September 2
 
 	- TODO refactor names in product&productDto

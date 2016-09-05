@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.GsonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.context.support.ServletContextAttributeExporter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -25,9 +25,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.ResourceBundleViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
+/*import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
+import com.google.gson.GsonBuilder;*/
 
 @Configuration
 @EnableWebMvc
@@ -95,11 +95,25 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter {
 		return servletContextAttributeExporter;
 	}
 	
+/*	@Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(converter());
+        super.configureMessageConverters(converters);
+    }
+	
+    @Bean
+    MappingJackson2HttpMessageConverter converter() {
+        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+        //converter.
+        //do your customizations here...
+        return converter;
+    }*/
+    
+    
 	/*
 	 * Temporarily fix GSON Date conversion problem
 	 * - Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
-	 * - also this is adding @Expose annotation 
-	 */
+	 
 	@Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(createGsonHttpMessageConverter());
@@ -116,7 +130,7 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter {
         GsonHttpMessageConverter gsonConverter = new GsonHttpMessageConverter();
         gsonConverter.setGson(gson);
         return gsonConverter;
-    }
+    }*/
 
 	
 }

@@ -32,7 +32,6 @@ import org.avp.quota.kpi.util.GeneralUtil;
 import org.avp.quota.kpi.util.SortParameter;
 import org.avp.quota.kpi.web.web.MaintenanceController.SalesRepTocLink;
 import org.avp.security.model.User;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.sporcic.extjs.ExtData;
 import org.sporcic.extjs.ExtResponse;
 import org.springframework.beans.factory.annotation.Autowired;

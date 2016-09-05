@@ -3,7 +3,6 @@ package org.avp.quota.kpi.web.web;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
-import org.avp.quota.kpi.web.service.interfaces.IApplicationConfigurationService;
 import org.avp.quota.kpi.web.util.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,11 +22,7 @@ public class LoginController {
 	private static Logger logger = Logger.getLogger(LoginController.class);
 	
 	private static final String LOGIN_FORM_ATTRIBUTE_NAME = "loginForm";
-	
-	@Autowired
-	private IApplicationConfigurationService applicationConfigurationService;
-
-	
+		
 	public LoginController() {}
 	
 	@RequestMapping(value={"/login.jsp", "/login"}, method = RequestMethod.GET)
@@ -46,7 +41,7 @@ public class LoginController {
 	public String doLogout(HttpServletRequest request) {
 		//userService.doLogout();
 		request.getSession().invalidate();
-		String ssoLogoutUrl = applicationConfigurationService.getApplicationConfiguration().getLogoutUrl();
+		String ssoLogoutUrl = "/logout";
 		String redirectUrl = String.format("redirect:%s", 
 				(ssoLogoutUrl != null && ssoLogoutUrl.length()>0) ? ssoLogoutUrl : "/");
 		return redirectUrl;
