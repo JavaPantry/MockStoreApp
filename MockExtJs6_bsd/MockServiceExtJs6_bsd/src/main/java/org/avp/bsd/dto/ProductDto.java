@@ -7,38 +7,38 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @SuppressWarnings("serial")
 public class ProductDto{
 
-	@JsonProperty
+	//@JsonProperty
 	private String sku;  
-	@JsonProperty
+	//@JsonProperty
 	private String EProductName;
-	@JsonProperty
+	//@JsonProperty
 	private String FProductName;
-	@JsonProperty
+	//@JsonProperty
 	private String EProductDescription;
-	@JsonProperty
+	//@JsonProperty
 	private String FProductDescription;
-	@JsonProperty
+	//@JsonProperty
 	private String EPackaging;
-	@JsonProperty
+	//@JsonProperty
 	private String FPackaging;
-	@JsonProperty
+	//@JsonProperty
 	private String EPriceUnit;
-	@JsonProperty
+	//@JsonProperty
 	private String FPriceUnit;
-	@JsonProperty
+	//@JsonProperty
 	private Integer ordinal;
-	@JsonProperty
+	//@JsonProperty
 	private Boolean active;
 	private Date createDt;
 
 	// properties from ProductPriceInStore
-	@JsonProperty
+	//@JsonProperty
 	private Double	price;
-	@JsonProperty
+	//@JsonProperty
 	private Double	priceScheduled;
-	@JsonProperty
+	//@JsonProperty
 	private Date	priceSchedule;
-	@JsonProperty
+	//@JsonProperty
 	private Date	created;
 
 	//private Set<ProductPriceInStore> productsInStore;

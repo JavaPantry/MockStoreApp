@@ -7,17 +7,18 @@
 - upgrade jackson version to 2.8.#
 - change log file location
 	log4j.appender.ROLLING_FILE.File=//c:/0-logs/MockStubSept.log
-!!!HUGE F...K WORD!!! - stepping 2nd time on same racks 
-!!! Jackson and Inner Classes: yes, you can use, but they must be STATIC inner classes!!! -> http://cowtowncoder.com/blog/archives/2010/08/entry_411.html
-Without STATIC modifier inner class cause:
-- Error in parsing json @RequestBody ProductInStoreJsonData requestProductInStore in request for `bsd/products/instore/update`
-		org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolving exception from handler
-		[public java.lang.String org.avp.quota.kpi.web.web.BsdController.updateInStoreProducts(org.avp.quota.kpi.web.web.BsdController
-		$ProductInStoreJsonData,java.lang.Long) throws java.lang.Exception]:
-		org.springframework.http.converter.HttpMessageNotReadableException: Could not read JSON: Can not construct instance of
-		org.avp.quota.kpi.web.web.BsdController$ProductInStoreJsonData: no suitable constructor found, can not deserialize from Object
-		value (missing default constructor or creator, or perhaps need to add/enable type information?)
+- !!!HUGE F...K WORD!!! - stepping 2nd time on same racks 
+	!!! Jackson and Inner Classes: yes, you can use, but they must be STATIC inner classes!!! -> http://cowtowncoder.com/blog/archives/2010/08/entry_411.html
+	Without STATIC modifier inner class cause:
+	- Error in parsing json @RequestBody ProductInStoreJsonData requestProductInStore in request for `bsd/products/instore/update`
+			org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolving exception from handler
+			[public java.lang.String org.avp.quota.kpi.web.web.BsdController.updateInStoreProducts(org.avp.quota.kpi.web.web.BsdController
+			$ProductInStoreJsonData,java.lang.Long) throws java.lang.Exception]:
+			org.springframework.http.converter.HttpMessageNotReadableException: Could not read JSON: Can not construct instance of
+			org.avp.quota.kpi.web.web.BsdController$ProductInStoreJsonData: no suitable constructor found, can not deserialize from Object
+			value (missing default constructor or creator, or perhaps need to add/enable type information?)
 
+- turn off @JsonProperty in ProductDto as was experimental to fight previous !!!HUGE F...K WORD!!!
 ---
 
 ### September 3,4
