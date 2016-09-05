@@ -19,6 +19,13 @@
 			value (missing default constructor or creator, or perhaps need to add/enable type information?)
 
 - turn off @JsonProperty in ProductDto as was experimental to fight previous !!!HUGE F...K WORD!!!
+
+- Merge branch RemoveGsonDependency and master
+- Test: update product price in store Works
+- Test: create product price in store Works
+- Test: delete product price in store Works
+- Test: error on opening 'st1' store
+
 ---
 
 ### September 3,4
