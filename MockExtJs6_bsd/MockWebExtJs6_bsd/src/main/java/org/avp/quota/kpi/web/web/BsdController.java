@@ -188,11 +188,18 @@ public class BsdController extends AbstractExtJsController {
 		return SUCCESS_RESPONSE;
 	}
 	
-	class ProductInStoreJsonData extends ExtResponse {
+	static class ProductInStoreJsonData extends ExtResponse {
+		
+		//public ProductInStoreJsonData(){/*required by jackson*/}
+		
 		@JsonProperty("data")
-	    private List<ProductDto> data = new ArrayList<ProductDto>();
-		public List<ProductDto> getProducts() {return data;}
-		public void setProducts(List<ProductDto> quotas) {this.data = quotas;}
+	    private ArrayList<ProductDto> data = new ArrayList<ProductDto>();
+
+		public ArrayList<ProductDto> getProducts() {return data;}
+		public void setProducts(ArrayList<ProductDto> quotas) {this.data = quotas;}
+
+		public ArrayList<ProductDto> getData() {return data;}
+		public void setData(ArrayList<ProductDto> data) {this.data = data;}
 	}
 
 	@RequestMapping(value={"/bsd/products/available"}, method=RequestMethod.GET)

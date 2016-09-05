@@ -2,26 +2,43 @@ package org.avp.bsd.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @SuppressWarnings("serial")
 public class ProductDto{
 
+	@JsonProperty
 	private String sku;  
+	@JsonProperty
 	private String EProductName;
+	@JsonProperty
 	private String FProductName;
+	@JsonProperty
 	private String EProductDescription;
+	@JsonProperty
 	private String FProductDescription;
+	@JsonProperty
 	private String EPackaging;
+	@JsonProperty
 	private String FPackaging;
+	@JsonProperty
 	private String EPriceUnit;
+	@JsonProperty
 	private String FPriceUnit;
+	@JsonProperty
 	private Integer ordinal;
+	@JsonProperty
 	private Boolean active;
 	private Date createDt;
 
 	// properties from ProductPriceInStore
+	@JsonProperty
 	private Double	price;
+	@JsonProperty
 	private Double	priceScheduled;
+	@JsonProperty
 	private Date	priceSchedule;
+	@JsonProperty
 	private Date	created;
 
 	//private Set<ProductPriceInStore> productsInStore;

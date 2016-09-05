@@ -336,7 +336,7 @@ public class MaintenanceController extends AbstractQuotaKPIController {
 		}//eof for (ProductLineDTO productLineDTO : dtos)
     	return SUCCESS_RESPONSE;
 	}
-	class SalesRepEmployeeJoinData extends ExtResponse {
+	static class SalesRepEmployeeJoinData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<ProductLineDTO> data = new ArrayList<ProductLineDTO>();
 		public List<ProductLineDTO> getProductLines() {return data;}
@@ -357,7 +357,7 @@ public class MaintenanceController extends AbstractQuotaKPIController {
 		return SUCCESS_RESPONSE;
 	}
 
-	class SalesRepData extends ExtResponse {
+	static class SalesRepData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<SalesRepresentativeDto> data = new ArrayList<SalesRepresentativeDto>();
 		public List<SalesRepresentativeDto> getSalesReps() {return data;}
@@ -389,7 +389,7 @@ public class MaintenanceController extends AbstractQuotaKPIController {
 		return SUCCESS_RESPONSE;
 	}
 	
-	class SalesRepresentativeManagerData extends ExtResponse {
+	static class SalesRepresentativeManagerData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<EmployeeDto> data = new ArrayList<EmployeeDto>();
 		public List<EmployeeDto> getSalesRepManagers() {return data;}
@@ -462,14 +462,14 @@ public class MaintenanceController extends AbstractQuotaKPIController {
 		public void setSalesRepresentativeId(String salesRepresentativeId) {this.salesRepresentativeId = salesRepresentativeId;}
 	
 	}
-	class SalesRepTocJoinData extends ExtResponse {
+	static class SalesRepTocJoinData extends ExtResponse {
 		@JsonProperty("data")
 	    private SalesRepTocLink data;
 		public SalesRepTocLink getSalesRepTocLink() {return data;}
 		public void setSalesRepTocLink(SalesRepTocLink link) {this.data = link;}
 	}
 	
-	/*class SalesRepTocJoinData extends ExtResponse {
+	/*static class SalesRepTocJoinData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<SalesRepTocLink> data = new ArrayList<SalesRepTocLink>();
 		public List<SalesRepTocLink> getProductLines() {return data;}
@@ -513,7 +513,7 @@ public class MaintenanceController extends AbstractQuotaKPIController {
 		quotaService.deleteTocFromSalesRep(salesRepresentativeId, dtos);
 		return SUCCESS_RESPONSE;
 	}
-	class TocData extends ExtResponse {
+	static class TocData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<TocDao> data;
 		public List<TocDao> getTocs() {return data;}

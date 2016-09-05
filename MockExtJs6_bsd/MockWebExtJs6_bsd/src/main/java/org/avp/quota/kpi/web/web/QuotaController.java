@@ -304,28 +304,28 @@ public class QuotaController extends AbstractQuotaKPIController {
 		}
 		return SUCCESS_RESPONSE;
 		}	
-	class QuotaJsonDto extends ExtResponse {
+	static class QuotaJsonDto extends ExtResponse {
 		@JsonProperty("data")
 	    private List<QuotaDto> data = new ArrayList<QuotaDto>();
 		public List<QuotaDto> getQuotas() {return data;}
 		public void setQuotas(List<QuotaDto> quotas) {this.data = quotas;}
 	}
 	
-	class QuotaJsonData extends ExtResponse {
+	static class QuotaJsonData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<QuotaDao> data = new ArrayList<QuotaDao>();
 		public List<QuotaDao> getQuotas() {return data;}
 		public void setQuotas(List<QuotaDao> quotas) {this.data = quotas;}
 	}
 	
-	class BudgetJsonData extends ExtResponse {
+	static class BudgetJsonData extends ExtResponse {
 		@JsonProperty("data")
 	    private List<BudgetDao> data = new ArrayList<BudgetDao>();
 		public List<BudgetDao> getBudgets() {return data;}
 		public void setBudgets(List<BudgetDao> budgets) {this.data = budgets;}
 	}
 	
-	class HeaderData extends ExtResponse {
+	static class HeaderData extends ExtResponse {
 		@JsonProperty("data")
 	    private QuotaDto data;
 		public QuotaDto getQuotaDto() {return data;}
