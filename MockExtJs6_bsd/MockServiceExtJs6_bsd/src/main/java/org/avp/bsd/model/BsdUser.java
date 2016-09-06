@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.avp.security.model.User;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 //import com.google.gson.annotations.Expose;
@@ -27,10 +29,12 @@ public class BsdUser extends User implements java.io.Serializable {
 	/*
 	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
 	 */
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="storeId")
 	private Store store;
 	
+	@JsonIgnore
 	@OneToMany(fetch=FetchType.EAGER , mappedBy = "user", cascade={CascadeType.ALL}, orphanRemoval=true)
 	private Set<OrderHeader> orders;
 	

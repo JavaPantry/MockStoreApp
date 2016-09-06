@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "products")
 public class Product implements java.io.Serializable {
@@ -36,6 +38,7 @@ public class Product implements java.io.Serializable {
 	/*
 	 * transient for json convertor to not call getter
 	 */
+	@JsonIgnore
 	@OneToMany(fetch=FetchType.LAZY , mappedBy="pk.product",cascade={CascadeType.ALL}, orphanRemoval=true)
 	private Set<ProductPriceInStore> productsInStore;
 

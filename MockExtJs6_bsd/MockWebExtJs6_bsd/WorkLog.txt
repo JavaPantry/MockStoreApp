@@ -1,8 +1,57 @@
 # Mock project
 
-### September 5: 
+### September 6: 
 
-Error when open new store (with no products in it)
+
+-	Get rid of DTO (code duplication) by ignoring properties which cause circular references 
+	google: spring configure jackson to not serialize properties without @JsonProperty
+		http://www.baeldung.com/jackson-ignore-properties-on-serialization
+- add @JsonIgnore to products, store, bsdUser (and authorities in user)
+- switch '/bsd/users', 'bsd/products', 'bsd/stores' return type  which return Stores instead StoreDto
+- modify methods 'bsd/updateuser', 'bsd/updatestore', 'bsd/updateproduct' to accept entity
+		
+		- call directly in browser -> http://localhost:8080/MockWebExtJs6_bsd/bsd/stores/test?page=1&start=0&limit=20
+		Response
+				{  
+				 "message":null,
+				 "success":true,
+				 "data":[  
+				      {  
+				         "id":1,
+				         "storeName":"MissisaugaStore",
+				         "clientName":"Tim Adams",
+				         "storeDescription":"store in Missisauga",
+				         "attSecurity":true,
+				         "attLangPref":"en",
+				         "clientLogo":"clientLogo.gif",
+				         "createDt":1472741491000
+				      },
+				      {  
+				         "id":2,
+				         "storeName":"HQStore",
+				         "clientName":"Hong Li",
+				         "storeDescription":"Head Quotar store",
+				         "attSecurity":true,
+				         "attLangPref":"en",
+				         "clientLogo":"clientLogo.gif",
+				         "createDt":1472741491000
+				      },
+				      {  
+				         "id":3,
+				         "storeName":"st1",
+				         "clientName":null,
+				         "storeDescription":"test",
+				         "attSecurity":null,
+				         "attLangPref":null,
+				         "clientLogo":null,
+				         "createDt":null
+				      }
+				   ],
+				   "total":3,
+				   "summary":null
+				} 
+
+- Error when open new store (with no products in it)
 
 	>>>bsd/products/available
 		javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet

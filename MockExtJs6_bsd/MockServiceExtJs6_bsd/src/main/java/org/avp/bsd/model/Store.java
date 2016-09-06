@@ -16,6 +16,8 @@ import org.avp.quota.kpi.model.dao.SalesRepEmployeeJoin;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "stores")
 public class Store implements java.io.Serializable {
@@ -38,6 +40,7 @@ public class Store implements java.io.Serializable {
 	/*
 	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
 	 */
+	@JsonIgnore
 	@OneToMany(fetch=FetchType.EAGER , mappedBy="pk.store", cascade={CascadeType.ALL}, orphanRemoval=true)//CascadeType.PERSIST, CascadeType.MERGE, 
 	@Fetch(value = FetchMode.SUBSELECT)
 	private Set<ProductPriceInStore> productsInStore;
@@ -45,6 +48,7 @@ public class Store implements java.io.Serializable {
 	/*
 	 * TODO - <AP> to break circular loop in json marshaling use transient modifier
 	 */
+	@JsonIgnore
 	@OneToMany(fetch=FetchType.EAGER , mappedBy = "store", cascade={CascadeType.ALL}, orphanRemoval=true)
 	private Set<BsdUser> users;
 

@@ -35,6 +35,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -85,6 +86,7 @@ public class User {
 	/*
 	 * http://www.mastertheboss.com/jboss-frameworks/hibernate-jpa/or-mapping/one-to-many-hibernatejpa-example
 	 */
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private List<Authority> authorities = new ArrayList<Authority>();
 	
