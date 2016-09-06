@@ -1,5 +1,44 @@
 # Mock project
 
+### September 5: 
+
+Error when open new store (with no products in it)
+
+	>>>bsd/products/available
+		javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+		DEBUG 2016-09-06 08:13:54,284 - org.hibernate.SQL - 
+		    select
+		        product0_.sku as sku1_17_,
+		        product0_.EPackaging as EPackagi2_17_,
+		        product0_.EPriceUnit as EPriceUn3_17_,
+		        product0_.EProductDescription as EProduct4_17_,
+		        product0_.EProductName as EProduct5_17_,
+		        product0_.FPackaging as FPackagi6_17_,
+		        product0_.FPriceUnit as FPriceUn7_17_,
+		        product0_.FProductDescription as FProduct8_17_,
+		        product0_.FProductName as FProduct9_17_,
+		        product0_.active as active10_17_,
+		        product0_.createDt as createD11_17_,
+		        product0_.ordinal as ordinal12_17_ 
+		    from
+		        products product0_ 
+		    where
+		        product0_.sku not in  (
+			>>>> empty
+		        )
+		DEBUG 2016-09-06 08:13:54,297 - org.hibernate.engine.jdbc.spi.SqlExceptionHelper - could not extract ResultSet [n/a]
+		com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax
+		
+		
+		public List<ProductDto> getProductNotInStore(Long storeId){
+				if (skus.isEmpty()){
+					products = productRepository.findAll();
+				}else{
+					products = productRepository.findAll(findProductsNotInStore(skus));
+				}
+
+
+--------------------------------------------
 ### September 5: Get rid of Gson mess
 
 - commit unstaged Changes to new branch GsonNotCompleted (Abandoned)

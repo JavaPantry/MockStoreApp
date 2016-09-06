@@ -227,8 +227,12 @@ public class BsdServiceImpl implements BsdService {
 		for (ProductPriceInStore productPriceInStore : productPricesInStore) {
 			skus.add(productPriceInStore.getPk().getProduct().getSku());
 		}
-		List<Product> products = productRepository.findAll(findProductsNotInStore(skus));
-		
+		List<Product> products = null;
+		if (skus.isEmpty()){
+			products = productRepository.findAll();
+		}else{
+			products = productRepository.findAll(findProductsNotInStore(skus));
+		}
 		List<ProductDto> productsNotInStore = DtoFactory.createProductDtoList(products); //new ArrayList<ProductDto>();
 		return productsNotInStore;
 	}
