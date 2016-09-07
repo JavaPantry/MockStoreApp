@@ -125,7 +125,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
 				
-				//"ROLE_BSD_DEALER"
+				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
 				
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				//jan 19 .antMatchers( "/ajax/**").permitAll()
