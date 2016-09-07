@@ -2,6 +2,10 @@
 
 ### September 6: 
 
+- remove GsonTest
+
+### September 6: 
+
 
 -	Get rid of DTO (code duplication) by ignoring properties which cause circular references 
 	google: spring configure jackson to not serialize properties without @JsonProperty
