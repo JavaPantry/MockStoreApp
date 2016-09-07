@@ -173,7 +173,9 @@ public class User {
         return result;
     }
 
-    @Override
+    /*
+     * let hibernate do that
+     * at.Override
     public boolean equals(final Object obj) {
         if (this == obj) {
             return true;
@@ -185,11 +187,11 @@ public class User {
             return false;
         }
         final User user = (User) obj;
-        if (!email.equals(user.email)) {
+        if (!id.equals(user.id)) {
             return false;
         }
         return true;
-    }
+    }*/
 
     @Override
     public String toString() {

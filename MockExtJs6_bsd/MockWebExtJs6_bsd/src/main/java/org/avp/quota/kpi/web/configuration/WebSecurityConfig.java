@@ -120,10 +120,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		logger.debug("configure(HttpSecurity "+http+")");
 		http.authorizeRequests()
 				.antMatchers("/","/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
-				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, "ROLE_BSD_DEALER",adminGroupAngular)
+				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, adminGroupAngular)
 				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
+				
+				//"ROLE_BSD_DEALER"
+				
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				//jan 19 .antMatchers( "/ajax/**").permitAll()
 				//.antMatchers( "/ajax/users/**").hasAnyAuthority(adminGroup)// + ", " + adminGroup)

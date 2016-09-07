@@ -199,37 +199,55 @@ public class BuildAndExportDatabase {
 				"en", "clientLogo.gif");
 		bsdService.save(storeHq);
 
+		/*
+		 * Users setup
+		 */ 		
+		BsdUser timAdams = new BsdUser();
+		timAdams.setUserId("Tim Adams");
+		timAdams.setFirstName("Tim");
+		timAdams.setLastName("Adams");
+		timAdams.setPassword(passwordEncoder.encode("password"));
+		timAdams.setEmail("timAdams@gmail.com");
+		timAdams.setStore(store);
+		userService.save(timAdams);
 		
-		BsdUser bsdUser = new BsdUser();
-		bsdUser.setUserId("Tim Adams");
-		bsdUser.setFirstName("Tim");
-		bsdUser.setLastName("Adams");
-		bsdUser.setPassword(passwordEncoder.encode("password"));
-		bsdUser.setEmail("timAdams@gmail.com");
-		bsdUser.setStore(store);
-		userService.save(bsdUser);
+		Authority timAdamsAuthoritiy = new Authority();
+		timAdamsAuthoritiy.setUser(timAdams);
+		timAdamsAuthoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(timAdamsAuthoritiy);
 		
-		Authority bsdUserAuthoritiy = new Authority();
-		bsdUserAuthoritiy.setUser(bsdUser);
-		bsdUserAuthoritiy.setRole("ROLE_BSD_DEALER");
-		userService.save(bsdUserAuthoritiy);
+		BsdUser hongLi = new BsdUser();
+		hongLi.setUserId("Hong Li");
+		hongLi.setFirstName("Hong");
+		hongLi.setLastName("Li");
+		hongLi.setPassword(passwordEncoder.encode("password"));
+		hongLi.setEmail("hongLi@gmail.com");
+		hongLi.setStore(storeHq);
+		userService.save(hongLi);
 		
-		BsdUser bsdUser2 = new BsdUser();
-		bsdUser2.setUserId("Hong Li");
-		bsdUser2.setFirstName("Hong");
-		bsdUser2.setLastName("Li");
-		bsdUser2.setPassword(passwordEncoder.encode("password"));
-		bsdUser2.setEmail("hongLi@gmail.com");
-		bsdUser2.setStore(storeHq);
-		userService.save(bsdUser2);
+		Authority hongLiAuthoritiy = new Authority();
+		hongLiAuthoritiy.setUser(hongLi);
+		hongLiAuthoritiy.setRole("ROLE_BSD_DEALER");
+		userService.save(hongLiAuthoritiy);
 		
-		Authority bsdUser2Authoritiy = new Authority();
-		bsdUser2Authoritiy.setUser(bsdUser2);
-		bsdUser2Authoritiy.setRole("ROLE_BSD_DEALER");
-		userService.save(bsdUser2Authoritiy);
+		BsdUser angularUser = new BsdUser();
+		angularUser.setUserId("Angular User");
+		angularUser.setFirstName("Angular");
+		angularUser.setLastName("User");
+		//user.setEnabled(true);
+		angularUser.setPassword(passwordEncoder.encode("password"));
+		angularUser.setEmail("angular@gmail.com");
+		angularUser.setStore(storeHq);
+		userService.save(angularUser);
+
+		Authority angularUserAuthoritiy = new Authority();
+		angularUserAuthoritiy.setUser(angularUser);
+		angularUserAuthoritiy.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
+		userService.save(angularUserAuthoritiy);
 		
-		
-		
+		/*
+		 * Products setup
+		 */
 		Product product1 = new Product("tst1","test product","test product (fr)");
 		bsdService.save(product1);
 		Product product2 = new Product("tst2","test product 1","test product 1 (fr)");
@@ -263,11 +281,11 @@ public class BuildAndExportDatabase {
 		bsdService.save(productPriceInStore7);
 		
 		
-		OrderHeader bsdUserOrder = new OrderHeader(bsdUser);
+		OrderHeader bsdUserOrder = new OrderHeader(timAdams);
 		bsdService.save(bsdUserOrder);
-		OrderHeader bsdUserOrder1 = new OrderHeader(bsdUser);
+		OrderHeader bsdUserOrder1 = new OrderHeader(timAdams);
 		bsdService.save(bsdUserOrder1);
-		OrderHeader bsdUserOrder2 = new OrderHeader(bsdUser2);
+		OrderHeader bsdUserOrder2 = new OrderHeader(hongLi);
 		bsdService.save(bsdUserOrder2);
 	}
 	
@@ -368,31 +386,14 @@ public class BuildAndExportDatabase {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11);
 		
 //		<users id="1" enabled="true" password="password" userId="Alexei Ptitchkin"/>
-		QuotaUser user = new QuotaUser();
-		user.setUserId("Alexei Ptitchkin");
-		user.setFirstName("Alexei");
-		user.setLastName("Ptitchkin");
-
-		//user.setEnabled(true);
-		//user.setPassword("password");
-		user.setPassword(passwordEncoder.encode("password"));
-		userService.save(user);
+		QuotaUser adminUser = new QuotaUser();
+		adminUser.setUserId("Alexei Ptitchkin");
+		adminUser.setFirstName("Alexei");
+		adminUser.setLastName("Ptitchkin");
+		adminUser.setPassword(passwordEncoder.encode("password"));
+		userService.save(adminUser);
 
 		
-
-		QuotaUser angularUser = new QuotaUser();
-		angularUser.setUserId("Angular User");
-		angularUser.setFirstName("Angular");
-		angularUser.setLastName("User");
-		//user.setEnabled(true);
-		angularUser.setPassword(passwordEncoder.encode("password"));
-		userService.save(angularUser);
-
-		setupQuotaAuthorities(user, angularUser);
-
-	}
-
-	private void setupQuotaAuthorities(User adminUser, User angularUser) {
 		/*
 		 * app.auth.userGroup=QuotaKPI_USER
 		 * app.auth.quotaGroup=ROLE_QuotaKPI_QUOTA
@@ -402,32 +403,37 @@ public class BuildAndExportDatabase {
 		 * app.auth.adminGroup=ROLE_QuotaKPI_ADMIN
 		 * 
 		 */
-				
-				Authority authoritiy = new Authority();
-				authoritiy.setUser(adminUser);
-				authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
-				userService.save(authoritiy);
-				
-				Authority authoritiy2 = new Authority();
-				authoritiy2.setUser(adminUser);
-				authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
-				userService.save(authoritiy2);
-				
-				Authority authoritiy3 = new Authority();
-				authoritiy3.setUser(adminUser);
-				authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
-				userService.save(authoritiy3);
-			
+		Authority authoritiy = new Authority();
+		authoritiy.setUser(adminUser);
+		authoritiy.setRole("ROLE_QuotaKPI_COMPANY");
+		userService.save(authoritiy);
 		
-				Authority authoritiy4 = new Authority();
-				authoritiy4.setUser(adminUser);
-				authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
-				userService.save(authoritiy4);
+		Authority authoritiy2 = new Authority();
+		authoritiy2.setUser(adminUser);
+		authoritiy2.setRole("ROLE_QuotaKPI_QUOTA");
+		userService.save(authoritiy2);
 		
-				Authority authoritiy6 = new Authority();
-				authoritiy6.setUser(angularUser);
-				authoritiy6.setRole("ROLE_QuotaKPI_ADMIN_ANGULAR");
-				userService.save(authoritiy6);
+		Authority authoritiy3 = new Authority();
+		authoritiy3.setUser(adminUser);
+		authoritiy3.setRole("ROLE_QuotaKPI_BUDGET");
+		userService.save(authoritiy3);
+
+		Authority authoritiy4 = new Authority();
+		authoritiy4.setUser(adminUser);
+		authoritiy4.setRole("ROLE_QuotaKPI_ADMIN");
+		userService.save(authoritiy4);
+		
+/*
+		QuotaUser angularUser = new QuotaUser();
+		angularUser.setUserId("Angular User");
+		angularUser.setFirstName("Angular");
+		angularUser.setLastName("User");
+		//user.setEnabled(true);
+		angularUser.setPassword(passwordEncoder.encode("password"));
+		userService.save(angularUser);
+*/
+		
+
 	}
 
 

@@ -1,11 +1,20 @@
 # Mock project
 
-### September 6: 
+### September 7: 
 
 - remove GsonTest
+- AngularUser was wrongfully created as QuotaUser
+- fix index.jsp to redirect AngularUser to extjs fron-end
+	<security:authorize access="hasAnyRole('QuotaKPI_ADMIN_ANGULAR', 'QuotaKPI_QUOTA')">
+		<c:redirect url="/exthome"/>
+	</security:authorize>
+ 
+- misleading console message 'Angular 2 is running in the development mode. Call enableProdMode() to enable the production mode'
+	https://github.com/angular/angular/issues/6189
+	import {enableProdMode} from "angular2/core";
+	enableProdMode();
 
 ### September 6: 
-
 
 -	Get rid of DTO (code duplication) by ignoring properties which cause circular references 
 	google: spring configure jackson to not serialize properties without @JsonProperty
