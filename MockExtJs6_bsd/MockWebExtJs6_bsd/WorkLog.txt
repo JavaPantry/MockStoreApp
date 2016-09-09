@@ -1,5 +1,15 @@
 # Mock project
 
+### September 8:
+
+Experiment with `webpack`
+	Chapter 10 of Angular_2_Development_with_TypeScript_v7_MEAP.pdf
+	Additional guide https://webpack.github.io/docs/usage.html
+		> npm install webpack -g
+	
+	[vilhelmfalkenmark/react-todo](https://github.com/vilhelmfalkenmark/react-todo)
+	
+	
 ### September 7: 
 
 - remove GsonTest
