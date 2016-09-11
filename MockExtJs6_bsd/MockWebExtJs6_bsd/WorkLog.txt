@@ -1,4 +1,8 @@
 # Mock project
+### September 11:
+
+- create diff file /MockWebExtJs6_bsd/WebPackDiff_Ch8vsCh10.txt
+- make pre-release 'before webpack optimization'
 
 ### September 8:
 
