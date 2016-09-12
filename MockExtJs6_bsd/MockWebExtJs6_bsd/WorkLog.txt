@@ -3,7 +3,31 @@
 
 - create diff file /MockWebExtJs6_bsd/WebPackDiff_Ch8vsCh10.txt
 - make pre-release 'before webpack optimization'
+- switch to new branch 'webpack_optimization'
+---
+- REad Appendix B install typescript 'npm install -g typescript'
+	-- typescript@1.8.10
+- confirm version and availability
+	C:\Users\ptitchkin>tsc --version
+	Version 1.8.10
+- transpile ts file with source map
+	tsc --sourcemap main.ts
 
+- p#335 
+>In the command line change to the server directory and run npm install to get all
+required dependencies for the server’s portion of the application.
+To use the local compiler run the command npm run tsc, which will transpile the
+server’s code and will create auction.js and model.js (and their source maps) in the
+directory build as configured in tsconfig.json. This is the code for the Auction’s server.
+Start the server by running the command npm startServer. It’ll print the message
+"Listening on 127.0.0.1:8000" on the console.
+- continue in C:\webStormWS\Angular2Workspace\auction\ReadMe.md
+
+
+ 
+
+
+	
 ### September 8:
 
 Experiment with `webpack`
