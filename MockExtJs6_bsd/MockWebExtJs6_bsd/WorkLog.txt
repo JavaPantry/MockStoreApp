@@ -1,4 +1,10 @@
 # Mock project
+
+### September 12:
+
+- test that C:\webStormWS\Angular2Workspace\auction is deployed and bundled
+- 
+
 ### September 11:
 
 - create diff file /MockWebExtJs6_bsd/WebPackDiff_Ch8vsCh10.txt

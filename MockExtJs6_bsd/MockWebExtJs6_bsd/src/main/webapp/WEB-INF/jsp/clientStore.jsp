@@ -12,7 +12,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
-  <!-- to start in WebStorm Add '../' src and href -->
 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
   <script src="${pageContext.request.contextPath}/resources/node_modules/zone.js/dist/zone.js"></script>
