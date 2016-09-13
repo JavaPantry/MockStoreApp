@@ -58,7 +58,8 @@
 		-- Temporary fix the problem by commenting out bootstrap css from vendor.ts and uncomment in clientStore.jsp
 		vendor.ts:>	//import 'bootstrap/dist/css/bootstrap.min.css';
 		clientStore.jsp:> <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
-		
+	- @ book github https://github.com/Farata/angular2typescript/issues/3
+	- google: 'webpack bootstrap.min.css Unexpected token (5:83)'
 		
 		
 		
@@ -72,6 +73,10 @@
 		app\components\product-item
 		app\components\search
 		app\components\stars
+ 
+- Merge 'webpack_optimization' and 'master' branches
+
+
  
 ## Start webpacked application
 - Error: Cannot find module "bootstrap/dist/css/bootstrap.min.css"
