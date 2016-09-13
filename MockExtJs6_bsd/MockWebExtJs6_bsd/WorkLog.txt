@@ -1,9 +1,23 @@
 # Mock project
 
+### September 13:
+
+- copy/overwrite package.json, tsconfig.json, webpack.config.js from c:\WebStormWS\Angular2Workspace\auction\client\ to MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources\
+- remove systemjs.config.js
+- remove from package.json
+
+	"prebuild": "npm run clean && npm run test",
+	"build": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+	"startWebpackDevServer": "webpack-dev-server --inline --colors --progress --display-error-details --disaply-modules --display-cached --port 8080",
+	"deleteTask_test": "karma start karma.conf.js",
+	"predeploy": "npm run build && rimraf ../server/build/public && mkdirp ../server/build/public",
+	"deploy": "copyup dist/* ../server/build/public"
+
+- modify "build": "webpack"
+
 ### September 12:
 
 - test that C:\webStormWS\Angular2Workspace\auction is deployed and bundled
-- 
 
 ### September 11:
 
