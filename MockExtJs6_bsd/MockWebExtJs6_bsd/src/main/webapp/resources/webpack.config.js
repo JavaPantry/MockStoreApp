@@ -32,13 +32,13 @@ module.exports = {
   },
   devtool: 'source-map',
   entry: {
-    'main'  : './src/main.ts',
-    'vendor': './src/vendor.ts'
+    'main'  : './app/main.ts',
+    'vendor': './app/vendor.ts'
   },
   module: {
     loaders: [
       {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
-      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /src/},
+      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
       {test: /\.html$/,  loader: 'raw'},
       {test: /\.ts$/,    loader: 'ts', query: {compilerOptions: {noEmit: false}}},
       {test: /\.woff$/,  loader: 'url?limit=10000&mimetype=application/font-woff'},

@@ -6,7 +6,7 @@ import {Observable, Subscriber} from 'rxjs/Rx';
 export class BidService {
   constructor(private webSocket: WebSocketService) {}
 
-  watchProduct(productId: number): Observable {
+  watchProduct(productId: number): Observable<any> {
     let openSubscriber = Subscriber.create(
       () => this.webSocket.send({productId: productId}));
 

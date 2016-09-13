@@ -8,7 +8,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 //https://github.com/angular/angular/issues/6189
 //not much gain on load time and traffic
 import {enableProdMode} from "@angular/core";
-enableProdMode();
+//enableProdMode();
 
 import ApplicationComponent from './components/application/application';
 import HomeComponent from './components/home/home';

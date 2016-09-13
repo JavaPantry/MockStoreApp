@@ -6,7 +6,7 @@ import {Observable, Subscriber} from 'rxjs/Rx';
 export class WebSocketService {
   private ws: WebSocket;
 
-  createObservableSocket(url: string, openSubscriber: Subscriber): Observable {
+  createObservableSocket(url: string, openSubscriber: Subscriber<any>): Observable<any> {
     this.ws = new WebSocket(url);
     return new Observable(observer => {
       this.ws.onmessage = event => observer.next(event.data);

@@ -7,7 +7,7 @@ import {
     REACTIVE_FORM_DIRECTIVES
 } from '@angular/forms';
 
-import {ProductService} from 'app/services/product-service';
+import {ProductService} from '../../services/product-service';  //webpack throws error 'app/services/product-service';
 
 @Component({
   selector: 'auction-search',

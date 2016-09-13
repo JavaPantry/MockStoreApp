@@ -25,7 +25,7 @@ export default class StarsComponent {
   }
 
   @Output()
-  ratingChange: EventEmitter<number> = new EventEmitter();
+  ratingChange: EventEmitter<number> = new EventEmitter<number>();//  = new EventEmitter(); cause error error TS2314: Generic type 'EventEmitter<T>' requires 1 type argument(s).
 
   fillStarsWithColor(index) {
 

@@ -14,7 +14,70 @@
 	"deploy": "copyup dist/* ../server/build/public"
 
 - modify "build": "webpack"
+- install STS-3.8.1
+- run C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources>npm install
+- replace folder './src' to './app' in /webpack.config.js
 
+	entry: {
+		'main'  : './src/main.ts',
+		'vendor': './src/vendor.ts'
+	}
+- copy and modyfy vendor.ts from C:\WebStormWS\Angular2Workspace\auction\client\src\
+- run C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources>npm run build
+
+- ERROR in ./app/components/search/search.ts > (10,30): error TS2307: Cannot find module 'app/services/product-service'. 
+
+	ERROR in ./app/components/search/search.ts
+	Module not found: Error: Cannot resolve module 'app/services/product-service' in C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockEx
+	tJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources\app\components\search
+	@ ./app/components/search/search.ts 13:24-63
+ 
+	- all pathes should be relative '../../services/product-service' instead 'app/services/product-service'
+	- fixed: `import {ProductService} from '../../services/product-service';  //webpack throws error 'app/services/product-service';`
+
+- ERROR in ./app/components/stars/stars.ts > (27,3): error TS2322: Type 'EventEmitter<{}>' is not assignable to type 'EventEmitter<number>'.
+	  Type '{}' is not assignable to type 'number'.
+		
+	- fixed: replace
+		ratingChange: EventEmitter<number> = new EventEmitter();
+		with
+		ratingChange: EventEmitter<number> = new EventEmitter<number>();
+	 
+- same ERROR in ./app/services/product-service.ts > (36,16): error TS2314: Generic type 'EventEmitter<T>' requires 1 type argument(s).
+
+- ERROR in ./app/services/websocket-service.ts > (9,55): error TS2314: Generic type 'Subscriber<T>' requires 1 type argument(s).
+- ERROR in ./app/services/websocket-service.ts > (9,68): error TS2314: Generic type 'Observable<T>' requires 1 type argument(s).
+	- fixed by adding `any`
+- ERROR in ./app/services/bid-service.ts > (9,36): error TS2314: Generic type 'Observable<T>' requires 1 type argument(s).
+	- fixed by adding `any` watchProduct(productId: number): Observable<any>
+
+- TODO ERROR in ./~/bootstrap/dist/css/bootstrap.min.css
+	Module parse failed: C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources\node_modules\bootstrap\dist\css\bootstrap.min.css Unexpected token (5:83)
+	You may need an appropriate loader to handle this file type.
+	SyntaxError: Unexpected token (5:83)
+		-- Temporary fix the problem by commenting out bootstrap css from vendor.ts and uncomment in clientStore.jsp
+		vendor.ts:>	//import 'bootstrap/dist/css/bootstrap.min.css';
+		clientStore.jsp:> <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
+		
+		
+		
+		
+- TODO Replace all templateUrl: with `template: require('./search.html')`
+		app\components\application
+		app\components\carousel
+		app\components\footer
+		app\components\navbar
+		app\components\order-detail
+		app\components\product-detail
+		app\components\product-item
+		app\components\search
+		app\components\stars
+ 
+## Start webpacked application
+- Error: Cannot find module "bootstrap/dist/css/bootstrap.min.css"
+
+
+ 
 ### September 12:
 
 - test that C:\webStormWS\Angular2Workspace\auction is deployed and bundled
