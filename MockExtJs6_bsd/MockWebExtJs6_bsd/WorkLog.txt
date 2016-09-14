@@ -1,5 +1,35 @@
 # Mock project
 
+### September 14:
+
+
+There still two files in dist directory
+89889688147bd7575d6327160d64e760.svg
+f4769f9bdb7466be65088239c12046d1.eot
+--------------------------------------------------------------------------------------------------
+- supposedly fixed by following steps:
+	1. increase limit in loaders for woff files (from 10000 to 50000)
+			{test: /\.woff$/,  loader: 'url?limit=50000&mimetype=application/font-woff'},
+			{test: /\.woff2$/, loader: 'url?limit=50000&mimetype=application/font-woff'},
+			{test: /\.ttf$/,   loader: 'url?limit=50000&mimetype=application/octet-stream'},
+			{test: /\.svg$/,   loader: 'url?limit=50000&mimetype=image/svg+xml'},
+
+
+- Error loading some fonts
+	GET http://localhost:8080/MockWebExtJs6_bsd/448c34a56d699c29117adc64c43affeb.woff2 
+	GET http://localhost:8080/MockWebExtJs6_bsd/fa2772327f55d8198301fdb8bcfc8158.woff 
+	GET http://localhost:8080/MockWebExtJs6_bsd/e18bbf611f2a2e43afc071aa2f4e1512.ttf 				
+
+- Files exist in dist directory
+	MockWebExtJs6_bsd\src\main\webapp\resources\dist\vendor.bundle.js
+- but requests for them point to root > http://localhost:8080/MockWebExtJs6_bsd/448c34a56d699c29117adc64c43affeb.woff2
+	\dist\vendor.bundle.js
+		82,758: module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
+	\dist\vendor.bundle.js.map
+		"module.exports = __webpack_public_path__ + \"448c34a56d699c29117adc64c43affeb.woff2\" 
+
+			
+
 ### September 13:
 
 - copy/overwrite package.json, tsconfig.json, webpack.config.js from c:\WebStormWS\Angular2Workspace\auction\client\ to MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources\
@@ -72,10 +102,6 @@
 				      {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
 				      {test: /\.css$/,  loader: 'style-loader!css-loader'}, 
 				      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
-			- error loading some fonts
-			GET http://localhost:8080/MockWebExtJs6_bsd/448c34a56d699c29117adc64c43affeb.woff2 
-			GET http://localhost:8080/MockWebExtJs6_bsd/fa2772327f55d8198301fdb8bcfc8158.woff 
-			GET http://localhost:8080/MockWebExtJs6_bsd/e18bbf611f2a2e43afc071aa2f4e1512.ttf 				
 		
 - TODO Replace all templateUrl: with `template: require('./search.html')`
 		app\components\application
