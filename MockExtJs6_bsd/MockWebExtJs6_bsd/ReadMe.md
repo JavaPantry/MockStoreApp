@@ -84,6 +84,14 @@ _Installation_
 4. [Why are Data Transfer Objects an anti-pattern?](http://stackoverflow.com/questions/1440952/why-are-data-transfer-objects-an-anti-pattern)
 5. [Spring 3.1 JSON date format](http://stackoverflow.com/questions/9038005/spring-3-1-json-date-format) from src [How to control Date formatting when Jackson JSON Processor is used with Spring 3.0](http://blog.seyfi.net/2010/03/how-to-control-date-formatting-when.html)
 
+## An Angular related reading
+
+- [es6-shim](http://stackoverflow.com/questions/35642223/angular2-why-do-we-need-the-es6-shim)
+- [reflect-metadata](https://www.google.com/search?q=reflect-metadata+angular2&oq=reflect-metadata&aqs=chrome.4.69i57j0l5.6943j0j9&sourceid=chrome&ie=UTF-8)
+- [rxjs](https://www.sitepoint.com/functional-reactive-programming-rxjs/)
+- [systemjs](https://www.google.com/search?q=systemjs+vs+webpack&oq=systemjs&aqs=chrome.1.69i57j0l5.6671j0j7&sourceid=chrome&ie=UTF-8)
+- [zone.js](https://medium.com/@MertzAlertz/what-the-hell-is-zone-js-and-why-is-it-in-my-angular-2-6ff28bcf943e#.fepfp1ads)
+
 
 ---
 
@@ -94,6 +102,15 @@ _Installation_
 	- run `npm -v` to confirm current version  
 	- in terminal window run `npm install npm -g`
 	- run `npm -v` again confirm output 3.10.5 (means npm had been updated)
+
+- after webpack optimization step completed it is essential to run _bundling and deployment_ after each typescript modification in MockWebExtJs6_bsd/src/main/webapp/resources
+
+	>[optional] delete _node_modules_ folder
+	>[optional] npm install
+	>[optional] delete _dist_ folder
+	>npm run build
+	>refresh MockWebExtJs6_bsd/src/main/webapp/resources folder. Otherwise STS will not pickup new bundle 
+
 
 - in _src/main/webapp/resources/_ run npm install this will create `node_modules` folder with all required dependencies
 
