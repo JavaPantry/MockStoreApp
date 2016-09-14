@@ -8,7 +8,8 @@ import {Order, OrderService} from "../../services/order-service";
 
 @Component({
   selector: 'auction-order-page',
-  templateUrl: 'resources/app/components/order-detail/order-detail.html',
+  //templateUrl: 'resources/app/components/order-detail/order-detail.html',
+  template: require('./order-detail.html'),
   directives: [NgClass]
 })
 export default class OrderComponent implements OnDestroy {

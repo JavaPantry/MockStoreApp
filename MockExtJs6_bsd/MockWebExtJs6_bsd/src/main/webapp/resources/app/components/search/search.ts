@@ -12,7 +12,8 @@ import {ProductService} from '../../services/product-service';  //webpack throws
 @Component({
   selector: 'auction-search',
   directives: [REACTIVE_FORM_DIRECTIVES],
-  templateUrl: 'resources/app/components/search/search.html'
+  //templateUrl: 'resources/app/components/search/search.html'
+  template: require('./search.html')
 })
 export default class SearchComponent {
   formModel: FormGroup;

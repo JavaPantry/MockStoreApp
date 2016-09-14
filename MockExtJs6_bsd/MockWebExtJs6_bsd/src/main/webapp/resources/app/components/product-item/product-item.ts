@@ -6,8 +6,10 @@ import StarsComponent from '../stars/stars';
 @Component({
   selector: 'auction-product-item',
   properties: ['product'],
-  templateUrl: 'resources/app/components/product-item/product-item.html',
-  styleUrls: ['resources/app/components/product-item/product-item.css'],
+  //templateUrl: 'resources/app/components/product-item/product-item.html',
+  template: require('./product-item.html'),
+  //styleUrls: ['resources/app/components/product-item/product-item.css'],
+  styles: [require('./product-item.css')],
   directives: [ROUTER_DIRECTIVES, StarsComponent],
 })
 export default class ProductItemComponent {

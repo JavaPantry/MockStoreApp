@@ -10,7 +10,8 @@ import StarsComponent from '../stars/stars';
 @Component({
   selector: 'auction-product-page',
   styles: ['auction-stars.large {font-size: 24px;}'],
-  templateUrl: 'resources/app/components/product-detail/product-detail.html',
+  //templateUrl: 'resources/app/components/product-detail/product-detail.html',
+  template: require('./product-detail.html'),
   directives: [NgClass, StarsComponent]
 })
 export default class ProductDetailComponent implements OnDestroy {

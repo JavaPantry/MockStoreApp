@@ -9,7 +9,8 @@ import OrderComponent from '../order-detail/order-detail';
 
 @Component({
   selector: 'auction-application',
-  templateUrl: 'resources/app/components/application/application.html',
+  //templateUrl: 'resources/app/components/application/application.html',
+  template: require('./application.html'),
   directives: [
     ROUTER_DIRECTIVES,
     NavbarComponent,

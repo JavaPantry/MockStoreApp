@@ -3,7 +3,8 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 @Component({
   selector: 'auction-stars',
   styles: [`.starrating { color: #d17581; }`],
-  templateUrl: 'resources/app/components/stars/stars.html'
+  //templateUrl: 'resources/app/components/stars/stars.html'
+  template: require('./stars.html')
 })
 export default class StarsComponent {
   private _rating: number;

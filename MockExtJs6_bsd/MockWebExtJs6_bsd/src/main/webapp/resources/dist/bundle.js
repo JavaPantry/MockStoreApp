@@ -12,11 +12,11 @@ webpackJsonp([0],{
 	//enableProdMode();
 	var application_1 = __webpack_require__(438);
 	var home_1 = __webpack_require__(439);
-	var product_detail_1 = __webpack_require__(447);
-	var order_detail_1 = __webpack_require__(674);
+	var product_detail_1 = __webpack_require__(456);
+	var order_detail_1 = __webpack_require__(684);
 	var product_service_1 = __webpack_require__(440);
-	var order_service_1 = __webpack_require__(675);
-	var services_1 = __webpack_require__(676);
+	var order_service_1 = __webpack_require__(685);
+	var services_1 = __webpack_require__(687);
 	platform_browser_dynamic_1.bootstrap(application_1.default, [
 	    router_1.provideRouter([
 	        { path: '', component: home_1.default },
@@ -4586,16 +4586,17 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(5);
 	var router_1 = __webpack_require__(365);
 	var home_1 = __webpack_require__(439);
-	var navbar_1 = __webpack_require__(444);
-	var footer_1 = __webpack_require__(445);
-	var search_1 = __webpack_require__(446);
+	var navbar_1 = __webpack_require__(449);
+	var footer_1 = __webpack_require__(451);
+	var search_1 = __webpack_require__(453);
 	var ApplicationComponent = (function () {
 	    function ApplicationComponent() {
 	    }
 	    ApplicationComponent = __decorate([
 	        core_1.Component({
 	            selector: 'auction-application',
-	            templateUrl: 'resources/app/components/application/application.html',
+	            //templateUrl: 'resources/app/components/application/application.html',
+	            template: __webpack_require__(455),
 	            directives: [
 	                router_1.ROUTER_DIRECTIVES,
 	                navbar_1.default,
@@ -4630,7 +4631,7 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(5);
 	var product_service_1 = __webpack_require__(440);
 	var carousel_1 = __webpack_require__(441);
-	var product_item_1 = __webpack_require__(442);
+	var product_item_1 = __webpack_require__(443);
 	var HomeComponent = (function () {
 	    function HomeComponent(productService) {
 	        var _this = this;
@@ -4649,7 +4650,8 @@ webpackJsonp([0],{
 	                carousel_1.default,
 	                product_item_1.default
 	            ],
-	            styleUrls: ['resources/app/components/home/home.css'],
+	            //styleUrls: ['resources/app/components/home/home.css'],
+	            styles: [__webpack_require__(448)],
 	            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
 	        }), 
 	        __metadata('design:paramtypes', [product_service_1.ProductService])
@@ -4771,7 +4773,8 @@ webpackJsonp([0],{
 	    CarouselComponent = __decorate([
 	        core_1.Component({
 	            selector: 'auction-carousel',
-	            templateUrl: 'resources/app/components/carousel/carousel.html'
+	            //templateUrl: 'resources/app/components/carousel/carousel.html'
+	            template: __webpack_require__(442)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], CarouselComponent);
@@ -4784,6 +4787,13 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 442:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"carousel slide\" data-ride=\"carousel\">\n  <ol class=\"carousel-indicators\">\n    <li class=\"active\"></li>\n    <li></li>\n    <li></li>\n  </ol>\n  <div class=\"carousel-inner\">\n    <div class=\"item active\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n    <div class=\"item\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n    <div class=\"item\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n  </div>\n  <a class=\"left carousel-control\" href=\"javascript:$('.carousel').carousel('prev');\">\n    <span class=\"glyphicon glyphicon-chevron-left\"></span>\n  </a>\n  <a class=\"right carousel-control\" href=\"javascript:$('.carousel').carousel('next');\">\n    <span class=\"glyphicon glyphicon-chevron-right\"></span>\n  </a>\n</div>\n"
+
+/***/ },
+
+/***/ 443:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4798,7 +4808,7 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(5);
 	var router_1 = __webpack_require__(365);
-	var stars_1 = __webpack_require__(443);
+	var stars_1 = __webpack_require__(444);
 	var ProductItemComponent = (function () {
 	    function ProductItemComponent() {
 	    }
@@ -4806,8 +4816,10 @@ webpackJsonp([0],{
 	        core_1.Component({
 	            selector: 'auction-product-item',
 	            properties: ['product'],
-	            templateUrl: 'resources/app/components/product-item/product-item.html',
-	            styleUrls: ['resources/app/components/product-item/product-item.css'],
+	            //templateUrl: 'resources/app/components/product-item/product-item.html',
+	            template: __webpack_require__(446),
+	            //styleUrls: ['resources/app/components/product-item/product-item.css'],
+	            styles: [__webpack_require__(447)],
 	            directives: [router_1.ROUTER_DIRECTIVES, stars_1.default],
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -4820,7 +4832,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 443:
+/***/ 444:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4873,7 +4885,8 @@ webpackJsonp([0],{
 	        core_1.Component({
 	            selector: 'auction-stars',
 	            styles: [".starrating { color: #d17581; }"],
-	            templateUrl: 'resources/app/components/stars/stars.html'
+	            //templateUrl: 'resources/app/components/stars/stars.html'
+	            template: __webpack_require__(445)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], StarsComponent);
@@ -4885,7 +4898,35 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 444:
+/***/ 445:
+/***/ function(module, exports) {
+
+	module.exports = "<p>\n  <span *ngFor=\"let star of stars; let i = index\"\n        class=\"starrating glyphicon glyphicon-star\"\n        [class.glyphicon-star-empty]=\"!star\"\n        (click)=\"fillStarsWithColor(i)\">\n  </span>\n  <span *ngIf=\"rating\">{{rating | number:'.0-2'}} stars</span>\n</p>\n"
+
+/***/ },
+
+/***/ 446:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"thumbnail\">\n  <img src=\"http://placehold.it/320x150\">\n  <div class=\"caption\">\n    <h4 class=\"pull-right\">{{ product.sku}}</h4>\n    <!--<h4 class=\"pull-right\">{{ product.price | currency }}</h4>-->\n    <h4><a [routerLink]=\"['products', product.sku]\">{{ product.sku}}</a></h4>\n    <!--<h4><a [routerLink]=\"['products', product.id]\">{{ product.title }}</a></h4>\n    <p>{{ product.description }}</p>-->\n  </div>\n  <div class=\"ratings\">\n    <auction-stars [rating]=\"product.rating\"></auction-stars>\n  </div>\n</div>\n\n"
+
+/***/ },
+
+/***/ 447:
+/***/ function(module, exports) {
+
+	module.exports = "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+
+/***/ },
+
+/***/ 448:
+/***/ function(module, exports) {
+
+	module.exports = "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../../node_modules/css-loader/index.js!./home.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../../node_modules/css-loader/index.js!./home.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../../node_modules/css-loader/index.js!./home.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+
+/***/ },
+
+/***/ 449:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4906,7 +4947,8 @@ webpackJsonp([0],{
 	    NavbarComponent = __decorate([
 	        core_1.Component({
 	            selector: 'auction-navbar',
-	            templateUrl: 'resources/app/components/navbar/navbar.html',
+	            //templateUrl: 'resources/app/components/navbar/navbar.html',
+	            template: __webpack_require__(450),
 	            directives: [router_1.ROUTER_DIRECTIVES]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -4919,7 +4961,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 445:
+/***/ 450:
+/***/ function(module, exports) {
+
+	module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container\">\n\n    <!--This is viewport size sencible menu-->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" [routerLink]=\"['/']\">Online Auction</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-ex1-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li><a [routerLink]=\"['orders']\">My Orders</a></li>\n        <li><a href=\"#\">Services</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\" >\n        <li><a class=\"btn btn-danger\" href=\"logout\" role=\"button\">Log-out</a ></li >\n      </ul >\n      <!--<a class=\"btn btn-danger  btn-sm\" href=\"logout\" role=\"button\">Logout</a>-->\n    </div>\n\n    <!--<div class=\"collapse navbar-collapse\" >\n      <ul class=\"nav navbar-nav navbar-right\" >\n        <li><a ui-sref=\"logout\" >Log-out</a ></li >\n      </ul >\n    </div >-->\n\n\n\n    <!-- /.navbar-collapse -->\n  </div>\n  <!-- /.container -->\n</nav>\n"
+
+/***/ },
+
+/***/ 451:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4939,7 +4988,8 @@ webpackJsonp([0],{
 	    FooterComponent = __decorate([
 	        core_1.Component({
 	            selector: 'auction-footer',
-	            templateUrl: 'resources/app/components/footer/footer.html'
+	            //templateUrl: 'resources/app/components/footer/footer.html'
+	            template: __webpack_require__(452)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], FooterComponent);
@@ -4951,7 +5001,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 446:
+/***/ 452:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"container\">\n  <hr>\n  <footer>\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <p>Copyright &copy; Online Auction 2016</p>\n      </div>\n    </div>\n  </footer>\n</div>\n"
+
+/***/ },
+
+/***/ 453:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4988,7 +5045,8 @@ webpackJsonp([0],{
 	        core_1.Component({
 	            selector: 'auction-search',
 	            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
-	            templateUrl: 'resources/app/components/search/search.html'
+	            //templateUrl: 'resources/app/components/search/search.html'
+	            template: __webpack_require__(454)
 	        }), 
 	        __metadata('design:paramtypes', [product_service_1.ProductService])
 	    ], SearchComponent);
@@ -5008,7 +5066,21 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 447:
+/***/ 454:
+/***/ function(module, exports) {
+
+	module.exports = "<form [formGroup]=\"formModel\"\n      (ngSubmit)=\"onSearch()\"\n      novalidate>\n\n  <div class=\"form-group\"\n       [class.has-error]=\"formModel.hasError('minlength', 'title')\">\n    <label for=\"title\">Product title:</label>\n    <input id=\"title\"\n           placeholder=\"Title\"\n           class=\"form-control\"\n           type=\"text\"\n           formControlName=\"title\"\n           minlength=\"3\">\n    <span class=\"help-block\"\n          [class.hidden]=\"!formModel.hasError('minlength', 'title')\">\n      Type at least 3 characters\n    </span>\n  </div>\n  <div class=\"form-group\"\n       [class.has-error]=\"formModel.hasError('positivenumber', 'price')\">\n    <label for=\"price\">Product price:</label>\n    <input id=\"price\"\n           placeholder=\"Price\"\n           class=\"form-control\"\n           type=\"number\"\n           step=\"any\"\n           min=\"0\"\n           formControlName=\"price\">\n    <span class=\"help-block\"\n          [class.hidden]=\"!formModel.hasError('positivenumber', 'price')\">\n      Price is not a positive number\n    </span>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"category\">Product category:</label>\n    <select id=\"category\"\n            class=\"form-control\"\n            formControlName=\"category\">\n      <option value=\"-1\">All categories</option>\n      <option *ngFor=\"let c of categories\"\n              [value]=\"c\">{{c}}</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <button type=\"submit\"\n            class=\"btn btn-primary btn-block\">Search</button>\n  </div>\n</form>\n"
+
+/***/ },
+
+/***/ 455:
+/***/ function(module, exports) {
+
+	module.exports = "<auction-navbar></auction-navbar>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-3\">\n      <auction-search></auction-search>\n    </div>\n\n    <div class=\"col-md-9\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n\n<auction-footer></auction-footer>"
+
+/***/ },
+
+/***/ 456:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5025,8 +5097,8 @@ webpackJsonp([0],{
 	var common_1 = __webpack_require__(2);
 	var router_1 = __webpack_require__(365);
 	var product_service_1 = __webpack_require__(440);
-	var bid_service_1 = __webpack_require__(448);
-	var stars_1 = __webpack_require__(443);
+	var bid_service_1 = __webpack_require__(457);
+	var stars_1 = __webpack_require__(444);
 	var ProductDetailComponent = (function () {
 	    function ProductDetailComponent(route, productService, bidService) {
 	        var _this = this;
@@ -5089,7 +5161,8 @@ webpackJsonp([0],{
 	        core_1.Component({
 	            selector: 'auction-product-page',
 	            styles: ['auction-stars.large {font-size: 24px;}'],
-	            templateUrl: 'resources/app/components/product-detail/product-detail.html',
+	            //templateUrl: 'resources/app/components/product-detail/product-detail.html',
+	            template: __webpack_require__(683),
 	            directives: [common_1.NgClass, stars_1.default]
 	        }), 
 	        __metadata('design:paramtypes', [router_1.ActivatedRoute, product_service_1.ProductService, bid_service_1.BidService])
@@ -5102,7 +5175,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 448:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5116,8 +5189,8 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(5);
-	var websocket_service_1 = __webpack_require__(449);
-	var Rx_1 = __webpack_require__(450);
+	var websocket_service_1 = __webpack_require__(458);
+	var Rx_1 = __webpack_require__(459);
 	var BidService = (function () {
 	    function BidService(webSocket) {
 	        this.webSocket = webSocket;
@@ -5139,7 +5212,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 449:
+/***/ 458:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5153,7 +5226,7 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(5);
-	var Rx_1 = __webpack_require__(450);
+	var Rx_1 = __webpack_require__(459);
 	var WebSocketService = (function () {
 	    function WebSocketService() {
 	    }
@@ -5185,7 +5258,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 674:
+/***/ 683:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"thumbnail\">\n  <img src=\"http://placehold.it/820x320\">\n  <div>\n    <!--<h4 class=\"pull-right\">{{ product?.price | currency }}</h4>\n    <h4>{{ product?.title }}</h4>\n    <p>{{ product?.description }}</p>-->\n\n    <h4>{{ product?.sku }}</h4>\n\n  </div>\n  <div class=\"ratings\">\n    <p class=\"pull-right\">{{ reviews?.length }} reviews</p>\n    <p><auction-stars [rating]=\"produt?.rating\"></auction-stars></p>\n  </div>\n</div>\n<div class=\"thumbnail\">\n  <button class=\"btn btn-default btn-lg\"\n          [ngClass]=\"{active: isWatching}\"\n          (click)=\"toggleWatchProduct()\"\n          role=\"button\">\n    {{ isWatching ? 'Stop watching' : 'Watch' }}\n  </button>\n\n  <label>Current bid: {{ currentBid | currency }}</label>\n</div>\n<div class=\"well\" id=\"reviews-anchor\">\n  <div class=\"row\">\n    <div class=\"col-md-12\"></div>\n  </div>\n  <div class=\"text-right\">\n    <button (click)=\"isReviewHidden = !isReviewHidden\"\n            class=\"btn btn-success btn-green\">Leave a Review</button>\n  </div>\n\n  <div [hidden]=\"isReviewHidden\">\n    <div><auction-stars [(rating)]=\"newRating\" [readonly]=\"false\" class=\"large\"></auction-stars></div>\n    <div><textarea [(ngModel)]=\"newComment\"></textarea></div>\n    <div><button (click)=\"addReview()\" class=\"btn\">Add review</button></div>\n  </div>\n\n  <div class=\"row\" *ngFor=\"let review of reviews\">\n    <hr>\n    <div class=\"col-md-12\">\n      <auction-stars [rating]=\"review.rating\"></auction-stars>\n      <span>{{ review.user }}</span>\n      <span class=\"pull-right\">{{ review.timestamp | date: 'shortDate' }}</span>\n      <p>{{ review.comment }}</p>\n    </div>\n  </div>\n</div>\n"
+
+/***/ },
+
+/***/ 684:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5201,7 +5281,7 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(5);
 	var common_1 = __webpack_require__(2);
 	var router_1 = __webpack_require__(365);
-	var order_service_1 = __webpack_require__(675);
+	var order_service_1 = __webpack_require__(685);
 	var OrderComponent = (function () {
 	    function OrderComponent(route, orderService) {
 	        //const productId = parseInt(route.snapshot.params['productId']);
@@ -5223,7 +5303,8 @@ webpackJsonp([0],{
 	    OrderComponent = __decorate([
 	        core_1.Component({
 	            selector: 'auction-order-page',
-	            templateUrl: 'resources/app/components/order-detail/order-detail.html',
+	            //templateUrl: 'resources/app/components/order-detail/order-detail.html',
+	            template: __webpack_require__(686),
 	            directives: [common_1.NgClass]
 	        }), 
 	        __metadata('design:paramtypes', [router_1.ActivatedRoute, order_service_1.OrderService])
@@ -5236,7 +5317,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 675:
+/***/ 685:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5292,14 +5373,21 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 676:
+/***/ 686:
+/***/ function(module, exports) {
+
+	module.exports = "    <!--div class=\"container\" -->\n        <div class=\"row\"> <!--col-md-12-->\n            <table class=\"table table-striped table-hover\">\n                <thead class=\"thead-inverse\">\n                <tr class=\"bg-primary\">\n                    <th>Order #</th>\n                    <th>Store #</th>\n                    <th>First Name</th>\n                    <th>Last Name</th>\n                    <th>Email</th>\n                </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let order of orders | async\" >\n                        <th class=\"col-md-1\"  scope=\"row\">{{ order?.id}}</th>\n                        <td class=\"col-md-1\">{{order?.userId}}</td>\n                        <td class=\"col-md-2\">{{order?.firstName}}</td>\n                        <td class=\"col-md-3\">{{order?.lastName}}</td>\n                        <td class=\"col-md-5\">{{order?.email}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    <!--/div -->\n\n    <!--<h4>Datatables.net Plain bootstrapped table</h4>\n        <table id=\"clientOrders\" class=\"display\">\n            <thead>\n            <tr>\n                <th>Order id</th>\n                <th>Store id</th>\n                <th>1st name</th>\n                <th>last name</th>\n                <th>email</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr *ngFor=\"let order of orders | async\" >\n                <td>{{order?.id}}</td>\n                <td>{{order?.storeId}}</td>\n                <td>{{order?.firstName}}</td>\n                <td>{{order?.lastName}}</td>\n                <td>{{order?.emailAddress}}</td>\n            </tr>\n            </tbody>\n        </table>\n\n        <script type=\"text/javascript\" language=\"javascript\" class=\"init\">\n            $(document).ready(function() {\n                $('#clientOrders').DataTable();\n            } );\n        </script>-->\n"
+
+/***/ },
+
+/***/ 687:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var bid_service_1 = __webpack_require__(448);
+	var bid_service_1 = __webpack_require__(457);
 	var product_service_1 = __webpack_require__(440);
-	var order_service_1 = __webpack_require__(675);
-	var websocket_service_1 = __webpack_require__(449);
+	var order_service_1 = __webpack_require__(685);
+	var websocket_service_1 = __webpack_require__(458);
 	exports.ONLINE_AUCTION_SERVICES = [
 	    bid_service_1.BidService,
 	    product_service_1.ProductService,

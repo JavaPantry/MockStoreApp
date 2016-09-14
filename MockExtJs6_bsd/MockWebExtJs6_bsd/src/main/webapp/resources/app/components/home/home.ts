@@ -13,7 +13,8 @@ import ProductItemComponent from '../product-item/product-item';
     CarouselComponent,
     ProductItemComponent
   ],
-  styleUrls: ['resources/app/components/home/home.css'],
+  //styleUrls: ['resources/app/components/home/home.css'],
+  styles: [require('./home.css')],
   template: `
     <div class="row carousel-holder">
       <div class="col-md-12">

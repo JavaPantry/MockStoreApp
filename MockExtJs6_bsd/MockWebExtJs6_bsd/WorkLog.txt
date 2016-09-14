@@ -1,11 +1,48 @@
 # Mock project
-
-### September 14:
-
-
-There still two files in dist directory
+--------------------------------------------------------------------------------------------------
+- TODO webpack - There still two files in dist directory
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+### September 14:
+
+- done TODO webpack - Replace all templateUrl/styleUrls: with `template: require('./search.html')`
+		+app\components\application > template: require('./application.html'),
+		app\components\carousel > template: require('./carousel.html')
+		app\components\footer > template: require('./footer.html')
+		app\components\navbar > template: require('./navbar.html'),
+		app\components\order-detail > template: require('./order-detail.html'),
+		app\components\product-detail > template: require('./product-detail.html'),
+		app\components\product-item > styles: [require('./product-item.css')],
+		app\components\search > template: require('./search.html')
+		app\components\stars > template: require('./stars.html')
+		app\components\home > styles: [require('./home.css')],
+		app\components\product-item > styles: [require('./product-item.css')],
+		
+Change in application.ts
+  //templateUrl: 'resources/app/components/application/application.html',
+  template: require('./application.html'),
+ 
+Cause ERROR in ./app/components/application/application.ts
+	(13,13): error TS2304: Cannot find name 'require'.
+
+- from book p#332		
+	>But this is is Webpack’s own require() function, not the one from Node.js. If you’ll
+	>be running the tsc compiler, the above code will result in the compilation errors as it
+	>doesn’t recognize the require() function with such signature.		
+	>To make sure that the compiler won’t complain, we created a custom types definitions file webpack.d.ts in the
+	>directory typings_custom with the following content:
+	
+			declare function require(path: string);
+			declare const webpack: {	
+				ENV: string
+			};
+		
+- copy webpack.d.ts from c:\WebStormWS\Angular2Workspace\auction\client\typings_custom\
+- Fixed
+
 --------------------------------------------------------------------------------------------------
 - supposedly fixed by following steps:
 	1. increase limit in loaders for woff files (from 10000 to 50000)
@@ -13,7 +50,6 @@ f4769f9bdb7466be65088239c12046d1.eot
 			{test: /\.woff2$/, loader: 'url?limit=50000&mimetype=application/font-woff'},
 			{test: /\.ttf$/,   loader: 'url?limit=50000&mimetype=application/octet-stream'},
 			{test: /\.svg$/,   loader: 'url?limit=50000&mimetype=image/svg+xml'},
-
 
 - Error loading some fonts
 	GET http://localhost:8080/MockWebExtJs6_bsd/448c34a56d699c29117adc64c43affeb.woff2 
@@ -81,7 +117,7 @@ f4769f9bdb7466be65088239c12046d1.eot
 - ERROR in ./app/services/bid-service.ts > (9,36): error TS2314: Generic type 'Observable<T>' requires 1 type argument(s).
 	- fixed by adding `any` watchProduct(productId: number): Observable<any>
 
-- TODO ERROR in ./~/bootstrap/dist/css/bootstrap.min.css
+- done TODO webpack ERROR in ./~/bootstrap/dist/css/bootstrap.min.css
 	Module parse failed: C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources\node_modules\bootstrap\dist\css\bootstrap.min.css Unexpected token (5:83)
 	You may need an appropriate loader to handle this file type.
 	SyntaxError: Unexpected token (5:83)
@@ -103,16 +139,6 @@ f4769f9bdb7466be65088239c12046d1.eot
 				      {test: /\.css$/,  loader: 'style-loader!css-loader'}, 
 				      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
 		
-- TODO Replace all templateUrl: with `template: require('./search.html')`
-		app\components\application
-		app\components\carousel
-		app\components\footer
-		app\components\navbar
-		app\components\order-detail
-		app\components\product-detail
-		app\components\product-item
-		app\components\search
-		app\components\stars
  
 - Merge 'webpack_optimization' and 'master' branches
 
