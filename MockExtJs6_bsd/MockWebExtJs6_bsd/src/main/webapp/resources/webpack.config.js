@@ -38,7 +38,9 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
+      {test: /\.css$/,  loader: 'style-loader!css-loader'}, 
       {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
+       
       {test: /\.html$/,  loader: 'raw'},
       {test: /\.ts$/,    loader: 'ts', query: {compilerOptions: {noEmit: false}}},
       {test: /\.woff$/,  loader: 'url?limit=10000&mimetype=application/font-woff'},

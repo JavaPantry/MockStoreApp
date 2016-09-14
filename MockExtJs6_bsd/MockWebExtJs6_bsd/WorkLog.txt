@@ -60,8 +60,22 @@
 		clientStore.jsp:> <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
 	- @ book github https://github.com/Farata/angular2typescript/issues/3
 	- google: 'webpack bootstrap.min.css Unexpected token (5:83)'
-		
-		
+	- on css/js loading in webpack
+		- https://github.com/erikras/react-redux-universal-hot-example/issues/596
+			- insert `{ test: /\.css$/, loader: 'style-loader!css-loader' },`
+			- //remove `{test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},`
+			- > success with some font loading errors on runtime
+			
+			- remove {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
+			- insert {test: /\.css$/,  loader: 'style-loader!css-loader' , exclude: /node_modules/},
+		FIXED	- Final working result
+				      {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
+				      {test: /\.css$/,  loader: 'style-loader!css-loader'}, 
+				      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
+			- error loading some fonts
+			GET http://localhost:8080/MockWebExtJs6_bsd/448c34a56d699c29117adc64c43affeb.woff2 
+			GET http://localhost:8080/MockWebExtJs6_bsd/fa2772327f55d8198301fdb8bcfc8158.woff 
+			GET http://localhost:8080/MockWebExtJs6_bsd/e18bbf611f2a2e43afc071aa2f4e1512.ttf 				
 		
 - TODO Replace all templateUrl: with `template: require('./search.html')`
 		app\components\application

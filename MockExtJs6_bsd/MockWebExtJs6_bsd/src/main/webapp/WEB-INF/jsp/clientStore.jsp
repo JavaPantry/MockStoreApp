@@ -12,9 +12,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
 
 <%--   
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/node_modules/bootstrap/dist/css/bootstrap.css">
+
+
 <script src="${pageContext.request.contextPath}/resources/node_modules/zone.js/dist/zone.js"></script>
 <script src="${pageContext.request.contextPath}/resources/node_modules/typescript/lib/typescript.js"></script>
 <script src="${pageContext.request.contextPath}/resources/node_modules/jquery/dist/jquery.js"></script>
