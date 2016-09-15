@@ -33,7 +33,7 @@
 	<script>System.import('app')</script> -->
 
 	<auction-application>Loading...</auction-application>
-	<script src="${pageContext.request.contextPath}/resources/dist/vendor.bundle.js.gz"></script>
+	<script src="${pageContext.request.contextPath}/resources/dist/vendor.bundle.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/dist/bundle.js"></script>
 
 
