@@ -81,11 +81,12 @@ _Installation_
 ## An Angular related reading
 
 - [es6-shim](http://stackoverflow.com/questions/35642223/angular2-why-do-we-need-the-es6-shim)
+- [jasmine-core](www.google.com/search?q=jasmine-core)
 - [reflect-metadata](https://www.google.com/search?q=reflect-metadata+angular2&oq=reflect-metadata&aqs=chrome.4.69i57j0l5.6943j0j9&sourceid=chrome&ie=UTF-8)
 - [rxjs](https://www.sitepoint.com/functional-reactive-programming-rxjs/)
 - [systemjs](https://www.google.com/search?q=systemjs+vs+webpack&oq=systemjs&aqs=chrome.1.69i57j0l5.6671j0j7&sourceid=chrome&ie=UTF-8)
 - [zone.js](https://medium.com/@MertzAlertz/what-the-hell-is-zone-js-and-why-is-it-in-my-angular-2-6ff28bcf943e#.fepfp1ads)
-
+- [angular2-template](https://npmdaily.com/pkg/angular2-template-loader)
 
 ---
 

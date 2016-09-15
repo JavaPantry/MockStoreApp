@@ -5,6 +5,49 @@
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
 ### September 15:
+
+- update package.json to rc-6
+- npm run build
+
+
+ERROR in ./app/main.ts
+(1,9): error TS2305: Module '"/@angular/platform-browser-dynamic/index"' has no exported member 'bootstrap'.
+ERROR in ./app/main.ts
+(2,9): error TS2305: Module '"/@angular/forms/index"' has no exported member 'disableDeprecatedForms'.
+ERROR in ./app/main.ts
+(2,33): error TS2305: Module '"/@angular/forms/index"' has no exported member 'provideForms'.
+ERROR in ./app/main.ts
+(3,9): error TS2305: Module '"/@angular/router/index"' has no exported member 'provideRouter'.
+ERROR in ./app/main.ts
+(5,9): error TS2305: Module '"/@angular/http/index"' has no exported member 'HTTP_PROVIDERS'.
+ERROR in ./app/components/search/search.ts
+(7,5): error TS2305: Module '"/@angular/forms/index"' has no exported member 'REACTIVE_FORM_DIRECTIVES'.
+ERROR in ./app/components/product-item/product-item.ts
+(2,9): error TS2305: Module '"/@angular/ro uter/index"' has no exported member 'ROUTER_DIRECTIVES'.
+ERROR in ./app/components/navbar/navbar.ts
+(2,9): error TS2305: Module '"/@angular/ro uter/index"' has no exported member 'ROUTER_DIRECTIVES'.
+ERROR in ./app/components/application/application.ts
+(2,9): error TS2305: Module '"/@angular/ro uter/index"' has no exported member 'ROUTER_DIRECTIVES'.
+
+ERROR in ./app/components/search/search.ts
+(14,3): error TS2345: Argument of type '{ selector: string; directives: any[]; template: any; }' is not assignable to parameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/product-item/product-item.ts
+(8,3): error TS2345: Argument of type '{ selector: string; properties: string[]; template: any; styles: any[]; directives: any[]; }' is not assignable to parameter o f type 'ComponentMetadataType'. Object literal may only specify known properties, and 'properties' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/product-detail/product-detail.ts
+(15,3): error TS2345: Argument of type '{ selector: string; styles: string[]; template: any; directives: (typeof NgClass | typeof StarsCo...' is not assignable to pa rameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(13,3): error TS2345: Argument of type '{ selector: string; template: any; directives: typeof NgClass[]; }' is not assignable to parameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/navbar/navbar.ts
+(8,3): error TS2345: Argument of type '{ selector: string; template: any; directives: any[]; }' is not assignable to parameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/home/home.ts
+(12,3): error TS2345: Argument of type '{ selector: string; providers: undefined[]; directives: typeof CarouselComponent[]; styles: any[]...' is not assignable to parameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+ERROR in ./app/components/application/application.ts
+(14,3): error TS2345: Argument of type '{ selector: string; template: any; directives: any[]; }' is not assignable to parameter of type 'ComponentMetadataType'. Object literal may only specify known properties, and 'directives' does not exist in type 'ComponentMetadataType'.
+
+
+-----------------------------------------------------------------------------------------
+- Switch to new "UpdateToRc5" branch
+- release v0.1.4.1 with title 'Webpack for dev and prod'
 - test to compare dev and prod build bundles
 
 unbundled app ts	- application front-end (not transpiled typescript, angular framework and all dependencies)
