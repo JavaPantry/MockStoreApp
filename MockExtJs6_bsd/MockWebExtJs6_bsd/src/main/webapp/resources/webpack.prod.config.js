@@ -1,41 +1,56 @@
-const path = require('path');
-
-// Webpack and its plugins
-const webpack              = require('webpack');
-const CommonsChunkPlugin   = require('webpack/lib/optimize/CommonsChunkPlugin');
+const path               = require('path');
+const webpack            = require('webpack');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CompressionPlugin    = require('compression-webpack-plugin');
-const CopyWebpackPlugin    = require('copy-webpack-plugin');
+const CopyWebpackPlugin  = require('copy-webpack-plugin');
 const DedupePlugin         = require('webpack/lib/optimize/DedupePlugin');
-const DefinePlugin         = require('webpack/lib/DefinePlugin');
+const DefinePlugin       = require('webpack/lib/DefinePlugin');
 const OccurenceOrderPlugin = require('webpack/lib/optimize/OccurenceOrderPlugin');
-const ProvidePlugin        = require('webpack/lib/ProvidePlugin');
+const ProvidePlugin      = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin       = require('webpack/lib/optimize/UglifyJsPlugin');
+const ENV  = process.env.NODE_ENV = 'development';
+const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 8080;
 
-const ENV = process.env.NODE_ENV = 'production';
 const metadata = {
   baseUrl: '/',
-  ENV    : ENV
+  ENV    : ENV,
+  host   : HOST,
+  port   : PORT
 };
 
 module.exports = {
   debug: false,
+  devServer: {
+    contentBase: 'src',
+    historyApiFallback: true,
+    host: metadata.host,
+    port: metadata.port,
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8000',
+        secure: false
+      }
+    }
+  },
   devtool: 'source-map',
   entry: {
     'main'  : './app/main.ts',
     'vendor': './app/vendor.ts'
   },
-  metadata: metadata,
   module: {
     loaders: [
-      {test: /\.css$/,   loader: 'to-string!css', exclude: /node_modules/},
-      {test: /\.css$/,   loader: 'style!css', exclude: /app/},
-      {test: /\.html$/,  loader: 'html?caseSensitive=true'},
+      {test: /\.css$/,   loader: 'raw', exclude: /node_modules/},
+      {test: /\.css$/,  loader: 'style-loader!css-loader'}, 
+      {test: /\.css$/,   loader: 'style!css?-minimize', exclude: /app/},
+       
+      {test: /\.html$/,  loader: 'raw'},
       {test: /\.ts$/,    loader: 'ts', query: {compilerOptions: {noEmit: false}}},
-      {test: /\.woff$/,  loader: "url?limit=10000&minetype=application/font-woff"},
-      {test: /\.woff2$/, loader: "url?limit=10000&minetype=application/font-woff"},
-      {test: /\.ttf$/,   loader: "url?limit=10000&minetype=application/octet-stream"},
-      {test: /\.svg$/,   loader: "url?limit=10000&minetype=image/svg+xml"},
-      {test: /\.eot$/,   loader: "file"}
+      {test: /\.woff$/,  loader: 'url?limit=50000&mimetype=application/font-woff'},
+      {test: /\.woff2$/, loader: 'url?limit=50000&mimetype=application/font-woff'},
+      {test: /\.ttf$/,   loader: 'url?limit=50000&mimetype=application/octet-stream'},
+      {test: /\.svg$/,   loader: 'url?limit=50000&mimetype=image/svg+xml'},
+      {test: /\.eot$/,   loader: 'file'}
     ]
   },
   output: {

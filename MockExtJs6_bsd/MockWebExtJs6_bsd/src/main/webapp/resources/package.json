@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
-    "buildProdDontUse": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+    "buildProd": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
     "startWebpackDevServer": "webpack-dev-server --inline --colors --progress --display-error-details --disaply-modules --display-cached --port 8080"
   },
   "dependencies": {

@@ -4,6 +4,20 @@
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
+### September 14: night
+
+
+Create webpack.prod.config.js
+run> C:\stsWorkSpace\maven.1471396642220\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources>npm run buildProd
+
+change vendor script loading
+<script src="${pageContext.request.contextPath}/resources/dist/vendor.bundle.js.gz"></script>
+
+Refused to execute script from 'http://localhost:8080/MockWebExtJs6_bsd/resources/dist/vendor.bundle.js.gz' because its MIME type ('application/x-gzip') is not executable, and strict MIME type checking is enabled.
+bundle.js:1Uncaught ReferenceError: webpackJsonp is not defined
+
+google: 'how to config pivotal ts server to accept js.gz'
+https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/
 
 --------------------------------------------------------------------------------------------------
 ### September 14:
