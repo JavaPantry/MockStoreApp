@@ -20,11 +20,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-/*commented out Thursday, April 21, 2016
-import org.avp.quota.kpi.web.service.CustomUserDetailsContextMapper;
-*/
-
-//don't need if Windows defined groups are used
 
 /**
  * On Aug 8 added angular user
@@ -51,9 +46,6 @@ import org.avp.quota.kpi.web.service.CustomUserDetailsContextMapper;
  * 
  * password: password
  * 
- * 
- * Previosly commented SPNEGO/kerberos stuff removed (backup in c:\STS-3.6.4.Workspace\backup\MockStubExtJs6_BeforeGroups_Jan19_2016.zip)
- * 
  */
 @Configuration
 @EnableWebSecurity
@@ -61,27 +53,6 @@ import org.avp.quota.kpi.web.service.CustomUserDetailsContextMapper;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static Logger logger = Logger.getLogger(WebSecurityConfig.class);
 	
-	/*	@Value("${app.ad-domain}")
-	private String adDomain;
-
-	@Value("${app.ad-server}")
-	private String adServer;
-
-	@Value("${app.service-principal}")
-	private String servicePrincipal;
-
-	@Value("${app.keytab-location}")
-	private String keytabLocation;
-
-	@Value("${app.ldap-search-base}")
-	private String ldapSearchBase;
-
-	@Value("${app.ldap-search-filter}")
-	private String ldapSearchFilter;
-	
-	@Value("${app.auth.userGroup}")
-	private String userGroup;
-*/	
 	@Value("${app.auth.adminGroup}")
 	private String adminGroup;
 	
@@ -128,7 +99,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
 				
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
-				//jan 19 .antMatchers( "/ajax/**").permitAll()
+				//.antMatchers( "/ajax/**").permitAll()
 				//.antMatchers( "/ajax/users/**").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				.antMatchers( "/companyUpload/**").permitAll()
 				.antMatchers( "/resources/**").permitAll()
@@ -141,11 +112,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		//AVP switch provider
 		//LDAP auth.authenticationProvider(activeDirectoryLdapAuthenticationProvider());
-
-		//Custom
-		//auth.authenticationProvider(customAuthenticationProvider());
 		auth.authenticationProvider(authProvider());
 	}
 
@@ -162,29 +129,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 	
-	/*
-	 * TODO - <AP> TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-	@Bean
-	public AuthenticationProvider customAuthenticationProvider() {
-		AuthenticationProvider customAuthenticationProvider = new AbstractUserDetailsAuthenticationProvider() {
-			@Override
-			protected UserDetails retrieveUser(String username,
-					UsernamePasswordAuthenticationToken authentication)
-					throws AuthenticationException {
-				//return customUserService.loadUserByUsername(username);
-				return userDetailsService.loadUserByUsername(username);
-			}
-			
-			@Override
-			protected void additionalAuthenticationChecks(UserDetails userDetails,
-					UsernamePasswordAuthenticationToken authentication)
-					throws AuthenticationException {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-		return customAuthenticationProvider;
-	}*/
 
 	/** 
 	 * commented out Thursday, April 21, 2016

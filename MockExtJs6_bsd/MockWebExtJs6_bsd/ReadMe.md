@@ -1,13 +1,7 @@
 # Mock project
 ---
-### September 5
-commit unstaged Changes to new branch GsonNotCompleted (Abandoned)
 
 ### TODOs 
-
-1. TODO - <AP>: Switch from gson to jackson
-
-	@Service class ApplicationConfigurationService already imports flexjson.JSONDeserializer
 
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 3. TODO - <AP>: later need to build separate org/avp/security jar project
@@ -95,7 +89,7 @@ _Installation_
 
 ---
 
-## Setup node_modules
+## Setup node_modules and build bundles
 
 - to update node package manager (npm) 
 
@@ -109,6 +103,8 @@ _Installation_
 	>[optional] npm install
 	>[optional] delete _dist_ folder
 	>npm run build
+	OR
+	>npm run buildProd
 	>refresh MockWebExtJs6_bsd/src/main/webapp/resources folder. Otherwise STS will not pickup new bundle 
 
 

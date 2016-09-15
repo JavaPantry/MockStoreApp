@@ -19,7 +19,6 @@ import org.avp.security.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-//import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("serial")
 @Entity

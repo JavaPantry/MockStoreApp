@@ -26,12 +26,7 @@
     <commons-lang.version>2.6</commons-lang.version>
 	<commons-beanutils.version>1.6</commons-beanutils.version>
     <guava.version>18.0</guava.version>
-    
     <jackson.version>2.8.2</jackson.version>
-    <!-- 
-    <flexjson.version>3.3</flexjson.version>
-    <gson.version>2.3</gson.version> 
-    -->
   </properties>
   
   <dependencies>
@@ -82,19 +77,7 @@
       <version>${guava.version}</version>
     </dependency>
 
-    <!-- Flex JSON -->      
-<!-- <dependency>
-      <groupId>net.sf.flexjson</groupId>
-      <artifactId>flexjson</artifactId>
-      <version>${flexjson.version}</version>
-    </dependency>
 
-	<dependency>
-		<groupId>com.google.code.gson</groupId>
-		<artifactId>gson</artifactId>
-		<version>${gson.version}</version>
-	</dependency>
- --> 
      
 	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 	<dependency>
@@ -115,22 +98,6 @@
 	    <version>${jackson.version}</version>
 	</dependency>
 
-     
-<!--      <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
- -->    
-    
-    
-     <!--
-     <dependency>
-      <groupId>org.avp.common</groupId>
-      <artifactId>commonapi</artifactId>
-      <version>1.0.9</version>
-    </dependency>
-     -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>

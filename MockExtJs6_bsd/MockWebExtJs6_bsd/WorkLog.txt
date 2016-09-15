@@ -4,6 +4,23 @@
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
+### September 15:
+- test to compare dev and prod build bundles
+
+unbundled app ts	- application front-end (not transpiled typescript, angular framework and all dependencies)
+vendor.bundle.js	- angular II framework with all dependencies
+bundle.js			- application front-end
+
+				|	dev sz	|dev time	|dev requests to load	|prod sz	|dev time	|prod requests to load
+--------------------------------------------------------------------------------------------------------------
+unbundled app ts|>20MB		|>15 sec	|500 requests			|-			|-			|-
+vendor.bundle.js|3.2MB		|761 ms		|10 requests			|1.3MB		|98ms		|8 requests
+bundle.js		|218.2KB	|34 ms		|						|85.3KB		|18ms		|
+
+
+
+
+--------------------------------------------------------------------------------------------------
 ### September 14: night
 
 rollback
