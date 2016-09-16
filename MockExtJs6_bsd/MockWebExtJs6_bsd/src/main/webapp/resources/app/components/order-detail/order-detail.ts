@@ -1,49 +1,96 @@
-import {Component, OnDestroy} from '@angular/core';
-import {NgClass} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
-import {Observable} from "rxjs/Observable";
+import { Component, OnDestroy } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
-import {Order, OrderService} from "../../services/order-service";
+import { Product, Review, ProductService } from '../../services/product-service';
+import { BidService } from '../../services/bid-service';
 
 @Component({
-  selector: 'auction-order-page',
-  //templateUrl: 'resources/app/components/order-detail/order-detail.html',
-  template: require('./order-detail.html'),
-  directives: [NgClass]
+  selector: 'auction-product-page',
+  styles: [ 'auction-stars.large {font-size: 24px;}' ],
+  //templateUrl: 'product-detail.html'
+  templateUrl: 'resources/app/components/order-detail/order-detail.html'
 })
 export default class OrderComponent implements OnDestroy {
+  product: Product;
+  reviews: Review[];
 
-  private orders: Observable<Order[]>;
+  currentBid: number;
+  newComment: string;
+  newRating: number;
+
+  isReviewHidden: boolean = true;
+  isWatching: boolean = false;
+  imgHtml: SafeHtml;
+
   private subscription: Subscription;
 
-  constructor(
-      route: ActivatedRoute,
-      private orderService: OrderService
-      ) {
+  constructor(private productService: ProductService,
+              private bidService: BidService,
+              private sanitizer: DomSanitizer,
+              router: ActivatedRoute) {
 
-    //const productId = parseInt(route.snapshot.params['productId']);
-    //const productId = route.snapshot.params['productId'];
+    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
+      <img src="http://placehold.it/820x320">`);
 
-    this.orders = this.orderService.getOrders();
+    const productId = parseInt(router.snapshot.params['productId']);
 
-    // subscribe search orders like in product-detail
+    this.productService
+      .getProductById(productId)
+      .subscribe(
+        product => {
+          this.product = product;
+          this.currentBid = product.price;
+        },
+        error => console.error(error));
 
+    this.productService
+      .getReviewsForProduct(productId)
+      .subscribe(
+        reviews => this.reviews = reviews,
+        error => console.error(error));
   }
 
-
-/*  routerOnDeactivate(): any {
+  toggleWatchProduct() {
     if (this.subscription) {
       this.subscription.unsubscribe();
+      this.subscription = null;
+      this.isWatching = false;
+    } else {
+      this.isWatching = true;
+      this.subscription = this.bidService.watchProduct(this.product.id)
+        .subscribe(
+          products => this.currentBid = products.find((p: any) => p.productId === this.product.id).bid,
+          error => console.log(error));
     }
-  }*/
+  }
 
   ngOnDestroy(): any {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+
+    return Promise.resolve(true);
   }
 
+  addReview() {
+    let review = new Review(0, this.product.id, new Date(), 'Anonymous',
+      this.newRating, this.newComment);
+    this.reviews = [...this.reviews, review];
+    this.product.rating = this.averageRating(this.reviews);
 
+    this.resetForm();
+  }
 
+  averageRating(reviews: Review[]) {
+    let sum = reviews.reduce((average, review) => average + review.rating, 0);
+    return sum / reviews.length;
+  }
+
+  resetForm() {
+    this.newRating = 0;
+    this.newComment = null;
+    this.isReviewHidden = true;
+  }
 }

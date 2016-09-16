@@ -1,17 +1,22 @@
-import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
-import {Product} from '../../services/product-service';
-import StarsComponent from '../stars/stars';
+import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
+import { Product } from '../../services/product-service';
 
 @Component({
   selector: 'auction-product-item',
-  properties: ['product'],
-  //templateUrl: 'resources/app/components/product-item/product-item.html',
-  template: require('./product-item.html'),
-  //styleUrls: ['resources/app/components/product-item/product-item.css'],
-  styles: [require('./product-item.css')],
-  directives: [ROUTER_DIRECTIVES, StarsComponent],
+  //styleUrls: [ 'product-item.css' ],
+  styleUrls: [ 'resources/app/components/product-item/product-item.css' ],
+  //templateUrl: 'product-item.html'
+  templateUrl: 'resources/app/components/product-item/product-item.html'
 })
 export default class ProductItemComponent {
-  product: Product;
+  @Input() product: Product;
+
+  imgHtml: SafeHtml;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
+      <img src="http://placehold.it/320x150">`);
+  }
 }

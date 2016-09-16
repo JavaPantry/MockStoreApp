@@ -1,16 +1,18 @@
-import { Component, OnDestroy } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import {Component, OnDestroy} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
-import { Product, Review, ProductService } from '../../services/product-service';
-import { BidService } from '../../services/bid-service';
+import {Product, Review, ProductService} from '../../services/product-service';
+import {BidService} from '../../services/bid-service';
+import StarsComponent from '../stars/stars';
 
 @Component({
   selector: 'auction-product-page',
-  styles: [ 'auction-stars.large {font-size: 24px;}' ],
-  //templateUrl: 'product-detail.html'
-  templateUrl: 'resources/app/components/product-detail/product-detail.html'
+  styles: ['auction-stars.large {font-size: 24px;}'],
+  //templateUrl: 'resources/app/components/product-detail/product-detail.html',
+  template: require('./product-detail.html'),
+  directives: [NgClass, StarsComponent]
 })
 export default class ProductDetailComponent implements OnDestroy {
   product: Product;
@@ -22,21 +24,18 @@ export default class ProductDetailComponent implements OnDestroy {
 
   isReviewHidden: boolean = true;
   isWatching: boolean = false;
-  imgHtml: SafeHtml;
 
   private subscription: Subscription;
 
-  constructor(private productService: ProductService,
-              private bidService: BidService,
-              private sanitizer: DomSanitizer,
-              router: ActivatedRoute) {
+  constructor(
+      route: ActivatedRoute,
+      productService: ProductService,
+      private bidService: BidService) {
 
-    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
-      <img src="http://placehold.it/820x320">`);
+    //const productId = parseInt(route.snapshot.params['productId']);
+    const productId = route.snapshot.params['productId'];
 
-    const productId = parseInt(router.snapshot.params['productId']);
-
-    this.productService
+    productService
       .getProductById(productId)
       .subscribe(
         product => {
@@ -45,11 +44,11 @@ export default class ProductDetailComponent implements OnDestroy {
         },
         error => console.error(error));
 
-    this.productService
+    /*productService
       .getReviewsForProduct(productId)
       .subscribe(
         reviews => this.reviews = reviews,
-        error => console.error(error));
+        error => console.error(error));*/
   }
 
   toggleWatchProduct() {
@@ -66,12 +65,16 @@ export default class ProductDetailComponent implements OnDestroy {
     }
   }
 
+/*  routerOnDeactivate(): any {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }*/
+
   ngOnDestroy(): any {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-
-    return Promise.resolve(true);
   }
 
   addReview() {

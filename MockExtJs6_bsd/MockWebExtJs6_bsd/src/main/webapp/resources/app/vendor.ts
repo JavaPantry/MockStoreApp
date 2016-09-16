@@ -1,5 +1,6 @@
 import 'zone.js/dist/zone';
-import 'reflect-metadata/Reflect.js';
+import 'core-js/es7/reflect.js';
+//previously imported  import 'reflect-metadata/Reflect.js';
 
 // Angular modules
 import '@angular/platform-browser-dynamic';
@@ -13,4 +14,3 @@ import 'rxjs';
 import 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'bootstrap/dist/css/bootstrap.css';

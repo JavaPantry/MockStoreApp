@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Component} from '@angular/core';
+import {
+    FormControl,
+    FormGroup,
+    FormBuilder,
+    Validators,
+    REACTIVE_FORM_DIRECTIVES
+} from '@angular/forms';
 
-import { ProductService } from '../../services/product-service';
+import {ProductService} from '../../services/product-service';  //webpack throws error 'app/services/product-service';
 
 @Component({
   selector: 'auction-search',
-  //templateUrl: 'search.html'
-  templateUrl: 'resources/app/components/search/search.html'
+  directives: [REACTIVE_FORM_DIRECTIVES],
+  //templateUrl: 'resources/app/components/search/search.html'
+  template: require('./search.html')
 })
 export default class SearchComponent {
   formModel: FormGroup;
@@ -30,10 +37,11 @@ export default class SearchComponent {
   }
 }
 
+
 function positiveNumberValidator(control: FormControl): any {
   if (!control.value) return null;
   const price = parseInt(control.value);
   return price === null ||
-    typeof price === 'number' &&
-         price > 0 ? null : {positivenumber: true};
+  typeof price === 'number' &&
+  price > 0 ? null : {positivenumber: true};
 }

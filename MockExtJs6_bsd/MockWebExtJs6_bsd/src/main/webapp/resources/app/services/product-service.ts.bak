@@ -1,5 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {Http, URLSearchParams} from '@angular/http';
+import {Http, URLSearchParams } from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 
@@ -33,29 +33,29 @@ export interface ProductSearchParams {
 
 @Injectable()
 export class ProductService {
-  searchEvent: EventEmitter<any> = new EventEmitter();
+  searchEvent: EventEmitter<number> = new EventEmitter<number>();//  = new EventEmitter(); cause error error TS2314: Generic type 'EventEmitter<T>' requires 1 type argument(s).
 
   constructor(private http: Http) {}
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
-      .get('/api/products', {search: encodeParams(params)})
+      .get('angular/products', {search: encodeParams(params)})
       .map(response => response.json());
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get('/api/products')
+    return this.http.get('angular/products')
       .map(response => response.json());
   }
 
-  getProductById(productId: number): Observable<Product> {
-    return this.http.get(`/api/products/${productId}`)
+  getProductById(productId: string): Observable<Product> {
+    return this.http.get(`angular/products/${productId}`)
       .map(response => response.json());
   }
 
   getReviewsForProduct(productId: number): Observable<Review[]> {
     return this.http
-      .get(`/api/products/${productId}/reviews`)
+      .get(`/products/${productId}/reviews`)
       .map(response => response.json())
       .map(reviews => reviews.map(
         (r: any) => new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment)));

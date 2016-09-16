@@ -1,11 +1,11 @@
 webpackJsonp([0],{
 
-/***/ 102:
+/***/ 113:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control_value_accessor__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control_value_accessor__ = __webpack_require__(29);
 /* unused harmony export CHECKBOX_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CheckboxControlValueAccessor; });
 /**
@@ -65,13 +65,13 @@ var CheckboxControlValueAccessor = (function () {
 
 /***/ },
 
-/***/ 103:
+/***/ 114:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__ = __webpack_require__(29);
 /* unused harmony export DEFAULT_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DefaultValueAccessor; });
 /**
@@ -137,16 +137,16 @@ var DefaultValueAccessor = (function () {
 
 /***/ },
 
-/***/ 104:
+/***/ 115:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(301);
 /* unused harmony export modelGroupProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModelGroup; });
 /**
@@ -240,15 +240,15 @@ var NgModelGroup = (function (_super) {
 
 /***/ },
 
-/***/ 105:
+/***/ 116:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_control__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_control__ = __webpack_require__(53);
 /* unused harmony export RADIO_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return RadioControlRegistry; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RadioControlValueAccessor; });
@@ -395,11 +395,11 @@ var RadioControlValueAccessor = (function () {
 
 /***/ },
 
-/***/ 106:
+/***/ 117:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(300);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ReactiveErrors; });
 /**
  * @license
@@ -436,14 +436,14 @@ var ReactiveErrors = (function () {
 
 /***/ },
 
-/***/ 107:
+/***/ 118:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(29);
 /* unused harmony export SELECT_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SelectControlValueAccessor; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgSelectOption; });
@@ -610,14 +610,14 @@ var NgSelectOption = (function () {
 
 /***/ },
 
-/***/ 108:
+/***/ 119:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(29);
 /* unused harmony export SELECT_MULTIPLE_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SelectMultipleControlValueAccessor; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgSelectMultipleOption; });
@@ -824,16 +824,16 @@ var SELECT_DIRECTIVES = [SelectMultipleControlValueAccessor, NgSelectMultipleOpt
 
 /***/ },
 
-/***/ 109:
+/***/ 120:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_shared__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__facade_lang__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_shared__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__facade_lang__ = __webpack_require__(18);
 /* unused harmony export VALID */
 /* unused harmony export INVALID */
 /* unused harmony export PENDING */
@@ -1663,963 +1663,7 @@ var FormArray = (function (_super) {
 
 /***/ },
 
-/***/ 128:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var http_1 = __webpack_require__(62);
-__webpack_require__(182);
-var Order = (function () {
-    function Order(id, storeId, userId, firstName, lastName, emailAddress) {
-        this.id = id;
-        this.storeId = storeId;
-        this.userId = userId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-    }
-    return Order;
-}());
-exports.Order = Order;
-/*
-* Removed: interface OrderSearchParams {
-* see app\services\product-service.ts
-*/
-var OrderService = (function () {
-    function OrderService(http) {
-        this.http = http;
-    }
-    OrderService.prototype.getOrders = function () {
-        return this.http.get('angular/orders')
-            .map(function (response) { return response.json(); });
-    };
-    OrderService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], OrderService);
-    return OrderService;
-}());
-exports.OrderService = OrderService;
-/*
- * Removed function encodeParams(params: any)
- * Encodes the object into a valid query string.
- * see app\services\product-service.ts
- */
-
-
-/***/ },
-
-/***/ 164:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(17);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AbstractControlDirective; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * Base class for control directives.
- *
- * Only used internally in the forms module.
- *
- * @stable
- */
-var AbstractControlDirective = (function () {
-    function AbstractControlDirective() {
-    }
-    Object.defineProperty(AbstractControlDirective.prototype, "control", {
-        get: function () { throw new Error('unimplemented'); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "value", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.value : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "valid", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.valid : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.invalid : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "pending", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.pending : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "errors", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.errors : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.pristine : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.dirty : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "touched", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.touched : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.untouched : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.disabled : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.enabled : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.statusChanges : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.valueChanges : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "path", {
-        get: function () { return null; },
-        enumerable: true,
-        configurable: true
-    });
-    AbstractControlDirective.prototype.reset = function (value) {
-        if (value === void 0) { value = undefined; }
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control))
-            this.control.reset(value);
-    };
-    return AbstractControlDirective;
-}());
-//# sourceMappingURL=abstract_control_directive.js.map
-
-/***/ },
-
-/***/ 165:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng_control__ = __webpack_require__(49);
-/* unused harmony export AbstractControlStatus */
-/* unused harmony export ngControlStatusHost */
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgControlStatus; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgControlStatusGroup; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-
-var AbstractControlStatus = (function () {
-    function AbstractControlStatus(cd) {
-        this._cd = cd;
-    }
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassUntouched", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.untouched : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassTouched", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.touched : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassPristine", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.pristine : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassDirty", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.dirty : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassValid", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.valid : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlStatus.prototype, "ngClassInvalid", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.invalid : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return AbstractControlStatus;
-}());
-var ngControlStatusHost = {
-    '[class.ng-untouched]': 'ngClassUntouched',
-    '[class.ng-touched]': 'ngClassTouched',
-    '[class.ng-pristine]': 'ngClassPristine',
-    '[class.ng-dirty]': 'ngClassDirty',
-    '[class.ng-valid]': 'ngClassValid',
-    '[class.ng-invalid]': 'ngClassInvalid'
-};
-/**
- * Directive automatically applied to Angular form controls that sets CSS classes
- * based on control status (valid/invalid/dirty/etc).
- *
- * @stable
- */
-var NgControlStatus = (function (_super) {
-    __extends(NgControlStatus, _super);
-    function NgControlStatus(cd) {
-        _super.call(this, cd);
-    }
-    NgControlStatus.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
-    ];
-    /** @nocollapse */
-    NgControlStatus.ctorParameters = [
-        { type: __WEBPACK_IMPORTED_MODULE_3__ng_control__["a" /* NgControl */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] },] },
-    ];
-    return NgControlStatus;
-}(AbstractControlStatus));
-/**
- * Directive automatically applied to Angular form groups that sets CSS classes
- * based on control status (valid/invalid/dirty/etc).
- *
- * @stable
- */
-var NgControlStatusGroup = (function (_super) {
-    __extends(NgControlStatusGroup, _super);
-    function NgControlStatusGroup(cd) {
-        _super.call(this, cd);
-    }
-    NgControlStatusGroup.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                    selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
-                    host: ngControlStatusHost
-                },] },
-    ];
-    /** @nocollapse */
-    NgControlStatusGroup.ctorParameters = [
-        { type: __WEBPACK_IMPORTED_MODULE_2__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] },] },
-    ];
-    return NgControlStatusGroup;
-}(AbstractControlStatus));
-//# sourceMappingURL=ng_control_status.js.map
-
-/***/ },
-
-/***/ 166:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_value_accessor__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ng_control__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(270);
-/* unused harmony export formControlBinding */
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModel; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-
-
-
-
-
-
-
-
-
-var formControlBinding = {
-    provide: __WEBPACK_IMPORTED_MODULE_7__ng_control__["a" /* NgControl */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgModel; })
-};
-var resolvedPromise = Promise.resolve(null);
-/**
- * Binds a domain model to a form control.
- *
- * ### Usage
- *
- * `ngModel` binds an existing domain model to a form control. For a
- * two-way binding, use `[(ngModel)]` to ensure the model updates in
- * both directions.
- *
- *  ```typescript
- * @Component({
- *      selector: "search-comp",
- *      directives: [],
- *      template: `<input type='text' [(ngModel)]="searchQuery">`
- *      })
- * class SearchComp {
- *  searchQuery: string;
- * }
- *  ```
- *
- *  @stable
- */
-var NgModel = (function (_super) {
-    __extends(NgModel, _super);
-    function NgModel(parent, validators, asyncValidators, valueAccessors) {
-        _super.call(this);
-        /** @internal */
-        this._control = new __WEBPACK_IMPORTED_MODULE_2__model__["b" /* FormControl */]();
-        /** @internal */
-        this._registered = false;
-        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
-        this._parent = parent;
-        this._rawValidators = validators || [];
-        this._rawAsyncValidators = asyncValidators || [];
-        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
-    }
-    NgModel.prototype.ngOnChanges = function (changes) {
-        this._checkForErrors();
-        if (!this._registered)
-            this._setUpControl();
-        if ('isDisabled' in changes) {
-            this._updateDisabled(changes);
-        }
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
-            this._updateValue(this.model);
-            this.viewModel = this.model;
-        }
-    };
-    NgModel.prototype.ngOnDestroy = function () { this.formDirective && this.formDirective.removeControl(this); };
-    Object.defineProperty(NgModel.prototype, "control", {
-        get: function () { return this._control; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgModel.prototype, "path", {
-        get: function () {
-            return this._parent ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["a" /* controlPath */])(this.name, this._parent) : [this.name];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgModel.prototype, "formDirective", {
-        get: function () { return this._parent ? this._parent.formDirective : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgModel.prototype, "validator", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["b" /* composeValidators */])(this._rawValidators); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgModel.prototype, "asyncValidator", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    NgModel.prototype.viewToModelUpdate = function (newValue) {
-        this.viewModel = newValue;
-        this.update.emit(newValue);
-    };
-    NgModel.prototype._setUpControl = function () {
-        this._isStandalone() ? this._setUpStandalone() :
-            this.formDirective.addControl(this);
-        this._registered = true;
-    };
-    NgModel.prototype._isStandalone = function () {
-        return !this._parent || (this.options && this.options.standalone);
-    };
-    NgModel.prototype._setUpStandalone = function () {
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["d" /* setUpControl */])(this._control, this);
-        this._control.updateValueAndValidity({ emitEvent: false });
-    };
-    NgModel.prototype._checkForErrors = function () {
-        if (!this._isStandalone()) {
-            this._checkParentType();
-        }
-        this._checkName();
-    };
-    NgModel.prototype._checkParentType = function () {
-        if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__ng_model_group__["a" /* NgModelGroup */]) &&
-            this._parent instanceof __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__["a" /* AbstractFormGroupDirective */]) {
-            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].formGroupNameException();
-        }
-        else if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__ng_model_group__["a" /* NgModelGroup */]) && !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_8__ng_form__["a" /* NgForm */])) {
-            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].modelParentException();
-        }
-    };
-    NgModel.prototype._checkName = function () {
-        if (this.options && this.options.name)
-            this.name = this.options.name;
-        if (!this._isStandalone() && !this.name) {
-            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].missingNameException();
-        }
-    };
-    NgModel.prototype._updateValue = function (value) {
-        var _this = this;
-        resolvedPromise.then(function () { _this.control.setValue(value, { emitViewToModelChange: false }); });
-    };
-    NgModel.prototype._updateDisabled = function (changes) {
-        var _this = this;
-        var disabledValue = changes['isDisabled'].currentValue;
-        var isDisabled = disabledValue != null && disabledValue != false;
-        resolvedPromise.then(function () {
-            if (isDisabled && !_this.control.disabled) {
-                _this.control.disable();
-            }
-            else if (!isDisabled && _this.control.disabled) {
-                _this.control.enable();
-            }
-        });
-    };
-    NgModel.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                    selector: '[ngModel]:not([formControlName]):not([formControl])',
-                    providers: [formControlBinding],
-                    exportAs: 'ngModel'
-                },] },
-    ];
-    /** @nocollapse */
-    NgModel.ctorParameters = [
-        { type: __WEBPACK_IMPORTED_MODULE_5__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Host"] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["b" /* NG_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_6__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
-    ];
-    NgModel.propDecorators = {
-        'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
-        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
-        'options': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModelOptions',] },],
-        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
-    };
-    return NgModel;
-}(__WEBPACK_IMPORTED_MODULE_7__ng_control__["a" /* NgControl */]));
-//# sourceMappingURL=ng_model.js.map
-
-/***/ },
-
-/***/ 167:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__ = __webpack_require__(28);
-/* unused harmony export NUMBER_VALUE_ACCESSOR */
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NumberValueAccessor; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-
-
-var NUMBER_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NumberValueAccessor; }),
-    multi: true
-};
-/**
- * The accessor for writing a number value and listening to changes that is used by the
- * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
- *
- *  ### Example
- *  ```
- *  <input type="number" [(ngModel)]="age">
- *  ```
- */
-var NumberValueAccessor = (function () {
-    function NumberValueAccessor(_renderer, _elementRef) {
-        this._renderer = _renderer;
-        this._elementRef = _elementRef;
-        this.onChange = function (_) { };
-        this.onTouched = function () { };
-    }
-    NumberValueAccessor.prototype.writeValue = function (value) {
-        // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
-        var normalizedValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["c" /* isBlank */])(value) ? '' : value;
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
-    };
-    NumberValueAccessor.prototype.registerOnChange = function (fn) {
-        this.onChange = function (value) { fn(value == '' ? null : __WEBPACK_IMPORTED_MODULE_1__facade_lang__["i" /* NumberWrapper */].parseFloat(value)); };
-    };
-    NumberValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    NumberValueAccessor.prototype.setDisabledState = function (isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
-    };
-    NumberValueAccessor.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                    selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
-                    host: {
-                        '(change)': 'onChange($event.target.value)',
-                        '(input)': 'onChange($event.target.value)',
-                        '(blur)': 'onTouched()'
-                    },
-                    providers: [NUMBER_VALUE_ACCESSOR]
-                },] },
-    ];
-    /** @nocollapse */
-    NumberValueAccessor.ctorParameters = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    ];
-    return NumberValueAccessor;
-}());
-//# sourceMappingURL=number_value_accessor.js.map
-
-/***/ },
-
-/***/ 168:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_value_accessor__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng_control__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reactive_errors__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(44);
-/* unused harmony export formControlBinding */
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlDirective; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-
-
-
-
-
-var formControlBinding = {
-    provide: __WEBPACK_IMPORTED_MODULE_5__ng_control__["a" /* NgControl */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return FormControlDirective; })
-};
-/**
- * Binds an existing {@link FormControl} to a DOM element. It requires importing the {@link
- * ReactiveFormsModule}.
- *
- * In this example, we bind the control to an input element. When the value of the input element
- * changes, the value of the control will reflect that change. Likewise, if the value of the
- * control changes, the input element reflects that change.
- *
- *  ```typescript
- * @Component({
- *   selector: 'my-app',
- *   template: `
- *     <div>
- *       <h2>Bind existing control example</h2>
- *       <form>
- *         <p>Element with existing control: <input type="text"
- * [formControl]="loginControl"></p>
- *         <p>Value of existing control: {{loginControl.value}}</p>
- *       </form>
- *     </div>
- *   `,
- * })
- * export class App {
- *   loginControl: FormControl = new FormControl('');
- * }
- *  ```
- *
- * ### ngModel
- *
- * We can also set the value of the form programmatically with setValue().
- **
- *  ```typescript
- * @Component({
- *      selector: "login-comp",
-
- *      template: "<input type='text' [formControl]='loginControl'>"
- *      })
- * class LoginComp {
- *  loginControl: FormControl = new FormControl('');
- *
- *  populate() {
- *    this.loginControl.setValue('some login');
- *  }
- *
- * }
- *  ```
- *
- *  @stable
- */
-var FormControlDirective = (function (_super) {
-    __extends(FormControlDirective, _super);
-    function FormControlDirective(validators, asyncValidators, valueAccessors) {
-        _super.call(this);
-        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
-        this._rawValidators = validators || [];
-        this._rawAsyncValidators = asyncValidators || [];
-        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
-    }
-    Object.defineProperty(FormControlDirective.prototype, "isDisabled", {
-        set: function (isDisabled) { __WEBPACK_IMPORTED_MODULE_6__reactive_errors__["a" /* ReactiveErrors */].disabledAttrWarning(); },
-        enumerable: true,
-        configurable: true
-    });
-    FormControlDirective.prototype.ngOnChanges = function (changes) {
-        if (this._isControlChanged(changes)) {
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["d" /* setUpControl */])(this.form, this);
-            if (this.control.disabled)
-                this.valueAccessor.setDisabledState(true);
-            this.form.updateValueAndValidity({ emitEvent: false });
-        }
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
-            this.form.setValue(this.model);
-            this.viewModel = this.model;
-        }
-    };
-    Object.defineProperty(FormControlDirective.prototype, "path", {
-        get: function () { return []; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlDirective.prototype, "validator", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["b" /* composeValidators */])(this._rawValidators); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlDirective.prototype, "asyncValidator", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlDirective.prototype, "control", {
-        get: function () { return this.form; },
-        enumerable: true,
-        configurable: true
-    });
-    FormControlDirective.prototype.viewToModelUpdate = function (newValue) {
-        this.viewModel = newValue;
-        this.update.emit(newValue);
-    };
-    FormControlDirective.prototype._isControlChanged = function (changes) {
-        return __WEBPACK_IMPORTED_MODULE_2__facade_collection__["a" /* StringMapWrapper */].contains(changes, 'form');
-    };
-    FormControlDirective.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControl]', providers: [formControlBinding], exportAs: 'ngForm' },] },
-    ];
-    /** @nocollapse */
-    FormControlDirective.ctorParameters = [
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["b" /* NG_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_4__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
-    ];
-    FormControlDirective.propDecorators = {
-        'form': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['formControl',] },],
-        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
-        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
-        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
-    };
-    return FormControlDirective;
-}(__WEBPACK_IMPORTED_MODULE_5__ng_control__["a" /* NgControl */]));
-//# sourceMappingURL=form_control_directive.js.map
-
-/***/ },
-
-/***/ 169:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_value_accessor__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_control__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reactive_errors__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__form_group_directive__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__form_group_name__ = __webpack_require__(73);
-/* unused harmony export controlNameBinding */
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlName; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-
-
-
-
-
-
-
-
-var controlNameBinding = {
-    provide: __WEBPACK_IMPORTED_MODULE_6__ng_control__["a" /* NgControl */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return FormControlName; })
-};
-/**
- * Syncs an existing form control with the specified name to a DOM element.
- *
- * This directive can only be used as a child of {@link FormGroupDirective}.  It also requires
- * importing the {@link ReactiveFormsModule}.
-
- * ### Example
- *
- * In this example, we create the login and password controls.
- * We can work with each control separately: check its validity, get its value, listen to its
- * changes.
- *
- *  ```
- * @Component({
- *      selector: "login-comp",
- *      template: `
- *        <form [formGroup]="myForm" (submit)="onLogIn()">
- *          Login <input type="text" formControlName="login">
- *          <div *ngIf="!loginCtrl.valid">Login is invalid</div>
- *          Password <input type="password" formControlName="password">
- *          <button type="submit">Log in!</button>
- *        </form>
- *      `})
- * class LoginComp {
- *  loginCtrl = new FormControl();
- *  passwordCtrl = new FormControl();
- *  myForm = new FormGroup({
- *     login: loginCtrl,
- *     password: passwordCtrl
- *  });
- *  onLogIn(): void {
- *    // value === {login: 'some login', password: 'some password'}
- *  }
- * }
- *  ```
- *
- * We can also set the value of the form programmatically using setValue().
- *
- *  ```
- * @Component({
- *      selector: "login-comp",
- *      template: `
- *        <form [formGroup]="myForm" (submit)='onLogIn()'>
- *          Login <input type='text' formControlName='login'>
- *          Password <input type='password' formControlName='password'>
- *          <button type='submit'>Log in!</button>
- *        </form>
- *      `})
- * class LoginComp {
- *  myForm = new FormGroup({
- *    login: new FormControl(),
- *    password: new FormControl()
- *  });
- *
- *  populate() {
- *     this.myForm.setValue({login: 'some login', password: 'some password'});
- *  }
- *
- *  onLogIn(): void {
- *    // this.credentials.login === "some login"
- *    // this.credentials.password === "some password"
- *  }
- * }
- *  ```
- *
- *  @stable
- */
-var FormControlName = (function (_super) {
-    __extends(FormControlName, _super);
-    function FormControlName(parent, validators, asyncValidators, valueAccessors) {
-        _super.call(this);
-        this._added = false;
-        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
-        this._parent = parent;
-        this._rawValidators = validators || [];
-        this._rawAsyncValidators = asyncValidators || [];
-        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
-    }
-    Object.defineProperty(FormControlName.prototype, "isDisabled", {
-        set: function (isDisabled) { __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].disabledAttrWarning(); },
-        enumerable: true,
-        configurable: true
-    });
-    FormControlName.prototype.ngOnChanges = function (changes) {
-        if (!this._added) {
-            this._checkParentType();
-            this.formDirective.addControl(this);
-            if (this.control.disabled)
-                this.valueAccessor.setDisabledState(true);
-            this._added = true;
-        }
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
-            this.viewModel = this.model;
-            this.formDirective.updateModel(this, this.model);
-        }
-    };
-    FormControlName.prototype.ngOnDestroy = function () {
-        if (this.formDirective) {
-            this.formDirective.removeControl(this);
-        }
-    };
-    FormControlName.prototype.viewToModelUpdate = function (newValue) {
-        this.viewModel = newValue;
-        this.update.emit(newValue);
-    };
-    Object.defineProperty(FormControlName.prototype, "path", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["a" /* controlPath */])(this.name, this._parent); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlName.prototype, "formDirective", {
-        get: function () { return this._parent ? this._parent.formDirective : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlName.prototype, "validator", {
-        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["b" /* composeValidators */])(this._rawValidators); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlName.prototype, "asyncValidator", {
-        get: function () {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(FormControlName.prototype, "control", {
-        get: function () { return this.formDirective.getControl(this); },
-        enumerable: true,
-        configurable: true
-    });
-    FormControlName.prototype._checkParentType = function () {
-        if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["a" /* FormGroupName */]) &&
-            this._parent instanceof __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__["a" /* AbstractFormGroupDirective */]) {
-            __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].ngModelGroupException();
-        }
-        else if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["a" /* FormGroupName */]) && !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__form_group_directive__["a" /* FormGroupDirective */]) &&
-            !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["b" /* FormArrayName */])) {
-            __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].controlParentException();
-        }
-    };
-    FormControlName.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
-    ];
-    /** @nocollapse */
-    FormControlName.ctorParameters = [
-        { type: __WEBPACK_IMPORTED_MODULE_4__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["SkipSelf"] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__validators__["b" /* NG_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
-        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_5__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
-    ];
-    FormControlName.propDecorators = {
-        'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['formControlName',] },],
-        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
-        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
-        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
-    };
-    return FormControlName;
-}(__WEBPACK_IMPORTED_MODULE_6__ng_control__["a" /* NgControl */]));
-//# sourceMappingURL=form_control_name.js.map
-
-/***/ },
-
-/***/ 17:
+/***/ 18:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3017,17 +2061,916 @@ function escapeRegExp(s) {
     return s.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 }
 //# sourceMappingURL=lang.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(40)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 
-/***/ 170:
+/***/ 180:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(18);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AbstractControlDirective; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+/**
+ * Base class for control directives.
+ *
+ * Only used internally in the forms module.
+ *
+ * @stable
+ */
+var AbstractControlDirective = (function () {
+    function AbstractControlDirective() {
+    }
+    Object.defineProperty(AbstractControlDirective.prototype, "control", {
+        get: function () { throw new Error('unimplemented'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "value", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.value : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "valid", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.valid : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.invalid : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "pending", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.pending : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "errors", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.errors : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.pristine : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.dirty : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "touched", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.touched : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.untouched : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.disabled : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.enabled : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.statusChanges : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control) ? this.control.valueChanges : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "path", {
+        get: function () { return null; },
+        enumerable: true,
+        configurable: true
+    });
+    AbstractControlDirective.prototype.reset = function (value) {
+        if (value === void 0) { value = undefined; }
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__facade_lang__["a" /* isPresent */])(this.control))
+            this.control.reset(value);
+    };
+    return AbstractControlDirective;
+}());
+//# sourceMappingURL=abstract_control_directive.js.map
+
+/***/ },
+
+/***/ 181:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng_control__ = __webpack_require__(53);
+/* unused harmony export AbstractControlStatus */
+/* unused harmony export ngControlStatusHost */
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgControlStatus; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgControlStatusGroup; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+var AbstractControlStatus = (function () {
+    function AbstractControlStatus(cd) {
+        this._cd = cd;
+    }
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassUntouched", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.untouched : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassTouched", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.touched : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassPristine", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.pristine : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassDirty", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.dirty : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassValid", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.valid : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassInvalid", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["a" /* isPresent */])(this._cd.control) ? this._cd.control.invalid : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return AbstractControlStatus;
+}());
+var ngControlStatusHost = {
+    '[class.ng-untouched]': 'ngClassUntouched',
+    '[class.ng-touched]': 'ngClassTouched',
+    '[class.ng-pristine]': 'ngClassPristine',
+    '[class.ng-dirty]': 'ngClassDirty',
+    '[class.ng-valid]': 'ngClassValid',
+    '[class.ng-invalid]': 'ngClassInvalid'
+};
+/**
+ * Directive automatically applied to Angular form controls that sets CSS classes
+ * based on control status (valid/invalid/dirty/etc).
+ *
+ * @stable
+ */
+var NgControlStatus = (function (_super) {
+    __extends(NgControlStatus, _super);
+    function NgControlStatus(cd) {
+        _super.call(this, cd);
+    }
+    NgControlStatus.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
+    ];
+    /** @nocollapse */
+    NgControlStatus.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_3__ng_control__["a" /* NgControl */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] },] },
+    ];
+    return NgControlStatus;
+}(AbstractControlStatus));
+/**
+ * Directive automatically applied to Angular form groups that sets CSS classes
+ * based on control status (valid/invalid/dirty/etc).
+ *
+ * @stable
+ */
+var NgControlStatusGroup = (function (_super) {
+    __extends(NgControlStatusGroup, _super);
+    function NgControlStatusGroup(cd) {
+        _super.call(this, cd);
+    }
+    NgControlStatusGroup.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
+                    host: ngControlStatusHost
+                },] },
+    ];
+    /** @nocollapse */
+    NgControlStatusGroup.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_2__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] },] },
+    ];
+    return NgControlStatusGroup;
+}(AbstractControlStatus));
+//# sourceMappingURL=ng_control_status.js.map
+
+/***/ },
+
+/***/ 182:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_value_accessor__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ng_control__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(301);
+/* unused harmony export formControlBinding */
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModel; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+
+
+
+
+
+
+
+
+var formControlBinding = {
+    provide: __WEBPACK_IMPORTED_MODULE_7__ng_control__["a" /* NgControl */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgModel; })
+};
+var resolvedPromise = Promise.resolve(null);
+/**
+ * Binds a domain model to a form control.
+ *
+ * ### Usage
+ *
+ * `ngModel` binds an existing domain model to a form control. For a
+ * two-way binding, use `[(ngModel)]` to ensure the model updates in
+ * both directions.
+ *
+ *  ```typescript
+ * @Component({
+ *      selector: "search-comp",
+ *      directives: [],
+ *      template: `<input type='text' [(ngModel)]="searchQuery">`
+ *      })
+ * class SearchComp {
+ *  searchQuery: string;
+ * }
+ *  ```
+ *
+ *  @stable
+ */
+var NgModel = (function (_super) {
+    __extends(NgModel, _super);
+    function NgModel(parent, validators, asyncValidators, valueAccessors) {
+        _super.call(this);
+        /** @internal */
+        this._control = new __WEBPACK_IMPORTED_MODULE_2__model__["b" /* FormControl */]();
+        /** @internal */
+        this._registered = false;
+        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
+        this._parent = parent;
+        this._rawValidators = validators || [];
+        this._rawAsyncValidators = asyncValidators || [];
+        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
+    }
+    NgModel.prototype.ngOnChanges = function (changes) {
+        this._checkForErrors();
+        if (!this._registered)
+            this._setUpControl();
+        if ('isDisabled' in changes) {
+            this._updateDisabled(changes);
+        }
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
+            this._updateValue(this.model);
+            this.viewModel = this.model;
+        }
+    };
+    NgModel.prototype.ngOnDestroy = function () { this.formDirective && this.formDirective.removeControl(this); };
+    Object.defineProperty(NgModel.prototype, "control", {
+        get: function () { return this._control; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgModel.prototype, "path", {
+        get: function () {
+            return this._parent ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["a" /* controlPath */])(this.name, this._parent) : [this.name];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgModel.prototype, "formDirective", {
+        get: function () { return this._parent ? this._parent.formDirective : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgModel.prototype, "validator", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["b" /* composeValidators */])(this._rawValidators); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgModel.prototype, "asyncValidator", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    NgModel.prototype.viewToModelUpdate = function (newValue) {
+        this.viewModel = newValue;
+        this.update.emit(newValue);
+    };
+    NgModel.prototype._setUpControl = function () {
+        this._isStandalone() ? this._setUpStandalone() :
+            this.formDirective.addControl(this);
+        this._registered = true;
+    };
+    NgModel.prototype._isStandalone = function () {
+        return !this._parent || (this.options && this.options.standalone);
+    };
+    NgModel.prototype._setUpStandalone = function () {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__shared__["d" /* setUpControl */])(this._control, this);
+        this._control.updateValueAndValidity({ emitEvent: false });
+    };
+    NgModel.prototype._checkForErrors = function () {
+        if (!this._isStandalone()) {
+            this._checkParentType();
+        }
+        this._checkName();
+    };
+    NgModel.prototype._checkParentType = function () {
+        if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__ng_model_group__["a" /* NgModelGroup */]) &&
+            this._parent instanceof __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__["a" /* AbstractFormGroupDirective */]) {
+            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].formGroupNameException();
+        }
+        else if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__ng_model_group__["a" /* NgModelGroup */]) && !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_8__ng_form__["a" /* NgForm */])) {
+            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].modelParentException();
+        }
+    };
+    NgModel.prototype._checkName = function () {
+        if (this.options && this.options.name)
+            this.name = this.options.name;
+        if (!this._isStandalone() && !this.name) {
+            __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__["a" /* TemplateDrivenErrors */].missingNameException();
+        }
+    };
+    NgModel.prototype._updateValue = function (value) {
+        var _this = this;
+        resolvedPromise.then(function () { _this.control.setValue(value, { emitViewToModelChange: false }); });
+    };
+    NgModel.prototype._updateDisabled = function (changes) {
+        var _this = this;
+        var disabledValue = changes['isDisabled'].currentValue;
+        var isDisabled = disabledValue != null && disabledValue != false;
+        resolvedPromise.then(function () {
+            if (isDisabled && !_this.control.disabled) {
+                _this.control.disable();
+            }
+            else if (!isDisabled && _this.control.disabled) {
+                _this.control.enable();
+            }
+        });
+    };
+    NgModel.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[ngModel]:not([formControlName]):not([formControl])',
+                    providers: [formControlBinding],
+                    exportAs: 'ngModel'
+                },] },
+    ];
+    /** @nocollapse */
+    NgModel.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_5__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Host"] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["b" /* NG_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_6__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
+    ];
+    NgModel.propDecorators = {
+        'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
+        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
+        'options': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModelOptions',] },],
+        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
+    };
+    return NgModel;
+}(__WEBPACK_IMPORTED_MODULE_7__ng_control__["a" /* NgControl */]));
+//# sourceMappingURL=ng_model.js.map
+
+/***/ },
+
+/***/ 183:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__ = __webpack_require__(29);
+/* unused harmony export NUMBER_VALUE_ACCESSOR */
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NumberValueAccessor; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+var NUMBER_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_2__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NumberValueAccessor; }),
+    multi: true
+};
+/**
+ * The accessor for writing a number value and listening to changes that is used by the
+ * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+ *
+ *  ### Example
+ *  ```
+ *  <input type="number" [(ngModel)]="age">
+ *  ```
+ */
+var NumberValueAccessor = (function () {
+    function NumberValueAccessor(_renderer, _elementRef) {
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this.onChange = function (_) { };
+        this.onTouched = function () { };
+    }
+    NumberValueAccessor.prototype.writeValue = function (value) {
+        // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
+        var normalizedValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__facade_lang__["c" /* isBlank */])(value) ? '' : value;
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+    };
+    NumberValueAccessor.prototype.registerOnChange = function (fn) {
+        this.onChange = function (value) { fn(value == '' ? null : __WEBPACK_IMPORTED_MODULE_1__facade_lang__["i" /* NumberWrapper */].parseFloat(value)); };
+    };
+    NumberValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    NumberValueAccessor.prototype.setDisabledState = function (isDisabled) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    };
+    NumberValueAccessor.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
+                    host: {
+                        '(change)': 'onChange($event.target.value)',
+                        '(input)': 'onChange($event.target.value)',
+                        '(blur)': 'onTouched()'
+                    },
+                    providers: [NUMBER_VALUE_ACCESSOR]
+                },] },
+    ];
+    /** @nocollapse */
+    NumberValueAccessor.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    ];
+    return NumberValueAccessor;
+}());
+//# sourceMappingURL=number_value_accessor.js.map
+
+/***/ },
+
+/***/ 184:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_value_accessor__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng_control__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reactive_errors__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(46);
+/* unused harmony export formControlBinding */
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlDirective; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+
+
+
+
+var formControlBinding = {
+    provide: __WEBPACK_IMPORTED_MODULE_5__ng_control__["a" /* NgControl */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return FormControlDirective; })
+};
+/**
+ * Binds an existing {@link FormControl} to a DOM element. It requires importing the {@link
+ * ReactiveFormsModule}.
+ *
+ * In this example, we bind the control to an input element. When the value of the input element
+ * changes, the value of the control will reflect that change. Likewise, if the value of the
+ * control changes, the input element reflects that change.
+ *
+ *  ```typescript
+ * @Component({
+ *   selector: 'my-app',
+ *   template: `
+ *     <div>
+ *       <h2>Bind existing control example</h2>
+ *       <form>
+ *         <p>Element with existing control: <input type="text"
+ * [formControl]="loginControl"></p>
+ *         <p>Value of existing control: {{loginControl.value}}</p>
+ *       </form>
+ *     </div>
+ *   `,
+ * })
+ * export class App {
+ *   loginControl: FormControl = new FormControl('');
+ * }
+ *  ```
+ *
+ * ### ngModel
+ *
+ * We can also set the value of the form programmatically with setValue().
+ **
+ *  ```typescript
+ * @Component({
+ *      selector: "login-comp",
+
+ *      template: "<input type='text' [formControl]='loginControl'>"
+ *      })
+ * class LoginComp {
+ *  loginControl: FormControl = new FormControl('');
+ *
+ *  populate() {
+ *    this.loginControl.setValue('some login');
+ *  }
+ *
+ * }
+ *  ```
+ *
+ *  @stable
+ */
+var FormControlDirective = (function (_super) {
+    __extends(FormControlDirective, _super);
+    function FormControlDirective(validators, asyncValidators, valueAccessors) {
+        _super.call(this);
+        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
+        this._rawValidators = validators || [];
+        this._rawAsyncValidators = asyncValidators || [];
+        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
+    }
+    Object.defineProperty(FormControlDirective.prototype, "isDisabled", {
+        set: function (isDisabled) { __WEBPACK_IMPORTED_MODULE_6__reactive_errors__["a" /* ReactiveErrors */].disabledAttrWarning(); },
+        enumerable: true,
+        configurable: true
+    });
+    FormControlDirective.prototype.ngOnChanges = function (changes) {
+        if (this._isControlChanged(changes)) {
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["d" /* setUpControl */])(this.form, this);
+            if (this.control.disabled)
+                this.valueAccessor.setDisabledState(true);
+            this.form.updateValueAndValidity({ emitEvent: false });
+        }
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
+            this.form.setValue(this.model);
+            this.viewModel = this.model;
+        }
+    };
+    Object.defineProperty(FormControlDirective.prototype, "path", {
+        get: function () { return []; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlDirective.prototype, "validator", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["b" /* composeValidators */])(this._rawValidators); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlDirective.prototype, "asyncValidator", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlDirective.prototype, "control", {
+        get: function () { return this.form; },
+        enumerable: true,
+        configurable: true
+    });
+    FormControlDirective.prototype.viewToModelUpdate = function (newValue) {
+        this.viewModel = newValue;
+        this.update.emit(newValue);
+    };
+    FormControlDirective.prototype._isControlChanged = function (changes) {
+        return __WEBPACK_IMPORTED_MODULE_2__facade_collection__["a" /* StringMapWrapper */].contains(changes, 'form');
+    };
+    FormControlDirective.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControl]', providers: [formControlBinding], exportAs: 'ngForm' },] },
+    ];
+    /** @nocollapse */
+    FormControlDirective.ctorParameters = [
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["b" /* NG_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_3__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_4__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
+    ];
+    FormControlDirective.propDecorators = {
+        'form': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['formControl',] },],
+        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
+        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
+        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
+    };
+    return FormControlDirective;
+}(__WEBPACK_IMPORTED_MODULE_5__ng_control__["a" /* NgControl */]));
+//# sourceMappingURL=form_control_directive.js.map
+
+/***/ },
+
+/***/ 185:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_value_accessor__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_control__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reactive_errors__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__form_group_directive__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__form_group_name__ = __webpack_require__(80);
+/* unused harmony export controlNameBinding */
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlName; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+
+
+
+
+
+
+
+var controlNameBinding = {
+    provide: __WEBPACK_IMPORTED_MODULE_6__ng_control__["a" /* NgControl */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return FormControlName; })
+};
+/**
+ * Syncs an existing form control with the specified name to a DOM element.
+ *
+ * This directive can only be used as a child of {@link FormGroupDirective}.  It also requires
+ * importing the {@link ReactiveFormsModule}.
+
+ * ### Example
+ *
+ * In this example, we create the login and password controls.
+ * We can work with each control separately: check its validity, get its value, listen to its
+ * changes.
+ *
+ *  ```
+ * @Component({
+ *      selector: "login-comp",
+ *      template: `
+ *        <form [formGroup]="myForm" (submit)="onLogIn()">
+ *          Login <input type="text" formControlName="login">
+ *          <div *ngIf="!loginCtrl.valid">Login is invalid</div>
+ *          Password <input type="password" formControlName="password">
+ *          <button type="submit">Log in!</button>
+ *        </form>
+ *      `})
+ * class LoginComp {
+ *  loginCtrl = new FormControl();
+ *  passwordCtrl = new FormControl();
+ *  myForm = new FormGroup({
+ *     login: loginCtrl,
+ *     password: passwordCtrl
+ *  });
+ *  onLogIn(): void {
+ *    // value === {login: 'some login', password: 'some password'}
+ *  }
+ * }
+ *  ```
+ *
+ * We can also set the value of the form programmatically using setValue().
+ *
+ *  ```
+ * @Component({
+ *      selector: "login-comp",
+ *      template: `
+ *        <form [formGroup]="myForm" (submit)='onLogIn()'>
+ *          Login <input type='text' formControlName='login'>
+ *          Password <input type='password' formControlName='password'>
+ *          <button type='submit'>Log in!</button>
+ *        </form>
+ *      `})
+ * class LoginComp {
+ *  myForm = new FormGroup({
+ *    login: new FormControl(),
+ *    password: new FormControl()
+ *  });
+ *
+ *  populate() {
+ *     this.myForm.setValue({login: 'some login', password: 'some password'});
+ *  }
+ *
+ *  onLogIn(): void {
+ *    // this.credentials.login === "some login"
+ *    // this.credentials.password === "some password"
+ *  }
+ * }
+ *  ```
+ *
+ *  @stable
+ */
+var FormControlName = (function (_super) {
+    __extends(FormControlName, _super);
+    function FormControlName(parent, validators, asyncValidators, valueAccessors) {
+        _super.call(this);
+        this._added = false;
+        this.update = new __WEBPACK_IMPORTED_MODULE_1__facade_async__["a" /* EventEmitter */]();
+        this._parent = parent;
+        this._rawValidators = validators || [];
+        this._rawAsyncValidators = asyncValidators || [];
+        this.valueAccessor = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["f" /* selectValueAccessor */])(this, valueAccessors);
+    }
+    Object.defineProperty(FormControlName.prototype, "isDisabled", {
+        set: function (isDisabled) { __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].disabledAttrWarning(); },
+        enumerable: true,
+        configurable: true
+    });
+    FormControlName.prototype.ngOnChanges = function (changes) {
+        if (!this._added) {
+            this._checkParentType();
+            this.formDirective.addControl(this);
+            if (this.control.disabled)
+                this.valueAccessor.setDisabledState(true);
+            this._added = true;
+        }
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["g" /* isPropertyUpdated */])(changes, this.viewModel)) {
+            this.viewModel = this.model;
+            this.formDirective.updateModel(this, this.model);
+        }
+    };
+    FormControlName.prototype.ngOnDestroy = function () {
+        if (this.formDirective) {
+            this.formDirective.removeControl(this);
+        }
+    };
+    FormControlName.prototype.viewToModelUpdate = function (newValue) {
+        this.viewModel = newValue;
+        this.update.emit(newValue);
+    };
+    Object.defineProperty(FormControlName.prototype, "path", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["a" /* controlPath */])(this.name, this._parent); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlName.prototype, "formDirective", {
+        get: function () { return this._parent ? this._parent.formDirective : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlName.prototype, "validator", {
+        get: function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["b" /* composeValidators */])(this._rawValidators); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlName.prototype, "asyncValidator", {
+        get: function () {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__shared__["c" /* composeAsyncValidators */])(this._rawAsyncValidators);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormControlName.prototype, "control", {
+        get: function () { return this.formDirective.getControl(this); },
+        enumerable: true,
+        configurable: true
+    });
+    FormControlName.prototype._checkParentType = function () {
+        if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["a" /* FormGroupName */]) &&
+            this._parent instanceof __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__["a" /* AbstractFormGroupDirective */]) {
+            __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].ngModelGroupException();
+        }
+        else if (!(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["a" /* FormGroupName */]) && !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_9__form_group_directive__["a" /* FormGroupDirective */]) &&
+            !(this._parent instanceof __WEBPACK_IMPORTED_MODULE_10__form_group_name__["b" /* FormArrayName */])) {
+            __WEBPACK_IMPORTED_MODULE_7__reactive_errors__["a" /* ReactiveErrors */].controlParentException();
+        }
+    };
+    FormControlName.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
+    ];
+    /** @nocollapse */
+    FormControlName.ctorParameters = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__control_container__["a" /* ControlContainer */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["SkipSelf"] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__validators__["b" /* NG_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__validators__["c" /* NG_ASYNC_VALIDATORS */],] },] },
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_5__control_value_accessor__["a" /* NG_VALUE_ACCESSOR */],] },] },
+    ];
+    FormControlName.propDecorators = {
+        'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['formControlName',] },],
+        'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngModel',] },],
+        'update': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['ngModelChange',] },],
+        'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
+    };
+    return FormControlName;
+}(__WEBPACK_IMPORTED_MODULE_6__ng_control__["a" /* NgControl */]));
+//# sourceMappingURL=form_control_name.js.map
+
+/***/ },
+
+/***/ 186:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(31);
 /* unused harmony export REQUIRED_VALIDATOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RequiredValidator; });
 /* unused harmony export MIN_LENGTH_VALIDATOR */
@@ -3244,11 +3187,74 @@ var PatternValidator = (function () {
 
 /***/ },
 
-/***/ 195:
+/***/ 225:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(400);
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var websocket_service_1 = __webpack_require__(366);
+var Subscriber_1 = __webpack_require__(2);
+var BidService = (function () {
+    function BidService(webSocket) {
+        this.webSocket = webSocket;
+    }
+    BidService.prototype.watchProduct = function (productId) {
+        var _this = this;
+        var openSubscriber = Subscriber_1.Subscriber.create(function () { return _this.webSocket.send({ productId: productId }); });
+        return this.webSocket.createObservableSocket('ws://localhost:8000', openSubscriber)
+            .map(function (message) { return JSON.parse(message); });
+    };
+    BidService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [websocket_service_1.WebSocketService])
+    ], BidService);
+    return BidService;
+}());
+exports.BidService = BidService;
+
+
+/***/ },
+
+/***/ 29:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NG_VALUE_ACCESSOR; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+/**
+ * Used to provide a {@link ControlValueAccessor} for form controls.
+ *
+ * See {@link DefaultValueAccessor} for how to implement one.
+ * @stable
+ */
+var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueToken"]('NgValueAccessor');
+//# sourceMappingURL=control_value_accessor.js.map
+
+/***/ },
+
+/***/ 299:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(437);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractControlDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractFormGroupDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "CheckboxControlValueAccessor", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["c"]; });
@@ -3300,276 +3306,11 @@ var PatternValidator = (function () {
 
 /***/ },
 
-/***/ 196:
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var product_service_1 = __webpack_require__(61);
-var carousel_1 = __webpack_require__(719);
-var product_item_1 = __webpack_require__(722);
-var HomeComponent = (function () {
-    function HomeComponent(productService) {
-        var _this = this;
-        this.productService = productService;
-        this.products = this.productService.getProducts();
-        this.productService.searchEvent
-            .subscribe(function (params) { return _this.products = _this.productService.search(params); }, function (err) {
-            return console.log("Can't get products. Error code: %s, URL: %s ");
-        }, function () { return console.log('DONE'); });
-    }
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-home-page',
-            providers: [],
-            directives: [
-                carousel_1.default,
-                product_item_1.default
-            ],
-            //styleUrls: ['resources/app/components/home/home.css'],
-            styles: [__webpack_require__(451)],
-            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService])
-    ], HomeComponent);
-    return HomeComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = HomeComponent;
-
-
-/***/ },
-
-/***/ 269:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormErrorExamples; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var FormErrorExamples = {
-    formControlName: "\n    <div [formGroup]=\"myGroup\">\n      <input formControlName=\"firstName\">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });",
-    formGroupName: "\n    <div [formGroup]=\"myGroup\">\n       <div formGroupName=\"person\">\n          <input formControlName=\"firstName\">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });",
-    formArrayName: "\n    <div [formGroup]=\"myGroup\">\n      <div formArrayName=\"cities\">\n        <div *ngFor=\"let city of cityArray.controls; let i=index\">\n          <input [formControlName]=\"i\">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl('SF')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });",
-    ngModelGroup: "\n    <form>\n       <div ngModelGroup=\"person\">\n          <input [(ngModel)]=\"person.name\" name=\"firstName\">\n       </div>\n    </form>",
-    ngModelWithFormGroup: "\n    <div [formGroup]=\"myGroup\">\n       <input formControlName=\"firstName\">\n       <input [(ngModel)]=\"showMoreControls\" [ngModelOptions]=\"{standalone: true}\">\n    </div>\n  "
-};
-//# sourceMappingURL=error_examples.js.map
-
-/***/ },
-
-/***/ 270:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(269);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TemplateDrivenErrors; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-var TemplateDrivenErrors = (function () {
-    function TemplateDrivenErrors() {
-    }
-    TemplateDrivenErrors.modelParentException = function () {
-        throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup's partner directive \"formControlName\" instead.  Example:\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formControlName + "\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelWithFormGroup);
-    };
-    TemplateDrivenErrors.formGroupNameException = function () {
-        throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formGroupName + "\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelGroup);
-    };
-    TemplateDrivenErrors.missingNameException = function () {
-        throw new Error("If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as 'standalone' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]=\"person.firstName\" name=\"first\">\n      Example 2: <input [(ngModel)]=\"person.firstName\" [ngModelOptions]=\"{standalone: true}\">");
-    };
-    TemplateDrivenErrors.modelGroupParentException = function () {
-        throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formGroupName + "\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelGroup);
-    };
-    return TemplateDrivenErrors;
-}());
-//# sourceMappingURL=template_driven_errors.js.map
-
-/***/ },
-
-/***/ 271:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model__ = __webpack_require__(109);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormBuilder; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-
-
-
-/**
- * Creates a form object from a user-specified configuration.
- *
- * ```typescript
- * @Component({
- *   selector: 'my-app',
- *   template: `
- *     <form [formGroup]="loginForm">
- *       <p>Login <input formControlName="login"></p>
- *       <div formGroupName="passwordRetry">
- *         <p>Password <input type="password" formControlName="password"></p>
- *         <p>Confirm password <input type="password" formControlName="passwordConfirmation"></p>
- *       </div>
- *     </form>
- *     <h3>Form value:</h3>
- *     <pre>{{value}}</pre>
- *   `,
- *   directives: [REACTIVE_FORM_DIRECTIVES]
- * })
- * export class App {
- *   loginForm: FormGroup;
- *
- *   constructor(builder: FormBuilder) {
- *     this.loginForm = builder.group({
- *       login: ["", Validators.required],
- *       passwordRetry: builder.group({
- *         password: ["", Validators.required],
- *         passwordConfirmation: ["", Validators.required, asyncValidator]
- *       })
- *     });
- *   }
- *
- *   get value(): string {
- *     return JSON.stringify(this.loginForm.value, null, 2);
- *   }
- * }
- * ```
- *
- * @stable
- */
-var FormBuilder = (function () {
-    function FormBuilder() {
-    }
-    /**
-     * Construct a new {@link FormGroup} with the given map of configuration.
-     * Valid keys for the `extra` parameter map are `optionals` and `validator`.
-     *
-     * See the {@link FormGroup} constructor for more details.
-     */
-    FormBuilder.prototype.group = function (controlsConfig, extra) {
-        if (extra === void 0) { extra = null; }
-        var controls = this._reduceControls(controlsConfig);
-        var validator = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["a" /* isPresent */])(extra) ? __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].get(extra, 'validator') : null;
-        var asyncValidator = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["a" /* isPresent */])(extra) ? __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].get(extra, 'asyncValidator') : null;
-        return new __WEBPACK_IMPORTED_MODULE_3__model__["a" /* FormGroup */](controls, validator, asyncValidator);
-    };
-    /**
-     * Construct a new {@link FormControl} with the given `formState`,`validator`, and
-     * `asyncValidator`.
-     */
-    FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
-        return new __WEBPACK_IMPORTED_MODULE_3__model__["b" /* FormControl */](formState, validator, asyncValidator);
-    };
-    /**
-     * Construct an array of {@link FormControl}s from the given `controlsConfig` array of
-     * configuration, with the given optional `validator` and `asyncValidator`.
-     */
-    FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
-        var _this = this;
-        if (validator === void 0) { validator = null; }
-        if (asyncValidator === void 0) { asyncValidator = null; }
-        var controls = controlsConfig.map(function (c) { return _this._createControl(c); });
-        return new __WEBPACK_IMPORTED_MODULE_3__model__["c" /* FormArray */](controls, validator, asyncValidator);
-    };
-    /** @internal */
-    FormBuilder.prototype._reduceControls = function (controlsConfig) {
-        var _this = this;
-        var controls = {};
-        __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].forEach(controlsConfig, function (controlConfig, controlName) {
-            controls[controlName] = _this._createControl(controlConfig);
-        });
-        return controls;
-    };
-    /** @internal */
-    FormBuilder.prototype._createControl = function (controlConfig) {
-        if (controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["b" /* FormControl */] || controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["a" /* FormGroup */] ||
-            controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["c" /* FormArray */]) {
-            return controlConfig;
-        }
-        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["d" /* isArray */])(controlConfig)) {
-            var value = controlConfig[0];
-            var validator = controlConfig.length > 1 ? controlConfig[1] : null;
-            var asyncValidator = controlConfig.length > 2 ? controlConfig[2] : null;
-            return this.control(value, validator, asyncValidator);
-        }
-        else {
-            return this.control(controlConfig);
-        }
-    };
-    FormBuilder.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-    ];
-    /** @nocollapse */
-    FormBuilder.ctorParameters = [];
-    return FormBuilder;
-}());
-//# sourceMappingURL=form_builder.js.map
-
-/***/ },
-
-/***/ 28:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NG_VALUE_ACCESSOR; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * Used to provide a {@link ControlValueAccessor} for form controls.
- *
- * See {@link DefaultValueAccessor} for how to implement one.
- * @stable
- */
-var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueToken"]('NgValueAccessor');
-//# sourceMappingURL=control_value_accessor.js.map
-
-/***/ },
-
-/***/ 29:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lang__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lang__ = __webpack_require__(18);
 /* unused harmony export Map */
 /* unused harmony export Set */
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return MapWrapper; });
@@ -3943,15 +3684,205 @@ var SetWrapper = (function () {
 
 /***/ },
 
-/***/ 30:
+/***/ 300:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormErrorExamples; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var FormErrorExamples = {
+    formControlName: "\n    <div [formGroup]=\"myGroup\">\n      <input formControlName=\"firstName\">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });",
+    formGroupName: "\n    <div [formGroup]=\"myGroup\">\n       <div formGroupName=\"person\">\n          <input formControlName=\"firstName\">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });",
+    formArrayName: "\n    <div [formGroup]=\"myGroup\">\n      <div formArrayName=\"cities\">\n        <div *ngFor=\"let city of cityArray.controls; let i=index\">\n          <input [formControlName]=\"i\">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl('SF')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });",
+    ngModelGroup: "\n    <form>\n       <div ngModelGroup=\"person\">\n          <input [(ngModel)]=\"person.name\" name=\"firstName\">\n       </div>\n    </form>",
+    ngModelWithFormGroup: "\n    <div [formGroup]=\"myGroup\">\n       <input formControlName=\"firstName\">\n       <input [(ngModel)]=\"showMoreControls\" [ngModelOptions]=\"{standalone: true}\">\n    </div>\n  "
+};
+//# sourceMappingURL=error_examples.js.map
+
+/***/ },
+
+/***/ 301:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(300);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TemplateDrivenErrors; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+var TemplateDrivenErrors = (function () {
+    function TemplateDrivenErrors() {
+    }
+    TemplateDrivenErrors.modelParentException = function () {
+        throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup's partner directive \"formControlName\" instead.  Example:\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formControlName + "\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelWithFormGroup);
+    };
+    TemplateDrivenErrors.formGroupNameException = function () {
+        throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formGroupName + "\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelGroup);
+    };
+    TemplateDrivenErrors.missingNameException = function () {
+        throw new Error("If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as 'standalone' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]=\"person.firstName\" name=\"first\">\n      Example 2: <input [(ngModel)]=\"person.firstName\" [ngModelOptions]=\"{standalone: true}\">");
+    };
+    TemplateDrivenErrors.modelGroupParentException = function () {
+        throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].formGroupName + "\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      " + __WEBPACK_IMPORTED_MODULE_0__error_examples__["a" /* FormErrorExamples */].ngModelGroup);
+    };
+    return TemplateDrivenErrors;
+}());
+//# sourceMappingURL=template_driven_errors.js.map
+
+/***/ },
+
+/***/ 302:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model__ = __webpack_require__(120);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormBuilder; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+/**
+ * Creates a form object from a user-specified configuration.
+ *
+ * ```typescript
+ * @Component({
+ *   selector: 'my-app',
+ *   template: `
+ *     <form [formGroup]="loginForm">
+ *       <p>Login <input formControlName="login"></p>
+ *       <div formGroupName="passwordRetry">
+ *         <p>Password <input type="password" formControlName="password"></p>
+ *         <p>Confirm password <input type="password" formControlName="passwordConfirmation"></p>
+ *       </div>
+ *     </form>
+ *     <h3>Form value:</h3>
+ *     <pre>{{value}}</pre>
+ *   `,
+ *   directives: [REACTIVE_FORM_DIRECTIVES]
+ * })
+ * export class App {
+ *   loginForm: FormGroup;
+ *
+ *   constructor(builder: FormBuilder) {
+ *     this.loginForm = builder.group({
+ *       login: ["", Validators.required],
+ *       passwordRetry: builder.group({
+ *         password: ["", Validators.required],
+ *         passwordConfirmation: ["", Validators.required, asyncValidator]
+ *       })
+ *     });
+ *   }
+ *
+ *   get value(): string {
+ *     return JSON.stringify(this.loginForm.value, null, 2);
+ *   }
+ * }
+ * ```
+ *
+ * @stable
+ */
+var FormBuilder = (function () {
+    function FormBuilder() {
+    }
+    /**
+     * Construct a new {@link FormGroup} with the given map of configuration.
+     * Valid keys for the `extra` parameter map are `optionals` and `validator`.
+     *
+     * See the {@link FormGroup} constructor for more details.
+     */
+    FormBuilder.prototype.group = function (controlsConfig, extra) {
+        if (extra === void 0) { extra = null; }
+        var controls = this._reduceControls(controlsConfig);
+        var validator = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["a" /* isPresent */])(extra) ? __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].get(extra, 'validator') : null;
+        var asyncValidator = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["a" /* isPresent */])(extra) ? __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].get(extra, 'asyncValidator') : null;
+        return new __WEBPACK_IMPORTED_MODULE_3__model__["a" /* FormGroup */](controls, validator, asyncValidator);
+    };
+    /**
+     * Construct a new {@link FormControl} with the given `formState`,`validator`, and
+     * `asyncValidator`.
+     */
+    FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+        return new __WEBPACK_IMPORTED_MODULE_3__model__["b" /* FormControl */](formState, validator, asyncValidator);
+    };
+    /**
+     * Construct an array of {@link FormControl}s from the given `controlsConfig` array of
+     * configuration, with the given optional `validator` and `asyncValidator`.
+     */
+    FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
+        var _this = this;
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+        var controls = controlsConfig.map(function (c) { return _this._createControl(c); });
+        return new __WEBPACK_IMPORTED_MODULE_3__model__["c" /* FormArray */](controls, validator, asyncValidator);
+    };
+    /** @internal */
+    FormBuilder.prototype._reduceControls = function (controlsConfig) {
+        var _this = this;
+        var controls = {};
+        __WEBPACK_IMPORTED_MODULE_1__facade_collection__["a" /* StringMapWrapper */].forEach(controlsConfig, function (controlConfig, controlName) {
+            controls[controlName] = _this._createControl(controlConfig);
+        });
+        return controls;
+    };
+    /** @internal */
+    FormBuilder.prototype._createControl = function (controlConfig) {
+        if (controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["b" /* FormControl */] || controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["a" /* FormGroup */] ||
+            controlConfig instanceof __WEBPACK_IMPORTED_MODULE_3__model__["c" /* FormArray */]) {
+            return controlConfig;
+        }
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__facade_lang__["d" /* isArray */])(controlConfig)) {
+            var value = controlConfig[0];
+            var validator = controlConfig.length > 1 ? controlConfig[1] : null;
+            var asyncValidator = controlConfig.length > 2 ? controlConfig[2] : null;
+            return this.control(value, validator, asyncValidator);
+        }
+        else {
+            return this.control(controlConfig);
+        }
+    };
+    FormBuilder.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    /** @nocollapse */
+    FormBuilder.ctorParameters = [];
+    return FormBuilder;
+}());
+//# sourceMappingURL=form_builder.js.map
+
+/***/ },
+
+/***/ 31:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NG_VALIDATORS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return NG_ASYNC_VALIDATORS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Validators; });
@@ -4102,7 +4033,7 @@ function _mergeErrors(arrayOfErrors) {
 
 /***/ },
 
-/***/ 324:
+/***/ 366:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4117,112 +4048,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var StarsComponent = (function () {
-    function StarsComponent() {
-        this.maxStars = 5;
-        this.readonly = true;
-        this.ratingChange = new core_1.EventEmitter(); //  = new EventEmitter(); cause error error TS2314: Generic type 'EventEmitter<T>' requires 1 type argument(s).
-    }
-    Object.defineProperty(StarsComponent.prototype, "rating", {
-        get: function () {
-            return this._rating;
-        },
-        set: function (value) {
-            this._rating = value || 0;
-            this.stars = Array(this.maxStars).fill(true, 0, this.rating);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    StarsComponent.prototype.fillStarsWithColor = function (index) {
-        if (!this.readonly) {
-            this.rating = index + 1;
-            this.ratingChange.emit(this.rating);
-        }
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], StarsComponent.prototype, "readonly", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], StarsComponent.prototype, "rating", null);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], StarsComponent.prototype, "ratingChange", void 0);
-    StarsComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-stars',
-            styles: [".starrating { color: #d17581; }"],
-            //templateUrl: 'resources/app/components/stars/stars.html'
-            template: __webpack_require__(450)
-        }), 
-        __metadata('design:paramtypes', [])
-    ], StarsComponent);
-    return StarsComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = StarsComponent;
-
-
-/***/ },
-
-/***/ 325:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var websocket_service_1 = __webpack_require__(326);
-var Rx_1 = __webpack_require__(127);
-var BidService = (function () {
-    function BidService(webSocket) {
-        this.webSocket = webSocket;
-    }
-    BidService.prototype.watchProduct = function (productId) {
-        var _this = this;
-        var openSubscriber = Rx_1.Subscriber.create(function () { return _this.webSocket.send({ productId: productId }); });
-        return this.webSocket.createObservableSocket('ws://localhost:8000', openSubscriber)
-            .map(function (message) { return JSON.parse(message); });
-    };
-    BidService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [websocket_service_1.WebSocketService])
-    ], BidService);
-    return BidService;
-}());
-exports.BidService = BidService;
-
-
-/***/ },
-
-/***/ 326:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var Rx_1 = __webpack_require__(127);
+var Rx_1 = __webpack_require__(226);
 var WebSocketService = (function () {
     function WebSocketService() {
     }
@@ -4254,225 +4080,11 @@ exports.WebSocketService = WebSocketService;
 
 /***/ },
 
-/***/ 330:
+/***/ 37:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(41);
-var home_1 = __webpack_require__(196);
-var navbar_1 = __webpack_require__(721);
-var footer_1 = __webpack_require__(720);
-var search_1 = __webpack_require__(723);
-var ApplicationComponent = (function () {
-    function ApplicationComponent() {
-    }
-    ApplicationComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-application',
-            //templateUrl: 'resources/app/components/application/application.html',
-            template: __webpack_require__(442),
-            directives: [
-                router_1.ROUTER_DIRECTIVES,
-                navbar_1.default,
-                footer_1.default,
-                search_1.default,
-                home_1.default
-            ]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ApplicationComponent);
-    return ApplicationComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ApplicationComponent;
-
-
-/***/ },
-
-/***/ 331:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var common_1 = __webpack_require__(48);
-var router_1 = __webpack_require__(41);
-var order_service_1 = __webpack_require__(128);
-var OrderComponent = (function () {
-    function OrderComponent(route, orderService) {
-        //const productId = parseInt(route.snapshot.params['productId']);
-        //const productId = route.snapshot.params['productId'];
-        this.orderService = orderService;
-        this.orders = this.orderService.getOrders();
-        // subscribe search orders like in product-detail
-    }
-    /*  routerOnDeactivate(): any {
-        if (this.subscription) {
-          this.subscription.unsubscribe();
-        }
-      }*/
-    OrderComponent.prototype.ngOnDestroy = function () {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
-    };
-    OrderComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-order-page',
-            //templateUrl: 'resources/app/components/order-detail/order-detail.html',
-            template: __webpack_require__(446),
-            directives: [common_1.NgClass]
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, order_service_1.OrderService])
-    ], OrderComponent);
-    return OrderComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = OrderComponent;
-
-
-/***/ },
-
-/***/ 332:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var common_1 = __webpack_require__(48);
-var router_1 = __webpack_require__(41);
-var product_service_1 = __webpack_require__(61);
-var bid_service_1 = __webpack_require__(325);
-var stars_1 = __webpack_require__(324);
-var ProductDetailComponent = (function () {
-    function ProductDetailComponent(route, productService, bidService) {
-        var _this = this;
-        this.bidService = bidService;
-        this.isReviewHidden = true;
-        this.isWatching = false;
-        //const productId = parseInt(route.snapshot.params['productId']);
-        var productId = route.snapshot.params['productId'];
-        productService
-            .getProductById(productId)
-            .subscribe(function (product) {
-            _this.product = product;
-            _this.currentBid = product.price;
-        }, function (error) { return console.error(error); });
-        /*productService
-          .getReviewsForProduct(productId)
-          .subscribe(
-            reviews => this.reviews = reviews,
-            error => console.error(error));*/
-    }
-    ProductDetailComponent.prototype.toggleWatchProduct = function () {
-        var _this = this;
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-            this.subscription = null;
-            this.isWatching = false;
-        }
-        else {
-            this.isWatching = true;
-            this.subscription = this.bidService.watchProduct(this.product.id)
-                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.id; }).bid; }, function (error) { return console.log(error); });
-        }
-    };
-    /*  routerOnDeactivate(): any {
-        if (this.subscription) {
-          this.subscription.unsubscribe();
-        }
-      }*/
-    ProductDetailComponent.prototype.ngOnDestroy = function () {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
-    };
-    ProductDetailComponent.prototype.addReview = function () {
-        var review = new product_service_1.Review(0, this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);
-        this.reviews = this.reviews.concat([review]);
-        this.product.rating = this.averageRating(this.reviews);
-        this.resetForm();
-    };
-    ProductDetailComponent.prototype.averageRating = function (reviews) {
-        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
-        return sum / reviews.length;
-    };
-    ProductDetailComponent.prototype.resetForm = function () {
-        this.newRating = 0;
-        this.newComment = null;
-        this.isReviewHidden = true;
-    };
-    ProductDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-product-page',
-            styles: ['auction-stars.large {font-size: 24px;}'],
-            //templateUrl: 'resources/app/components/product-detail/product-detail.html',
-            template: __webpack_require__(447),
-            directives: [common_1.NgClass, stars_1.default]
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, product_service_1.ProductService, bid_service_1.BidService])
-    ], ProductDetailComponent);
-    return ProductDetailComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProductDetailComponent;
-
-
-/***/ },
-
-/***/ 333:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var bid_service_1 = __webpack_require__(325);
-var product_service_1 = __webpack_require__(61);
-var order_service_1 = __webpack_require__(128);
-var websocket_service_1 = __webpack_require__(326);
-exports.ONLINE_AUCTION_SERVICES = [
-    bid_service_1.BidService,
-    product_service_1.ProductService,
-    order_service_1.OrderService,
-    websocket_service_1.WebSocketService
-];
-
-
-/***/ },
-
-/***/ 35:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abstract_control_directive__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abstract_control_directive__ = __webpack_require__(180);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ControlContainer; });
 /**
  * @license
@@ -4521,27 +4133,99 @@ var ControlContainer = (function (_super) {
 
 /***/ },
 
-/***/ 397:
+/***/ 370:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var common_1 = __webpack_require__(69);
+var forms_1 = __webpack_require__(299);
+var http_1 = __webpack_require__(144);
+var platform_browser_1 = __webpack_require__(54);
+var router_1 = __webpack_require__(92);
+var application_1 = __webpack_require__(782);
+var carousel_1 = __webpack_require__(783);
+var home_1 = __webpack_require__(785);
+var footer_1 = __webpack_require__(784);
+var navbar_1 = __webpack_require__(786);
+var product_detail_1 = __webpack_require__(788);
+var product_item_1 = __webpack_require__(789);
+var order_detail_1 = __webpack_require__(787);
+var search_1 = __webpack_require__(790);
+var stars_1 = __webpack_require__(791);
+var services_1 = __webpack_require__(792);
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                forms_1.ReactiveFormsModule,
+                router_1.RouterModule.forRoot([
+                    { path: '', component: home_1.default },
+                    { path: 'products/:productId', component: product_detail_1.default }
+                ])
+            ],
+            declarations: [
+                application_1.default,
+                carousel_1.default,
+                footer_1.default,
+                home_1.default,
+                navbar_1.default,
+                product_detail_1.default,
+                product_item_1.default,
+                order_detail_1.default,
+                search_1.default,
+                stars_1.default
+            ],
+            providers: [
+                { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }
+            ].concat(services_1.ONLINE_AUCTION_SERVICES),
+            bootstrap: [application_1.default]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
+    return AppModule;
+}());
+exports.AppModule = AppModule;
+
+
+/***/ },
+
+/***/ 434:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_checkbox_value_accessor__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_default_value_accessor__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_ng_control_status__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ng_form__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_ng_model__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_model_group__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_number_value_accessor__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_radio_control_value_accessor__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_reactive_directives_form_control_directive__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_reactive_directives_form_control_name__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_group_directive__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_group_name__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_select_control_value_accessor__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_select_multiple_control_value_accessor__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_validators__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_ng_control__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_checkbox_value_accessor__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_default_value_accessor__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_ng_control_status__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_ng_model__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_model_group__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_number_value_accessor__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_radio_control_value_accessor__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_reactive_directives_form_control_directive__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_reactive_directives_form_control_name__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_group_directive__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_group_name__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_select_control_value_accessor__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_select_multiple_control_value_accessor__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_validators__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_ng_control__ = __webpack_require__(53);
 /* unused harmony export SHARED_FORM_DIRECTIVES */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TEMPLATE_DRIVEN_DIRECTIVES; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return REACTIVE_DRIVEN_DIRECTIVES; });
@@ -4657,7 +4341,7 @@ var InternalFormsSharedModule = (function () {
 
 /***/ },
 
-/***/ 398:
+/***/ 435:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4690,14 +4374,14 @@ function normalizeAsyncValidator(validator) {
 
 /***/ },
 
-/***/ 399:
+/***/ 436:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(397);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(302);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormsModule; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ReactiveFormsModule; });
 /**
@@ -4751,32 +4435,32 @@ var ReactiveFormsModule = (function () {
 
 /***/ },
 
-/***/ 400:
+/***/ 437:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_control_value_accessor__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_default_value_accessor__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_control__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_ng_control_status__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_ng_form__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_ng_model__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_ng_model_group__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_control_directive__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_control_name__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_group_directive__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_reactive_directives_form_group_name__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_control_value_accessor__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_multiple_control_value_accessor__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_validators__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__model__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_control_value_accessor__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_default_value_accessor__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_control__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_ng_control_status__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_ng_model__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_ng_model_group__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_control_directive__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_control_name__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_group_directive__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_reactive_directives_form_group_name__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_control_value_accessor__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_multiple_control_value_accessor__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_validators__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__model__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(436);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__["a"]; });
@@ -4858,20 +4542,20 @@ var ReactiveFormsModule = (function () {
 
 /***/ },
 
-/***/ 44:
+/***/ 46:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkbox_value_accessor__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__default_value_accessor__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(398);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_value_accessor__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__radio_control_value_accessor__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__select_multiple_control_value_accessor__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkbox_value_accessor__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__default_value_accessor__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_value_accessor__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__radio_control_value_accessor__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__select_multiple_control_value_accessor__ = __webpack_require__(119);
 /* harmony export (immutable) */ exports["a"] = controlPath;
 /* harmony export (immutable) */ exports["d"] = setUpControl;
 /* harmony export (immutable) */ exports["h"] = cleanUpControl;
@@ -5026,88 +4710,11 @@ function selectValueAccessor(dir, valueAccessors) {
 
 /***/ },
 
-/***/ 442:
-/***/ function(module, exports) {
-
-module.exports = "<auction-navbar></auction-navbar>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-3\">\n      <auction-search></auction-search>\n    </div>\n\n    <div class=\"col-md-9\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n\n<auction-footer></auction-footer>"
-
-/***/ },
-
-/***/ 443:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"carousel slide\" data-ride=\"carousel\">\n  <ol class=\"carousel-indicators\">\n    <li class=\"active\"></li>\n    <li></li>\n    <li></li>\n  </ol>\n  <div class=\"carousel-inner\">\n    <div class=\"item active\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n    <div class=\"item\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n    <div class=\"item\">\n      <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\">\n    </div>\n  </div>\n  <a class=\"left carousel-control\" href=\"javascript:$('.carousel').carousel('prev');\">\n    <span class=\"glyphicon glyphicon-chevron-left\"></span>\n  </a>\n  <a class=\"right carousel-control\" href=\"javascript:$('.carousel').carousel('next');\">\n    <span class=\"glyphicon glyphicon-chevron-right\"></span>\n  </a>\n</div>\n"
-
-/***/ },
-
-/***/ 444:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <hr>\n  <footer>\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <p>Copyright &copy; Online Auction 2016</p>\n      </div>\n    </div>\n  </footer>\n</div>\n"
-
-/***/ },
-
-/***/ 445:
-/***/ function(module, exports) {
-
-module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container\">\n\n    <!--This is viewport size sencible menu-->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" [routerLink]=\"['/']\">Online Auction</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-ex1-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li><a [routerLink]=\"['orders']\">My Orders</a></li>\n        <li><a href=\"#\">Services</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\" >\n        <li><a class=\"btn btn-danger\" href=\"logout\" role=\"button\">Log-out</a ></li >\n      </ul >\n      <!--<a class=\"btn btn-danger  btn-sm\" href=\"logout\" role=\"button\">Logout</a>-->\n    </div>\n\n    <!--<div class=\"collapse navbar-collapse\" >\n      <ul class=\"nav navbar-nav navbar-right\" >\n        <li><a ui-sref=\"logout\" >Log-out</a ></li >\n      </ul >\n    </div >-->\n\n\n\n    <!-- /.navbar-collapse -->\n  </div>\n  <!-- /.container -->\n</nav>\n"
-
-/***/ },
-
-/***/ 446:
-/***/ function(module, exports) {
-
-module.exports = "    <!--div class=\"container\" -->\n        <div class=\"row\"> <!--col-md-12-->\n            <table class=\"table table-striped table-hover\">\n                <thead class=\"thead-inverse\">\n                <tr class=\"bg-primary\">\n                    <th>Order #</th>\n                    <th>Store #</th>\n                    <th>First Name</th>\n                    <th>Last Name</th>\n                    <th>Email</th>\n                </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let order of orders | async\" >\n                        <th class=\"col-md-1\"  scope=\"row\">{{ order?.id}}</th>\n                        <td class=\"col-md-1\">{{order?.userId}}</td>\n                        <td class=\"col-md-2\">{{order?.firstName}}</td>\n                        <td class=\"col-md-3\">{{order?.lastName}}</td>\n                        <td class=\"col-md-5\">{{order?.email}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    <!--/div -->\n\n    <!--<h4>Datatables.net Plain bootstrapped table</h4>\n        <table id=\"clientOrders\" class=\"display\">\n            <thead>\n            <tr>\n                <th>Order id</th>\n                <th>Store id</th>\n                <th>1st name</th>\n                <th>last name</th>\n                <th>email</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr *ngFor=\"let order of orders | async\" >\n                <td>{{order?.id}}</td>\n                <td>{{order?.storeId}}</td>\n                <td>{{order?.firstName}}</td>\n                <td>{{order?.lastName}}</td>\n                <td>{{order?.emailAddress}}</td>\n            </tr>\n            </tbody>\n        </table>\n\n        <script type=\"text/javascript\" language=\"javascript\" class=\"init\">\n            $(document).ready(function() {\n                $('#clientOrders').DataTable();\n            } );\n        </script>-->\n"
-
-/***/ },
-
-/***/ 447:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"thumbnail\">\n  <img src=\"http://placehold.it/820x320\">\n  <div>\n    <!--<h4 class=\"pull-right\">{{ product?.price | currency }}</h4>\n    <h4>{{ product?.title }}</h4>\n    <p>{{ product?.description }}</p>-->\n\n    <h4>{{ product?.sku }}</h4>\n\n  </div>\n  <div class=\"ratings\">\n    <p class=\"pull-right\">{{ reviews?.length }} reviews</p>\n    <p><auction-stars [rating]=\"produt?.rating\"></auction-stars></p>\n  </div>\n</div>\n<div class=\"thumbnail\">\n  <button class=\"btn btn-default btn-lg\"\n          [ngClass]=\"{active: isWatching}\"\n          (click)=\"toggleWatchProduct()\"\n          role=\"button\">\n    {{ isWatching ? 'Stop watching' : 'Watch' }}\n  </button>\n\n  <label>Current bid: {{ currentBid | currency }}</label>\n</div>\n<div class=\"well\" id=\"reviews-anchor\">\n  <div class=\"row\">\n    <div class=\"col-md-12\"></div>\n  </div>\n  <div class=\"text-right\">\n    <button (click)=\"isReviewHidden = !isReviewHidden\"\n            class=\"btn btn-success btn-green\">Leave a Review</button>\n  </div>\n\n  <div [hidden]=\"isReviewHidden\">\n    <div><auction-stars [(rating)]=\"newRating\" [readonly]=\"false\" class=\"large\"></auction-stars></div>\n    <div><textarea [(ngModel)]=\"newComment\"></textarea></div>\n    <div><button (click)=\"addReview()\" class=\"btn\">Add review</button></div>\n  </div>\n\n  <div class=\"row\" *ngFor=\"let review of reviews\">\n    <hr>\n    <div class=\"col-md-12\">\n      <auction-stars [rating]=\"review.rating\"></auction-stars>\n      <span>{{ review.user }}</span>\n      <span class=\"pull-right\">{{ review.timestamp | date: 'shortDate' }}</span>\n      <p>{{ review.comment }}</p>\n    </div>\n  </div>\n</div>\n"
-
-/***/ },
-
-/***/ 448:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"thumbnail\">\n  <img src=\"http://placehold.it/320x150\">\n  <div class=\"caption\">\n    <h4 class=\"pull-right\">{{ product.sku}}</h4>\n    <!--<h4 class=\"pull-right\">{{ product.price | currency }}</h4>-->\n    <h4><a [routerLink]=\"['products', product.sku]\">{{ product.sku}}</a></h4>\n    <!--<h4><a [routerLink]=\"['products', product.id]\">{{ product.title }}</a></h4>\n    <p>{{ product.description }}</p>-->\n  </div>\n  <div class=\"ratings\">\n    <auction-stars [rating]=\"product.rating\"></auction-stars>\n  </div>\n</div>\n\n"
-
-/***/ },
-
-/***/ 449:
-/***/ function(module, exports) {
-
-module.exports = "<form [formGroup]=\"formModel\"\n      (ngSubmit)=\"onSearch()\"\n      novalidate>\n\n  <div class=\"form-group\"\n       [class.has-error]=\"formModel.hasError('minlength', 'title')\">\n    <label for=\"title\">Product title:</label>\n    <input id=\"title\"\n           placeholder=\"Title\"\n           class=\"form-control\"\n           type=\"text\"\n           formControlName=\"title\"\n           minlength=\"3\">\n    <span class=\"help-block\"\n          [class.hidden]=\"!formModel.hasError('minlength', 'title')\">\n      Type at least 3 characters\n    </span>\n  </div>\n  <div class=\"form-group\"\n       [class.has-error]=\"formModel.hasError('positivenumber', 'price')\">\n    <label for=\"price\">Product price:</label>\n    <input id=\"price\"\n           placeholder=\"Price\"\n           class=\"form-control\"\n           type=\"number\"\n           step=\"any\"\n           min=\"0\"\n           formControlName=\"price\">\n    <span class=\"help-block\"\n          [class.hidden]=\"!formModel.hasError('positivenumber', 'price')\">\n      Price is not a positive number\n    </span>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"category\">Product category:</label>\n    <select id=\"category\"\n            class=\"form-control\"\n            formControlName=\"category\">\n      <option value=\"-1\">All categories</option>\n      <option *ngFor=\"let c of categories\"\n              [value]=\"c\">{{c}}</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <button type=\"submit\"\n            class=\"btn btn-primary btn-block\">Search</button>\n  </div>\n</form>\n"
-
-/***/ },
-
-/***/ 450:
-/***/ function(module, exports) {
-
-module.exports = "<p>\n  <span *ngFor=\"let star of stars; let i = index\"\n        class=\"starrating glyphicon glyphicon-star\"\n        [class.glyphicon-star-empty]=\"!star\"\n        (click)=\"fillStarsWithColor(i)\">\n  </span>\n  <span *ngIf=\"rating\">{{rating | number:'.0-2'}} stars</span>\n</p>\n"
-
-/***/ },
-
-/***/ 451:
-/***/ function(module, exports) {
-
-module.exports = "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../../node_modules/css-loader/index.js!./home.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../../node_modules/css-loader/index.js!./home.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../../node_modules/css-loader/index.js!./home.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
-
-/***/ },
-
-/***/ 452:
-/***/ function(module, exports) {
-
-module.exports = "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../../node_modules/css-loader/index.js!./product-item.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
-
-/***/ },
-
-/***/ 49:
+/***/ 53:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abstract_control_directive__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__abstract_control_directive__ = __webpack_require__(180);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgControl; });
 /**
  * @license
@@ -5162,7 +4769,7 @@ var NgControl = (function (_super) {
 
 /***/ },
 
-/***/ 54:
+/***/ 60:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5285,7 +4892,7 @@ var EventEmitter = (function (_super) {
 
 /***/ },
 
-/***/ 61:
+/***/ 68:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5300,8 +4907,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var http_1 = __webpack_require__(62);
-__webpack_require__(182);
+var http_1 = __webpack_require__(144);
+__webpack_require__(338);
 var Product = (function () {
     function Product(id, title, price, rating, description, categories) {
         this.id = id;
@@ -5329,24 +4936,24 @@ exports.Review = Review;
 var ProductService = (function () {
     function ProductService(http) {
         this.http = http;
-        this.searchEvent = new core_1.EventEmitter(); //  = new EventEmitter(); cause error error TS2314: Generic type 'EventEmitter<T>' requires 1 type argument(s).
+        this.searchEvent = new core_1.EventEmitter();
     }
     ProductService.prototype.search = function (params) {
         return this.http
-            .get('angular/products', { search: encodeParams(params) })
+            .get('/api/products', { search: encodeParams(params) })
             .map(function (response) { return response.json(); });
     };
     ProductService.prototype.getProducts = function () {
-        return this.http.get('angular/products')
+        return this.http.get('/api/products')
             .map(function (response) { return response.json(); });
     };
     ProductService.prototype.getProductById = function (productId) {
-        return this.http.get("angular/products/" + productId)
+        return this.http.get("/api/products/" + productId)
             .map(function (response) { return response.json(); });
     };
     ProductService.prototype.getReviewsForProduct = function (productId) {
         return this.http
-            .get("/products/" + productId + "/reviews")
+            .get("/api/products/" + productId + "/reviews")
             .map(function (response) { return response.json(); })
             .map(function (reviews) { return reviews.map(function (r) { return new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment); }); });
     };
@@ -5375,12 +4982,12 @@ function encodeParams(params) {
 
 /***/ },
 
-/***/ 70:
+/***/ 77:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared__ = __webpack_require__(46);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AbstractFormGroupDirective; });
 /**
  * @license
@@ -5457,18 +5064,18 @@ var AbstractFormGroupDirective = (function (_super) {
 
 /***/ },
 
-/***/ 71:
+/***/ 78:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(46);
 /* unused harmony export formDirectiveProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgForm; });
 /**
@@ -5672,7 +5279,7 @@ var NgForm = (function (_super) {
 
 /***/ },
 
-/***/ 719:
+/***/ 782:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5687,16 +5294,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
+var ApplicationComponent = (function () {
+    function ApplicationComponent() {
+    }
+    ApplicationComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-application',
+            templateUrl: 'resources/app/components/application/application.html',
+            styleUrls: ['resources/app/components/application/application.css'],
+            encapsulation: core_1.ViewEncapsulation.None
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ApplicationComponent);
+    return ApplicationComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ApplicationComponent;
+
+
+/***/ },
+
+/***/ 783:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(54);
 var CarouselComponent = (function () {
-    function CarouselComponent() {
+    function CarouselComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\"/>");
     }
     CarouselComponent = __decorate([
         core_1.Component({
             selector: 'auction-carousel',
-            //templateUrl: 'resources/app/components/carousel/carousel.html'
-            template: __webpack_require__(443)
+            templateUrl: 'resources/app/components/carousel/carousel.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], CarouselComponent);
     return CarouselComponent;
 }());
@@ -5706,18 +5350,349 @@ exports.default = CarouselComponent;
 
 /***/ },
 
-/***/ 72:
+/***/ 784:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var FooterComponent = (function () {
+    function FooterComponent() {
+    }
+    FooterComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-footer',
+            templateUrl: 'resources/app/components/footer/footer.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], FooterComponent);
+    return FooterComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = FooterComponent;
+
+
+/***/ },
+
+/***/ 785:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var product_service_1 = __webpack_require__(68);
+var HomeComponent = (function () {
+    function HomeComponent(productService) {
+        var _this = this;
+        this.productService = productService;
+        this.products = this.productService.getProducts();
+        this.productService.searchEvent
+            .subscribe(function (params) { return _this.products = _this.productService.search(params); }, console.error.bind(console), function () { return console.log('DONE'); });
+    }
+    HomeComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-home-page',
+            styleUrls: ['resources/app/components/home/home.css'],
+            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = HomeComponent;
+
+
+/***/ },
+
+/***/ 786:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var NavbarComponent = (function () {
+    function NavbarComponent() {
+    }
+    NavbarComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-navbar',
+            //templateUrl: 'navbar.html'
+            templateUrl: 'resources/app/components/navbar/navbar.html',
+        }), 
+        __metadata('design:paramtypes', [])
+    ], NavbarComponent);
+    return NavbarComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = NavbarComponent;
+
+
+/***/ },
+
+/***/ 787:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(54);
+var router_1 = __webpack_require__(92);
+var product_service_1 = __webpack_require__(68);
+var bid_service_1 = __webpack_require__(225);
+var OrderComponent = (function () {
+    function OrderComponent(productService, bidService, sanitizer, router) {
+        var _this = this;
+        this.productService = productService;
+        this.bidService = bidService;
+        this.sanitizer = sanitizer;
+        this.isReviewHidden = true;
+        this.isWatching = false;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
+        var productId = parseInt(router.snapshot.params['productId']);
+        this.productService
+            .getProductById(productId)
+            .subscribe(function (product) {
+            _this.product = product;
+            _this.currentBid = product.price;
+        }, function (error) { return console.error(error); });
+        this.productService
+            .getReviewsForProduct(productId)
+            .subscribe(function (reviews) { return _this.reviews = reviews; }, function (error) { return console.error(error); });
+    }
+    OrderComponent.prototype.toggleWatchProduct = function () {
+        var _this = this;
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+            this.subscription = null;
+            this.isWatching = false;
+        }
+        else {
+            this.isWatching = true;
+            this.subscription = this.bidService.watchProduct(this.product.id)
+                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.id; }).bid; }, function (error) { return console.log(error); });
+        }
+    };
+    OrderComponent.prototype.ngOnDestroy = function () {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+        return Promise.resolve(true);
+    };
+    OrderComponent.prototype.addReview = function () {
+        var review = new product_service_1.Review(0, this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);
+        this.reviews = this.reviews.concat([review]);
+        this.product.rating = this.averageRating(this.reviews);
+        this.resetForm();
+    };
+    OrderComponent.prototype.averageRating = function (reviews) {
+        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
+        return sum / reviews.length;
+    };
+    OrderComponent.prototype.resetForm = function () {
+        this.newRating = 0;
+        this.newComment = null;
+        this.isReviewHidden = true;
+    };
+    OrderComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-product-page',
+            styles: ['auction-stars.large {font-size: 24px;}'],
+            //templateUrl: 'product-detail.html'
+            templateUrl: 'resources/app/components/order-detail/order-detail.html'
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService, bid_service_1.BidService, platform_browser_1.DomSanitizer, router_1.ActivatedRoute])
+    ], OrderComponent);
+    return OrderComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = OrderComponent;
+
+
+/***/ },
+
+/***/ 788:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(54);
+var router_1 = __webpack_require__(92);
+var product_service_1 = __webpack_require__(68);
+var bid_service_1 = __webpack_require__(225);
+var ProductDetailComponent = (function () {
+    function ProductDetailComponent(productService, bidService, sanitizer, router) {
+        var _this = this;
+        this.productService = productService;
+        this.bidService = bidService;
+        this.sanitizer = sanitizer;
+        this.isReviewHidden = true;
+        this.isWatching = false;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
+        var productId = parseInt(router.snapshot.params['productId']);
+        this.productService
+            .getProductById(productId)
+            .subscribe(function (product) {
+            _this.product = product;
+            _this.currentBid = product.price;
+        }, function (error) { return console.error(error); });
+        this.productService
+            .getReviewsForProduct(productId)
+            .subscribe(function (reviews) { return _this.reviews = reviews; }, function (error) { return console.error(error); });
+    }
+    ProductDetailComponent.prototype.toggleWatchProduct = function () {
+        var _this = this;
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+            this.subscription = null;
+            this.isWatching = false;
+        }
+        else {
+            this.isWatching = true;
+            this.subscription = this.bidService.watchProduct(this.product.id)
+                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.id; }).bid; }, function (error) { return console.log(error); });
+        }
+    };
+    ProductDetailComponent.prototype.ngOnDestroy = function () {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+        return Promise.resolve(true);
+    };
+    ProductDetailComponent.prototype.addReview = function () {
+        var review = new product_service_1.Review(0, this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);
+        this.reviews = this.reviews.concat([review]);
+        this.product.rating = this.averageRating(this.reviews);
+        this.resetForm();
+    };
+    ProductDetailComponent.prototype.averageRating = function (reviews) {
+        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
+        return sum / reviews.length;
+    };
+    ProductDetailComponent.prototype.resetForm = function () {
+        this.newRating = 0;
+        this.newComment = null;
+        this.isReviewHidden = true;
+    };
+    ProductDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-product-page',
+            styles: ['auction-stars.large {font-size: 24px;}'],
+            //templateUrl: 'product-detail.html'
+            templateUrl: 'resources/app/components/product-detail/product-detail.html'
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService, bid_service_1.BidService, platform_browser_1.DomSanitizer, router_1.ActivatedRoute])
+    ], ProductDetailComponent);
+    return ProductDetailComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProductDetailComponent;
+
+
+/***/ },
+
+/***/ 789:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(54);
+var product_service_1 = __webpack_require__(68);
+var ProductItemComponent = (function () {
+    function ProductItemComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/320x150\">");
+    }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', product_service_1.Product)
+    ], ProductItemComponent.prototype, "product", void 0);
+    ProductItemComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-product-item',
+            //styleUrls: [ 'product-item.css' ],
+            styleUrls: ['resources/app/components/product-item/product-item.css'],
+            //templateUrl: 'product-item.html'
+            templateUrl: 'resources/app/components/product-item/product-item.html'
+        }), 
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
+    ], ProductItemComponent);
+    return ProductItemComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProductItemComponent;
+
+
+/***/ },
+
+/***/ 79:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reactive_errors__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reactive_errors__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared__ = __webpack_require__(46);
 /* unused harmony export formDirectiveProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormGroupDirective; });
 /**
@@ -5935,7 +5910,7 @@ var FormGroupDirective = (function (_super) {
 
 /***/ },
 
-/***/ 720:
+/***/ 790:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5950,118 +5925,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var FooterComponent = (function () {
-    function FooterComponent() {
-    }
-    FooterComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-footer',
-            //templateUrl: 'resources/app/components/footer/footer.html'
-            template: __webpack_require__(444)
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FooterComponent);
-    return FooterComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = FooterComponent;
-
-
-/***/ },
-
-/***/ 721:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(41);
-var NavbarComponent = (function () {
-    function NavbarComponent() {
-    }
-    NavbarComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-navbar',
-            //templateUrl: 'resources/app/components/navbar/navbar.html',
-            template: __webpack_require__(445),
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], NavbarComponent);
-    return NavbarComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = NavbarComponent;
-
-
-/***/ },
-
-/***/ 722:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(41);
-var stars_1 = __webpack_require__(324);
-var ProductItemComponent = (function () {
-    function ProductItemComponent() {
-    }
-    ProductItemComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-product-item',
-            properties: ['product'],
-            //templateUrl: 'resources/app/components/product-item/product-item.html',
-            template: __webpack_require__(448),
-            //styleUrls: ['resources/app/components/product-item/product-item.css'],
-            styles: [__webpack_require__(452)],
-            directives: [router_1.ROUTER_DIRECTIVES, stars_1.default],
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ProductItemComponent);
-    return ProductItemComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProductItemComponent;
-
-
-/***/ },
-
-/***/ 723:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(195);
-var product_service_1 = __webpack_require__(61); //webpack throws error 'app/services/product-service';
+var forms_1 = __webpack_require__(299);
+var product_service_1 = __webpack_require__(68);
 var SearchComponent = (function () {
     function SearchComponent(productService) {
         this.productService = productService;
@@ -6079,12 +5944,10 @@ var SearchComponent = (function () {
         }
     };
     SearchComponent = __decorate([
-        //webpack throws error 'app/services/product-service';
         core_1.Component({
             selector: 'auction-search',
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
-            //templateUrl: 'resources/app/components/search/search.html'
-            template: __webpack_require__(449)
+            //templateUrl: 'search.html'
+            templateUrl: 'resources/app/components/search/search.html'
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService])
     ], SearchComponent);
@@ -6104,53 +5967,117 @@ function positiveNumberValidator(control) {
 
 /***/ },
 
-/***/ 729:
+/***/ 791:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var platform_browser_dynamic_1 = __webpack_require__(129);
-var forms_1 = __webpack_require__(195);
-var router_1 = __webpack_require__(41);
-var common_1 = __webpack_require__(48);
-var http_1 = __webpack_require__(62);
-//enableProdMode();
-var application_1 = __webpack_require__(330);
-var home_1 = __webpack_require__(196);
-var product_detail_1 = __webpack_require__(332);
-var order_detail_1 = __webpack_require__(331);
-var product_service_1 = __webpack_require__(61);
-var order_service_1 = __webpack_require__(128);
-var services_1 = __webpack_require__(333);
-platform_browser_dynamic_1.bootstrap(application_1.default, [
-    router_1.provideRouter([
-        { path: '', component: home_1.default },
-        { path: 'products/:productId', component: product_detail_1.default },
-        { path: 'orders', component: order_detail_1.default }
-    ]),
-    { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
-    forms_1.disableDeprecatedForms(),
-    forms_1.provideForms(),
-    http_1.HTTP_PROVIDERS,
-    product_service_1.ProductService,
-    order_service_1.OrderService,
-    services_1.ONLINE_AUCTION_SERVICES
-]);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var StarsComponent = (function () {
+    function StarsComponent() {
+        this.maxStars = 5;
+        this.readonly = true;
+        this.ratingChange = new core_1.EventEmitter();
+    }
+    Object.defineProperty(StarsComponent.prototype, "rating", {
+        get: function () {
+            return this._rating;
+        },
+        set: function (value) {
+            this._rating = value || 0;
+            this.stars = Array(this.maxStars).fill(true, 0, this.rating);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    StarsComponent.prototype.fillStarsWithColor = function (index) {
+        if (!this.readonly) {
+            this.rating = index + 1;
+            this.ratingChange.emit(this.rating);
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], StarsComponent.prototype, "readonly", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], StarsComponent.prototype, "rating", null);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], StarsComponent.prototype, "ratingChange", void 0);
+    StarsComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-stars',
+            styles: ['.starrating { color: #d17581; }'],
+            //templateUrl: 'stars.html'
+            templateUrl: 'resources/app/components/stars/stars.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], StarsComponent);
+    return StarsComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = StarsComponent;
 
 
 /***/ },
 
-/***/ 73:
+/***/ 792:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var bid_service_1 = __webpack_require__(225);
+var product_service_1 = __webpack_require__(68);
+var websocket_service_1 = __webpack_require__(366);
+exports.ONLINE_AUCTION_SERVICES = [
+    bid_service_1.BidService,
+    product_service_1.ProductService,
+    websocket_service_1.WebSocketService
+];
+
+
+/***/ },
+
+/***/ 798:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(1);
+var platform_browser_dynamic_1 = __webpack_require__(145);
+var app_module_1 = __webpack_require__(370);
+if (false) {
+    core_1.enableProdMode();
+}
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ },
+
+/***/ 80:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reactive_errors__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__form_group_directive__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reactive_errors__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__form_group_directive__ = __webpack_require__(79);
 /* unused harmony export formGroupNameProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormGroupName; });
 /* unused harmony export formArrayNameProvider */
@@ -6364,5 +6291,5 @@ function _hasInvalidParent(parent) {
 
 /***/ }
 
-},[729]);
+},[798]);
 //# sourceMappingURL=bundle.js.map
