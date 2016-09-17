@@ -44,7 +44,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get('angular/products')
+    return this.http.get('/api/products')
       .map(response => response.json());
   }
 

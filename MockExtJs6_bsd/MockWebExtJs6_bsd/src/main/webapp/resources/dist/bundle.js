@@ -4944,7 +4944,7 @@ var ProductService = (function () {
             .map(function (response) { return response.json(); });
     };
     ProductService.prototype.getProducts = function () {
-        return this.http.get('/api/products')
+        return this.http.get('angular/products')
             .map(function (response) { return response.json(); });
     };
     ProductService.prototype.getProductById = function (productId) {
