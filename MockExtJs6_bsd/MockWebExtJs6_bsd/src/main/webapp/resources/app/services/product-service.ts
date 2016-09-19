@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 export class Product {
   constructor(
-    public id: number,
+    public sku: number,
     public title: string,
     public price: number,
     public rating: number,
@@ -39,7 +39,7 @@ export class ProductService {
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
-      .get('/api/products', {search: encodeParams(params)})
+      .get('/angular/products', {search: encodeParams(params)})
       .map(response => response.json());
   }
 
@@ -48,8 +48,8 @@ export class ProductService {
       .map(response => response.json());
   }
 
-  getProductById(productId: number): Observable<Product> {
-    return this.http.get(`/api/products/${productId}`)
+  getProductById(productId: string): Observable<Product> {
+    return this.http.get(`angular/products/${productId}`)
       .map(response => response.json());
   }
 

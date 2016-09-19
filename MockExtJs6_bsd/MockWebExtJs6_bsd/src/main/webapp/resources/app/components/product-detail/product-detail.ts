@@ -9,7 +9,6 @@ import { BidService } from '../../services/bid-service';
 @Component({
   selector: 'auction-product-page',
   styles: [ 'auction-stars.large {font-size: 24px;}' ],
-  //templateUrl: 'product-detail.html'
   templateUrl: 'resources/app/components/product-detail/product-detail.html'
 })
 export default class ProductDetailComponent implements OnDestroy {
@@ -34,8 +33,9 @@ export default class ProductDetailComponent implements OnDestroy {
     this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
       <img src="http://placehold.it/820x320">`);
 
-    const productId = parseInt(router.snapshot.params['productId']);
-
+    //const productId = parseInt(router.snapshot.params['productId']);
+	const productId = router.snapshot.params['productId'];
+	
     this.productService
       .getProductById(productId)
       .subscribe(
@@ -45,11 +45,11 @@ export default class ProductDetailComponent implements OnDestroy {
         },
         error => console.error(error));
 
-    this.productService
+    /*this.productService
       .getReviewsForProduct(productId)
       .subscribe(
         reviews => this.reviews = reviews,
-        error => console.error(error));
+        error => console.error(error));*/
   }
 
   toggleWatchProduct() {
@@ -59,23 +59,23 @@ export default class ProductDetailComponent implements OnDestroy {
       this.isWatching = false;
     } else {
       this.isWatching = true;
-      this.subscription = this.bidService.watchProduct(this.product.id)
+      this.subscription = this.bidService.watchProduct(this.product.sku)
         .subscribe(
-          products => this.currentBid = products.find((p: any) => p.productId === this.product.id).bid,
+          products => this.currentBid = products.find((p: any) => p.productId === this.product.sku).bid,
           error => console.log(error));
     }
   }
 
   ngOnDestroy(): any {
-    if (this.subscription) {
+    /*if (this.subscription) {
       this.subscription.unsubscribe();
-    }
+    }*/
 
     return Promise.resolve(true);
   }
 
   addReview() {
-    let review = new Review(0, this.product.id, new Date(), 'Anonymous',
+    let review = new Review(0, this.product.sku, new Date(), 'Anonymous',
       this.newRating, this.newComment);
     this.reviews = [...this.reviews, review];
     this.product.rating = this.averageRating(this.reviews);

@@ -27,7 +27,8 @@ import { ONLINE_AUCTION_SERVICES } from './services/services';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '',                    component: HomeComponent},
-      {path: 'products/:productId', component: ProductDetailComponent}
+      {path: 'products/:productId', component: ProductDetailComponent},
+      {path: 'orders',              component: OrderComponent}
     ])
   ],
   declarations: [

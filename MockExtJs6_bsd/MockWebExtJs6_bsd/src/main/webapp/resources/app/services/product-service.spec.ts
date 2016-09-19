@@ -26,14 +26,14 @@ describe('ProductService', () => {
   }));
 
   it('getProductById() should return Product with ID=1', async(() => {
-    let mockProduct = {id: 1};
+    let mockProduct = {sku: '1'};
     mockBackend.connections.subscribe((connection: MockConnection) => {
       let responseOpts = new ResponseOptions({body: JSON.stringify(mockProduct)});
       connection.mockRespond(new Response(responseOpts));
     });
 
-    service.getProductById(1).subscribe(p => {
-      expect(p.id).toBe(1);
+    service.getProductById('1').subscribe(p => {
+      expect(p.sku).toBe('1');
     });
   }));
 });

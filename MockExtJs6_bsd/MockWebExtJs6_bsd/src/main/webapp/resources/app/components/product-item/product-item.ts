@@ -5,9 +5,7 @@ import { Product } from '../../services/product-service';
 
 @Component({
   selector: 'auction-product-item',
-  //styleUrls: [ 'product-item.css' ],
-  styleUrls: [ 'resources/app/components/product-item/product-item.css' ],
-  //templateUrl: 'product-item.html'
+  styleUrls: [ 'resources/app/components/product-item/product-item.css'],
   templateUrl: 'resources/app/components/product-item/product-item.html'
 })
 export default class ProductItemComponent {

@@ -143,9 +143,9 @@ var DefaultValueAccessor = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(301);
 /* unused harmony export modelGroupProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModelGroup; });
@@ -831,7 +831,7 @@ var SELECT_DIRECTIVES = [SelectMultipleControlValueAccessor, NgSelectMultipleOpt
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_shared__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__facade_lang__ = __webpack_require__(18);
 /* unused harmony export VALID */
@@ -2317,14 +2317,14 @@ var NgControlStatusGroup = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_value_accessor__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ng_control__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(301);
@@ -2598,7 +2598,7 @@ var NumberValueAccessor = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_value_accessor__ = __webpack_require__(29);
@@ -2761,16 +2761,16 @@ var FormControlDirective = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_form_group_directive__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_value_accessor__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_control__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reactive_errors__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__form_group_directive__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__form_group_name__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__form_group_directive__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__form_group_name__ = __webpack_require__(79);
 /* unused harmony export controlNameBinding */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlName; });
 /**
@@ -3187,44 +3187,6 @@ var PatternValidator = (function () {
 
 /***/ },
 
-/***/ 225:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var websocket_service_1 = __webpack_require__(366);
-var Subscriber_1 = __webpack_require__(2);
-var BidService = (function () {
-    function BidService(webSocket) {
-        this.webSocket = webSocket;
-    }
-    BidService.prototype.watchProduct = function (productId) {
-        var _this = this;
-        var openSubscriber = Subscriber_1.Subscriber.create(function () { return _this.webSocket.send({ productId: productId }); });
-        return this.webSocket.createObservableSocket('ws://localhost:8000', openSubscriber)
-            .map(function (message) { return JSON.parse(message); });
-    };
-    BidService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [websocket_service_1.WebSocketService])
-    ], BidService);
-    return BidService;
-}());
-exports.BidService = BidService;
-
-
-/***/ },
-
 /***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3254,7 +3216,7 @@ var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueT
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(438);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractControlDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractFormGroupDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "CheckboxControlValueAccessor", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["c"]; });
@@ -3879,7 +3841,7 @@ var FormBuilder = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
@@ -4033,7 +3995,102 @@ function _mergeErrors(arrayOfErrors) {
 
 /***/ },
 
+/***/ 365:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var websocket_service_1 = __webpack_require__(367);
+var Subscriber_1 = __webpack_require__(2);
+var BidService = (function () {
+    function BidService(webSocket) {
+        this.webSocket = webSocket;
+    }
+    BidService.prototype.watchProduct = function (productId) {
+        var _this = this;
+        var openSubscriber = Subscriber_1.Subscriber.create(function () { return _this.webSocket.send({ productId: productId }); });
+        return this.webSocket.createObservableSocket('ws://localhost:8000', openSubscriber)
+            .map(function (message) { return JSON.parse(message); });
+    };
+    BidService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [websocket_service_1.WebSocketService])
+    ], BidService);
+    return BidService;
+}());
+exports.BidService = BidService;
+
+
+/***/ },
+
 /***/ 366:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var http_1 = __webpack_require__(92);
+__webpack_require__(213);
+var Order = (function () {
+    function Order(id, storeId, userId, firstName, lastName, emailAddress) {
+        this.id = id;
+        this.storeId = storeId;
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+    }
+    return Order;
+}());
+exports.Order = Order;
+/*
+* Removed: interface OrderSearchParams {
+* see app\services\product-service.ts
+*/
+var OrderService = (function () {
+    function OrderService(http) {
+        this.http = http;
+    }
+    OrderService.prototype.getOrders = function () {
+        return this.http.get('angular/orders')
+            .map(function (response) { return response.json(); });
+    };
+    OrderService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], OrderService);
+    return OrderService;
+}());
+exports.OrderService = OrderService;
+/*
+ * Removed function encodeParams(params: any)
+ * Encodes the object into a valid query string.
+ * see app\services\product-service.ts
+ */
+
+
+/***/ },
+
+/***/ 367:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4133,7 +4190,7 @@ var ControlContainer = (function (_super) {
 
 /***/ },
 
-/***/ 370:
+/***/ 371:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4148,22 +4205,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var common_1 = __webpack_require__(69);
+var common_1 = __webpack_require__(68);
 var forms_1 = __webpack_require__(299);
-var http_1 = __webpack_require__(144);
-var platform_browser_1 = __webpack_require__(54);
-var router_1 = __webpack_require__(92);
-var application_1 = __webpack_require__(782);
-var carousel_1 = __webpack_require__(783);
-var home_1 = __webpack_require__(785);
-var footer_1 = __webpack_require__(784);
-var navbar_1 = __webpack_require__(786);
-var product_detail_1 = __webpack_require__(788);
-var product_item_1 = __webpack_require__(789);
-var order_detail_1 = __webpack_require__(787);
-var search_1 = __webpack_require__(790);
-var stars_1 = __webpack_require__(791);
-var services_1 = __webpack_require__(792);
+var http_1 = __webpack_require__(92);
+var platform_browser_1 = __webpack_require__(60);
+var router_1 = __webpack_require__(144);
+var application_1 = __webpack_require__(783);
+var carousel_1 = __webpack_require__(784);
+var home_1 = __webpack_require__(786);
+var footer_1 = __webpack_require__(785);
+var navbar_1 = __webpack_require__(787);
+var product_detail_1 = __webpack_require__(789);
+var product_item_1 = __webpack_require__(790);
+var order_detail_1 = __webpack_require__(788);
+var search_1 = __webpack_require__(791);
+var stars_1 = __webpack_require__(792);
+var services_1 = __webpack_require__(793);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -4176,7 +4233,8 @@ var AppModule = (function () {
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forRoot([
                     { path: '', component: home_1.default },
-                    { path: 'products/:productId', component: product_detail_1.default }
+                    { path: 'products/:productId', component: product_detail_1.default },
+                    { path: 'orders', component: order_detail_1.default }
                 ])
             ],
             declarations: [
@@ -4205,7 +4263,7 @@ exports.AppModule = AppModule;
 
 /***/ },
 
-/***/ 434:
+/***/ 435:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4213,15 +4271,15 @@ exports.AppModule = AppModule;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_checkbox_value_accessor__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_default_value_accessor__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_ng_control_status__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ng_form__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_ng_model__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_model_group__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_number_value_accessor__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_radio_control_value_accessor__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_reactive_directives_form_control_directive__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_reactive_directives_form_control_name__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_group_directive__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_group_name__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_group_directive__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_group_name__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_select_control_value_accessor__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_select_multiple_control_value_accessor__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_validators__ = __webpack_require__(186);
@@ -4341,7 +4399,7 @@ var InternalFormsSharedModule = (function () {
 
 /***/ },
 
-/***/ 435:
+/***/ 436:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4374,12 +4432,12 @@ function normalizeAsyncValidator(validator) {
 
 /***/ },
 
-/***/ 436:
+/***/ 437:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(302);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormsModule; });
@@ -4435,32 +4493,32 @@ var ReactiveFormsModule = (function () {
 
 /***/ },
 
-/***/ 437:
+/***/ 438:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_control_container__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_control_value_accessor__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_default_value_accessor__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_control__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_ng_control_status__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_ng_form__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_ng_form__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_ng_model__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_ng_model_group__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_control_directive__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_control_name__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_group_directive__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_reactive_directives_form_group_name__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_group_directive__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_reactive_directives_form_group_name__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_control_value_accessor__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_multiple_control_value_accessor__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_validators__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__model__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__validators__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(437);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__["a"]; });
@@ -4551,7 +4609,7 @@ var ReactiveFormsModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkbox_value_accessor__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__default_value_accessor__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_value_accessor__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__radio_control_value_accessor__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(118);
@@ -4769,7 +4827,7 @@ var NgControl = (function (_super) {
 
 /***/ },
 
-/***/ 60:
+/***/ 59:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4892,97 +4950,7 @@ var EventEmitter = (function (_super) {
 
 /***/ },
 
-/***/ 68:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var http_1 = __webpack_require__(144);
-__webpack_require__(338);
-var Product = (function () {
-    function Product(id, title, price, rating, description, categories) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.rating = rating;
-        this.description = description;
-        this.categories = categories;
-    }
-    return Product;
-}());
-exports.Product = Product;
-var Review = (function () {
-    function Review(id, productId, timestamp, user, rating, comment) {
-        this.id = id;
-        this.productId = productId;
-        this.timestamp = timestamp;
-        this.user = user;
-        this.rating = rating;
-        this.comment = comment;
-    }
-    return Review;
-}());
-exports.Review = Review;
-var ProductService = (function () {
-    function ProductService(http) {
-        this.http = http;
-        this.searchEvent = new core_1.EventEmitter();
-    }
-    ProductService.prototype.search = function (params) {
-        return this.http
-            .get('/api/products', { search: encodeParams(params) })
-            .map(function (response) { return response.json(); });
-    };
-    ProductService.prototype.getProducts = function () {
-        return this.http.get('angular/products')
-            .map(function (response) { return response.json(); });
-    };
-    ProductService.prototype.getProductById = function (productId) {
-        return this.http.get("/api/products/" + productId)
-            .map(function (response) { return response.json(); });
-    };
-    ProductService.prototype.getReviewsForProduct = function (productId) {
-        return this.http
-            .get("/api/products/" + productId + "/reviews")
-            .map(function (response) { return response.json(); })
-            .map(function (reviews) { return reviews.map(function (r) { return new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment); }); });
-    };
-    ProductService.prototype.getAllCategories = function () {
-        return ['Books', 'Electronics', 'Hardware'];
-    };
-    ProductService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], ProductService);
-    return ProductService;
-}());
-exports.ProductService = ProductService;
-/**
- * Encodes the object into a valid query string.
- */
-function encodeParams(params) {
-    return Object.keys(params)
-        .filter(function (key) { return params[key]; })
-        .reduce(function (accum, key) {
-        accum.append(key, params[key]);
-        return accum;
-    }, new http_1.URLSearchParams());
-}
-
-
-/***/ },
-
-/***/ 77:
+/***/ 76:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5064,12 +5032,12 @@ var AbstractFormGroupDirective = (function (_super) {
 
 /***/ },
 
-/***/ 78:
+/***/ 77:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model__ = __webpack_require__(120);
@@ -5279,414 +5247,12 @@ var NgForm = (function (_super) {
 
 /***/ },
 
-/***/ 782:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var ApplicationComponent = (function () {
-    function ApplicationComponent() {
-    }
-    ApplicationComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-application',
-            templateUrl: 'resources/app/components/application/application.html',
-            styleUrls: ['resources/app/components/application/application.css'],
-            encapsulation: core_1.ViewEncapsulation.None
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ApplicationComponent);
-    return ApplicationComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ApplicationComponent;
-
-
-/***/ },
-
-/***/ 783:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(54);
-var CarouselComponent = (function () {
-    function CarouselComponent(sanitizer) {
-        this.sanitizer = sanitizer;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\"/>");
-    }
-    CarouselComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-carousel',
-            templateUrl: 'resources/app/components/carousel/carousel.html'
-        }), 
-        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
-    ], CarouselComponent);
-    return CarouselComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = CarouselComponent;
-
-
-/***/ },
-
-/***/ 784:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var FooterComponent = (function () {
-    function FooterComponent() {
-    }
-    FooterComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-footer',
-            templateUrl: 'resources/app/components/footer/footer.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FooterComponent);
-    return FooterComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = FooterComponent;
-
-
-/***/ },
-
-/***/ 785:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var product_service_1 = __webpack_require__(68);
-var HomeComponent = (function () {
-    function HomeComponent(productService) {
-        var _this = this;
-        this.productService = productService;
-        this.products = this.productService.getProducts();
-        this.productService.searchEvent
-            .subscribe(function (params) { return _this.products = _this.productService.search(params); }, console.error.bind(console), function () { return console.log('DONE'); });
-    }
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-home-page',
-            styleUrls: ['resources/app/components/home/home.css'],
-            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService])
-    ], HomeComponent);
-    return HomeComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = HomeComponent;
-
-
-/***/ },
-
-/***/ 786:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var NavbarComponent = (function () {
-    function NavbarComponent() {
-    }
-    NavbarComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-navbar',
-            //templateUrl: 'navbar.html'
-            templateUrl: 'resources/app/components/navbar/navbar.html',
-        }), 
-        __metadata('design:paramtypes', [])
-    ], NavbarComponent);
-    return NavbarComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = NavbarComponent;
-
-
-/***/ },
-
-/***/ 787:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(54);
-var router_1 = __webpack_require__(92);
-var product_service_1 = __webpack_require__(68);
-var bid_service_1 = __webpack_require__(225);
-var OrderComponent = (function () {
-    function OrderComponent(productService, bidService, sanitizer, router) {
-        var _this = this;
-        this.productService = productService;
-        this.bidService = bidService;
-        this.sanitizer = sanitizer;
-        this.isReviewHidden = true;
-        this.isWatching = false;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
-        var productId = parseInt(router.snapshot.params['productId']);
-        this.productService
-            .getProductById(productId)
-            .subscribe(function (product) {
-            _this.product = product;
-            _this.currentBid = product.price;
-        }, function (error) { return console.error(error); });
-        this.productService
-            .getReviewsForProduct(productId)
-            .subscribe(function (reviews) { return _this.reviews = reviews; }, function (error) { return console.error(error); });
-    }
-    OrderComponent.prototype.toggleWatchProduct = function () {
-        var _this = this;
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-            this.subscription = null;
-            this.isWatching = false;
-        }
-        else {
-            this.isWatching = true;
-            this.subscription = this.bidService.watchProduct(this.product.id)
-                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.id; }).bid; }, function (error) { return console.log(error); });
-        }
-    };
-    OrderComponent.prototype.ngOnDestroy = function () {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
-        return Promise.resolve(true);
-    };
-    OrderComponent.prototype.addReview = function () {
-        var review = new product_service_1.Review(0, this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);
-        this.reviews = this.reviews.concat([review]);
-        this.product.rating = this.averageRating(this.reviews);
-        this.resetForm();
-    };
-    OrderComponent.prototype.averageRating = function (reviews) {
-        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
-        return sum / reviews.length;
-    };
-    OrderComponent.prototype.resetForm = function () {
-        this.newRating = 0;
-        this.newComment = null;
-        this.isReviewHidden = true;
-    };
-    OrderComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-product-page',
-            styles: ['auction-stars.large {font-size: 24px;}'],
-            //templateUrl: 'product-detail.html'
-            templateUrl: 'resources/app/components/order-detail/order-detail.html'
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService, bid_service_1.BidService, platform_browser_1.DomSanitizer, router_1.ActivatedRoute])
-    ], OrderComponent);
-    return OrderComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = OrderComponent;
-
-
-/***/ },
-
-/***/ 788:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(54);
-var router_1 = __webpack_require__(92);
-var product_service_1 = __webpack_require__(68);
-var bid_service_1 = __webpack_require__(225);
-var ProductDetailComponent = (function () {
-    function ProductDetailComponent(productService, bidService, sanitizer, router) {
-        var _this = this;
-        this.productService = productService;
-        this.bidService = bidService;
-        this.sanitizer = sanitizer;
-        this.isReviewHidden = true;
-        this.isWatching = false;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
-        var productId = parseInt(router.snapshot.params['productId']);
-        this.productService
-            .getProductById(productId)
-            .subscribe(function (product) {
-            _this.product = product;
-            _this.currentBid = product.price;
-        }, function (error) { return console.error(error); });
-        this.productService
-            .getReviewsForProduct(productId)
-            .subscribe(function (reviews) { return _this.reviews = reviews; }, function (error) { return console.error(error); });
-    }
-    ProductDetailComponent.prototype.toggleWatchProduct = function () {
-        var _this = this;
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-            this.subscription = null;
-            this.isWatching = false;
-        }
-        else {
-            this.isWatching = true;
-            this.subscription = this.bidService.watchProduct(this.product.id)
-                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.id; }).bid; }, function (error) { return console.log(error); });
-        }
-    };
-    ProductDetailComponent.prototype.ngOnDestroy = function () {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
-        return Promise.resolve(true);
-    };
-    ProductDetailComponent.prototype.addReview = function () {
-        var review = new product_service_1.Review(0, this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);
-        this.reviews = this.reviews.concat([review]);
-        this.product.rating = this.averageRating(this.reviews);
-        this.resetForm();
-    };
-    ProductDetailComponent.prototype.averageRating = function (reviews) {
-        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
-        return sum / reviews.length;
-    };
-    ProductDetailComponent.prototype.resetForm = function () {
-        this.newRating = 0;
-        this.newComment = null;
-        this.isReviewHidden = true;
-    };
-    ProductDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-product-page',
-            styles: ['auction-stars.large {font-size: 24px;}'],
-            //templateUrl: 'product-detail.html'
-            templateUrl: 'resources/app/components/product-detail/product-detail.html'
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService, bid_service_1.BidService, platform_browser_1.DomSanitizer, router_1.ActivatedRoute])
-    ], ProductDetailComponent);
-    return ProductDetailComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProductDetailComponent;
-
-
-/***/ },
-
-/***/ 789:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(54);
-var product_service_1 = __webpack_require__(68);
-var ProductItemComponent = (function () {
-    function ProductItemComponent(sanitizer) {
-        this.sanitizer = sanitizer;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/320x150\">");
-    }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', product_service_1.Product)
-    ], ProductItemComponent.prototype, "product", void 0);
-    ProductItemComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-product-item',
-            //styleUrls: [ 'product-item.css' ],
-            styleUrls: ['resources/app/components/product-item/product-item.css'],
-            //templateUrl: 'product-item.html'
-            templateUrl: 'resources/app/components/product-item/product-item.html'
-        }), 
-        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
-    ], ProductItemComponent);
-    return ProductItemComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProductItemComponent;
-
-
-/***/ },
-
-/***/ 79:
+/***/ 78:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators__ = __webpack_require__(31);
@@ -5910,7 +5476,7 @@ var FormGroupDirective = (function (_super) {
 
 /***/ },
 
-/***/ 790:
+/***/ 783:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5925,159 +5491,317 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(299);
-var product_service_1 = __webpack_require__(68);
-var SearchComponent = (function () {
-    function SearchComponent(productService) {
-        this.productService = productService;
-        this.categories = this.productService.getAllCategories();
-        var fb = new forms_1.FormBuilder();
-        this.formModel = fb.group({
-            'title': [null, forms_1.Validators.minLength(3)],
-            'price': [null, positiveNumberValidator],
-            'category': ['']
-        });
+var ApplicationComponent = (function () {
+    function ApplicationComponent() {
     }
-    SearchComponent.prototype.onSearch = function () {
-        if (this.formModel.valid) {
-            this.productService.searchEvent.emit(this.formModel.value);
-        }
-    };
-    SearchComponent = __decorate([
+    ApplicationComponent = __decorate([
         core_1.Component({
-            selector: 'auction-search',
-            //templateUrl: 'search.html'
-            templateUrl: 'resources/app/components/search/search.html'
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService])
-    ], SearchComponent);
-    return SearchComponent;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = SearchComponent;
-function positiveNumberValidator(control) {
-    if (!control.value)
-        return null;
-    var price = parseInt(control.value);
-    return price === null ||
-        typeof price === 'number' &&
-            price > 0 ? null : { positivenumber: true };
-}
-
-
-/***/ },
-
-/***/ 791:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var StarsComponent = (function () {
-    function StarsComponent() {
-        this.maxStars = 5;
-        this.readonly = true;
-        this.ratingChange = new core_1.EventEmitter();
-    }
-    Object.defineProperty(StarsComponent.prototype, "rating", {
-        get: function () {
-            return this._rating;
-        },
-        set: function (value) {
-            this._rating = value || 0;
-            this.stars = Array(this.maxStars).fill(true, 0, this.rating);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    StarsComponent.prototype.fillStarsWithColor = function (index) {
-        if (!this.readonly) {
-            this.rating = index + 1;
-            this.ratingChange.emit(this.rating);
-        }
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], StarsComponent.prototype, "readonly", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], StarsComponent.prototype, "rating", null);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], StarsComponent.prototype, "ratingChange", void 0);
-    StarsComponent = __decorate([
-        core_1.Component({
-            selector: 'auction-stars',
-            styles: ['.starrating { color: #d17581; }'],
-            //templateUrl: 'stars.html'
-            templateUrl: 'resources/app/components/stars/stars.html'
+            selector: 'auction-application',
+            templateUrl: 'resources/app/components/application/application.html',
+            styleUrls: ['resources/app/components/application/application.css'],
+            encapsulation: core_1.ViewEncapsulation.None
         }), 
         __metadata('design:paramtypes', [])
-    ], StarsComponent);
-    return StarsComponent;
+    ], ApplicationComponent);
+    return ApplicationComponent;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = StarsComponent;
+exports.default = ApplicationComponent;
 
 
 /***/ },
 
-/***/ 792:
+/***/ 784:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var bid_service_1 = __webpack_require__(225);
-var product_service_1 = __webpack_require__(68);
-var websocket_service_1 = __webpack_require__(366);
-exports.ONLINE_AUCTION_SERVICES = [
-    bid_service_1.BidService,
-    product_service_1.ProductService,
-    websocket_service_1.WebSocketService
-];
-
-
-/***/ },
-
-/***/ 798:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = __webpack_require__(1);
-var platform_browser_dynamic_1 = __webpack_require__(145);
-var app_module_1 = __webpack_require__(370);
-if (false) {
-    core_1.enableProdMode();
-}
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+var platform_browser_1 = __webpack_require__(60);
+var CarouselComponent = (function () {
+    function CarouselComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\"/>");
+    }
+    CarouselComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-carousel',
+            templateUrl: 'resources/app/components/carousel/carousel.html'
+        }), 
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
+    ], CarouselComponent);
+    return CarouselComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = CarouselComponent;
 
 
 /***/ },
 
-/***/ 80:
+/***/ 785:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var FooterComponent = (function () {
+    function FooterComponent() {
+    }
+    FooterComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-footer',
+            templateUrl: 'resources/app/components/footer/footer.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], FooterComponent);
+    return FooterComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = FooterComponent;
+
+
+/***/ },
+
+/***/ 786:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var product_service_1 = __webpack_require__(91);
+var HomeComponent = (function () {
+    function HomeComponent(productService) {
+        var _this = this;
+        this.productService = productService;
+        this.products = this.productService.getProducts();
+        this.productService.searchEvent
+            .subscribe(function (params) { return _this.products = _this.productService.search(params); }, console.error.bind(console), function () { return console.log('DONE'); });
+    }
+    HomeComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-home-page',
+            styleUrls: ['resources/app/components/home/home.css'],
+            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = HomeComponent;
+
+
+/***/ },
+
+/***/ 787:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var NavbarComponent = (function () {
+    function NavbarComponent() {
+    }
+    NavbarComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-navbar',
+            templateUrl: 'resources/app/components/navbar/navbar.html',
+        }), 
+        __metadata('design:paramtypes', [])
+    ], NavbarComponent);
+    return NavbarComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = NavbarComponent;
+
+
+/***/ },
+
+/***/ 788:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var order_service_1 = __webpack_require__(366);
+var OrderComponent = (function () {
+    function OrderComponent(
+        //route: ActivatedRoute,
+        orderService) {
+        this.orderService = orderService;
+        this.orders = this.orderService.getOrders();
+        // subscribe search orders like in product-detail
+    }
+    OrderComponent.prototype.ngOnDestroy = function () {
+        /*if (this.subscription) {
+          this.subscription.unsubscribe();
+        }*/
+        return Promise.resolve(true);
+    };
+    OrderComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-order-page',
+            styles: ['auction-stars.large {font-size: 24px;}'],
+            templateUrl: 'resources/app/components/order-detail/order-detail.html'
+        }), 
+        __metadata('design:paramtypes', [order_service_1.OrderService])
+    ], OrderComponent);
+    return OrderComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = OrderComponent;
+
+
+/***/ },
+
+/***/ 789:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(60);
+var router_1 = __webpack_require__(144);
+var product_service_1 = __webpack_require__(91);
+var bid_service_1 = __webpack_require__(365);
+var ProductDetailComponent = (function () {
+    function ProductDetailComponent(productService, bidService, sanitizer, router) {
+        var _this = this;
+        this.productService = productService;
+        this.bidService = bidService;
+        this.sanitizer = sanitizer;
+        this.isReviewHidden = true;
+        this.isWatching = false;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
+        //const productId = parseInt(router.snapshot.params['productId']);
+        var productId = router.snapshot.params['productId'];
+        this.productService
+            .getProductById(productId)
+            .subscribe(function (product) {
+            _this.product = product;
+            _this.currentBid = product.price;
+        }, function (error) { return console.error(error); });
+        /*this.productService
+          .getReviewsForProduct(productId)
+          .subscribe(
+            reviews => this.reviews = reviews,
+            error => console.error(error));*/
+    }
+    ProductDetailComponent.prototype.toggleWatchProduct = function () {
+        var _this = this;
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+            this.subscription = null;
+            this.isWatching = false;
+        }
+        else {
+            this.isWatching = true;
+            this.subscription = this.bidService.watchProduct(this.product.sku)
+                .subscribe(function (products) { return _this.currentBid = products.find(function (p) { return p.productId === _this.product.sku; }).bid; }, function (error) { return console.log(error); });
+        }
+    };
+    ProductDetailComponent.prototype.ngOnDestroy = function () {
+        /*if (this.subscription) {
+          this.subscription.unsubscribe();
+        }*/
+        return Promise.resolve(true);
+    };
+    ProductDetailComponent.prototype.addReview = function () {
+        var review = new product_service_1.Review(0, this.product.sku, new Date(), 'Anonymous', this.newRating, this.newComment);
+        this.reviews = this.reviews.concat([review]);
+        this.product.rating = this.averageRating(this.reviews);
+        this.resetForm();
+    };
+    ProductDetailComponent.prototype.averageRating = function (reviews) {
+        var sum = reviews.reduce(function (average, review) { return average + review.rating; }, 0);
+        return sum / reviews.length;
+    };
+    ProductDetailComponent.prototype.resetForm = function () {
+        this.newRating = 0;
+        this.newComment = null;
+        this.isReviewHidden = true;
+    };
+    ProductDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-product-page',
+            styles: ['auction-stars.large {font-size: 24px;}'],
+            templateUrl: 'resources/app/components/product-detail/product-detail.html'
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService, bid_service_1.BidService, platform_browser_1.DomSanitizer, router_1.ActivatedRoute])
+    ], ProductDetailComponent);
+    return ProductDetailComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProductDetailComponent;
+
+
+/***/ },
+
+/***/ 79:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reactive_errors__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__form_group_directive__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__form_group_directive__ = __webpack_require__(78);
 /* unused harmony export formGroupNameProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormGroupName; });
 /* unused harmony export formArrayNameProvider */
@@ -6289,7 +6013,298 @@ function _hasInvalidParent(parent) {
 }
 //# sourceMappingURL=form_group_name.js.map
 
+/***/ },
+
+/***/ 790:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(60);
+var product_service_1 = __webpack_require__(91);
+var ProductItemComponent = (function () {
+    function ProductItemComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/320x150\">");
+    }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', product_service_1.Product)
+    ], ProductItemComponent.prototype, "product", void 0);
+    ProductItemComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-product-item',
+            styleUrls: ['resources/app/components/product-item/product-item.css'],
+            templateUrl: 'resources/app/components/product-item/product-item.html'
+        }), 
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
+    ], ProductItemComponent);
+    return ProductItemComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProductItemComponent;
+
+
+/***/ },
+
+/***/ 791:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var forms_1 = __webpack_require__(299);
+var product_service_1 = __webpack_require__(91);
+var SearchComponent = (function () {
+    function SearchComponent(productService) {
+        this.productService = productService;
+        this.categories = this.productService.getAllCategories();
+        var fb = new forms_1.FormBuilder();
+        this.formModel = fb.group({
+            'title': [null, forms_1.Validators.minLength(3)],
+            'price': [null, positiveNumberValidator],
+            'category': ['']
+        });
+    }
+    SearchComponent.prototype.onSearch = function () {
+        if (this.formModel.valid) {
+            this.productService.searchEvent.emit(this.formModel.value);
+        }
+    };
+    SearchComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-search',
+            //templateUrl: 'search.html'
+            templateUrl: 'resources/app/components/search/search.html'
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService])
+    ], SearchComponent);
+    return SearchComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = SearchComponent;
+function positiveNumberValidator(control) {
+    if (!control.value)
+        return null;
+    var price = parseInt(control.value);
+    return price === null ||
+        typeof price === 'number' &&
+            price > 0 ? null : { positivenumber: true };
+}
+
+
+/***/ },
+
+/***/ 792:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var StarsComponent = (function () {
+    function StarsComponent() {
+        this.maxStars = 5;
+        this.readonly = true;
+        this.ratingChange = new core_1.EventEmitter();
+    }
+    Object.defineProperty(StarsComponent.prototype, "rating", {
+        get: function () {
+            return this._rating;
+        },
+        set: function (value) {
+            this._rating = value || 0;
+            this.stars = Array(this.maxStars).fill(true, 0, this.rating);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    StarsComponent.prototype.fillStarsWithColor = function (index) {
+        if (!this.readonly) {
+            this.rating = index + 1;
+            this.ratingChange.emit(this.rating);
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], StarsComponent.prototype, "readonly", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], StarsComponent.prototype, "rating", null);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], StarsComponent.prototype, "ratingChange", void 0);
+    StarsComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-stars',
+            styles: ['.starrating { color: #d17581; }'],
+            //templateUrl: 'stars.html'
+            templateUrl: 'resources/app/components/stars/stars.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], StarsComponent);
+    return StarsComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = StarsComponent;
+
+
+/***/ },
+
+/***/ 793:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var bid_service_1 = __webpack_require__(365);
+var product_service_1 = __webpack_require__(91);
+var websocket_service_1 = __webpack_require__(367);
+var order_service_1 = __webpack_require__(366);
+exports.ONLINE_AUCTION_SERVICES = [
+    bid_service_1.BidService,
+    product_service_1.ProductService,
+    order_service_1.OrderService,
+    websocket_service_1.WebSocketService
+];
+
+
+/***/ },
+
+/***/ 799:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(1);
+var platform_browser_dynamic_1 = __webpack_require__(145);
+var app_module_1 = __webpack_require__(371);
+if (false) {
+    core_1.enableProdMode();
+}
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ },
+
+/***/ 91:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var http_1 = __webpack_require__(92);
+__webpack_require__(213);
+var Product = (function () {
+    function Product(sku, title, price, rating, description, categories) {
+        this.sku = sku;
+        this.title = title;
+        this.price = price;
+        this.rating = rating;
+        this.description = description;
+        this.categories = categories;
+    }
+    return Product;
+}());
+exports.Product = Product;
+var Review = (function () {
+    function Review(id, productId, timestamp, user, rating, comment) {
+        this.id = id;
+        this.productId = productId;
+        this.timestamp = timestamp;
+        this.user = user;
+        this.rating = rating;
+        this.comment = comment;
+    }
+    return Review;
+}());
+exports.Review = Review;
+var ProductService = (function () {
+    function ProductService(http) {
+        this.http = http;
+        this.searchEvent = new core_1.EventEmitter();
+    }
+    ProductService.prototype.search = function (params) {
+        return this.http
+            .get('/angular/products', { search: encodeParams(params) })
+            .map(function (response) { return response.json(); });
+    };
+    ProductService.prototype.getProducts = function () {
+        return this.http.get('angular/products')
+            .map(function (response) { return response.json(); });
+    };
+    ProductService.prototype.getProductById = function (productId) {
+        return this.http.get("angular/products/" + productId)
+            .map(function (response) { return response.json(); });
+    };
+    ProductService.prototype.getReviewsForProduct = function (productId) {
+        return this.http
+            .get("/api/products/" + productId + "/reviews")
+            .map(function (response) { return response.json(); })
+            .map(function (reviews) { return reviews.map(function (r) { return new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment); }); });
+    };
+    ProductService.prototype.getAllCategories = function () {
+        return ['Books', 'Electronics', 'Hardware'];
+    };
+    ProductService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], ProductService);
+    return ProductService;
+}());
+exports.ProductService = ProductService;
+/**
+ * Encodes the object into a valid query string.
+ */
+function encodeParams(params) {
+    return Object.keys(params)
+        .filter(function (key) { return params[key]; })
+        .reduce(function (accum, key) {
+        accum.append(key, params[key]);
+        return accum;
+    }, new http_1.URLSearchParams());
+}
+
+
 /***/ }
 
-},[798]);
+},[799]);
 //# sourceMappingURL=bundle.js.map

@@ -4,11 +4,73 @@
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
-### September 15:
+### September 19:
+
+Upgrade to Angular RC6 completed
+
+- Error in GET http://localhost:8080/MockWebExtJs6_bsd/angular/products
+		vendor.bundle.js (line 58198)
+		EXCEPTION: Uncaught (in promise): Error: Error in ./OrderComponent class OrderComponent_Host - inline template:0:0 caused by: No provider for OrderService!
+		vendor.bundle.js (line 47190)
+		Unhandled Promise rejection: Error in ./OrderComponent class OrderComponent_Host - inline template:0:0 caused by: No provider for OrderService! ; Zone: angular ; Task: Promise.then ; Value: ViewWrappedError { _nativeError=Error: Error in ./OrderComponent class OrderComponent_Host - inline template:0:0 caused by: No provider for OrderService!,  originalError=Error: No provider for OrderService!,  context=DebugContext,  more...}
+ 
+- recover order link in top menu
+- recover OrderComponent
+Error: Can't resolve all parameters for OrderComponent: (?).
+
+ERROR in ./app/components/order-detail/order-detail.ts
+(17,19): error TS2304: Cannot find name 'Observable'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(22,29): error TS2304: Cannot find name 'OrderService'.
+
+
+- merge old html and tc files
+
+ERROR in .\app\services\product-service.spec.ts
+(35,28): error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+ERROR in ./app/components/product-detail/product-detail.ts
+(37,20): error TS2304: Cannot find name 'route'.
+
+ERROR in ./app/components/product-detail/product-detail.ts
+(62,69): error TS2339: Property 'id' does not exist on type 'Product'.
+ERROR in ./app/components/product-detail/product-detail.ts
+(64,96): error TS2339: Property 'id' does not exist on type 'Product'.
+ERROR in ./app/components/product-detail/product-detail.ts
+(78,45): error TS2339: Property 'id' does not exist on type 'Product'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(40,23): error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(62,69): error TS2339: Property 'id' does not exist on type 'Product'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(64,96): error TS2339: Property 'id' does not exist on type 'Product'.
+ERROR in ./app/components/order-detail/order-detail.ts
+(78,45): error TS2339: Property 'id' does not exist on type 'Product'.
+
+	"NetworkError: 404 Not Found - http://localhost:8080/api/products/NaN"
+	"NetworkError: 404 Not Found - http://localhost:8080/api/products/NaN/reviews"
+
+Fixed:
+
+	  replace 'api' with 'angular' in this.http.get(...) 
+	  getProducts(): Observable<Product[]> {
+	    return this.http.get('angular/products')
+	      .map(response => response.json());
+	  }
+	
+	
+	GET http://localhost:8080/api/products	404 Not Found		3ms	
+	vendor.bundle.js (line 58198)
+	"NetworkError: 404 Not Found - http://localhost:8080/api/products"
+	products
+	EXCEPTION: Response with status: 404 Not Found for URL: http://localhost:8080/api/products
+	vendor.bundle.js (line 47174)
+	uncaught exception: Response with status: 404 Not Found for URL: http://localhost:8080/api/products
+
+--------------------------------------------------------------------------------------------------
+### September 15,16:
 
 - update package.json to rc-6
-- npm run build
-
+- C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources>npm run build
 
 ERROR in ./app/main.ts (1,9): error TS2305: Module '"/@angular/platform-browser-dynamic/index"' has no exported member 'bootstrap'.
 ERROR in ./app/main.ts (2,9): error TS2305: Module '"/@angular/forms/index"' has no exported member 'disableDeprecatedForms'.
