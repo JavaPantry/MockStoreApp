@@ -6,6 +6,7 @@ f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
 ### September 19:
 
+Merge 'master' and 'UpdateToRc5' branches
 Upgrade to Angular RC6 completed
 
 - Error in GET http://localhost:8080/MockWebExtJs6_bsd/angular/products
