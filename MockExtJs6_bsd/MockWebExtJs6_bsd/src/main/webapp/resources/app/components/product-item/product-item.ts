@@ -14,7 +14,8 @@ export default class ProductItemComponent {
   imgHtml: SafeHtml;
 
   constructor(private sanitizer: DomSanitizer) {
-    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
-      <img src="http://placehold.it/320x150">`);
+  	//var src = 'resources/images/products/'+this.product.image;
+    //this.imgHtml = sanitizer.bypassSecurityTrustHtml(`<img src=\"`+src+`\">`);
+    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`<img src="http://placehold.it/320x150">`);
   }
 }

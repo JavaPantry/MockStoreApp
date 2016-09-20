@@ -16,7 +16,7 @@ This is playground to be used as start for new projects
 ## User Interface
 
 - ExtJs6 (v 6.x)
-- AngularJs (AngularJs I) to be replaced with Angular II
+- AngularJs (AngularJs I) replaced with Angular II
 
 ## import from Github
 

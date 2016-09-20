@@ -248,20 +248,53 @@ public class BuildAndExportDatabase {
 		/*
 		 * Products setup
 		 */
-		Product product1 = new Product("tst1","test product","test product (fr)");
+		Product product1 = new Product("tst1","test product 1","test product 1(fr)", "cinemaeos_120.gif");
 		bsdService.save(product1);
-		Product product2 = new Product("tst2","test product 1","test product 1 (fr)");
+		Product product2 = new Product("tst2","test product 2","test product 2 (fr)", "cinemalenses_120.gif");
 		bsdService.save(product2);
-		Product product3 = new Product("tst3","test product 1","test product 1 (fr)");
+		Product product3 = new Product("tst3","test product 3","test product 3 (fr)", "digisuper76_small.gif");
 		bsdService.save(product3);
-		Product product4 = new Product("tst4","test product 1","test product 1 (fr)");
+		Product product4 = new Product("tst4","test product 4","test product 4 (fr)", "fixed-network-thumb_120x80.gif");
 		bsdService.save(product4);
-		Product product5 = new Product("tst5","test product 1","test product 1 (fr)");
+		Product product5 = new Product("tst5","test product 5","test product 5 (fr)", "GPS Receiver Small.gif");
 		bsdService.save(product5);
-		Product product6 = new Product("tst6","test product 1","test product 1 (fr)");
+		Product product6 = new Product("tst6","test product 6","test product 6 (fr)", "High Definition PTZ Cameras small thumbnail.gif");
 		bsdService.save(product6);
-		Product product7 = new Product("tst7","test product 1","test product 1 (fr)");
+		Product product7 = new Product("tst7","test product 7","test product 7 (fr)", "LFP Small.gif");
 		bsdService.save(product7);
+		Product product8 = new Product("tst8","test product 1","test product 1 (fr)", "ME20F-SH_120x80.gif");
+		bsdService.save(product8);
+		Product product9 = new Product("tst9","test product 1","test product 1 (fr)", "portable_80x120.gif");
+		bsdService.save(product9);
+		Product product10 = new Product("tst10","test product 1","test product 1 (fr)", "Pro Photo Inkjet.gif");
+		bsdService.save(product10);
+		Product product11 = new Product("tst11","test product 1","test product 1 (fr)", "ptz-network-thumb_120x80.gif");
+		bsdService.save(product11);
+		Product product12 = new Product("tst12","test product 1","test product 1 (fr)", "subcat_EFL_120x80.gif");
+		bsdService.save(product12);
+		Product product13 = new Product("tst13","test product","test product (fr)", "subcat_SLF_120x80.gif");
+		bsdService.save(product13);
+		Product product14 = new Product("tst14","test product 1","test product 1 (fr)", "subcat-dsc_120x80.gif");
+		bsdService.save(product14);
+		Product product15 = new Product("tst15","test product 1","test product 1 (fr)", "subcat-dslr_120x80.gif");
+		bsdService.save(product15);
+		Product product16 = new Product("tst16","test product 1","test product 1 (fr)", "vb-s30d_120x80.gif");
+		bsdService.save(product16);
+		Product product17 = new Product("tst17","test product 1","test product 1 (fr)", "Wireless File Transmitter Small.gif");
+		bsdService.save(product17);
+		Product product18 = new Product("tst18","test product 1","test product 1 (fr)", "WUX400ST_120x80.gif");
+		bsdService.save(product18);
+		Product product19 = new Product("tst19","test product 1","test product 1 (fr)", "WUX5000_120x80.gif");
+		bsdService.save(product19);
+		Product product20 = new Product("tst20","test product 1","test product 1 (fr)", "XA35 90x60.gif");
+		bsdService.save(product20);
+		Product product21 = new Product("tst21","test product 1","test product 1 (fr)", "XC10_90x60.gif");
+		bsdService.save(product21);
+		Product product22 = new Product("tst22","test product 1","test product 1 (fr)", "XF205_90x60.gif");
+		bsdService.save(product22);
+		Product product23 = new Product("tst23","test product 1","test product 1 (fr)", "XF305_Thumbnail_120x80.gif");
+		bsdService.save(product23);
+		
 		
 		ProductPriceInStore productPriceInStore1 = new ProductPriceInStore(new StoreProductPK(store, product1), 9.99, 15.99, new Date());
 		bsdService.save(productPriceInStore1);

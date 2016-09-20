@@ -5530,7 +5530,11 @@ var platform_browser_1 = __webpack_require__(60);
 var CarouselComponent = (function () {
     function CarouselComponent(sanitizer) {
         this.sanitizer = sanitizer;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"http://placehold.it/800x300\" alt=\"\"/>");
+        this.imgHtml1 = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"resources/images/slides/slide1.png\" alt=\"\"/>");
+        this.imgHtml2 = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"resources/images/slides/slide2.png\" alt=\"\"/>");
+        this.imgHtml3 = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"resources/images/slides/slide3.png\" alt=\"\"/>");
+        this.imgHtml4 = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"resources/images/slides/slide4.png\" alt=\"\"/>");
+        this.imgHtml5 = sanitizer.bypassSecurityTrustHtml("\n        <img class=\"slide-image\" src=\"resources/images/slides/slide5.png\" alt=\"\"/>");
     }
     CarouselComponent = __decorate([
         core_1.Component({
@@ -5726,7 +5730,7 @@ var ProductDetailComponent = (function () {
         this.sanitizer = sanitizer;
         this.isReviewHidden = true;
         this.isWatching = false;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/820x320\">");
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("<img src=\"http://placehold.it/820x320\">");
         //const productId = parseInt(router.snapshot.params['productId']);
         var productId = router.snapshot.params['productId'];
         this.productService
@@ -6035,7 +6039,9 @@ var product_service_1 = __webpack_require__(91);
 var ProductItemComponent = (function () {
     function ProductItemComponent(sanitizer) {
         this.sanitizer = sanitizer;
-        this.imgHtml = sanitizer.bypassSecurityTrustHtml("\n      <img src=\"http://placehold.it/320x150\">");
+        //var src = 'resources/images/products/'+this.product.image;
+        //this.imgHtml = sanitizer.bypassSecurityTrustHtml(`<img src=\"`+src+`\">`);
+        this.imgHtml = sanitizer.bypassSecurityTrustHtml("<img src=\"http://placehold.it/320x150\">");
     }
     __decorate([
         core_1.Input(), 
@@ -6234,8 +6240,9 @@ var core_1 = __webpack_require__(1);
 var http_1 = __webpack_require__(92);
 __webpack_require__(213);
 var Product = (function () {
-    function Product(sku, title, price, rating, description, categories) {
+    function Product(sku, image, title, price, rating, description, categories) {
         this.sku = sku;
+        this.image = image;
         this.title = title;
         this.price = price;
         this.rating = rating;

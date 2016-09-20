@@ -9,6 +9,7 @@ public class ProductDto{
 
 	//@JsonProperty
 	private String sku;  
+	private String image;
 	//@JsonProperty
 	private String EProductName;
 	//@JsonProperty
@@ -181,6 +182,14 @@ public class ProductDto{
 				+ price + ", priceScheduled=" + priceScheduled
 				+ ", priceSchedule=" + priceSchedule + ", created=" + created
 				+ "]";
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 /*	public Set<ProductPriceInStore> getProductsInStore() {

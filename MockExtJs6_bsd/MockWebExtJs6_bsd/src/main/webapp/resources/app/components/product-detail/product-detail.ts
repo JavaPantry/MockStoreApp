@@ -30,8 +30,7 @@ export default class ProductDetailComponent implements OnDestroy {
               private sanitizer: DomSanitizer,
               router: ActivatedRoute) {
 
-    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
-      <img src="http://placehold.it/820x320">`);
+    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`<img src="http://placehold.it/820x320">`);
 
     //const productId = parseInt(router.snapshot.params['productId']);
 	const productId = router.snapshot.params['productId'];

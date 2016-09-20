@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 export class Product {
   constructor(
     public sku: number,
+    public image: number,
     public title: string,
     public price: number,
     public rating: number,

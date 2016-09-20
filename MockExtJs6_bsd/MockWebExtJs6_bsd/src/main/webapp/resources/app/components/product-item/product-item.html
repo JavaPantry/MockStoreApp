@@ -1,5 +1,8 @@
 <div class="thumbnail">
-  <span [innerHTML]="imgHtml"></span>
+  <span> 
+		<img src="resources/images/products/{{product.image}}"> 
+  </span>
+  
   <div class="caption">
     <h4 class="pull-right">{{ product.sku}}</h4>
     <h4 class="pull-right">{{ product.price | currency }}</h4>

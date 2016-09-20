@@ -31,6 +31,9 @@ public class Product implements java.io.Serializable {
 	private String EPriceUnit;
 	private String FPriceUnit;
 	private Integer ordinal;
+	
+	private String image;
+	
 	@Column(columnDefinition = "BIT", length = 1)//, columnDefinition="boolean default false", nullable=false,
 	private Boolean active;
 	private Date createDt;
@@ -52,6 +55,13 @@ public class Product implements java.io.Serializable {
 		this.FProductName = FProductName;
 	}
 
+	public Product(String sku, String EProductName, String FProductName, String image) {
+		this.sku = sku;
+		this.EProductName = EProductName;
+		this.FProductName = FProductName;
+		this.image = image;
+	}
+	
 	public Product(String sku, String EProductName,
 			String FProductName, String EProductDescription,
 			String FProductDescription, String EPackaging, String FPackaging,
@@ -174,6 +184,14 @@ public class Product implements java.io.Serializable {
 
 	public void setProductsInStore(Set<ProductPriceInStore> productsInStore) {
 		this.productsInStore = productsInStore;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

@@ -7,10 +7,22 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export default class CarouselComponent {
 
-    imgHtml: SafeHtml;
+    imgHtml1: SafeHtml;
+    imgHtml2: SafeHtml;
+    imgHtml3: SafeHtml;
+    imgHtml4: SafeHtml;
+    imgHtml5: SafeHtml;
 
     constructor(private sanitizer: DomSanitizer) {
-      this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
-        <img class="slide-image" src="http://placehold.it/800x300" alt=""/>`);
+      this.imgHtml1 = sanitizer.bypassSecurityTrustHtml(`
+        <img class="slide-image" src="resources/images/slides/slide1.png" alt=""/>`);
+      this.imgHtml2 = sanitizer.bypassSecurityTrustHtml(`
+        <img class="slide-image" src="resources/images/slides/slide2.png" alt=""/>`);
+      this.imgHtml3 = sanitizer.bypassSecurityTrustHtml(`
+        <img class="slide-image" src="resources/images/slides/slide3.png" alt=""/>`);
+      this.imgHtml4 = sanitizer.bypassSecurityTrustHtml(`
+        <img class="slide-image" src="resources/images/slides/slide4.png" alt=""/>`);
+      this.imgHtml5 = sanitizer.bypassSecurityTrustHtml(`
+        <img class="slide-image" src="resources/images/slides/slide5.png" alt=""/>`);      
     }
 }

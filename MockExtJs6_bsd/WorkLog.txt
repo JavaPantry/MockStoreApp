@@ -4,6 +4,44 @@
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
+### September 20:
+
+
+Render product's image in product-detail and product-item components
+
+<span [innerHTML]="'resources/images/products/'+product.image"></span>
+
+prints string
+
+-----------------
+<div class="thumbnail">
+  <!-- <span [innerHTML]="imgHtml"></span> -->
+  <span [innerHTML]='resources/images/products/'+'"product.image"'></span>
+  <!-- <span [innerHTML]="<img src='resources/images/products/product.image'>"></span> -->
+  <!-- <img src="resources/images/products/"+{{product.image}}></img>-->
+  <div class="caption">
+
+cause
+
+Unhandled Promise rejection:
+
+Template parse errors:
+Unexpected closing tag "span" ("innerHTML]="imgHtml"></span> -->
+  <span [innerHTML]='resources/images/products/'+'"product.image"'>[ERROR ->]</span>
+  <!-- <span [innerHTML]="<img src='resources/images/products/product.image'>"></span> -->
+  "): ProductItemComponent@2:67
+
+; Zone: <root> ; Task: Promise.then ; Value:
+Error: Template parse errors: Unexpected closing tag "span" ("innerHTML]="imgHtml"></span> --> <span [innerHTML]='resources/images/products/'+'"product.image"'>[ERROR ->]</span> <!-- <span [innerHTML]="<img src='resources/images/products/product.image'>"></span> --> "): ProductItemComponent@2:67
+
+------
+Unhandled Promise rejection:
+Template parse errors:
+Parser Error: Unexpected token < at column 1 in [<img src='resources/images/products/product.image'>] in ProductItemComponent@4:8 ("
+  //<span [innerHTML]="product.image"></span>
+  
+  
+--------------------------------------------------------------------------------------------------
 ### September 19:
 
 Merge 'master' and 'UpdateToRc5' branches
