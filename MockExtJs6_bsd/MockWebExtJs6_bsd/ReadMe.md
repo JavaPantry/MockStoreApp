@@ -1,4 +1,4 @@
-# Mock project
+# Mock web project
 ---
 
 ### TODOs 

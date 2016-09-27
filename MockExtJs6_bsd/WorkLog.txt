@@ -4,8 +4,27 @@
 89889688147bd7575d6327160d64e760.svg
 f4769f9bdb7466be65088239c12046d1.eot
 --------------------------------------------------------------------------------------------------
-### September 20:
 
+- Steps to build front-end 
+1. change to >cd C:\STS-3.8.1.Workspace_Sept2016\maven.1473771212570\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources
+2. Optional: remove MockWebExtJs6_bsd\src\main\webapp\resources\dist
+	>npm run clean
+2. run webpack to compile and minimize deployment
+	>npm run build
+3. Refresh /MockWebExtJs6_bsd/src/main/webapp/resources in eclipse
+4. Rebuild all three projects
+5. Optional: remove app from server and clean server
+6. Run on server (if removed will do fresh deploy)
+--------------------------------------------------------------------------------------------------
+
+### September 27:
+
+- update /MockWebExtJs6_bsd/src/main/webapp/resources/app/components/footer/footer.html to be inline with login page footer
+
+
+
+--------------------------------------------------------------------------------------------------
+### September 20:
 
 Render product's image in product-detail and product-item components
 
