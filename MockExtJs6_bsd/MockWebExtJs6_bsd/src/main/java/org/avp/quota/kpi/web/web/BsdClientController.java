@@ -66,8 +66,10 @@ public class BsdClientController extends AbstractExtJsController {
 			@RequestParam(value="filter", required=false) String filter
 			) {
 		BsdUser user = (BsdUser) session.getAttribute("appuser");
-		Store store = user.getStore();
+		Store userStore = user.getStore();
 		
+		//dirty trick
+		Store store = bsdService.findStoreById(userStore.getId());
 		
         logger.debug("/angular/products userName"+user.getUserId());
         logger.debug("/angular/products store"+store.getStoreName());

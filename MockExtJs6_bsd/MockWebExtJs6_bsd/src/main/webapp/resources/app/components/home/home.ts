@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product, ProductService } from '../../services/product-service';
 
 @Component({
@@ -11,6 +12,16 @@ import { Product, ProductService } from '../../services/product-service';
         <auction-carousel></auction-carousel>
       </div>
     </div>
+
+    <div class="row">
+    <form [formGroup]="formModel2"  (ngSubmit)="onReload()"    novalidate>
+     <div class="form-group">
+	    <button type="submit" class="btn btn-primary btn-block">Reload</button>
+	  </div>
+	</form>
+	</div>
+
+
     <div class="row">
       <div *ngFor="let product of products | async" class="col-sm-4 col-lg-4 col-md-4">
         <auction-product-item [product]="product"></auction-product-item>
@@ -21,7 +32,19 @@ import { Product, ProductService } from '../../services/product-service';
 export default class HomeComponent {
   products: Observable<Product[]>;
 
+  formModel2: FormGroup;
+
   constructor(private productService: ProductService) {
+    
+    const fb = new FormBuilder();
+    this.formModel2 = fb.group({
+      //'title': [null, Validators.minLength(3)],
+      //'price': [null, positiveNumberValidator],
+      //'category': ['']
+    })
+    
+    
+    
     this.products = this.productService.getProducts();
 
     this.productService.searchEvent
@@ -30,5 +53,9 @@ export default class HomeComponent {
         console.error.bind(console),
         () => console.log('DONE')
       );
+  }
+  
+  onReload() {
+          this.products = this.productService.getProducts();
   }
 }
