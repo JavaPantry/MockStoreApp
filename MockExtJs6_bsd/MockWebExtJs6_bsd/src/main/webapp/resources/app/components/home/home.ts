@@ -14,9 +14,12 @@ import { Product, ProductService } from '../../services/product-service';
     </div>
 
     <div class="row">
-    <form [formGroup]="formModel2"  (ngSubmit)="onReload()"    novalidate>
+    <!-- <form [formGroup]="formModel2"  (ngSubmit)="onReload()" novalidate> -->
+    <form (ngSubmit)="onReload()" novalidate>
      <div class="form-group">
-	    <button type="submit" class="btn btn-primary btn-block">Reload</button>
+     	<div class="col-sm-2 col-lg-2 col-md-2">
+	    	<button type="submit" class="btn btn-primary btn-block">Reload</button>
+	    </div>
 	  </div>
 	</form>
 	</div>
@@ -36,12 +39,12 @@ export default class HomeComponent {
 
   constructor(private productService: ProductService) {
     
-    const fb = new FormBuilder();
+    /*const fb = new FormBuilder();
     this.formModel2 = fb.group({
       //'title': [null, Validators.minLength(3)],
       //'price': [null, positiveNumberValidator],
       //'category': ['']
-    })
+    })*/
     
     
     
