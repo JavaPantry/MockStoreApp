@@ -5275,7 +5275,7 @@ var HomeComponent = (function () {
         core_1.Component({
             selector: 'auction-home-page',
             styleUrls: ['resources/app/components/home/home.css'],
-            template: "\n    <div class=\"row carousel-holder\">\n      <div class=\"col-md-12\">\n        <auction-carousel></auction-carousel>\n      </div>\n    </div>\n\n    <div class=\"row\">\n    <!-- <form [formGroup]=\"formModel2\"  (ngSubmit)=\"onReload()\" novalidate> -->\n    <form (ngSubmit)=\"onReload()\" novalidate>\n     <div class=\"form-group\">\n     \t<div class=\"col-sm-2 col-lg-2 col-md-2\">\n\t    \t<button type=\"submit\" class=\"btn btn-primary btn-block\">Reload</button>\n\t    </div>\n\t  </div>\n\t</form>\n\t</div>\n\n\n    <div class=\"row\">\n      <div *ngFor=\"let product of products | async\" class=\"col-sm-4 col-lg-4 col-md-4\">\n        <auction-product-item [product]=\"product\"></auction-product-item>\n      </div>\n    </div>\n  "
+            templateUrl: 'resources/app/components/home/home.html'
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService])
     ], HomeComponent);
