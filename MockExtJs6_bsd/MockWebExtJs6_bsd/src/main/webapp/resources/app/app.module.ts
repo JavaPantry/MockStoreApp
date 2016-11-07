@@ -13,7 +13,8 @@ import NavbarComponent from './components/navbar/navbar';
 import ProductDetailComponent from './components/product-detail/product-detail';
 import ProductItemComponent from './components/product-item/product-item';
 
-import OrderComponent from './components/order-detail/order-detail';
+import OrderListComponent           from './components/order-list/order-list';
+import OrderDetailsComponent    from './components/order-detail/order-detail';
 
 import SearchComponent from './components/search/search';
 import StarsComponent from './components/stars/stars';
@@ -28,7 +29,8 @@ import { ONLINE_AUCTION_SERVICES } from './services/services';
     RouterModule.forRoot([
       {path: '',                    component: HomeComponent},
       {path: 'products/:productId', component: ProductDetailComponent},
-      {path: 'orders',              component: OrderComponent}
+      {path: 'ordersList',              component: OrderListComponent},
+      {path: 'orderDetails',        component: OrderDetailsComponent}
     ])
   ],
   declarations: [
@@ -40,8 +42,9 @@ import { ONLINE_AUCTION_SERVICES } from './services/services';
     ProductDetailComponent,
     ProductItemComponent,
     
-    OrderComponent,
-    
+    OrderListComponent,
+    OrderDetailsComponent,
+   
     SearchComponent,
     StarsComponent
   ],

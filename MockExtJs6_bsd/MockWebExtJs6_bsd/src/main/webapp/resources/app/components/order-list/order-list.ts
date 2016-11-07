@@ -7,11 +7,11 @@ import { Subscription } from 'rxjs/Subscription';
 import {Order, OrderService} from "../../services/order-service";
 
 @Component({
-  selector: 'auction-orderdetail-page',
+  selector: 'auction-order-page',
   styles: [ 'auction-stars.large {font-size: 24px;}' ],
-  templateUrl: 'resources/app/components/order-detail/order-detail.html'
+  templateUrl: 'resources/app/components/order-list/order-list.html'
 })
-export default class OrderDetailsComponent implements OnDestroy {
+export default class OrderListComponent implements OnDestroy {
 
 
   private orders: Observable<Order[]>;
@@ -32,6 +32,4 @@ export default class OrderDetailsComponent implements OnDestroy {
     }*/
     return Promise.resolve(true);
   }
-
-
 }

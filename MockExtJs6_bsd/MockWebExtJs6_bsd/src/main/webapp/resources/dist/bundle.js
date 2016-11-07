@@ -144,7 +144,7 @@ var DefaultValueAccessor = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(305);
 /* unused harmony export modelGroupProvider */
 /* harmony export */ __webpack_require__.d(exports, "a", function() { return NgModelGroup; });/**
  * @license
@@ -395,7 +395,7 @@ var RadioControlValueAccessor = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(304);
 
 /* harmony export */ __webpack_require__.d(exports, "a", function() { return ReactiveErrors; });/**
  * @license
@@ -2273,7 +2273,7 @@ var NgControlStatusGroup = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(305);
 /* unused harmony export formControlBinding */
 /* harmony export */ __webpack_require__.d(exports, "a", function() { return NgModel; });/**
  * @license
@@ -3125,6 +3125,63 @@ var PatternValidator = (function () {
 
 /***/ },
 
+/***/ 229:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var http_1 = __webpack_require__(94);
+__webpack_require__(214);
+var Order = (function () {
+    function Order(id, storeId, userId, firstName, lastName, emailAddress) {
+        this.id = id;
+        this.storeId = storeId;
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+    }
+    return Order;
+}());
+exports.Order = Order;
+/*
+* Removed: interface OrderSearchParams {
+* see app\services\product-service.ts
+*/
+var OrderService = (function () {
+    function OrderService(http) {
+        this.http = http;
+    }
+    OrderService.prototype.getOrders = function () {
+        return this.http.get('angular/orders')
+            .map(function (response) { return response.json(); });
+    };
+    OrderService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], OrderService);
+    return OrderService;
+}());
+exports.OrderService = OrderService;
+/*
+ * Removed function encodeParams(params: any)
+ * Encodes the object into a valid query string.
+ * see app\services\product-service.ts
+ */
+
+
+/***/ },
+
 /***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3522,7 +3579,7 @@ var SetWrapper = (function () {
 
 /***/ },
 
-/***/ 302:
+/***/ 303:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3545,7 +3602,7 @@ var SetWrapper = (function () {
 
 /***/ },
 
-/***/ 303:
+/***/ 304:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3568,11 +3625,11 @@ var FormErrorExamples = {
 
 /***/ },
 
-/***/ 304:
+/***/ 305:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(304);
 
 /* harmony export */ __webpack_require__.d(exports, "a", function() { return TemplateDrivenErrors; });/**
  * @license
@@ -3603,7 +3660,7 @@ var TemplateDrivenErrors = (function () {
 
 /***/ },
 
-/***/ 305:
+/***/ 306:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3740,7 +3797,7 @@ var FormBuilder = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(18);
@@ -3894,7 +3951,7 @@ function _mergeErrors(arrayOfErrors) {
 
 /***/ },
 
-/***/ 367:
+/***/ 368:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3932,63 +3989,6 @@ exports.BidService = BidService;
 
 /***/ },
 
-/***/ 368:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var http_1 = __webpack_require__(94);
-__webpack_require__(214);
-var Order = (function () {
-    function Order(id, storeId, userId, firstName, lastName, emailAddress) {
-        this.id = id;
-        this.storeId = storeId;
-        this.userId = userId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-    }
-    return Order;
-}());
-exports.Order = Order;
-/*
-* Removed: interface OrderSearchParams {
-* see app\services\product-service.ts
-*/
-var OrderService = (function () {
-    function OrderService(http) {
-        this.http = http;
-    }
-    OrderService.prototype.getOrders = function () {
-        return this.http.get('angular/orders')
-            .map(function (response) { return response.json(); });
-    };
-    OrderService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], OrderService);
-    return OrderService;
-}());
-exports.OrderService = OrderService;
-/*
- * Removed function encodeParams(params: any)
- * Encodes the object into a valid query string.
- * see app\services\product-service.ts
- */
-
-
-/***/ },
-
 /***/ 369:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -4004,7 +4004,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var Rx_1 = __webpack_require__(229);
+var Rx_1 = __webpack_require__(230);
 var WebSocketService = (function () {
     function WebSocketService() {
     }
@@ -4105,7 +4105,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(69);
-var forms_1 = __webpack_require__(302);
+var forms_1 = __webpack_require__(303);
 var http_1 = __webpack_require__(94);
 var platform_browser_1 = __webpack_require__(62);
 var router_1 = __webpack_require__(145);
@@ -4114,12 +4114,13 @@ var carousel_1 = __webpack_require__(785);
 var home_1 = __webpack_require__(787);
 var footer_1 = __webpack_require__(786);
 var navbar_1 = __webpack_require__(788);
-var product_detail_1 = __webpack_require__(790);
-var product_item_1 = __webpack_require__(791);
+var product_detail_1 = __webpack_require__(791);
+var product_item_1 = __webpack_require__(792);
+var order_list_1 = __webpack_require__(790);
 var order_detail_1 = __webpack_require__(789);
-var search_1 = __webpack_require__(792);
-var stars_1 = __webpack_require__(793);
-var services_1 = __webpack_require__(794);
+var search_1 = __webpack_require__(793);
+var stars_1 = __webpack_require__(794);
+var services_1 = __webpack_require__(795);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -4133,7 +4134,8 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: '', component: home_1.default },
                     { path: 'products/:productId', component: product_detail_1.default },
-                    { path: 'orders', component: order_detail_1.default }
+                    { path: 'ordersList', component: order_list_1.default },
+                    { path: 'orderDetails', component: order_detail_1.default }
                 ])
             ],
             declarations: [
@@ -4144,6 +4146,7 @@ var AppModule = (function () {
                 navbar_1.default,
                 product_detail_1.default,
                 product_item_1.default,
+                order_list_1.default,
                 order_detail_1.default,
                 search_1.default,
                 stars_1.default
@@ -4333,7 +4336,7 @@ function normalizeAsyncValidator(validator) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(437);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(306);
 
 /* harmony export */ __webpack_require__.d(exports, "FormsModule", function() { return FormsModule; });
 /* harmony export */ __webpack_require__.d(exports, "ReactiveFormsModule", function() { return ReactiveFormsModule; });/**
@@ -4409,7 +4412,7 @@ var ReactiveFormsModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_control_value_accessor__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_multiple_control_value_accessor__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_validators__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__model__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__validators__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(439);
@@ -5335,33 +5338,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var order_service_1 = __webpack_require__(368);
-var OrderComponent = (function () {
-    function OrderComponent(
+var order_service_1 = __webpack_require__(229);
+var OrderDetailsComponent = (function () {
+    function OrderDetailsComponent(
         //route: ActivatedRoute,
         orderService) {
         this.orderService = orderService;
         this.orders = this.orderService.getOrders();
         // subscribe search orders like in product-detail
     }
-    OrderComponent.prototype.ngOnDestroy = function () {
+    OrderDetailsComponent.prototype.ngOnDestroy = function () {
         /*if (this.subscription) {
           this.subscription.unsubscribe();
         }*/
         return Promise.resolve(true);
     };
-    OrderComponent = __decorate([
+    OrderDetailsComponent = __decorate([
         core_1.Component({
-            selector: 'auction-order-page',
+            selector: 'auction-orderdetail-page',
             styles: ['auction-stars.large {font-size: 24px;}'],
             templateUrl: 'resources/app/components/order-detail/order-detail.html'
         }), 
         __metadata('design:paramtypes', [order_service_1.OrderService])
-    ], OrderComponent);
-    return OrderComponent;
+    ], OrderDetailsComponent);
+    return OrderDetailsComponent;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = OrderComponent;
+exports.default = OrderDetailsComponent;
 
 
 /***/ },
@@ -5609,10 +5612,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
+var order_service_1 = __webpack_require__(229);
+var OrderListComponent = (function () {
+    function OrderListComponent(
+        //route: ActivatedRoute,
+        orderService) {
+        this.orderService = orderService;
+        this.orders = this.orderService.getOrders();
+        // subscribe search orders like in product-detail
+    }
+    OrderListComponent.prototype.ngOnDestroy = function () {
+        /*if (this.subscription) {
+          this.subscription.unsubscribe();
+        }*/
+        return Promise.resolve(true);
+    };
+    OrderListComponent = __decorate([
+        core_1.Component({
+            selector: 'auction-order-page',
+            styles: ['auction-stars.large {font-size: 24px;}'],
+            templateUrl: 'resources/app/components/order-list/order-list.html'
+        }), 
+        __metadata('design:paramtypes', [order_service_1.OrderService])
+    ], OrderListComponent);
+    return OrderListComponent;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = OrderListComponent;
+
+
+/***/ },
+
+/***/ 791:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(62);
 var router_1 = __webpack_require__(145);
 var product_service_1 = __webpack_require__(93);
-var bid_service_1 = __webpack_require__(367);
+var bid_service_1 = __webpack_require__(368);
 var ProductDetailComponent = (function () {
     function ProductDetailComponent(productService, bidService, sanitizer, router) {
         var _this = this;
@@ -5686,7 +5735,7 @@ exports.default = ProductDetailComponent;
 
 /***/ },
 
-/***/ 791:
+/***/ 792:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5730,7 +5779,7 @@ exports.default = ProductItemComponent;
 
 /***/ },
 
-/***/ 792:
+/***/ 793:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5745,7 +5794,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(302);
+var forms_1 = __webpack_require__(303);
 var product_service_1 = __webpack_require__(93);
 var SearchComponent = (function () {
     function SearchComponent(productService) {
@@ -5787,7 +5836,7 @@ function positiveNumberValidator(control) {
 
 /***/ },
 
-/***/ 793:
+/***/ 794:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5854,15 +5903,15 @@ exports.default = StarsComponent;
 
 /***/ },
 
-/***/ 794:
+/***/ 795:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var bid_service_1 = __webpack_require__(367);
+var bid_service_1 = __webpack_require__(368);
 var product_service_1 = __webpack_require__(93);
 var websocket_service_1 = __webpack_require__(369);
-var order_service_1 = __webpack_require__(368);
+var order_service_1 = __webpack_require__(229);
 exports.ONLINE_AUCTION_SERVICES = [
     bid_service_1.BidService,
     product_service_1.ProductService,
@@ -6095,7 +6144,7 @@ function _hasInvalidParent(parent) {
 
 /***/ },
 
-/***/ 800:
+/***/ 801:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6202,5 +6251,5 @@ function encodeParams(params) {
 
 /***/ }
 
-},[800]);
+},[801]);
 //# sourceMappingURL=bundle.js.map
