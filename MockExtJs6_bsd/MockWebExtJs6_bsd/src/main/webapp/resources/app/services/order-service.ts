@@ -3,6 +3,15 @@ import {Http, URLSearchParams } from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 
+
+export class OrderDetail
+{
+  constructor(public id: number
+      , public orderId: number
+      , public productId: number
+      , public quantity: number
+  ) {}
+}
 export class Order {
   constructor(public id: number
       , public storeId: number
@@ -10,6 +19,7 @@ export class Order {
       , public firstName: string
       , public lastName: string
       , public emailAddress: string
+      , public orderDetails: Array<OrderDetail>
   ) {}
 }
 

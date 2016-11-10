@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription';
 
-import {Order, OrderService} from "../../services/order-service";
+import {Order, OrderDetail, OrderService} from "../../services/order-service";
 
 @Component({
   selector: 'auction-orderdetail-page',

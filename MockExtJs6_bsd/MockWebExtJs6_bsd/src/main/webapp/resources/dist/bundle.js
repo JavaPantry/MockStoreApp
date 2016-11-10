@@ -3142,14 +3142,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(1);
 var http_1 = __webpack_require__(94);
 __webpack_require__(214);
+var OrderDetail = (function () {
+    function OrderDetail(id, orderId, productId, quantity) {
+        this.id = id;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+    return OrderDetail;
+}());
+exports.OrderDetail = OrderDetail;
 var Order = (function () {
-    function Order(id, storeId, userId, firstName, lastName, emailAddress) {
+    function Order(id, storeId, userId, firstName, lastName, emailAddress, orderDetails) {
         this.id = id;
         this.storeId = storeId;
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
+        this.orderDetails = orderDetails;
     }
     return Order;
 }());
