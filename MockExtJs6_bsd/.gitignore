@@ -16,6 +16,9 @@ _site
 *.zip
 *~
 ~*.doc*
+~*.pptx
+~*.tmp
+
 
 
 # OS or Editor folders
