@@ -1,6 +1,7 @@
 const path               = require('path');
 const webpack            = require('webpack');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const CopyWebpackPlugin  = require('copy-webpack-plugin');
 const DefinePlugin       = require('webpack/lib/DefinePlugin');
 const ProvidePlugin      = require('webpack/lib/ProvidePlugin');
@@ -17,7 +18,7 @@ const metadata = {
 };
 
 module.exports = {
-  debug: true,
+
   devServer: {
     contentBase: 'src',
     historyApiFallback: true,
@@ -61,6 +62,6 @@ module.exports = {
     new ProvidePlugin({jQuery: 'jquery', jquery: 'jquery', $: 'jquery'})
   ],
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['.ts', '.js']
   }
 };

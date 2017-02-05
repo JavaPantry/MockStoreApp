@@ -103,6 +103,11 @@ _Installation_
 	>[optional] delete _node_modules_ folder
 	>[optional] npm install
 	>[optional] delete _dist_ folder
+
+Open terminal
+
+	C:\Users\Alexei>cd {projectRoot}\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources
+	{projectRoot}\MockExtJs6_bsd\MockWebExtJs6_bsd\src\main\webapp\resources>
 	>npm run build
 	OR
 	>npm run buildProd

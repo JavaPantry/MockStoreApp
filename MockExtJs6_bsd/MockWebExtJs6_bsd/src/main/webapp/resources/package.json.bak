@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist",
+    "prebuild": "npm run clean",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "buildProd": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
     "startWebpackDevServer": "webpack-dev-server --inline --colors --progress --display-error-details --disaply-modules --display-cached --port 8080"
   },
   "dependencies": {
-"@angular/common": "2.0.0-rc.6",
+	"@angular/common": "2.0.0-rc.6",
     "@angular/compiler": "2.0.0-rc.6",
     "@angular/core": "2.0.0-rc.6",
     "@angular/forms": "2.0.0-rc.6",
@@ -54,7 +55,7 @@
     "ts-loader": "^0.8.1",
     "typescript": "^2.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.1.0-beta.21",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "webpack": "2.1.0-beta.21",
+    "webpack-dev-server": "2.1.0-beta.0"
   }
 }
