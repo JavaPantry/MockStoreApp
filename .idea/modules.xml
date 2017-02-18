@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MockExtJs6_bsd.iml" filepath="$PROJECT_DIR$/MockExtJs6_bsd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MockServiceExtJs6_bsd.iml" filepath="$PROJECT_DIR$/MockServiceExtJs6_bsd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MockWebExtJs6_bsd.iml" filepath="$PROJECT_DIR$/MockWebExtJs6_bsd.iml" />
+    </modules>
+  </component>
+</project>
