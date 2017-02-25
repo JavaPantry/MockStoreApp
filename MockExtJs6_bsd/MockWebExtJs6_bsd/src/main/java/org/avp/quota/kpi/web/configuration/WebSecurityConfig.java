@@ -45,11 +45,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * QuotaKPI_REPORT		sptestuser604
  * 
  * password: password
- * 
+ *
+ at Configuration
+ at EnableWebSecurity
+ at PropertySource("classpath:securityConfig.properties")
+
+
  */
-@Configuration
-@EnableWebSecurity
-@PropertySource("classpath:securityConfig.properties")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static Logger logger = Logger.getLogger(WebSecurityConfig.class);
 	

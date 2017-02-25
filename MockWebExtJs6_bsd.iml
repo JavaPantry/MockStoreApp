@@ -6,7 +6,7 @@
         <descriptors>
           <deploymentDescriptor name="jboss-deployment-structure.xml" url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/webapp/WEB-INF/jboss-deployment-structure.xml" />
           <deploymentDescriptor name="jboss-web.xml" url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/webapp/WEB-INF/jboss-web.xml" />
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/webapp/WEB-INF/bakDeploy.bak" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/webapp" relative="/" />
@@ -15,6 +15,26 @@
           <root url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java" />
           <root url="file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/resources" />
         </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="initializer org.avp.quota.kpi.web.configuration.SpringConfiguration servlet context" name="MVC dispatcher initializer servlet context" removed="true">
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/org/avp/quota/kpi/web/configuration/SpringConfigurationWebMvc.java</file>
+        </fileset>
+        <fileset id="initializer org.avp.quota.kpi.web.configuration.SpringConfiguration root context" name="MVC dispatcher initializer root context" removed="true">
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/thymeleafexamples/stsm/business/SpringBusinessConfig.java</file>
+        </fileset>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/HsqlJUnitDataServiceModuleConfiguration.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/JbossDataServiceModuleConfiguration.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/JbossTestDataServiceModuleConfiguration.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfiguration.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/TomcatDataServiceModuleConfigurationForBuild.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/thymeleafexamples/stsm/business/SpringBusinessConfig.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/org/avp/quota/kpi/web/configuration/SpringConfiguration.java</file>
+          <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/org/avp/quota/kpi/web/configuration/SpringConfigurationWebMvc.java</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
@@ -84,11 +104,13 @@
     <orderEntry type="library" name="Maven: org.mvel:mvel2:2.0.11" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-ognl:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-compat:3.0.5" level="project" />
-    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:2.1.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: ognl:ognl:3.0.8" level="project" />
-    <orderEntry type="library" name="Maven: org.javassist:javassist:3.16.1-GA" level="project" />
-    <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf-spring4:3.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:3.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.attoparser:attoparser:2.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.4.6" level="project" />
+    <orderEntry type="library" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-expression-processor:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
@@ -118,6 +140,7 @@
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.1.0.GA" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.2.Final" level="project" />
