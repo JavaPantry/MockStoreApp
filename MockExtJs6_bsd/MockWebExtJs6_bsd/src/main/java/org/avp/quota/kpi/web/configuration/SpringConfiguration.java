@@ -28,10 +28,12 @@ public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServ
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
-        servletContext.setAttribute("spring.profiles.active", "Tomcat");
+        //servletContext.setAttribute("spring.profiles.active", "Tomcat");
+		servletContext.setInitParameter("spring.profiles.active", "Tomcat");
         //Set multiple active profile
-        //servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
-    }
+        // not exists anymore servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
+
+	}
 
 	public SpringConfiguration() {
 		//-Djava.security.krb5.conf=krb5.conf
@@ -41,7 +43,7 @@ public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServ
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class<?>[] { SpringConfigurationWebMvc.class };
+    	return new Class<?>[] { SpringConfigurationWebMvc.class };
 	}
 
 	@Override

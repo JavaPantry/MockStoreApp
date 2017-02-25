@@ -31,6 +31,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import thymeleafexamples.stsm.business.entities.Feature;
 import thymeleafexamples.stsm.business.entities.Row;
 import thymeleafexamples.stsm.business.entities.SeedStarter;
@@ -43,21 +44,16 @@ import thymeleafexamples.stsm.business.services.VarietyService;
 @Controller
 public class SeedStarterMngController {
 
-
     @Autowired
     private VarietyService varietyService;
     
     @Autowired
     private SeedStarterService seedStarterService;
-    
-    
-    
+
     public SeedStarterMngController() {
         super();
     }
 
-    
-    
     @ModelAttribute("allTypes")
     public List<Type> populateTypes() {
         return Arrays.asList(Type.ALL);
@@ -77,17 +73,14 @@ public class SeedStarterMngController {
     public List<SeedStarter> populateSeedStarters() {
         return this.seedStarterService.findAll();
     }
-    
-    
-    
+
+    // at RequestMapping(value={"/","/seedstartermngHome"}, method= RequestMethod.GET)
     @RequestMapping({"/","/seedstartermngHome"})
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
         return "seedstartermngHome";
     }
-    
-    
-    
+
     @RequestMapping(value="/seedstartermngHome", params={"save"})
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
@@ -97,22 +90,17 @@ public class SeedStarterMngController {
         model.clear();
         return "redirect:/seedstartermngHome";
     }
-    
 
-    
     @RequestMapping(value="/seedstartermngHome", params={"addRow"})
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         seedStarter.getRows().add(new Row());
         return "seedstartermngHome";
     }
-    
-    
+
     @RequestMapping(value="/seedstartermngHome", params={"removeRow"})
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
         seedStarter.getRows().remove(rowId.intValue());
         return "seedstartermngHome";
     }
-
-
 }

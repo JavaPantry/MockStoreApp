@@ -38,50 +38,41 @@ import com.google.gson.GsonBuilder;*/
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages={"org.avp.quota.kpi.web.validators",
-							//???"org.avp.quota.kpi.web.service",???
-							"org.avp.quota.kpi.web.web",
+@ComponentScan(basePackages={"org.avp.quota.kpi.web.web",
 							"thymeleafexamples.stsm.web.controller"})
 public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
-
-	/*@Bean
-	public InternalResourceViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/jsp/");
-		viewResolver.setSuffix(".jsp");
-		viewResolver.setOrder(1);
-		return viewResolver;
-	}*/
-	@Bean
-	public ThymeleafViewResolver viewResolver(){
-		ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-		viewResolver.setTemplateEngine(templateEngine());
-		return viewResolver;
-	}
-    /*@Bean
-	public ResourceBundleViewResolver tilesViewResolver() {
-		ResourceBundleViewResolver tilesViewResolver = new ResourceBundleViewResolver();
-		tilesViewResolver.setBasename("spring-views");
-		tilesViewResolver.setOrder(0);
-		return tilesViewResolver;
-	}*/
-
-    /*@Bean
-	public TilesConfigurer tilesConfigurer() {
-		TilesConfigurer tilesConfigurer = new TilesConfigurer();
-		tilesConfigurer.setDefinitions("/WEB-INF/tiles.xml");
-		tilesConfigurer.setCompleteAutoload(true); // to enable using EL in tiles.xml
-		return tilesConfigurer;
-	}*/
 
 	public void setApplicationContext(final ApplicationContext applicationContext)
 			throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
-        /* **************************************************************** */
+	@Bean
+	public ThymeleafViewResolver viewResolver(){
+		ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+		viewResolver.setTemplateEngine(templateEngine());
+		return viewResolver;
+	}
+
+	@Bean
+	public SpringTemplateEngine templateEngine(){
+		// SpringTemplateEngine automatically applies SpringStandardDialect and
+		// enables Spring's own MessageSource message resolution mechanisms.
+		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+		//templateEngine.addDialect(new LayoutDialect());
+		templateEngine.setTemplateResolver(templateResolver());
+		// Enabling the SpringEL compiler with Spring 4.2.4 or newer can
+		// speed up execution in most scenarios, but might be incompatible
+		// with specific cases when expressions in one template are reused
+		// across different data types, so this flag is "false" by default
+		// for safer backwards compatibility.
+		templateEngine.setEnableSpringELCompiler(true);
+		return templateEngine;
+	}
+
+    /* **************************************************************** */
     /*  THYMELEAF-SPECIFIC ARTIFACTS                                    */
     /*  TemplateResolver <- TemplateEngine <- ViewResolver              */
     /* **************************************************************** */
@@ -102,21 +93,6 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 		return templateResolver;
 	}
 
-	@Bean
-	public SpringTemplateEngine templateEngine(){
-		// SpringTemplateEngine automatically applies SpringStandardDialect and
-		// enables Spring's own MessageSource message resolution mechanisms.
-		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-		//templateEngine.addDialect(new LayoutDialect());
-		templateEngine.setTemplateResolver(templateResolver());
-		// Enabling the SpringEL compiler with Spring 4.2.4 or newer can
-		// speed up execution in most scenarios, but might be incompatible
-		// with specific cases when expressions in one template are reused
-		// across different data types, so this flag is "false" by default
-		// for safer backwards compatibility.
-		templateEngine.setEnableSpringELCompiler(true);
-		return templateEngine;
-	}
 
 
 
@@ -158,43 +134,5 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 		servletContextAttributeExporter.setAttributes(attributes);
 		return servletContextAttributeExporter;
 	}
-	
-/*	@Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(converter());
-        super.configureMessageConverters(converters);
-    }
-	
-    @Bean
-    MappingJackson2HttpMessageConverter converter() {
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        //converter.
-        //do your customizations here...
-        return converter;
-    }*/
-    
-    
-	/*
-	 * Temporarily fix GSON Date conversion problem
-	 * - Fix Date conversion problem for now as [Configure Gson in Spring before using GsonHttpMessageConverter](http://stackoverflow.com/questions/31335146/configure-gson-in-spring-before-using-gsonhttpmessageconverter)
-	 
-	@Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(createGsonHttpMessageConverter());
-        super.configureMessageConverters(converters);
-    }
-
-    private GsonHttpMessageConverter createGsonHttpMessageConverter() {
-        Gson gson = new GsonBuilder()
-                //.excludeFieldsWithoutExposeAnnotation()
-                //.setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
-        		.setDateFormat("MM'-'dd'-'yyyy")
-                .create();
-
-        GsonHttpMessageConverter gsonConverter = new GsonHttpMessageConverter();
-        gsonConverter.setGson(gson);
-        return gsonConverter;
-    }*/
-
 	
 }
