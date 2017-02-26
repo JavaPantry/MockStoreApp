@@ -28,7 +28,9 @@ public class LoginController {
 	@RequestMapping(value={"/login.jsp", "/login"}, method = RequestMethod.GET)
 	public void displayLoginForm(ModelMap model,	@RequestParam(value = "error", required = false) String error,
 													@RequestParam(value = "logout", required = false) String logout) {
-		model.addAttribute(LOGIN_FORM_ATTRIBUTE_NAME, new LoginForm());
+		LoginForm loginForm = new LoginForm();
+		loginForm.setUserName("Alexei Ptitchkin");
+		model.addAttribute(LOGIN_FORM_ATTRIBUTE_NAME, loginForm);
 		if (error != null) {
 			model.addAttribute("error", "Invalid username and password!");
 		}

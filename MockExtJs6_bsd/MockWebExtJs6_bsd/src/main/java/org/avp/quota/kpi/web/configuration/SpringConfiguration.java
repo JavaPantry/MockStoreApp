@@ -6,6 +6,7 @@ import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import thymeleafexamples.stsm.business.SpringBusinessConfig;
@@ -25,7 +26,7 @@ import javax.servlet.ServletException;
 
 // removed from scan ,"org.avp.security.service"
 @Configuration
-public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServletInitializer{
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
