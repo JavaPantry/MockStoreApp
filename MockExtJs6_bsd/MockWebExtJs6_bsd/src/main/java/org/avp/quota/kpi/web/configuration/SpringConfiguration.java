@@ -34,7 +34,6 @@ public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServ
 		servletContext.setInitParameter("spring.profiles.active", "Tomcat");
         //Set multiple active profile
         // not exists anymore servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
-
 	}
 
 	public SpringConfiguration() {
