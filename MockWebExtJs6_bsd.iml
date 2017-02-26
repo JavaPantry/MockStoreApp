@@ -25,7 +25,7 @@
         <fileset id="initializer org.avp.quota.kpi.web.configuration.SpringConfiguration root context" name="MVC dispatcher initializer root context" removed="true">
           <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockWebExtJs6_bsd/src/main/java/thymeleafexamples/stsm/business/SpringBusinessConfig.java</file>
         </fileset>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
+        <fileset id="fileset" name="Spring Application Context" removed="false" profiles="Tomcat">
           <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/HsqlJUnitDataServiceModuleConfiguration.java</file>
           <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/JbossDataServiceModuleConfiguration.java</file>
           <file>file://$MODULE_DIR$/MockExtJs6_bsd/MockServiceExtJs6_bsd/src/main/java/org/avp/quota/kpi/configuration/JbossTestDataServiceModuleConfiguration.java</file>

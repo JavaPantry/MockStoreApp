@@ -15,6 +15,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.context.support.ServletContextAttributeExporter;
@@ -31,10 +33,8 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
-
-/*import org.springframework.http.converter.json.GsonHttpMessageConverter;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;*/
+import thymeleafexamples.stsm.web.conversion.DateFormatter;
+import thymeleafexamples.stsm.web.conversion.VarietyFormatter;
 
 @Configuration
 @EnableWebMvc
@@ -93,9 +93,6 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 		return templateResolver;
 	}
 
-
-
-
 	@Bean
 	public SessionLocaleResolver localeResolver() {
 		SessionLocaleResolver localeResolver = new SessionLocaleResolver();
@@ -121,8 +118,37 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 	    registry.addResourceHandler("/app/**").addResourceLocations("/app/");
 	    registry.setOrder(-1);
 	}
-	
-	@Override
+
+    /*
+ *  Message externalization/internationalization
+ */
+    @Bean
+    public ResourceBundleMessageSource messageSource(){
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages");
+        return messageSource;
+    }
+    /*
+     * Add formatter for class {@link thymeleafexamples.stsm.business.entities.Variety}
+     * and {@link java.util.Date} in addition to the one registered by default
+     */
+    @Override
+    public void addFormatters(final FormatterRegistry registry) {
+        super.addFormatters(registry);
+        registry.addFormatter(varietyFormatter());
+        registry.addFormatter(dateFormatter());
+    }
+
+    @Bean
+    public VarietyFormatter varietyFormatter() {
+        return new VarietyFormatter();
+    }
+
+    @Bean
+    public DateFormatter dateFormatter() {
+        return new DateFormatter();
+    }
+    @Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(localeChangeInterceptor());
 	}
