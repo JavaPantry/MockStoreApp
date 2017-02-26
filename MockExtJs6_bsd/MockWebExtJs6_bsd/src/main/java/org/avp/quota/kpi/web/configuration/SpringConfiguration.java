@@ -6,9 +6,11 @@ import org.avp.quota.kpi.configuration.TomcatDataServiceModuleConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import thymeleafexamples.stsm.business.SpringBusinessConfig;
 
+import javax.servlet.Filter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
@@ -56,4 +58,12 @@ public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServ
 		return new String[] { "/" };
 	}
 
+	public static final String CHARACTER_ENCODING = "UTF-8";
+	@Override
+	protected Filter[] getServletFilters() {
+		final CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+		encodingFilter.setEncoding(CHARACTER_ENCODING);
+		encodingFilter.setForceEncoding(true);
+		return new Filter[] { encodingFilter };
+	}
 }
