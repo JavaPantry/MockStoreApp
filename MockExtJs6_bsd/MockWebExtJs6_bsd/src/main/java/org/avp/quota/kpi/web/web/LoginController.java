@@ -46,6 +46,4 @@ public class LoginController {
 				(ssoLogoutUrl != null && ssoLogoutUrl.length()>0) ? ssoLogoutUrl : "/");
 		return redirectUrl;
 	}
-
-
 }
