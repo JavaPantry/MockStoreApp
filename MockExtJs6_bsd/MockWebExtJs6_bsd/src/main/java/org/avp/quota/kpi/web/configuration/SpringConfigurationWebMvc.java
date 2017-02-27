@@ -39,7 +39,12 @@ import thymeleafexamples.stsm.web.conversion.VarietyFormatter;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages={"org.avp.quota.kpi.web.web",
-							"thymeleafexamples.stsm.web.controller"})
+							"thymeleafexamples.stsm.web.controller",
+							"org.avp.quota.kpi.web.service",
+							"org.avp.quota.kpi.service",
+							"org.avp.bsd.service",
+							"org.avp.security.service"})
+
 public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;

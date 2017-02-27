@@ -26,6 +26,13 @@ import javax.servlet.ServletException;
 
 // removed from scan ,"org.avp.security.service"
 @Configuration
+@Import(SpringSecurityInitializer.class)
+@ComponentScan(basePackages={
+		"org.avp.quota.kpi.web.service",
+		"org.avp.quota.kpi.service",
+		"org.avp.bsd.service",
+		"org.avp.security.service"})
+
 public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServletInitializer{
 
     @Override

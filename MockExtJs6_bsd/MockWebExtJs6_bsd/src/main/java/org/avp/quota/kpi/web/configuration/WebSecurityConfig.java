@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -52,6 +53,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
  */
+@Configuration
+@EnableWebSecurity
+@PropertySource("classpath:securityConfig.properties")
+@ComponentScan(basePackages={"org.avp.security.service"})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static Logger logger = Logger.getLogger(WebSecurityConfig.class);
 	
