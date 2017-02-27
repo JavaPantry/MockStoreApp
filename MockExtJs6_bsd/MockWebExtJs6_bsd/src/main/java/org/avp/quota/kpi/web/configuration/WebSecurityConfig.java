@@ -58,7 +58,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 * org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'springSecurityFilterChain' is defined
 *
 * read: http://www.baeldung.com/no-bean-named-springsecurityfilterchain-is-defined
-* */
+*
+*/
 
 @Configuration
 @EnableWebSecurity

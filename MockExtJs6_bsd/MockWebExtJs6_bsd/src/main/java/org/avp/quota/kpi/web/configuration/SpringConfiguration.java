@@ -26,23 +26,9 @@ import javax.servlet.ServletException;
 
 // removed from scan ,"org.avp.security.service"
 @Configuration
-@Import(SpringSecurityInitializer.class)
-@ComponentScan(basePackages={
-		"org.avp.quota.kpi.web.service",
-		"org.avp.quota.kpi.service",
-		"org.avp.bsd.service",
-		"org.avp.security.service"})
-
-public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServletInitializer{
-
-    @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        super.onStartup(servletContext);
-        //servletContext.setAttribute("spring.profiles.active", "Tomcat");
-		servletContext.setInitParameter("spring.profiles.active", "Tomcat");
-        //Set multiple active profile
-        // not exists anymore servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
-	}
+@Import({WebSecurityConfig.class})
+@ComponentScan(basePackages={"org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.bsd.service"})
+public class SpringConfiguration  {
 
 	public SpringConfiguration() {
 		//-Djava.security.krb5.conf=krb5.conf
@@ -50,27 +36,4 @@ public class SpringConfiguration  extends AbstractAnnotationConfigDispatcherServ
 		//System.getenv().containsKey("java.security.krb5.conf");
 	}
 
-	@Override
-	protected Class<?>[] getServletConfigClasses() {
-    	return new Class<?>[] { SpringConfigurationWebMvc.class };
-	}
-
-	@Override
-	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { SpringBusinessConfig.class };
-	}
-
-	@Override
-	protected String[] getServletMappings() {
-		return new String[] { "/" };
-	}
-
-	public static final String CHARACTER_ENCODING = "UTF-8";
-	@Override
-	protected Filter[] getServletFilters() {
-		final CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-		encodingFilter.setEncoding(CHARACTER_ENCODING);
-		encodingFilter.setForceEncoding(true);
-		return new Filter[] { encodingFilter };
-	}
 }

@@ -26,6 +26,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.ResourceBundleViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
@@ -33,8 +34,12 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import thymeleafexamples.stsm.business.SpringBusinessConfig;
 import thymeleafexamples.stsm.web.conversion.DateFormatter;
 import thymeleafexamples.stsm.web.conversion.VarietyFormatter;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 
 @Configuration
 @EnableWebMvc
