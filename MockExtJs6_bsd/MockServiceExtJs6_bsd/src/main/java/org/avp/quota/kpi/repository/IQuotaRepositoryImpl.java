@@ -1,28 +1,19 @@
 package org.avp.quota.kpi.repository;
 
+import org.apache.log4j.Logger;
+import org.avp.quota.kpi.model.dto.TotalDto;
+import org.avp.quota.kpi.util.FilterOperator;
+import org.avp.quota.kpi.util.FilterParameterExtJs6;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
-import org.apache.log4j.Logger;
-import org.avp.quota.kpi.model.dao.QuotaDao;
-import org.avp.quota.kpi.model.dto.TotalDto;
-import org.avp.quota.kpi.service.QuotaServiceImpl;
-import org.avp.quota.kpi.util.FilterOperator;
-import org.avp.quota.kpi.util.FilterParameterExtJs6;
-import org.avp.quota.kpi.util.FilterType;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 @Repository
 public class IQuotaRepositoryImpl implements IQuotaRepositoryCustom {

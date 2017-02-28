@@ -17,7 +17,7 @@ public class BeanUtilityTest {
 	public void tearDown() throws Exception {
 	}
 	
-	@Test
+	// at Test
 	public void testNullSafeMergeTo() {
 		A src = new A(1L,11,22,"A original","A original2");
 		A dst = new A(2L,33,44,"B original","B original2");
