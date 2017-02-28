@@ -105,7 +105,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		logger.debug("configure(HttpSecurity "+http+")");
 		http.authorizeRequests()
-				.antMatchers("/","/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
+				.antMatchers("/").permitAll()
+				.antMatchers("/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
 				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, adminGroupAngular)
 				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
