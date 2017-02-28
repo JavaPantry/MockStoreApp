@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<html>
+<head>
+<!-- page import="org.avp.fast.constants.GlobalConstant" -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<meta http-equiv="Content-Type"	content="text/html; charset=windows-1252"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<META http-equiv="Content-Style-Type" content="text/css"/>
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"/>
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
+<META HTTP-EQUIV="expires" CONTENT="-1"/>
+<title>Quota KPI</title>
+<link rel="icon" href="resources/fast/images/chart_curve.png">
+<!-- 
+	* for Spring security tag security:authorize access="hasRole('QuotaKPI_XXXX')" groups/roles should have 'ROLE_' prefix
+ -->
+
+<script type="text/javascript">
+var welcomeUserName		= 'Welcome, ' + '[[${userFullName}]]';//+ '${pageContext.request.userPrincipal.name}'
+var FaST_Version_Number = 'v 0.0.1';
+
+var quotaUser = true;    
+var budgetUser = false;    
+var companyUser = false;    
+var reportUser = false;    
+var adminUser = false;    
+
+var messages = {
+	managerIdLabel	: '[[#{label.list.manager.id}]]',
+	managerNameLabel: '[[#{label.list.manager.id}]]'
+}
+</script>
+
+
+<div sec:authorize="hasRole('QuotaKPI_QUOTA')">
+    <script type="text/javascript">
+		quotaUser = true;    
+    </script>
+</div>
+
+<div sec:authorize access="hasRole('QuotaKPI_BUDGET')">
+    <script type="text/javascript">
+		budgetUser = true;    
+    </script>
+</div>
+
+<div sec:authorize access="hasRole('QuotaKPI_REPORT')">
+    <script type="text/javascript">
+		reportUser = true;    
+    </script>
+</div>
+
+<div sec:authorize access="hasRole('QuotaKPI_COMPANY')">
+    <script type="text/javascript">
+		companyUser = true;    
+    </script>
+</div>
+
+<div sec:authorize access="hasRole('QuotaKPI_ADMIN')">
+    <script type="text/javascript">
+		quotaUser = true;    
+		budgetUser = true;    
+		companyUser = true;    
+		reportUser = true;    
+		adminUser = true;    
+    </script>
+</div>
+
+
+<div sec:authorize access="hasRole('QuotaKPI_ADMIN_ANGULAR')">
+    <script type="text/javascript">
+		quotaUser = true;    
+		budgetUser = true;    
+		companyUser = true;    
+		reportUser = true;    
+		adminUser = true;    
+    </script>
+</div>
+
+
+<link rel="stylesheet" href="resources/node_modules/bootstrap/dist/css/bootstrap.css">
+<script src="resources/node_modules/jquery/dist/jquery.js"></script>
+ 
+  
+<link rel="stylesheet" type="text/css" href="resources/extjs-6.0.1/classic/theme-classic/resources/theme-classic-all-debug.css"/>
+<link rel="stylesheet" type="text/css" href="resources/extjs-6.0.1/packages/charts/classic/classic/resources/charts-all-debug.css"/>
+<link rel="stylesheet" type="text/css" href="resources/extjs-6.0.1/packages/ux/classic/classic/resources/ux-all-debug.css"/>
+<script type="text/javascript" src="resources/extjs-6.0.1/ext-all-debug.js"></script>
+<script type="text/javascript" src="resources/extjs-6.0.1/packages/charts/classic/charts-debug.js"></script>
+
+  
+ 
+<link rel="stylesheet" type="text/css" href="resources/fast/css/app.css"/>
+<script type="text/javascript" src="app/app.js"></script>
+
+</head>
+
+<body>
+
+
+
+<script>
+document.write("Loading Quota KPI "+FaST_Version_Number+'.<p>'+'<spring:message code="label.list.manager.id"/>');
+</script>
+</body>
+</html>

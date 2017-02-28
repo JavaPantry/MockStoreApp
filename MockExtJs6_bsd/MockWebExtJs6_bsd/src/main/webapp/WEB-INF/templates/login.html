@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10, IE=edge" />
+		
+		<link rel="icon" href="/resources/fast/images/chart_curve.png">
+        <title th:text="#{label.login.page_title}">login page</title>
+		<!--th:text="#{}"-->
+		<script src="/resources/node_modules/jquery/dist/jquery.js"></script>
+		<link rel="stylesheet" href="/resources/node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="/resources/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<link href="/resources/css/main.css" rel="stylesheet" >
+        <link href="/resources/css/paper.css" rel="stylesheet" >
+        <link href="/resources/css/signin.css" rel="stylesheet">
+        
+    </head>
+    
+    <body>
+    HTML
+     <div class="container">
+      <form class="form-signin" method="post" modelAttribute="loginForm">
+			<h5 class="form-signin-heading" th:text="#{label.login.title}">Login page</h5>
+
+		  <!--<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+			  <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+		  </ul>-->
+
+
+			<!--<c:if test="${not empty error}">
+				<div class="error">${error}</div>
+			</c:if>
+			<c:if test="${not empty msg}">
+				<div class="msg">${msg}</div>
+			</c:if>-->
+			
+			<label for="inputUserName" class="sr-only">Email address</label>
+			<input id="inputUserName" name="userName" class="form-control" placeholder="User Id" required autofocus>  <!-- type="email"  -->
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+			<!-- <div class="checkbox"><label><input type="checkbox" value="remember-me"> Remember me</label></div> -->
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<div class="footer">
+				<div>
+					<span>&copy; 2013-2015 </span>
+					<a href="http://www.google.com"><span>ABC Canada Inc.</span></a><span th:text="#{label.main.footer.project_title_short}"> - </span>
+				</div>
+			</div>
+      </form>
+    </div> <!-- /container -->
+    
+    </body>
+
+</html>

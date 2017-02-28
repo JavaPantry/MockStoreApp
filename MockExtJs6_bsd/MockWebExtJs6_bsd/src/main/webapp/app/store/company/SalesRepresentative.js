@@ -30,7 +30,7 @@ Ext.define('QuotaKPI.store.company.SalesRepresentative', {
             writeAllFields: true,
             allowSingle: false,
             encode: false,
-            rootProperty: 'data',
+            rootProperty: 'data'
         },
         listeners: {
         	//TODO - <AP> somehow despite record delete successful response is error 

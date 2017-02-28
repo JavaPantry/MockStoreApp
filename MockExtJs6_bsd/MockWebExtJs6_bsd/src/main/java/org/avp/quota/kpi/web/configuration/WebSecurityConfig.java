@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -45,8 +46,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * QuotaKPI_REPORT		sptestuser604
  * 
  * password: password
- * 
+ *
+ at Configuration
+ at EnableWebSecurity
+ at PropertySource("classpath:securityConfig.properties")
+
+
  */
+
+/*
+* org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'springSecurityFilterChain' is defined
+*
+* read: http://www.baeldung.com/no-bean-named-springsecurityfilterchain-is-defined
+*
+*/
+
 @Configuration
 @EnableWebSecurity
 @PropertySource("classpath:securityConfig.properties")
@@ -90,7 +104,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		logger.debug("configure(HttpSecurity "+http+")");
 		http.authorizeRequests()
-				.antMatchers("/","/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
+				.antMatchers("/").permitAll()
+				.antMatchers("/exthome","/clientStore","/app/**").authenticated() //.permitAll() those patterns should be excluded from permitted and authenticated/authorized
 				.antMatchers( "/ajax/quotas/**").hasAnyAuthority(quotaGroup, adminGroup, adminGroupAngular)
 				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
@@ -135,7 +150,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 * 
 	 * 
 	 * For Role based Access control using Spring Security and MVC, Mapping LDAP Groups to Authorities for Authorization
-	 * @see http://javarevisited.blogspot.com/2013/07/role-based-access-control-using-spring-security-ldap-authorities-mapping-mvc.html 
+	 * http://javarevisited.blogspot.com/2013/07/role-based-access-control-using-spring-security-ldap-authorities-mapping-mvc.html
 	
 	@Bean
 	public ActiveDirectoryLdapAuthenticationProvider activeDirectoryLdapAuthenticationProvider() {

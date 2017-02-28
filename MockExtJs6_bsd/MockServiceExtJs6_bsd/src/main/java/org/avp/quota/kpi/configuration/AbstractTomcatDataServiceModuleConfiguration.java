@@ -31,9 +31,7 @@ public abstract class AbstractTomcatDataServiceModuleConfiguration{
 	 * 
 	 */
 	public abstract boolean isInBuildMode();
-	
-	
-	
+
 	/*
 	 * google : Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' is defined
 	 * http://stackoverflow.com/questions/24520602/spring-data-jpa-no-bean-named-entitymanagerfactory-is-defined-injection-of-a 

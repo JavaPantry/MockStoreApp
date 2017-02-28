@@ -35,3 +35,14 @@ This is playground to be used as start for new projects
 - You should see the start of build
 - Click on web project and select debug on server
 
+This is "Thymeleaf_branch" branch
+
+- remove web.xml
+    Cannot initialize context because there is already a root application context present - check whether you have multiple ContextLoader* definitions in your web.xml!
+    http://stackoverflow.com/questions/22729725/why-this-spring-application-with-java-based-configuration-dont-work-properly
+
+- How to set active profile without web.xml
+    https://dzone.com/articles/using-spring-profiles-and-java
+
+
+This is "ThymeleafWithWebXml" branch
