@@ -23,11 +23,12 @@ import javax.servlet.ServletException;
 //SpringConfigurationThymeleaf.class
 //WebSecurityConfig.class,
 
-
+// at Import({WebSecurityConfig.class})
 // removed from scan ,"org.avp.security.service"
+//remove from import , SpringConfigurationThymeleaf.class
 @Configuration
-@Import({WebSecurityConfig.class})
-@ComponentScan(basePackages={"org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.bsd.service"})
+@ComponentScan(basePackages={"org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.bsd.service","org.avp.security.service"})
+@Import({WebSecurityConfig.class, TomcatDataServiceModuleConfiguration.class, SpringBusinessConfig.class})
 public class SpringConfiguration  {
 
 	public SpringConfiguration() {

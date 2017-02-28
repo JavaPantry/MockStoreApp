@@ -64,7 +64,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 @PropertySource("classpath:securityConfig.properties")
-@ComponentScan(basePackages={"org.avp.security.service"})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static Logger logger = Logger.getLogger(WebSecurityConfig.class);
 	

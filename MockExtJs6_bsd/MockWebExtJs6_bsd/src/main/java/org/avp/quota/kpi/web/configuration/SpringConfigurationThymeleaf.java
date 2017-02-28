@@ -7,7 +7,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-//at Con f igu rat i o n
+//at Configuration
 public class SpringConfigurationThymeleaf {
 
 	@Bean
