@@ -46,3 +46,5 @@ This is "Thymeleaf_branch" branch
 
 
 This is "ThymeleafWithWebXml" branch
+Thymeleaf integrated, jsp and tile files removed
+Merged with master
