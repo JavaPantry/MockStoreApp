@@ -100,6 +100,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired 
 	private UserDetailsService userDetailsService;
 
+	/*
+	*
+	.antMatchers( "/images/**").permitAll()
+	.antMatchers( "/css/**").permitAll()
+	.antMatchers( "/js/**").permitAll()
+	.antMatchers( "/resources/**").permitAll()
+	.antMatchers( "/app/**").permitAll()
+
+*/
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		logger.debug("configure(HttpSecurity "+http+")");
@@ -118,6 +128,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				//.antMatchers( "/ajax/users/**").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				.antMatchers( "/companyUpload/**").permitAll()
 				.antMatchers( "/resources/**").permitAll()
+				.antMatchers( "/images/**").permitAll()
+				.antMatchers( "/css/**").permitAll()
+				.antMatchers( "/js/**").permitAll()
+				.antMatchers( "/resources/**").permitAll()
+				.antMatchers( "/app/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
