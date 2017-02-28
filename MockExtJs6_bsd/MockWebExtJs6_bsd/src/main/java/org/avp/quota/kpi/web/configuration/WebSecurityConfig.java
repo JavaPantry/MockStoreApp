@@ -133,6 +133,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/js/**").permitAll()
 				.antMatchers( "/resources/**").permitAll()
 				.antMatchers( "/app/**").permitAll()
+                .antMatchers( "/seedstartermngHome/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
