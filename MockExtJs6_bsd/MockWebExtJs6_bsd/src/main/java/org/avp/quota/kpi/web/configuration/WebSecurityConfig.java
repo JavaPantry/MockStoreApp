@@ -44,7 +44,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * QuotaKPI_BUDGET		sptestuser601
  * QuotaKPI_COMPANY		sptestuser602
  * QuotaKPI_REPORT		sptestuser604
- * 
+ *
+ * User thymeleaf with login id 'Thyme Leaf'
+ * app.auth.thymeleafGroup=ROLE_BSD_DEALER_THYMELEAF
+ *
  * password: password
  *
  at Configuration
@@ -74,7 +77,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${app.auth.adminGroupAngular}")
 	private String adminGroupAngular;
 
-	
+	//app.auth.thymeleafGroup=ROLE_BSD_DEALER_THYMELEAF
+	@Value("${app.auth.thymeleafGroup}")
+	private String thymeleafGroup;
+
 	@Value("${app.auth.quotaGroup}")
 	private String quotaGroup;
 	@Value("${app.auth.budgetGroup}")
@@ -83,7 +89,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private String companyGroup;
 	@Value("${app.auth.reportGroup}")
 	private String reportGroup;
-	
+
+
 	/*
 	commented out Thursday, April 21, 2016
 	//don't need if Windows defined groups are used
@@ -120,9 +127,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
-				
+
+				//TODO - <AP> repair online UI
+				.antMatchers( "/repair/**").hasAnyAuthority(thymeleafGroup)
+
 				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
-				
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
 				//.antMatchers( "/ajax/**").permitAll()
 				//.antMatchers( "/ajax/users/**").hasAnyAuthority(adminGroup)// + ", " + adminGroup)

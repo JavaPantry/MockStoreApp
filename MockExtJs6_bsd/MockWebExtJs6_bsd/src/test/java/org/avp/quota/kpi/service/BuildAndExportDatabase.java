@@ -229,7 +229,22 @@ public class BuildAndExportDatabase {
 		hongLiAuthoritiy.setUser(hongLi);
 		hongLiAuthoritiy.setRole("ROLE_BSD_DEALER");
 		userService.save(hongLiAuthoritiy);
-		
+
+		BsdUser thymeLeaf = new BsdUser();
+		thymeLeaf.setUserId("Thyme Leaf");
+		thymeLeaf.setFirstName("Thyme");
+		thymeLeaf.setLastName("Leaf");
+		thymeLeaf.setPassword(passwordEncoder.encode("password"));
+		thymeLeaf.setEmail("thymeLeaf@gmail.com");
+		thymeLeaf.setStore(storeHq);
+		userService.save(thymeLeaf);
+
+		Authority thymeLeafAuthoritiy = new Authority();
+		thymeLeafAuthoritiy.setUser(thymeLeaf);
+		thymeLeafAuthoritiy.setRole("ROLE_BSD_DEALER_THYMELEAF");
+		userService.save(thymeLeafAuthoritiy);
+
+
 		BsdUser angularUser = new BsdUser();
 		angularUser.setUserId("Angular User");
 		angularUser.setFirstName("Angular");
