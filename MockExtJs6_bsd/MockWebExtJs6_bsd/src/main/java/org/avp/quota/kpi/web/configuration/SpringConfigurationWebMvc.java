@@ -124,6 +124,10 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
 
+		registry.addResourceHandler("/repair_images/**").addResourceLocations("/repair_images/");
+		registry.addResourceHandler("/repair_css/**").addResourceLocations("/repair_css/");
+
+
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	    registry.addResourceHandler("/app/**").addResourceLocations("/app/");
 	    registry.setOrder(-1);
