@@ -130,6 +130,7 @@ public class SpringConfigurationWebMvc extends WebMvcConfigurerAdapter implement
 
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	    registry.addResourceHandler("/app/**").addResourceLocations("/app/");
+
 	    registry.setOrder(-1);
 	}
 

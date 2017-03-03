@@ -129,7 +129,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
 
 				//TODO - <AP> repair online UI
-				.antMatchers( "/repair/**").hasAnyAuthority(thymeleafGroup)
+				.antMatchers( "/repairOnlineHome/**").hasAnyAuthority(thymeleafGroup)
 
 				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
@@ -142,7 +142,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 				.antMatchers( "/repair_images/**").permitAll()
 				.antMatchers( "/repair_css/**").permitAll()
-
+				.antMatchers( "/node_modules/**").permitAll()
 
 				.antMatchers( "/js/**").permitAll()
 				.antMatchers( "/resources/**").permitAll()

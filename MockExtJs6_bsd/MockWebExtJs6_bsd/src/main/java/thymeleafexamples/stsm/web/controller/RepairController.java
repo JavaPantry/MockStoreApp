@@ -68,33 +68,33 @@ public class RepairController {
         return this.seedStarterService.findAll();
     }
 
-    // at RequestMapping(value={"/","/repairHome"}, method= RequestMethod.GET)
-    @RequestMapping({"/repairHome"})
+    // at RequestMapping(value={"/","/repairOnlineHome"}, method= RequestMethod.GET)
+    @RequestMapping({"/repairOnlineHome"})
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
-        return "repairHome";
+        return "repairOnlineHome";
     }
 
-    @RequestMapping(value="/repairHome", params={"save"})
+    @RequestMapping(value="/repairOnlineHome", params={"save"})
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
-            return "repairHome";
+            return "repairOnlineHome";
         }
         this.seedStarterService.add(seedStarter);
         model.clear();
-        return "redirect:/repairHome";
+        return "redirect:/repairOnlineHome";
     }
 
-    @RequestMapping(value="/repairHome", params={"addRow"})
+    @RequestMapping(value="/repairOnlineHome", params={"addRow"})
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         seedStarter.getRows().add(new Row());
-        return "repairHome";
+        return "repairOnlineHome";
     }
 
-    @RequestMapping(value="/repairHome", params={"removeRow"})
+    @RequestMapping(value="/repairOnlineHome", params={"removeRow"})
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
         seedStarter.getRows().remove(rowId.intValue());
-        return "repairHome";
+        return "repairOnlineHome";
     }
 }
