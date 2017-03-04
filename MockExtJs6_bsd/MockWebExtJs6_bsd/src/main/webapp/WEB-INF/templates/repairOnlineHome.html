@@ -1,50 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Repair Online</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="resources\node_modules\bootstrap\dist\css\bootstrap.css">
+<head th:replace="~{repairPageParts :: repairHead}"></head>
 
-    <script src="resources\node_modules\jquery\dist\jquery.js"></script>
-
-    <script src="resources\node_modules\bootstrap\dist\js\bootstrap.js"></script>
-    <script src="resources\node_modules\bootstrap-validator\dist\validator.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="resources\css\global_new.css">
-    <link rel="stylesheet" type="text/css" href="resources\css\bootstrap_canon.css">
-
-    <link rel="stylesheet" type="text/css" href="resources\node_modules\bootstrap-datepicker\dist\css\bootstrap-datepicker3.css">
-    <script src="resources\node_modules\bootstrap-datepicker\js\bootstrap-datepicker.js"></script>
-
-</head>
 <body>
-
-<nav class="navbar navbar-default header_bkg">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="http://www.canon.ca/inetCA/home?m=home"> <img src="resources/images/canon_main_logo.gif" alt="Canon Logo"></a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right"> <!---->
-                <li><a href="#">Support & Drivers</a></li>
-                <li><a href="#">Supplies & Accessories</a></li>
-                <!--<li><button class="btn btn-danger navbar-btn">Francais</button></li>-->
-                <li><button class="button_language" onClick="window.location.href='/euo/repairOnlineStep1';return false;">Francais&nbsp;&nbsp;&#xf144;</button></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
+<div th:replace="~{repairPageParts :: repairNavigation}"></div>
 
 <div class="container">
     <div class="page-header">
@@ -185,10 +145,10 @@
 
             <div class="panel-body">
 
-                <form class="form-horizontal" data-toggle="validator" id="repairFormStep1" method="post" action="repairOnlineHome.html"
+                <form class="form-horizontal" data-toggle="validator" id="repairFormStep1" method="post" action="#"
                       onsubmit="document.getElementById('repairFormStep1').submit();">
-                    <fieldset>
 
+                    <fieldset>
 
                         <div class="form-group required">
                             <label class="control-label required col-sm-4" for="ProductTypeahead">Choose Product Family:</label>
@@ -196,7 +156,6 @@
                                 <input type="text" name="productid" id="ProductTypeahead" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Type your Product"
                                        data-error="Product required" required>
                                 <div class="help-block with-errors"></div>
-                                <!-- tt-query -->
                             </div>
                         </div>
                         <input type="hidden" name="mySuppsId" id="mySuppsId">
@@ -370,21 +329,10 @@
         </div> <!--div class="panel panel-default"-->
 
     </div> <!--div class="panel-group"-->
-
-
-
     <!--end Content-->
-    <footer class="panel-footer">  <!--class="panel-footer"-->
-        <ul >
-            <li class="line"><a href="\euo\repairOnlineLink?link=privacy">Privacy Policy<!--<s:text name="label.PrivacyPolicy" />--></a></li>
-            <li class="line"><a href="\euo\repairOnlineLink?link=term">Terms of Use<!--<s:text name="label.TermsOfUse" />--></a></li>
-            <li class="line"><a href="\euo\repairOnlineLink?link=help">Help / FAQ<!--<s:text name="label.HelpNFAQ" />--></a></li>
-        </ul>
-    </footer>
-</div>
 
-
-
+    <div th:replace="~{repairPageParts :: repairFooterBody}"></div>
+</div>  <!--container-->
 
 <script>
 
@@ -406,29 +354,7 @@
         alert('pCodeValid = '+pCodeValid);
         return pCodeValid;
     }
-
 </script>
-
-
-<!--
-<script src="b ower_components/moment/moment.js"></script>
-<script src="b ower_components/bootstrap-datepicker-mobile/bootstrap-datepicker-mobile.js"></script>
--->
-
-
-<script>
-
-</script>
-
-<!--
-<script>
-    $(function(){
-        $("#headerTmplHolder").load("./headerTmpl.html");
-        $("#bodyTmplHolder").load("./step1.html");
-    });
-</script>
--->
-
 
 </body>
 </html>

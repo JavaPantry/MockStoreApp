@@ -30,8 +30,8 @@ at ActiveProfiles("Tomcat")
 */
 
 @Configuration
-@ComponentScan(basePackages={"thymeleafexamples.stsm.business","org.avp.quota.kpi.repository","org.avp.quota.kpi.service.interfaces","org.avp.quota.kpi.web.service","org.avp.quota.kpi.service","org.avp.quota.kpi.service","org.avp.bsd.service"})
-@Import({ TomcatDataServiceModuleConfiguration.class})
+@ComponentScan(basePackages={"thymeleafexamples.stsm.business"})
+// at Import({ TomcatDataServiceModuleConfiguration.class})
 public class SpringBusinessConfig {
 
     public SpringBusinessConfig() {

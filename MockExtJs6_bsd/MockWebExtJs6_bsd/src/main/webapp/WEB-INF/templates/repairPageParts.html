@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<head th:fragment="repairHead">
+    <meta charset="UTF-8">
+    <title>Repair Online head</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources\node_modules\bootstrap\dist\css\bootstrap.css">
+
+    <script src="resources\node_modules\jquery\dist\jquery.js"></script>
+
+    <script src="resources\node_modules\bootstrap\dist\js\bootstrap.js"></script>
+    <script src="resources\node_modules\bootstrap-validator\dist\validator.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="resources\css\global_new.css">
+    <link rel="stylesheet" type="text/css" href="resources\css\bootstrap_canon.css">
+
+    <link rel="stylesheet" type="text/css" href="resources\node_modules\bootstrap-datepicker\dist\css\bootstrap-datepicker3.css">
+    <script src="resources\node_modules\bootstrap-datepicker\js\bootstrap-datepicker.js"></script>
+
+</head>
+
+
+<nav class="navbar navbar-default header_bkg" th:fragment="repairNavigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.canon.ca/inetCA/home?m=home"> <img src="resources/images/canon_main_logo.gif" alt="Canon Logo"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right"> <!---->
+                <li><a href="#">Support & Drivers</a></li>
+                <li><a href="#">Supplies & Accessories</a></li>
+                <li><a href="#">Test</a></li>
+                <!--<li><button class="btn btn-danger navbar-btn">Francais</button></li>-->
+                <li><button class="button_language" onClick="window.location.href='/euo/repairOnlineStep1';return false;">Francais&nbsp;&nbsp;&#xf144;</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<footer class="panel-footer" th:fragment="repairFooterBody">
+    <ul >
+        <li class="line"><a href="\euo\repairOnlineLink?link=privacy">Privacy Policy<!--<s:text name="label.PrivacyPolicy" />--></a></li>
+        <li class="line"><a href="\euo\repairOnlineLink?link=term">Terms of Use<!--<s:text name="label.TermsOfUse" />--></a></li>
+        <li class="line"><a href="\euo\repairOnlineLink?link=help">Help/FAQ<!--<s:text name="label.HelpNFAQ" />--></a></li>
+    </ul>
+</footer>
+</body>
+</html>
