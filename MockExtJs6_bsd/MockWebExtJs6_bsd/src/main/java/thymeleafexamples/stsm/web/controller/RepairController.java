@@ -49,10 +49,12 @@ public class RepairController {
     }
 
 
-    Integer wizardStep = new Integer(1);
+    private Integer wizardStep;// = new Integer(1);
 
     @ModelAttribute("wizardStep")
-    public Integer wizardStep(){return wizardStep;}
+    public Integer wizardStep(){
+        return wizardStep;
+    }
 
     @ModelAttribute("allTypes")
     public List<Type> populateTypes() {
@@ -78,7 +80,15 @@ public class RepairController {
     @RequestMapping({"/repairOnlineHome"})
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
+        wizardStep = 1;
         return "repairOnlineHome";
+    }
+
+    @RequestMapping({"/repairOnlineHome2"})
+    public String showSeedstarters2(final SeedStarter seedStarter) {
+        seedStarter.setDatePlanted(Calendar.getInstance().getTime());
+        wizardStep = 2;
+        return "repairOnlineHome2";
     }
 
     @RequestMapping(value="/repairOnlineHome", params={"save"})
