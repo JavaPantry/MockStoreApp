@@ -29,7 +29,8 @@
         <div class="panel panel-default">
 
             <!--<div>WizardStep: <span th:text="${wizardStep}">wizardStepNo</span></div>-->
-            <div th:replace="~{repairPageParts :: repairWizardStep}"></div>
+	        <!--th:with="step=${wizardStep},title='Step 1'"-->
+            <div th:replace="~{repairPageParts :: repairWizardStep (${wizardStep}, 'Step 1. Request Estimate')}"></div>
 
             <div class="panel-body">
 

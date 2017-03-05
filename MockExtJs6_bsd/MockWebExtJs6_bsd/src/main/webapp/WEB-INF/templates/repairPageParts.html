@@ -46,14 +46,15 @@
     </div>
 </nav>
 
-
-<div class="panel-heading panelGroupHeadBkg" th:fragment="repairWizardStep">Step1. Request Estimate
-    <!--<span>WizardStep:</span>(<span th:text="${wizardStep}">wizardStepNo</span>)-->
+<!--Step 1. Request Estimate-->
+<!--th:text="${title}"-->
+<div class="panel-heading panelGroupHeadBkg" th:fragment="repairWizardStep(step, title )">
+    <span th:text="${title}">Step #. Default withard step title</span>
     <div class="numberedSteps">
-        <span th:class="${wizardStep} == 1 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
-        <span th:class="${wizardStep} == 2 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
-        <span th:class="${wizardStep} == 3 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
-        <span th:class="${wizardStep} == 4 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
+        <span th:class="${step} == 1 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
+        <span th:class="${step} == 2 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
+        <span th:class="${step} == 3 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
+        <span th:class="${step} == 4 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
     </div>
 </div>
 
