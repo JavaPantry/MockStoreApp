@@ -31,6 +31,8 @@ public class SeedStarter {
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
     private Feature[] features = null;
+
+    //private int wizardStep = 1;
     
     private List<Row> rows = new ArrayList<Row>();
     
@@ -39,6 +41,10 @@ public class SeedStarter {
         super();
     }
 
+
+    //public int getWizardStep() { return wizardStep; }
+
+    //public void setWizardStep(int wizardStep) { this.wizardStep = wizardStep; }
 
     public Integer getId() {
         return this.id;

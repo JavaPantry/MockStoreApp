@@ -47,6 +47,15 @@
 </nav>
 
 
+<div class="panel-heading panelGroupHeadBkg" th:fragment="repairWizardStep">Step1. Request Estimate
+    <span>WizardStep:</span><span th:text="${wizardStep}">wizardStepNo</span>
+    <div class="numberedSteps">
+        <span th:class="${wizardStep} == 1 ? 'wizard_stepOn':'wizard_stepOff'">1</span>
+        <span class="wizard_stepOff">2</span>
+        <span class="wizard_stepOff">3</span>
+        <span class="wizard_stepOff">4</span>
+    </div>
+</div>
 
 <footer class="panel-footer" th:fragment="repairFooterBody">
     <ul >

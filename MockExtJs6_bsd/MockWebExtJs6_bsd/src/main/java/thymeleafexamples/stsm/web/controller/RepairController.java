@@ -48,6 +48,12 @@ public class RepairController {
         super();
     }
 
+
+    Integer wizardStep = new Integer(1);
+
+    @ModelAttribute("wizardStep")
+    public Integer wizardStep(){return wizardStep;}
+
     @ModelAttribute("allTypes")
     public List<Type> populateTypes() {
         return Arrays.asList(Type.ALL);
