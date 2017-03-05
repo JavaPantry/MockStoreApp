@@ -19,117 +19,11 @@
             </tr>
         </table>
     </div>
-    <!--<div id="bodyTmplHolder"></div>-->
-    <!--<div t h replace="~{step1content :: wizardStep1}"></div>-->
+
     <!--start Content-->
     <script  type="text/javascript" src="resources\js\typeahead.bundle.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            //typeahead init
-            // Defining the local dataset
-            var productData = [
-                {"id":1,"name":"EF 100-400mm f/4.5-5.6L IS USM"},
-                {"id":2,"name":"EF 200-500mm f/4.5-5.6L IS USM"},
-                {"id":3,"name":"EF 300-500mm f/4.5-5.6L IS USM"},
-                {"id":4,"name":"EF 150-1500mm f/4.5-5.6L IS USM"},
-                {"id":5,"name":"EF 230-500mm f/4.5-5.6L IS USM"},
-                {"id":6,"name":"EF 220-500mm f/4.5-5.6L IS USM"},
-                {"id":7,"name":"EF 350-500mm f/4.5-5.6L IS USM"},
-                {"id":8,"name":"EF 430-500mm f/4.5-5.6L IS USM"},
-                {"id":9,"name":"EF 670-500mm f/4.5-5.6L IS USM"},
-                {"id":10,"name":"EF 600-500mm f/4.5-5.6L IS USM"}
-            ];
-
-            // Constructing the suggestion engine
-            var bloodhoundDS = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace(['id','name']),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                local: productData
-            });
-            bloodhoundDS.initialize();
-            // Initializing the typeahead
-            $('#scrollable-dropdown-menu .typeahead').typeahead({
-                    hint: true,
-                    highlight: true, /* Enable substring highlighting */
-                    minLength: 1 /* Specify minimum characters required for showing result */
-                },
-                {
-                    name: 'searchproduct',
-                    source: bloodhoundDS.ttAdapter(),
-                    displayKey: 'name',
-                    valueKey:"id",
-                    limit: 20
-                });
-
-            $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
-                //console.log('Selection: ' + suggestion);
-                for(var prop in suggestion){
-                    console.log(prop + ': ' + suggestion[prop]);
-                }
-                $('#mySuppsId').val(suggestion['id']);
-            });
-            //end of typeahead init
-
-        });
-    </script>
-
-    <style type="text/css">
-
-        .twitter-typeahead {
-            width: 100%;
-            position: relative;
-        }
-
-
-        .typeahead, .tt-query, .tt-hint {
-            border: 2px solid #CCCCCC;
-            /* border-radius: 8px; */
-            font-size: 12px; /* Set input font size */
-            height: 30px;
-            line-height: 30px;
-            outline: medium none;
-            padding: 8px 12px;
-            width: 100%;
-        }
-        .typeahead {
-            background-color: #FFFFFF;
-        }
-        .typeahead:focus {
-            border: 2px solid #0097CF;
-        }
-        .tt-query {
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-        }
-        .tt-hint {
-            color: #999999;
-        }
-        .tt-menu {
-            background-color: #FFFFFF;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 2px;
-            padding: 8px 0;
-            width: 422px;
-        }
-        .tt-suggestion {
-            font-size: 12px;  /* Set suggestion dropdown font size */
-            padding: 3px 20px;
-        }
-        .tt-suggestion:hover {
-            cursor: pointer;
-            background-color: #0097CF;
-            color: #FFFFFF;
-        }
-        .tt-suggestion p {
-            margin: 0;
-        }
-        #scrollable-dropdown-menu .tt-menu {
-            max-height: 150px;
-            overflow-y: auto;
-        }
-    </style>
-
+    <script  type="text/javascript" src="resources/js/repairOnlineHome.js"></script>
+    <link rel="stylesheet" href="resources/css/repairOnlineHome.css">
 
     <div class="panel-group">
         <div class="panel panel-default">
@@ -248,18 +142,6 @@
                             </div>
                         </div>
 
-                        <!--<div class="form-group">
-                            <label class="control-label col-sm-4" for="purchaseDate">Native Purchase Date:</label>
-                            <div class="input-group col-sm-8" id="purchaseDate">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </div>
-                                &lt;!&ndash;<input type="text" class="date-picker form-control" data-date-start-view="decade" data-date-format="mm/dd/yy" data-date="02/01/99" value="02/01/99" name="birthday" placeholder="MM/DD/YY" />&ndash;&gt;
-                                <input type="text" class="date-picker form-control" data-date-format="yy-mm-dd" name="purchaseDate" placeholder="yyyy-mm-dd" />
-
-                            </div>
-                        </div>-->
-
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="purchaseDate2">Bootstrap Purchase Date:</label>
                             <!-- define '.input-group#purchaseDate2' in resources/css/global_new.css -->
@@ -271,46 +153,8 @@
                             </div>
                         </div>
 
-                        <!--<div class="form-group">
-                            <label class="control-label col-sm-4" for="purchaseDate3">Original Purchase Date:</label>
-                            &lt;!&ndash; define '.input-group#purchaseDate2' in resources/css/global_new.css &ndash;&gt;
-                            <div class="input-group col-sm-8" id="purchaseDate3">
-                                <input type="text" class="form-control" data-date-format="mm/dd/yy" placeholder="MM/DD/YY" id='orderStartDate' value = "orderStartDate" name="orderStartDate">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar" onClick="displayDatePicker('orderStartDate', this, 'ymd', '-'); return false;"></span>
-                                    &lt;!&ndash;<button type="button" class="button_example" onClick="displayDatePicker('orderStartDate', this, 'ymd', '-'); return false;">&nbsp;&#xe805;&nbsp;</button>&ndash;&gt;
-                                </div>
-                            </div>
-                        </div>-->
-
-
-
-                        <!--<div class="form-group">
-                            <label class="control-label col-sm-4" for="purchaseDate2">Purchase Date:</label>
-                            <div class="form-group col-sm-8" id="purchaseDate2">
-                                <div class="input-group date">
-                                    <input type="text" class="form-control">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-
-                        <!--                    <div class="form-group">
-                                                <div class="input-group date">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                                </div>
-                                            </div>-->
-
-
-
-
                         <div class="well well-sm" style="font-weight:bold; color: #4d4d4d;">Please note: If you do not find your model in the menus above, we recommend you call our
                             Customer Support Center at 1-800-OK- CANON (1-800-652-2666) for further information.</div>
-
-
 
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
@@ -348,12 +192,6 @@
 
     }
 
-    function postalValid(){
-        var pCode = document.getElementById('postCode').value;
-        var pCodeValid = document.getElementById('postCode').checkValidity();
-        alert('pCodeValid = '+pCodeValid);
-        return pCodeValid;
-    }
 </script>
 
 </body>
