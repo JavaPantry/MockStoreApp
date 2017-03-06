@@ -37,7 +37,7 @@ import java.util.List;
 
 
 @Controller
-public class RepairController {
+public class BsdStoreController {
 
     @Autowired
     private VarietyService varietyService;
@@ -45,7 +45,7 @@ public class RepairController {
     @Autowired
     private SeedStarterService seedStarterService;
 
-    public RepairController() {
+    public BsdStoreController() {
         super();
     }
 
@@ -78,43 +78,43 @@ public class RepairController {
         return this.seedStarterService.findAll();
     }
 
-    // at RequestMapping(value={"/","/repairOnlineHome"}, method= RequestMethod.GET)
-    @RequestMapping({"/repairOnlineHome"})
+    // at RequestMapping(value={"/","/bsdStoreOnlineHome"}, method= RequestMethod.GET)
+    @RequestMapping({"/bsdStoreOnlineHome"})
     public String showRepairStep1(Model model, final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
         wizardStep = 1;
         model.addAttribute("wizardStep", wizardStep);
-        return "repair/repairOnlineHome";
+        return "bsd/bsdStoreOnlineHome";
     }
 
-    @RequestMapping({"/repairOnlineHome2"})
+    @RequestMapping({"/bsdStoreOnlineHome2"})
     public String showRepairStep2(Model model, final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
         wizardStep = 2;
         model.addAttribute("wizardStep", wizardStep);
-        return "repair/repairOnlineHome2";
+        return "bsd/bsdStoreOnlineHome";
     }
 
-    @RequestMapping(value="/repairOnlineHome", params={"save"})
+    @RequestMapping(value="/bsdStoreOnlineHome", params={"save"})
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
-            return "repair/repairOnlineHome";
+            return "bsd/bsdStoreOnlineHome";
         }
         this.seedStarterService.add(seedStarter);
         model.clear();
-        return "redirect:/repairOnlineHome";
+        return "redirect:/bsdStoreOnlineHome";
     }
 
-    @RequestMapping(value="/repairOnlineHome", params={"addRow"})
+    @RequestMapping(value="/bsdStoreOnlineHome", params={"addRow"})
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         seedStarter.getRows().add(new Row());
-        return "repair/repairOnlineHome";
+        return "bsd/bsdStoreOnlineHome";
     }
 
-    @RequestMapping(value="/repairOnlineHome", params={"removeRow"})
+    @RequestMapping(value="/bsdStoreOnlineHome", params={"removeRow"})
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
         seedStarter.getRows().remove(rowId.intValue());
-        return "repair/repairOnlineHome";
+        return "bsd/bsdStoreOnlineHome";
     }
 }
