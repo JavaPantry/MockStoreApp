@@ -47,5 +47,4 @@ bower_components
 node_modules
 typings
 
-# intelliJ idea folder
-.idea
+

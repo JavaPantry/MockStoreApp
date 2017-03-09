@@ -51,4 +51,13 @@ What's really surprize me that it looks like thymeleaf call getter for wizardSte
 
 > My question is: Why thymeleaf render model attribute prior it set in controller method and how to fix this.
 
+It turns out that @ModelAttribute methods are invoked before the controller methods annotated with @RequestMapping are invoked.
 
+
+    @RequestMapping({"/repairOnlineHome"})
+    public String showRepairStep1(Model model, final SeedStarter seedStarter) {
+        wizardStep = 1;
+        model.addAttribute("wizardStep", wizardStep);
+        return "repair/repairOnlineHome";
+    }
+ 

@@ -3,8 +3,9 @@
 
 ### TODOs 
 
+
+1. Redirect to specific page according to user role after login http://www.baeldung.com/spring_redirect_after_login
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
-3. TODO - <AP>: later need to build separate org/avp/security jar project
 4. TODO - <AP>: rename BsdController to ?_BsdSiteAdminUIController?_ 
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 6. TODO - <AP>: Really need to understand how to resolve conflicts in _github merging_ 
@@ -28,7 +29,6 @@
 11. On angular client Product page need add [Refresh] button 
 12. move FilterParameterExtJs6 from service to web project
 
----
 
 - Remove ExtJs Trial water mark
 
