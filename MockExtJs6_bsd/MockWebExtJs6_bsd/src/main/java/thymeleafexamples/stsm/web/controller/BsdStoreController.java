@@ -19,7 +19,16 @@
  */
 package thymeleafexamples.stsm.web.controller;
 
+import org.avp.bsd.dto.ProductDto;
+import org.avp.bsd.model.BsdUser;
+import org.avp.bsd.model.Product;
+import org.avp.bsd.model.ProductPriceInStore;
+import org.avp.bsd.model.Store;
+import org.avp.bsd.service.BsdService;
+import org.avp.security.model.User;
+import org.avp.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -31,9 +40,8 @@ import thymeleafexamples.stsm.business.services.SeedStarterService;
 import thymeleafexamples.stsm.business.services.VarietyService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
+import javax.servlet.http.HttpSession;
+import java.util.*;
 
 
 @Controller
@@ -45,18 +53,15 @@ public class BsdStoreController {
     @Autowired
     private SeedStarterService seedStarterService;
 
+    @Autowired
+    protected BsdService bsdService;
+
+    @Autowired
+    protected CustomUserService userService;
+
     public BsdStoreController() {
         super();
     }
-
-
-    private Integer wizardStep;// = new Integer(1);
-
-    // rely on this annotation cause http://stackoverflow.com/questions/42627745/thymeleaf-render-model-attribute-prior-it-set-in-controller-method
-    // at ModelAttribute("wizardStep")
-    //public Integer wizardStep(){
-    //    return wizardStep;
-    //}
 
     @ModelAttribute("allTypes")
     public List<Type> populateTypes() {
@@ -80,22 +85,32 @@ public class BsdStoreController {
 
     // at RequestMapping(value={"/","/bsdStoreOnlineHome"}, method= RequestMethod.GET)
     @RequestMapping({"/bsdStoreOnlineHome"})
-    public String showRepairStep1(Model model, final SeedStarter seedStarter) {
+    public String showRepairStep1(Authentication authentication, HttpSession session, ModelMap model, final SeedStarter seedStarter) {
+        storePrincipal(model, session, authentication);
+
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
-        wizardStep = 1;
-        model.addAttribute("wizardStep", wizardStep);
+
+        BsdUser user = (BsdUser) session.getAttribute("appuser");
+        Store userStore = user.getStore();
+        //dirty trick
+        Store store = bsdService.findStoreById(userStore.getId());
+
+        Set<ProductPriceInStore> productsPriceInStore = store.getProductsInStore();
+        List<Product> products = new ArrayList<Product>();//bsdService.getProducts();
+        for (ProductPriceInStore productPriceInStore : productsPriceInStore) {
+            Product product = productPriceInStore.getPk().getProduct();
+            products.add(product);
+            //logger.debug("/tl/products read "+product.getSku()+" product");
+
+        }
+        //logger.debug("/tl/products read "+products.size()+" products");
+        List<ProductDto> productsDtos = org.avp.bsd.service.DtoFactory.createProductDtoList(products);
+
+        model.addAttribute("products", productsDtos);
         return "bsd/bsdStoreOnlineHome";
     }
 
-    @RequestMapping({"/bsdStoreOnlineHome2"})
-    public String showRepairStep2(Model model, final SeedStarter seedStarter) {
-        seedStarter.setDatePlanted(Calendar.getInstance().getTime());
-        wizardStep = 2;
-        model.addAttribute("wizardStep", wizardStep);
-        return "bsd/bsdStoreOnlineHome";
-    }
-
-    @RequestMapping(value="/bsdStoreOnlineHome", params={"save"})
+    /*@RequestMapping(value="/bsdStoreOnlineHome", params={"save"})
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
             return "bsd/bsdStoreOnlineHome";
@@ -103,18 +118,25 @@ public class BsdStoreController {
         this.seedStarterService.add(seedStarter);
         model.clear();
         return "redirect:/bsdStoreOnlineHome";
-    }
+    }*/
 
-    @RequestMapping(value="/bsdStoreOnlineHome", params={"addRow"})
+    /*@RequestMapping(value="/bsdStoreOnlineHome", params={"addRow"})
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         seedStarter.getRows().add(new Row());
         return "bsd/bsdStoreOnlineHome";
-    }
+    }*/
 
-    @RequestMapping(value="/bsdStoreOnlineHome", params={"removeRow"})
+    /*@RequestMapping(value="/bsdStoreOnlineHome", params={"removeRow"})
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
         seedStarter.getRows().remove(rowId.intValue());
         return "bsd/bsdStoreOnlineHome";
+    }*/
+
+    private void storePrincipal(ModelMap model, HttpSession session, Authentication authentication) {
+        String userName = authentication.getName();
+        User user = (User) userService.getDomainUser(userName);
+        session.setAttribute("appuser", user);
+        model.addAttribute("userFullName", user.getUserId());
     }
 }

@@ -89,6 +89,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${app.auth.repairGroup}")
 	private String repairGroup;
 
+	//app.auth.dealer=ROLE_BSD_DEALER
+	@Value("${app.auth.dealer}")
+	private String dealerGroup;
 
 	/*
 	commented out Thursday, April 21, 2016
@@ -127,8 +130,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
 				//TODO - <AP> repair online UI
-				.antMatchers( "/repairOnlineHome/**").hasAnyAuthority(repairGroup)
-				.antMatchers( "/bsdStoreOnlineHome/**").hasAnyAuthority(thymeleafGroup)
+				.antMatchers( "/clientStore/**").hasAnyAuthority(thymeleafGroup, dealerGroup, repairGroup)
+				.antMatchers( "/bsdStoreOnlineHome/**").hasAnyAuthority(thymeleafGroup, dealerGroup, repairGroup)
+				.antMatchers( "/repairOnlineHome/**").hasAnyAuthority(repairGroup, thymeleafGroup)
 
 				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)

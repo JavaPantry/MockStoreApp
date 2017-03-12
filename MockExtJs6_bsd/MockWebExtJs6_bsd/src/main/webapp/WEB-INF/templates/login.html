@@ -16,7 +16,7 @@
 		<link href="/resources/css/main.css" rel="stylesheet" >
         <link href="/resources/css/paper.css" rel="stylesheet" >
         <link href="/resources/css/signin.css" rel="stylesheet">
-        
+	    <link rel="stylesheet" type="text/css" media="all" href="../../css/app.css" th:href="@{/css/app.css}"/>
     </head>
     
     <body>
@@ -25,9 +25,10 @@
       <form class="form-signin" method="post" modelAttribute="loginForm">
 			<h5 class="form-signin-heading" th:text="#{label.login.title}">Login page</h5>
 
-		  <!--<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
-			  <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
-		  </ul>-->
+			<!--class="errorlist"-->
+			<!--<ul th:if="${#fields.hasErrors('*')}" >
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+			</ul>-->
 
 
 			<!--<c:if test="${not empty error}">

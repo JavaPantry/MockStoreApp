@@ -7,161 +7,73 @@
 <div th:replace="~{repairPageParts :: repairNavigation}"></div>
 
 <div class="container">
+
     <div class="page-header">
+        <div class="row">
+
+            <div class="carousel-holder col-md-12">
+                <!--<div class="col-md-8">-->
+
+                    <div id="products-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#products-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#products-carousel" data-slide-to="1"></li>
+                            <li data-target="#products-carousel" data-slide-to="2"></li>
+                            <li data-target="#products-carousel" data-slide-to="3"></li>
+                            <li data-target="#products-carousel" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active"><img class="slide-image" width="100%" src="resources/images/slides/slide1.png" alt=""/></div>
+                            <div class="item"><img class="slide-image" width="100%" src="resources/images/slides/slide2.png" alt=""/></div>
+                            <div class="item"><img class="slide-image" width="100%" src="resources/images/slides/slide3.png" alt=""/></div>
+                            <div class="item"><img class="slide-image" width="100%" src="resources/images/slides/slide4.png" alt=""/></div>
+                            <div class="item"><img class="slide-image" width="100%" src="resources/images/slides/slide5.png" alt=""/></div>
+                        </div>
+                        <a class="left carousel-control" href="#products-carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#products-carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+
+                <!--</div>-->
+            </div>
+        </div>
+
         <table class="header_bkg">
             <tr>
                 <td>
                     <span class="left_header_block"></span>
                 </td>
                 <td>
-                    <h3>Online Repair Tracking & Approval System</h3>
+                    <h3>BSD Store</h3>
                 </td>
             </tr>
         </table>
     </div>
 
     <!--start Content-->
-    <script  type="text/javascript" src="resources\js\typeahead.bundle.js"></script>
     <script  type="text/javascript" src="resources/js/repairOnlineHome.js"></script>
     <link rel="stylesheet" href="resources/css/repairOnlineHome.css">
 
     <div class="panel-group">
         <div class="panel panel-default">
 
-	        <div>WizardStep: <span th:text="${wizardStep}">wizardStepNo</span></div>
-            <div th:replace="~{repairPageParts :: repairWizardStep (${wizardStep}, 'BSD-Store Home')}"></div>
-
             <div class="panel-body">
 
-                <form class="form-horizontal" data-toggle="validator" id="repairFormStep1" method="post" action="#">
-                    <!--onsubmit="document.getElementById('repairFormStep1').submit();"-->
 
-                    <fieldset>
+                <div class="row">
+                    <ul>
+                        <li th:each="product : ${products}" class="col-sm-4 col-lg-4 col-md-4">
+                            <img th:src="@{'resources/images/products/'+${product.image}} ">
+                            <!--<input type="text" th:value="${product.getEProductName()}" />-->
+                            <div><label th:text="${product.getEProductName()}">Electric Heating</label></div>
+                            <div><label th:text="${product.sku}">sku</label></div>
+                        </li>
+                    </ul>
+                </div>
 
-                        <div class="form-group required">
-                            <label class="control-label required col-sm-4" for="ProductTypeahead">Choose Product Family:</label>
-                            <div id="scrollable-dropdown-menu" class="col-sm-8">
-                                <input type="text" name="productid" id="ProductTypeahead" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Type your Product"
-                                       data-error="Product required" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <input type="hidden" name="mySuppsId" id="mySuppsId">
-
-                        <div class="form-group required">
-                            <label class="control-label required col-sm-4" for="productFamily">Choose Product Family:</label>
-                            <div class="col-sm-8">
-                                <select class="form-control" id="productFamily" placeholder="Enter product family">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group required">
-                            <label class="control-label col-sm-4" for="productSeries">Choose Product Series:</label>
-                            <div class="col-sm-8">
-                                <select class="form-control" id="productSeries" placeholder="Enter product series">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group required">
-                            <label class="control-label col-sm-4" for="chooseModel">Choose Model:</label>
-                            <div class="col-sm-8">
-                                <select class="form-control" id="chooseModel" placeholder="Enter model">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" for="serialNumber">Serial Number:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control"
-                                       id="serialNumber"
-                                       pattern="^[_A-z0-9]{1,}$" maxlength="15"
-                                       minlength="7" required
-                                       placeholder="Enter Serial Number"
-                                       data-error="Serial number must be 7 to 15 alphaNumeric characters">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label class="control-label col-sm-4" for="postCode">Postal code:</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control"
-                                       name="repairRecord.OURSPPC" id="postCode" autocomplete="off"
-                                       pattern="[A-Za-z][0-9][A-Za-z]\s{0,1}[0-9][A-Za-z][0-9]"
-                                       data-error="postal code format A9A 9A9"
-                                       value ="A0A 0A0"
-                                       required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-default"
-                                        onclick="JavaScript: if(postalValid()){postalCodeToObtainAddress('shipping', 'en');} return false;">
-                                    Get City
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label class="control-label col-sm-4" for="city_text">City:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control"
-                                       name="repairRecord.OURSPCT" id="city_text"
-                                       value = "">
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label class="control-label col-sm-4" for="province_text">Province:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control"
-                                       name="provinceShipping" id="province_text"
-                                       value ="">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" for="purchaseDate2">Bootstrap Purchase Date:</label>
-                            <!-- define '.input-group#purchaseDate2' in resources/css/global_new.css -->
-                            <div class="input-group date col-sm-8" id="purchaseDate2">
-                                <input type="text" class="form-control" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="well well-sm" style="font-weight:bold; color: #4d4d4d;">Please note: If you do not find your model in the menus above, we recommend you call our
-                            Customer Support Center at 1-800-OK- CANON (1-800-652-2666) for further information.</div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-8">
-                                <!--<button type="submit" class="btn btn-default">Submit</button>-->
-                                <button type="button" class="button_example" onClick="window.location.href='/euo/repairOnlineStep1';return false">TRACK EXISTING REPAIR&nbsp;&nbsp;&#xe800;</button>
-                                <button type="button" class="button_example" onClick="window.location.href='/euo/repairOnlineStep1';return false">&nbsp;HOME&nbsp;</button>
-                                <!--<button type="button" class="button_example" onClick="window.location.href='/euo/repairOnlineStep1';return false">NEXT STEP&nbsp;&nbsp;&#xe800;</button>-->
-                                <button type="submit" class="btn btn-primary">NEXT STEP&nbsp;&nbsp;&#xe800;</button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
 
             </div> <!--closing div class="panel-body" -->
         </div> <!--div class="panel panel-default"-->
@@ -171,22 +83,6 @@
 
     <div th:replace="~{repairPageParts :: repairFooterBody}"></div>
 </div>  <!--container-->
-
-<script>
-
-    /* bootstrap date picker require toggle*/
-    $('.input-group.date').datepicker({
-        todayBtn: true,
-        clearBtn: true,
-        toggleActive: true
-    });
-
-    window.onload = function()
-    {
-
-    }
-
-</script>
 
 </body>
 </html>
