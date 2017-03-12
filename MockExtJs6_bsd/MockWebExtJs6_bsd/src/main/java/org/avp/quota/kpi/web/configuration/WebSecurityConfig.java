@@ -4,23 +4,18 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
  * On Aug 8 added angular user
@@ -87,8 +82,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private String budgetGroup;
 	@Value("${app.auth.companyGroup}")
 	private String companyGroup;
+
 	@Value("${app.auth.reportGroup}")
 	private String reportGroup;
+
+	@Value("${app.auth.repairGroup}")
+	private String repairGroup;
 
 
 	/*
@@ -127,9 +126,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/ajax/budgets/**").hasAnyAuthority(budgetGroup, adminGroup,adminGroupAngular)
 				.antMatchers( "/ajax/salesReps/**").hasAnyAuthority(companyGroup,adminGroup,adminGroupAngular)
 				.antMatchers( "/report/**").hasAnyAuthority(reportGroup,adminGroup,adminGroupAngular)
-
 				//TODO - <AP> repair online UI
-				.antMatchers( "/repairOnlineHome/**").hasAnyAuthority(thymeleafGroup)
+				.antMatchers( "/repairOnlineHome/**").hasAnyAuthority(repairGroup)
+				.antMatchers( "/bsdStoreOnlineHome/**").hasAnyAuthority(thymeleafGroup)
 
 				//TODO - <AP> configure antMatchers for "ROLE_BSD_DEALER"
 				//.antMatchers( "/ajax/updateSalesRep").hasAnyAuthority(adminGroup)// + ", " + adminGroup)
@@ -151,6 +150,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
+			.successHandler(appSuccessHandler())//declare your bean here
 			.and().logout().logoutSuccessUrl("/login?logout").permitAll()
 			.and().csrf().disable();
 	}
@@ -174,6 +174,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 	
+	@Bean
+	public AuthenticationSuccessHandler appSuccessHandler(){
+		return new AppUrlAuthenticationSuccessHandler();
+	}
 
 	/** 
 	 * commented out Thursday, April 21, 2016

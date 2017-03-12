@@ -122,6 +122,8 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
  * support with @Transactional annotation
  * Also see @BeforeTransaction or @AfterTransaction. 
  * Notice that these methods will not be executed for test methods annotated with @NotTransactional
+ *
+ * See MockWebExtJs6_bsd/Documents/DatabaseSelects.sql
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -243,6 +245,22 @@ public class BuildAndExportDatabase {
 		thymeLeafAuthoritiy.setUser(thymeLeaf);
 		thymeLeafAuthoritiy.setRole("ROLE_BSD_DEALER_THYMELEAF");
 		userService.save(thymeLeafAuthoritiy);
+
+		BsdUser repairThymeLeaf = new BsdUser();
+		repairThymeLeaf.setUserId("Repair T");
+		repairThymeLeaf.setFirstName("Repair");
+		repairThymeLeaf.setLastName("ThymeLeaf");
+		repairThymeLeaf.setPassword(passwordEncoder.encode("password"));
+		repairThymeLeaf.setEmail("repairThymeLeaf@gmail.com");
+		repairThymeLeaf.setStore(storeHq);
+		userService.save(repairThymeLeaf);
+
+		Authority repairThymeLeafAuthoritiy = new Authority();
+		repairThymeLeafAuthoritiy.setUser(repairThymeLeaf);
+		repairThymeLeafAuthoritiy.setRole("ROLE_REPAIR_THYMELEAF");
+		userService.save(repairThymeLeafAuthoritiy);
+
+
 
 
 		BsdUser angularUser = new BsdUser();
