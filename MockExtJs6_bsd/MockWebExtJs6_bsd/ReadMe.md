@@ -4,17 +4,12 @@
 ### TODOs 
 
 
+
 1. Redirect to specific page according to user role after login http://www.baeldung.com/spring_redirect_after_login
 2. TODO - <AP>: TBR org/avp/quota/kpi/web/configuration/WebSecurityConfig:customAuthenticationProvider()
 4. TODO - <AP>: rename BsdController to ?_BsdSiteAdminUIController?_ 
 5. TODO - <AP>: rename BsdClientController to ?_BsdClientUIController?_
 6. TODO - <AP>: Really need to understand how to resolve conflicts in _github merging_ 
-7. TODO - <AP>: Should I make extJs form submit json in bsd/update* ?
-8. On ManageStore form add buttons between 'left one pointed to products within store' AND 'right one pointed to products globally available but not assigned to selected store' grids
-
-8.1. `[>]`,`[>>]` - move product/_group of_ from left to right (delete product from store)
-8.2. `[<]`,`[<<]`- move product/_group of_ from right to left (add product to store)
-
 9. both grids have filter entry field in toolbar and beside it [clear filter] button enabled when filter is active
 10. Error highlighting in empty product price cell is disabled(due dragManager still working and conflict with cell editor)
 		
@@ -23,6 +18,24 @@
 		
 		TypeError: Argument 1 of Node.insertBefore is not an object.
 		cell.dom.insertBefore(editor.el.dom, cell.dom.firstChild);
+
+#### Remove index jsp (did routing to proper UI)
+
+- note that spring security tags accept roles without **ROLE_** prefix
+
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+    <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+    
+    <security:authorize access="hasAnyRole('QuotaKPI_ADMIN_ANGULAR', 'QuotaKPI_QUOTA')">
+    <c:redirect url="/exthome"/>
+    </security:authorize>
+    
+    <security:authorize access="hasAnyRole('BSD_DEALER')">
+    <c:redirect url="/clientStore"/>
+    </security:authorize>
+
+
 
 ![Activate Cell Editor Error](Documents/ActivateCellEditorError.png)
 	
