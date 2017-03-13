@@ -14,6 +14,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var http_1 = __webpack_require__(108);
 __webpack_require__(232);
@@ -2393,7 +2394,7 @@ var FormGroup = (function (_super) {
      */
     FormGroup.prototype.getRawValue = function () {
         return this._reduceChildren({}, function (acc, control, name) {
-            acc[name] = control.value;
+            acc[name] = control instanceof FormControl ? control.value : ((control)).getRawValue();
             return acc;
         });
     };
@@ -2748,7 +2749,11 @@ var FormArray = (function (_super) {
      * Otherwise, the `value` property is the best way to get the value of the array.
      * @return {?}
      */
-    FormArray.prototype.getRawValue = function () { return this.controls.map(function (control) { return control.value; }); };
+    FormArray.prototype.getRawValue = function () {
+        return this.controls.map(function (control) {
+            return control instanceof FormControl ? control.value : ((control)).getRawValue();
+        });
+    };
     /**
      * \@internal
      * @param {?} index
@@ -4267,6 +4272,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var http_1 = __webpack_require__(108);
 __webpack_require__(232);
@@ -5484,6 +5490,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var websocket_service_1 = __webpack_require__(375);
 var Subscriber_1 = __webpack_require__(2);
@@ -5519,6 +5526,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var Rx_1 = __webpack_require__(249);
 var WebSocketService = (function () {
@@ -5562,6 +5570,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(75);
 var forms_1 = __webpack_require__(308);
@@ -6234,7 +6243,7 @@ function ReactiveFormsModule_tsickle_Closure_declarations() {
 /**
  * @stable
  */
-var /** @type {?} */ VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('2.4.7');
+var /** @type {?} */ VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('2.4.9');
 //# sourceMappingURL=version.js.map
 
 /***/ },
@@ -6706,6 +6715,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var ApplicationComponent = (function () {
     function ApplicationComponent() {
@@ -6720,7 +6730,6 @@ ApplicationComponent = __decorate([
         encapsulation: core_1.ViewEncapsulation.None
     })
 ], ApplicationComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ApplicationComponent;
 
 
@@ -6740,6 +6749,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(58);
 var CarouselComponent = (function () {
@@ -6760,7 +6770,6 @@ CarouselComponent = __decorate([
     }),
     __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
 ], CarouselComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CarouselComponent;
 
 
@@ -6777,6 +6786,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var FooterComponent = (function () {
     function FooterComponent() {
@@ -6789,7 +6799,6 @@ FooterComponent = __decorate([
         templateUrl: 'resources/app/components/footer/footer.html'
     })
 ], FooterComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = FooterComponent;
 
 
@@ -6809,6 +6818,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var product_service_1 = __webpack_require__(107);
 var HomeComponent = (function () {
@@ -6838,7 +6848,6 @@ HomeComponent = __decorate([
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService])
 ], HomeComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = HomeComponent;
 
 
@@ -6855,6 +6864,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var NavbarComponent = (function () {
     function NavbarComponent() {
@@ -6867,7 +6877,6 @@ NavbarComponent = __decorate([
         templateUrl: 'resources/app/components/navbar/navbar.html',
     })
 ], NavbarComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = NavbarComponent;
 
 
@@ -6887,6 +6896,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var order_service_1 = __webpack_require__(248);
 var OrderDetailsComponent = (function () {
@@ -6913,7 +6923,6 @@ OrderDetailsComponent = __decorate([
     }),
     __metadata("design:paramtypes", [order_service_1.OrderService])
 ], OrderDetailsComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = OrderDetailsComponent;
 
 
@@ -6933,6 +6942,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var order_service_1 = __webpack_require__(248);
 var OrderListComponent = (function () {
@@ -6959,7 +6969,6 @@ OrderListComponent = __decorate([
     }),
     __metadata("design:paramtypes", [order_service_1.OrderService])
 ], OrderListComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = OrderListComponent;
 
 
@@ -6979,6 +6988,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(58);
 var router_1 = __webpack_require__(161);
@@ -7054,7 +7064,6 @@ ProductDetailComponent = __decorate([
         platform_browser_1.DomSanitizer,
         router_1.ActivatedRoute])
 ], ProductDetailComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ProductDetailComponent;
 
 
@@ -7074,6 +7083,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(58);
 var product_service_1 = __webpack_require__(107);
@@ -7098,7 +7108,6 @@ ProductItemComponent = __decorate([
     }),
     __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
 ], ProductItemComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ProductItemComponent;
 
 
@@ -7118,6 +7127,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(308);
 var product_service_1 = __webpack_require__(107);
@@ -7147,7 +7157,6 @@ SearchComponent = __decorate([
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService])
 ], SearchComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SearchComponent;
 function positiveNumberValidator(control) {
     if (!control.value)
@@ -7175,6 +7184,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var StarsComponent = (function () {
     function StarsComponent() {
@@ -7222,7 +7232,6 @@ StarsComponent = __decorate([
         templateUrl: 'resources/app/components/stars/stars.html'
     })
 ], StarsComponent);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = StarsComponent;
 
 
@@ -7233,6 +7242,7 @@ exports.default = StarsComponent;
 
 "use strict";
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var bid_service_1 = __webpack_require__(374);
 var product_service_1 = __webpack_require__(107);
 var websocket_service_1 = __webpack_require__(375);
@@ -7252,6 +7262,7 @@ exports.ONLINE_AUCTION_SERVICES = [
 
 "use strict";
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var platform_browser_dynamic_1 = __webpack_require__(162);
 var app_module_1 = __webpack_require__(379);

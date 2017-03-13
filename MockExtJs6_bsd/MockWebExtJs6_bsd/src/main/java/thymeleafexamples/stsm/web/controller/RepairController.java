@@ -81,7 +81,6 @@ public class RepairController {
     // at RequestMapping(value={"/","/repairOnlineHome"}, method= RequestMethod.GET)
     @RequestMapping({"/repairOnlineHome"})
     public String showRepairStep1(Model model, final SeedStarter seedStarter) {
-        seedStarter.setDatePlanted(Calendar.getInstance().getTime());
         wizardStep = 1;
         model.addAttribute("wizardStep", wizardStep);
         return "repair/repairOnlineHome";
@@ -89,7 +88,6 @@ public class RepairController {
 
     @RequestMapping({"/repairOnlineHome2"})
     public String showRepairStep2(Model model, final SeedStarter seedStarter) {
-        seedStarter.setDatePlanted(Calendar.getInstance().getTime());
         wizardStep = 2;
         model.addAttribute("wizardStep", wizardStep);
         return "repair/repairOnlineHome2";
