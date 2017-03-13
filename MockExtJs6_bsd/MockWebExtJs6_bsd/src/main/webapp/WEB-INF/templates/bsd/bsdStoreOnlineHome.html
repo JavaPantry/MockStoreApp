@@ -65,7 +65,7 @@
 
                 <div class="row">
                     <ul>
-                        <li th:each="product : ${products}" class="col-sm-4 col-lg-4 col-md-4">
+                        <li th:each="product : ${products}" class="col-sm-3 col-lg-3 col-md-3">
                             <img th:src="@{'resources/images/products/'+${product.image}} ">
                             <!--<input type="text" th:value="${product.getEProductName()}" />-->
                             <div><label th:text="${product.getEProductName()}">Electric Heating</label></div>
