@@ -151,6 +151,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/resources/**").permitAll()
 				.antMatchers( "/app/**").permitAll()
                 .antMatchers( "/thymeleafHome/**").permitAll()
+				//.antMatchers( "/mylogin").permitAll()
+
 				.anyRequest().authenticated()
 				.and()
 			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
