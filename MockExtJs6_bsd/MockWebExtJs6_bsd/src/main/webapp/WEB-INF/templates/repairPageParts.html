@@ -22,6 +22,9 @@
 
 </head>
 
+<!--
+[inline login form bootstrap](http://bootsnipp.com/snippets/featured/horizontal-login-form-in-navbar)
+-->
 
 <nav class="navbar navbar-default header_bkg" th:fragment="repairNavigation">
     <div class="container-fluid">
@@ -35,13 +38,33 @@
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
+
             <ul class="nav navbar-nav navbar-right"> <!---->
                 <li><a href="#">Support & Drivers</a></li>
                 <li><a href="/clientStore">eStore</a></li>
                 <li><a href="/logout">Logout</a></li>
                 <!--<li><button class="btn btn-danger navbar-btn">Francais</button></li>-->
                 <li><button class="button_language" onClick="window.location.href='/euo/repairOnlineStep1';return false;">Francais&nbsp;&nbsp;&#xf144;</button></li>
+                <li>
+                    <!-- login form -->
+                    <!-- attempt slide collapse from left to right
+                        http://stackoverflow.com/questions/12498476/twitter-bootstrap-collapse-plugin-direction-horizontal-instead-of-vertical?noredirect=1&lq=1
+                    -->
+                    <button class="button_language" data-toggle="collapse" data-target="#signIn" style="margin-left: 5px;">Sign In</button>
+                    <form id="signIn" class="navbar-form navbar-right collapse" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" name="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-xs">Sign In</button>
+                    </form>
+                    <!-- login form ends -->
+                </li>
             </ul>
+
+
         </div>
     </div>
 </nav>

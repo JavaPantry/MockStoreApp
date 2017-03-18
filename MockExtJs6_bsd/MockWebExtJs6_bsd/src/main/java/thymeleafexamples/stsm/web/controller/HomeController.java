@@ -19,38 +19,32 @@
  */
 package thymeleafexamples.stsm.web.controller;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import thymeleafexamples.stsm.business.entities.Feature;
-import thymeleafexamples.stsm.business.entities.Row;
-import thymeleafexamples.stsm.business.entities.SeedStarter;
-import thymeleafexamples.stsm.business.entities.Type;
-import thymeleafexamples.stsm.business.entities.Variety;
+import thymeleafexamples.stsm.business.entities.*;
 import thymeleafexamples.stsm.business.services.SeedStarterService;
 import thymeleafexamples.stsm.business.services.VarietyService;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
+
 
 @Controller
-public class SeedStarterMngController {
+public class HomeController {
 
     @Autowired
     private VarietyService varietyService;
-    
+
     @Autowired
     private SeedStarterService seedStarterService;
 
-    public SeedStarterMngController() {
+    public HomeController() {
         super();
     }
 
@@ -75,32 +69,32 @@ public class SeedStarterMngController {
     }
 
     // at RequestMapping(value={"/","/thymeleafHome"}, method= RequestMethod.GET)
-    @RequestMapping({"/thymeleafHome"})
+    @RequestMapping({"/","/home"})
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());
-        return "thymeleafHome";
+        return "home";
     }
 
-    @RequestMapping(value="/thymeleafHome", params={"save"})
+    @RequestMapping(value="/home", params={"save"})
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
-            return "thymeleafHome";
+            return "home";
         }
         this.seedStarterService.add(seedStarter);
         model.clear();
-        return "redirect:/thymeleafHome";
+        return "redirect:/home";
     }
 
-    @RequestMapping(value="/thymeleafHome", params={"addRow"})
+    @RequestMapping(value="/home", params={"addRow"})
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         seedStarter.getRows().add(new Row());
-        return "thymeleafHome";
+        return "home";
     }
 
-    @RequestMapping(value="/thymeleafHome", params={"removeRow"})
+    @RequestMapping(value="/home", params={"removeRow"})
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
         seedStarter.getRows().remove(rowId.intValue());
-        return "thymeleafHome";
+        return "home";
     }
 }
