@@ -150,12 +150,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers( "/js/**").permitAll()
 				.antMatchers( "/resources/**").permitAll()
 				.antMatchers( "/app/**").permitAll()
-                .antMatchers( "/seedstartermngHome/**").permitAll()
+                .antMatchers( "/thymeleafHome/**").permitAll()
+				//.antMatchers( "/mylogin").permitAll()
+
 				.anyRequest().authenticated()
 				.and()
-			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
+			//Switch back: .formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("userName").passwordParameter("password").permitAll()
+			.formLogin().loginPage("/home").failureUrl("/home?error").usernameParameter("userName").passwordParameter("password").permitAll()
 			.successHandler(appSuccessHandler())//declare your bean here
-			.and().logout().logoutSuccessUrl("/login?logout").permitAll()
+			//Switch back: .and().logout().logoutSuccessUrl("/login?logout").permitAll()
+			.and().logout().logoutSuccessUrl("/home?logout").permitAll()
 			.and().csrf().disable();
 	}
 

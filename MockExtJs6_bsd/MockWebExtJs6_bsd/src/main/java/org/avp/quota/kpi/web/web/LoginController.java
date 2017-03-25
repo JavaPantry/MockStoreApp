@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 import org.avp.quota.kpi.web.util.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +28,7 @@ public class LoginController {
 		
 	public LoginController() {}
 	
-	@RequestMapping(value={"/login.jsp", "/login"}, method = RequestMethod.GET)
+	@RequestMapping(value={"/login"}, method = RequestMethod.GET)
 	public void displayLoginForm(ModelMap model,	@RequestParam(value = "error", required = false) String error,
 													@RequestParam(value = "logout", required = false) String logout) {
 		LoginForm loginForm = new LoginForm();
@@ -48,4 +51,22 @@ public class LoginController {
 				(ssoLogoutUrl != null && ssoLogoutUrl.length()>0) ? ssoLogoutUrl : "/");
 		return redirectUrl;
 	}
+
+	/*
+ * http://stackoverflow.com/questions/3830571/spring-security-bypass-login-form
+ */
+
+	@RequestMapping(value={"/mylogin"}, method= RequestMethod.POST)
+	public String customLogin(@RequestParam(value = "userName") String username,
+	                          @RequestParam(value = "password") String password) {
+
+		// build authentication token for user
+		final Authentication auth = new UsernamePasswordAuthenticationToken(username,password);
+		auth.setAuthenticated(true);
+
+		// set authentication in context
+		SecurityContextHolder.getContext().setAuthentication(auth);
+		return "home";
+	}
+
 }
