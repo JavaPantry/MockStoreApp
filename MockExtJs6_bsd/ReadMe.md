@@ -48,3 +48,9 @@ This is "Thymeleaf_branch" branch
 This is "ThymeleafWithWebXml" branch
 Thymeleaf integrated, jsp and tile files removed
 Merged with master
+
+## Build WAR deployment
+
+Skipping test
+
+C:\intellijWS\MockStoreApp\MockExtJs6_bsd>mvn -Dmaven.test.skip=true package

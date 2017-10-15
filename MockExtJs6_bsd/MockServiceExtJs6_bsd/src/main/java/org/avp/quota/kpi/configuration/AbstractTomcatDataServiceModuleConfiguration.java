@@ -58,10 +58,10 @@ public abstract class AbstractTomcatDataServiceModuleConfiguration{
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
       dataSource.setDriverClassName("com.mysql.jdbc.Driver");
       //TODO - <AP> under jboss or tomcat database not switched till full clean deploymnt folder
-      
-      //dataSource.setUrl("jdbc:mysql://localhost:3306/mockstub?createDatabaseIfNotExist=true ");
-      dataSource.setUrl("jdbc:mysql://localhost:3306/gitmockauth?createDatabaseIfNotExist=true ");
-      
+
+        dataSource.setUrl("jdbc:mysql://localhost:3306/gitmockauth?createDatabaseIfNotExist=true ");
+        //dataSource.setUrl("jdbc:mysql://ubuntu:3306/gitmockauth?createDatabaseIfNotExist=true ");
+
       dataSource.setUsername( "root" );
       dataSource.setPassword( "pswd" );
       return dataSource;
