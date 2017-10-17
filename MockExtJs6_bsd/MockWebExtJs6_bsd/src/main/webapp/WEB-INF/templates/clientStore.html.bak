@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <title>BSD Customer Store</title>
+  <style>body{padding-top:70px}</style>
+</head>
+<body>
+
+	<auction-application>Loading...</auction-application>
+	<script src="resources/dist/vendor.bundle.js"></script>
+	<script src="resources/dist/bundle.js"></script>
+
+</body>
+</html>

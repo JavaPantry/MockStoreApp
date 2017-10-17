@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
-<head>
-  <title>BSD Customer Store</title>
-  <style>body{padding-top:70px}</style>
-</head>
-<body>
 
-	<auction-application>Loading...</auction-application>
-	<script src="resources/dist/vendor.bundle.js"></script>
-	<script src="resources/dist/bundle.js"></script>
+<head th:replace="~{repairPageParts :: repairHead}"></head>
+
+<body>
+<div th:replace="~{repairPageParts :: repairNavigation}"></div>
+
+<div class="container">
+
+	<div class="page-header">
+		<table class="header_bkg">
+			<tr>
+				<td>
+					<span class="left_header_block"></span>
+				</td>
+				<td>
+					<h3>BSD Store</h3>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!--start Content-->
+	<script  type="text/javascript" src="resources/js/repairOnlineHome.js"></script>
+	<link rel="stylesheet" href="resources/css/repairOnlineHome.css">
+
+	<div class="panel-group">
+		<div class="panel panel-default">
+
+			<div class="panel-body">
+
+
+				<div class="row">
+					<ul>
+						<li th:each="product : ${products}" class="col-sm-3 col-lg-3 col-md-3">
+							<img th:src="@{'resources/images/products/'+${product.image}} ">
+							<!--<input type="text" th:value="${product.getEProductName()}" />-->
+							<div><label th:text="${product.getEProductName()}">Electric Heating</label></div>
+							<div><label th:text="${product.sku}">sku</label></div>
+						</li>
+					</ul>
+				</div>
+
+
+			</div> <!--closing div class="panel-body" -->
+		</div> <!--div class="panel panel-default"-->
+
+	</div> <!--div class="panel-group"-->
+	<!--end Content-->
+
+	<div th:replace="~{repairPageParts :: repairFooterBody}"></div>
+</div>  <!--container-->
 
 </body>
 </html>
