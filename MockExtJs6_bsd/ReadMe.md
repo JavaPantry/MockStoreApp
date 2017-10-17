@@ -54,3 +54,5 @@ Merged with master
 Skipping test
 
 C:\intellijWS\MockStoreApp\MockExtJs6_bsd>mvn -Dmaven.test.skip=true package
+
+## For Angular front end check-out DeadEndAngular branch master-branch will continue with thymeleaf front end
