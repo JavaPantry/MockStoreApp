@@ -208,10 +208,10 @@ Cause ERROR in ./app/components/application/application.ts
 	(13,13): error TS2304: Cannot find name 'require'.
 
 - from book p#332		
-	>But this is is Webpack’s own require() function, not the one from Node.js. If you’ll
+	>But this is is Webpackï¿½s own require() function, not the one from Node.js. If youï¿½ll
 	>be running the tsc compiler, the above code will result in the compilation errors as it
-	>doesn’t recognize the require() function with such signature.		
-	>To make sure that the compiler won’t complain, we created a custom types definitions file webpack.d.ts in the
+	>doesnï¿½t recognize the require() function with such signature.		
+	>To make sure that the compiler wonï¿½t complain, we created a custom types definitions file webpack.d.ts in the
 	>directory typings_custom with the following content:
 	
 			declare function require(path: string);
@@ -348,11 +348,11 @@ Cause ERROR in ./app/components/application/application.ts
 
 - p#335 
 >In the command line change to the server directory and run npm install to get all
-required dependencies for the server’s portion of the application.
+required dependencies for the serverï¿½s portion of the application.
 To use the local compiler run the command npm run tsc, which will transpile the
-server’s code and will create auction.js and model.js (and their source maps) in the
-directory build as configured in tsconfig.json. This is the code for the Auction’s server.
-Start the server by running the command npm startServer. It’ll print the message
+serverï¿½s code and will create auction.js and model.js (and their source maps) in the
+directory build as configured in tsconfig.json. This is the code for the Auctionï¿½s server.
+Start the server by running the command npm startServer. Itï¿½ll print the message
 "Listening on 127.0.0.1:8000" on the console.
 - continue in C:\webStormWS\Angular2Workspace\auction\ReadMe.md
 
@@ -1051,5 +1051,21 @@ to
         <auction-product-item [product]="product"></auction-product-item>
       </div>
 
+---
+### October 17, 2017
 
+#### remove angular dependencies
+#### replace clientStore.bak with WEB-INF/templates/bsd/bsdStoreOnlineHome.html content
+#### Store angular version WEB-INF/templates/clientStore.html.bak
+---
+### October 18, 2017
 
+#### put former angular's home.ts request to product service into IndexController//clientStore.html
+
+Check how how tomcat logging is set
+```
+18-Oct-2017 08:55 Command line argument: -Djava.rmi.server.hostname=127.0.0.1
+18-Oct-2017 08:55 Command line argument: -Djava.util.logging.config.file=C:\Users\Q05459\.IntelliJIdea2017.1\system\tomcat\Unnamed_MockExtJs6_bsd\conf\logging.properties
+18-Oct-2017 08:55 Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Oct-2017 08:55 Command line argument: -Djava.endorsed.dirs=C:\STS-3.6.4\apache-tomcat-8.0.24\endorsed
+```
